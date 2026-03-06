@@ -1,4 +1,4 @@
-# Auto-deploys to GitHub Pages on every push to main
+# Automatically builds and deploys to GitHub Pages on every push to main
 name: Deploy to GitHub Pages
 
 on:
