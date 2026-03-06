@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './components/Layout'
 import TeamPage from './pages/TeamPage'
 import OneOnOnesPage from './pages/OneOnOnesPage'
@@ -7,7 +7,7 @@ import ArchivePage from './pages/ArchivePage'
 
 export default function App() {
   return (
-    <BrowserRouter basename="/manager-dashboard">
+    <HashRouter>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/team" element={<TeamPage />} />
@@ -17,6 +17,6 @@ export default function App() {
           <Route path="*" element={<Navigate to="/team" replace />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
