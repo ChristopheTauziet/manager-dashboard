@@ -1,0 +1,53 @@
+[
+  {
+    "id": "1",
+    "name": "Jordan Rivera",
+    "email": "jordan.rivera@company.com",
+    "role": "Senior Software Engineer",
+    "level": "IC4",
+    "location": "San Francisco",
+    "gender": "Male",
+    "start_date": "2021-03-15",
+    "compensation": [
+      { "year": 2021, "base_salary": 165000, "bonus_target": 16500, "equity_value": 50000, "total_comp": 231500, "notes": "Initial offer" },
+      { "year": 2022, "base_salary": 175000, "bonus_target": 17500, "equity_value": 65000, "total_comp": 257500, "notes": "Annual review — exceeds expectations" },
+      { "year": 2023, "base_salary": 185000, "bonus_target": 18500, "equity_value": 80000, "total_comp": 283500, "notes": "Promo to IC4" },
+      { "year": 2024, "base_salary": 195000, "bonus_target": 19500, "equity_value": 95000, "total_comp": 309500, "notes": "Strong year, equity refresh" },
+      { "year": 2025, "base_salary": 200000, "bonus_target": 20000, "equity_value": 100000, "total_comp": 320000, "notes": "Market adjustment" }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Priya Sharma",
+    "email": "priya.sharma@company.com",
+    "role": "Software Engineer",
+    "level": "IC3",
+    "location": "New York",
+    "gender": "Female",
+    "start_date": "2022-08-01",
+    "compensation": [
+      { "year": 2022, "base_salary": 140000, "bonus_target": 14000, "equity_value": 40000, "total_comp": 194000, "notes": "Initial offer" },
+      { "year": 2023, "base_salary": 150000, "bonus_target": 15000, "equity_value": 50000, "total_comp": 215000, "notes": "Annual review — meets expectations" },
+      { "year": 2024, "base_salary": 158000, "bonus_target": 15800, "equity_value": 55000, "total_comp": 228800, "notes": "Solid performance" },
+      { "year": 2025, "base_salary": 165000, "bonus_target": 16500, "equity_value": 60000, "total_comp": 241500, "notes": "On track for IC4 promo" }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Alex Chen",
+    "email": "alex.chen@company.com",
+    "role": "Engineering Manager",
+    "level": "M1",
+    "location": "San Francisco",
+    "gender": "Non-binary",
+    "start_date": "2020-01-10",
+    "compensation": [
+      { "year": 2020, "base_salary": 180000, "bonus_target": 27000, "equity_value": 60000, "total_comp": 267000, "notes": "Initial offer as IC5" },
+      { "year": 2021, "base_salary": 190000, "bonus_target": 28500, "equity_value": 75000, "total_comp": 293500, "notes": "Strong IC year" },
+      { "year": 2022, "base_salary": 210000, "bonus_target": 42000, "equity_value": 100000, "total_comp": 352000, "notes": "Promo to M1" },
+      { "year": 2023, "base_salary": 220000, "bonus_target": 44000, "equity_value": 110000, "total_comp": 374000, "notes": "First full year as manager" },
+      { "year": 2024, "base_salary": 230000, "bonus_target": 46000, "equity_value": 120000, "total_comp": 396000, "notes": "Team grew to 6 reports" },
+      { "year": 2025, "base_salary": 240000, "bonus_target": 48000, "equity_value": 130000, "total_comp": 418000, "notes": "Exceeds expectations" }
+    ]
+  }
+]

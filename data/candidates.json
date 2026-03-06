@@ -1,0 +1,61 @@
+[
+  {
+    "id": "1",
+    "name": "Sam Okafor",
+    "role": "Senior Software Engineer",
+    "status": "Onsite",
+    "applied_date": "2025-01-15",
+    "last_activity_date": "2025-02-28",
+    "overall_notes": "Strong systems background. Came from a referral by Jordan. Very articulate in phone screen.",
+    "recommendation": "Strong yes",
+    "interview_rounds": [
+      { "round_name": "Recruiter Screen", "interviewer": "Lisa Park", "date": "2025-01-20", "notes": "Good communication, salary expectations aligned. Motivated by our tech stack.", "recommendation": "Advance" },
+      { "round_name": "Technical Phone Screen", "interviewer": "Jordan Rivera", "date": "2025-02-05", "notes": "Solved the system design problem cleanly. Asked excellent clarifying questions. Deep knowledge of distributed systems.", "recommendation": "Strong advance" },
+      { "round_name": "Onsite — Coding", "interviewer": "Priya Sharma", "date": "2025-02-28", "notes": "Clean code, good testing instincts. Slightly slow on the graph problem but got there.", "recommendation": "Advance" },
+      { "round_name": "Onsite — System Design", "interviewer": "Alex Chen", "date": "2025-02-28", "notes": "Designed a scalable notification system. Great tradeoff analysis. This person is senior-level.", "recommendation": "Strong advance" }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Maria Gonzalez",
+    "role": "Software Engineer",
+    "status": "Offer",
+    "applied_date": "2025-01-08",
+    "last_activity_date": "2025-03-01",
+    "overall_notes": "Excellent candidate for IC3. Strong frontend skills, great culture fit. Offer sent, waiting for response.",
+    "recommendation": "Strong yes",
+    "interview_rounds": [
+      { "round_name": "Recruiter Screen", "interviewer": "Lisa Park", "date": "2025-01-12", "notes": "Enthusiastic about the role. Currently at a startup, looking for more stability.", "recommendation": "Advance" },
+      { "round_name": "Technical Phone Screen", "interviewer": "Priya Sharma", "date": "2025-01-25", "notes": "Strong React and TypeScript skills. Built a component library at current company.", "recommendation": "Advance" },
+      { "round_name": "Onsite — Coding", "interviewer": "Jordan Rivera", "date": "2025-02-15", "notes": "Excellent problem solving. Code was clean and well-structured.", "recommendation": "Strong advance" },
+      { "round_name": "Onsite — Behavioral", "interviewer": "Alex Chen", "date": "2025-02-15", "notes": "Great examples of collaboration and handling conflict. Would be a strong addition to the team.", "recommendation": "Strong advance" }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Tyler Brooks",
+    "role": "Senior Software Engineer",
+    "status": "Rejected",
+    "applied_date": "2025-01-20",
+    "last_activity_date": "2025-02-10",
+    "overall_notes": "Decent technical skills but struggled with system design depth. Not at senior level yet.",
+    "recommendation": "No",
+    "interview_rounds": [
+      { "round_name": "Recruiter Screen", "interviewer": "Lisa Park", "date": "2025-01-25", "notes": "Seemed qualified on paper. 5 years of experience.", "recommendation": "Advance" },
+      { "round_name": "Technical Phone Screen", "interviewer": "Jordan Rivera", "date": "2025-02-10", "notes": "Solved the coding problem but couldn't explain time complexity. System design question was weak — didn't consider scalability.", "recommendation": "Reject" }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Aisha Patel",
+    "role": "Engineering Manager",
+    "status": "Phone screen",
+    "applied_date": "2025-02-25",
+    "last_activity_date": "2025-03-04",
+    "overall_notes": "Applied for EM role. 8 years experience, 3 as a manager. Currently managing a team of 10 at a fintech company.",
+    "recommendation": "Pending",
+    "interview_rounds": [
+      { "round_name": "Recruiter Screen", "interviewer": "Lisa Park", "date": "2025-03-04", "notes": "Very impressive background. Led a team through a major platform migration. Salary expectations are at the top of our band.", "recommendation": "Advance" }
+    ]
+  }
+]

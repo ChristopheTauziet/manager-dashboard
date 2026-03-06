@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "team_member_id": "1",
+    "team_member_name": "Jordan Rivera",
+    "date": "2025-02-28",
+    "notes": "Discussed tech lead path. Jordan is interested in driving the API redesign project. Feeling good about current workload.",
+    "next_steps": "Share tech lead competencies doc. Set up meeting with VP Eng to discuss project scope."
+  },
+  {
+    "id": "2",
+    "team_member_id": "1",
+    "team_member_name": "Jordan Rivera",
+    "date": "2025-02-14",
+    "notes": "Sprint retrospective follow-up. Jordan flagged that the CI pipeline is too slow — taking 45 min. Wants to spend a sprint on optimization.",
+    "next_steps": "Approve CI optimization sprint. Review pipeline metrics together."
+  },
+  {
+    "id": "3",
+    "team_member_id": "1",
+    "team_member_name": "Jordan Rivera",
+    "date": "2025-01-31",
+    "notes": "Career check-in. Discussed IC4 → IC5 path. Jordan wants more visibility with leadership. Suggested presenting at all-hands.",
+    "next_steps": "Nominate Jordan for March all-hands presentation slot."
+  },
+  {
+    "id": "4",
+    "team_member_id": "2",
+    "team_member_name": "Priya Sharma",
+    "date": "2025-03-03",
+    "notes": "Checked in on onboarding buddy program Priya is running. Going well — 3 new hires paired up. Discussed IC4 promo timeline.",
+    "next_steps": "Draft promo packet outline for next cycle. Schedule calibration prep meeting."
+  },
+  {
+    "id": "5",
+    "team_member_id": "2",
+    "team_member_name": "Priya Sharma",
+    "date": "2025-02-17",
+    "notes": "Priya shipped the new auth flow ahead of schedule. Discussed expanding scope to include SSO integration.",
+    "next_steps": "Write up SSO project brief. Loop in security team."
+  },
+  {
+    "id": "6",
+    "team_member_id": "2",
+    "team_member_name": "Priya Sharma",
+    "date": "2025-02-03",
+    "notes": "Discussed conference talk opportunity. Priya wants to present at ReactConf on the design system work.",
+    "next_steps": "Review CFP together. Budget approval for travel."
+  },
+  {
+    "id": "7",
+    "team_member_id": "3",
+    "team_member_name": "Alex Chen",
+    "date": "2025-02-10",
+    "notes": "Skip-level feedback synthesis. Alex's reports consistently praise their 1:1s and clarity of expectations. One area to work on: delegating more instead of jumping in to fix things.",
+    "next_steps": "Alex to practice delegation framework for next 2 sprints. Follow up on progress."
+  },
+  {
+    "id": "8",
+    "team_member_id": "3",
+    "team_member_name": "Alex Chen",
+    "date": "2025-01-27",
+    "notes": "Discussed team planning for Q2. Alex wants to hire 2 more engineers and restructure into 2 pods. Reviewed budget.",
+    "next_steps": "Submit headcount request to finance. Draft pod structure proposal."
+  }
+]
