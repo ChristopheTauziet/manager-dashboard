@@ -1,12 +1,9 @@
-import { useState, useMemo, useCallback, Fragment } from 'react'
+import { useState, useMemo, Fragment } from 'react'
 import { ChevronDown, ChevronRight, Filter, ThumbsUp, ThumbsDown, MessageSquare } from 'lucide-react'
 import { cn, formatDate } from '@/lib/utils'
 import candidatesData from '../../data/candidates.json'
 
 const ALL_STATUSES = ['All', 'Hired', 'Offer', 'Rejected'] as const
-
-const RATING_OPTIONS = ['—', 'Strong Hire', 'Hire', 'No Hire', 'Strong No Hire'] as const
-type Rating = (typeof RATING_OPTIONS)[number]
 
 const statusStyles: Record<string, string> = {
   'Hired': 'bg-green-500/20 text-green-400',
@@ -14,34 +11,22 @@ const statusStyles: Record<string, string> = {
   'Rejected': 'bg-red-500/20 text-red-400',
 }
 
-const ratingStyles: Record<string, string> = {
-  'Strong Hire': 'text-green-400',
-  'Hire': 'text-emerald-400',
-  'No Hire': 'text-red-400',
-  'Strong No Hire': 'text-red-400',
-  '—': 'text-muted-foreground',
-}
-
-const STORAGE_KEY = 'interview-ratings'
-
-function loadRatings(): Record<string, Rating> {
-  try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}')
-  } catch { return {} }
-}
-
-function saveRatings(ratings: Record<string, Rating>) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(ratings))
-}
-
-function inferRating(recommendation: string): Rating {
-  if (!recommendation) return '—'
-  const lower = recommendation.toLowerCase()
-  if (lower.includes('strong hire') || lower.includes('4 -')) return 'Strong Hire'
-  if (lower.includes('strong no') || lower.includes('1 -')) return 'Strong No Hire'
-  if (lower.includes('no hire') || lower.includes('2 -')) return 'No Hire'
-  if (lower.includes('hire') || lower.includes('3 -')) return 'Hire'
-  return '—'
+function summarizeRating(rating: string): { label: string; style: string } {
+  if (!rating) return { label: '—', style: 'text-muted-foreground' }
+  const lower = rating.toLowerCase()
+  if (lower.includes('strong hire') || lower.includes('4 -')) {
+    return { label: 'Strong Hire', style: 'text-green-400' }
+  }
+  if (lower.includes('strong no') || lower.includes('1 -')) {
+    return { label: 'Strong No', style: 'text-red-400' }
+  }
+  if (lower.includes('no hire') || lower.includes('2 -')) {
+    return { label: 'No Hire', style: 'text-red-400' }
+  }
+  if (lower.includes('hire') || lower.includes('3 -')) {
+    return { label: 'Hire', style: 'text-emerald-400' }
+  }
+  return { label: '—', style: 'text-muted-foreground' }
 }
 
 function renderBullets(text: string) {
@@ -59,21 +44,6 @@ export default function InterviewsPage() {
   const [statusFilter, setStatusFilter] = useState('All')
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const [search, setSearch] = useState('')
-  const [ratingOverrides, setRatingOverrides] = useState<Record<string, Rating>>(loadRatings)
-
-  const getRating = useCallback((candidate: { id: string; recommendation: string }): Rating => {
-    if (ratingOverrides[candidate.id]) return ratingOverrides[candidate.id]
-    return inferRating(candidate.recommendation)
-  }, [ratingOverrides])
-
-  const handleRatingChange = useCallback((id: string, value: Rating) => {
-    setRatingOverrides(prev => {
-      const next = { ...prev, [id]: value }
-      saveRatings(next)
-      return next
-    })
-  }, [])
-
   const filtered = useMemo(() => {
     let data = candidatesData as typeof candidatesData
     if (statusFilter !== 'All') {
@@ -132,7 +102,7 @@ export default function InterviewsPage() {
           <tbody>
             {filtered.map(candidate => {
               const isExpanded = expandedId === candidate.id
-              const rating = getRating(candidate)
+              const rating = summarizeRating(candidate.recommendation)
               return (
                 <Fragment key={candidate.id}>
                   <tr
@@ -152,20 +122,10 @@ export default function InterviewsPage() {
                     <td className="px-5 py-3 text-sm text-muted-foreground hidden md:table-cell">
                       {candidate.last_activity_date ? formatDate(candidate.last_activity_date) : '—'}
                     </td>
-                    <td className="px-5 py-3" onClick={e => e.stopPropagation()}>
-                      <select
-                        value={rating}
-                        onChange={e => handleRatingChange(candidate.id, e.target.value as Rating)}
-                        className={cn(
-                          'text-sm font-medium bg-transparent border border-transparent hover:border-border rounded px-1.5 py-0.5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/50 appearance-none',
-                          ratingStyles[rating]
-                        )}
-                        style={{ WebkitAppearance: 'none' }}
-                      >
-                        {RATING_OPTIONS.map(opt => (
-                          <option key={opt} value={opt} className="bg-card text-foreground">{opt}</option>
-                        ))}
-                      </select>
+                    <td className="px-5 py-3">
+                      <span className={cn('text-sm font-medium', rating.style)}>
+                        {rating.label}
+                      </span>
                     </td>
                   </tr>
                   {isExpanded && (
