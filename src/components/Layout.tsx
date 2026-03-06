@@ -1,11 +1,12 @@
 import { NavLink, Outlet } from 'react-router-dom'
-import { Users, MessageSquare, UserSearch } from 'lucide-react'
+import { Users, MessageSquare, UserSearch, Archive } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const navItems = [
   { to: '/team', label: 'Team', icon: Users },
   { to: '/one-on-ones', label: '1:1s', icon: MessageSquare },
   { to: '/interviews', label: 'Interviews', icon: UserSearch },
+  { to: '/archive', label: 'Archive', icon: Archive },
 ]
 
 export default function Layout() {

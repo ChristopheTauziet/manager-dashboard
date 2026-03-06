@@ -1,97 +1,113 @@
-import { useState, useMemo } from 'react'
-import { ChevronDown, ChevronRight } from 'lucide-react'
-import { cn, daysSince, formatDate } from '@/lib/utils'
+import { useMemo } from 'react'
+import { cn, formatDate } from '@/lib/utils'
 import teamData from '../../data/team.json'
 import oneOnOnesData from '../../data/one_on_ones.json'
 
-interface Meeting {
-  id: string
-  team_member_id: string
-  team_member_name: string
-  date: string
-  notes: string
-  next_steps: string
+const CADENCE: Record<string, { weeks: number; graceWeeks: number; label: string }> = {
+  direct_report: { weeks: 2, graceWeeks: 1, label: 'Every 2 weeks' },
+  skip:          { weeks: 6, graceWeeks: 2, label: 'Every 6 weeks' },
+  designer:      { weeks: 12, graceWeeks: 2, label: 'Every 12 weeks' },
+}
+
+function weeksBetween(from: string, to: Date): number {
+  const diff = to.getTime() - new Date(from).getTime()
+  return Math.floor(diff / (1000 * 60 * 60 * 24 * 7))
+}
+
+function weeksUntil(dateStr: string, from: Date): number {
+  const diff = new Date(dateStr).getTime() - from.getTime()
+  return Math.ceil(diff / (1000 * 60 * 60 * 24 * 7))
 }
 
 export default function OneOnOnesPage() {
-  const [expandedId, setExpandedId] = useState<string | null>(null)
+  const now = new Date()
 
-  const memberSummaries = useMemo(() => {
+  const rows = useMemo(() => {
     return teamData.map(member => {
-      const meetings = (oneOnOnesData as Meeting[])
-        .filter(m => m.team_member_id === member.id)
-        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-      const latest = meetings[0]
-      const days = latest ? daysSince(latest.date) : Infinity
-      return { member, meetings, latest, days }
-    }).sort((a, b) => b.days - a.days)
-  }, [])
+      const entry = oneOnOnesData.find(o => o.team_member_id === member.id)
+      const cadence = CADENCE[member.relationship] ?? CADENCE.designer
+      const lastDate = entry?.last_one_on_one ?? null
+      const nextDate = entry?.next_one_on_one ?? null
 
-  const statusColor = (days: number) => {
-    if (days <= 7) return 'bg-success'
-    if (days <= 14) return 'bg-warning'
-    return 'bg-destructive'
-  }
+      const weeksSinceLast = lastDate ? weeksBetween(lastDate, now) : Infinity
+      const weeksToNext = nextDate ? weeksUntil(nextDate, now) : Infinity
 
-  const statusText = (days: number) => {
-    if (days === Infinity) return 'Never'
-    return `${days}d ago`
-  }
+      const overdue = weeksSinceLast > cadence.weeks
+      const noUpcoming = weeksToNext > cadence.graceWeeks
+      const isRed = overdue && noUpcoming
+
+      return { member, lastDate, nextDate, weeksSinceLast, weeksToNext, cadence, isRed }
+    }).sort((a, b) => {
+      if (a.isRed !== b.isRed) return a.isRed ? -1 : 1
+      return b.weeksSinceLast - a.weeksSinceLast
+    })
+  }, [now])
 
   return (
     <div className="space-y-8">
       <h1 className="text-2xl font-semibold">1:1 Tracker</h1>
 
       <div className="bg-card border border-border rounded-xl overflow-hidden">
-        {memberSummaries.map(({ member, meetings, latest, days }) => {
-          const isExpanded = expandedId === member.id
-          return (
-            <div key={member.id} className="border-b border-border last:border-b-0">
-              <button
-                onClick={() => setExpandedId(isExpanded ? null : member.id)}
-                className="w-full flex items-center gap-4 px-5 py-4 hover:bg-accent/30 transition-colors text-left"
-              >
-                <span className="text-muted-foreground">
-                  {isExpanded ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
-                </span>
-                <span className="font-medium flex-1">{member.name}</span>
-                <span className="text-sm text-muted-foreground hidden sm:block">
-                  {latest ? formatDate(latest.date) : 'No meetings'}
-                </span>
-                <span className={cn(
-                  'text-xs font-medium px-2.5 py-1 rounded-full text-white',
-                  statusColor(days)
-                )}>
-                  {statusText(days)}
-                </span>
-              </button>
-
-              {isExpanded && (
-                <div className="px-5 pb-5 space-y-4">
-                  {meetings.length === 0 ? (
-                    <p className="text-sm text-muted-foreground italic">No 1:1s recorded yet.</p>
+        <table className="w-full">
+          <thead>
+            <tr className="border-b border-border">
+              <th className="text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">Name</th>
+              <th className="text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider hidden sm:table-cell">Relationship</th>
+              <th className="text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider hidden sm:table-cell">Cadence</th>
+              <th className="text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">Last 1:1</th>
+              <th className="text-center px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">Weeks Since</th>
+              <th className="text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">Next 1:1</th>
+              <th className="text-center px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">Weeks Until</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(({ member, lastDate, nextDate, weeksSinceLast, weeksToNext, cadence, isRed }) => (
+              <tr key={member.id} className={cn('border-b border-border transition-colors', isRed && 'bg-red-500/5')}>
+                <td className="px-5 py-4">
+                  <div className="font-medium">{member.name}</div>
+                  <div className="text-xs text-muted-foreground sm:hidden">
+                    {cadence.label}
+                  </div>
+                </td>
+                <td className="px-5 py-4 text-sm text-muted-foreground hidden sm:table-cell">
+                  {member.relationship === 'direct_report' ? 'Direct report' :
+                   member.relationship === 'skip' ? 'Skip' : 'Designer'}
+                </td>
+                <td className="px-5 py-4 text-sm text-muted-foreground hidden sm:table-cell">{cadence.label}</td>
+                <td className="px-5 py-4 text-sm">
+                  {lastDate ? formatDate(lastDate) : <span className="text-muted-foreground">—</span>}
+                </td>
+                <td className="px-5 py-4 text-center">
+                  <span className={cn(
+                    'text-sm font-medium px-2.5 py-1 rounded-full',
+                    isRed
+                      ? 'bg-red-500/20 text-red-400'
+                      : weeksSinceLast > cadence.weeks
+                        ? 'bg-yellow-500/20 text-yellow-400'
+                        : 'bg-green-500/20 text-green-400'
+                  )}>
+                    {weeksSinceLast === Infinity ? '—' : `${weeksSinceLast}w`}
+                  </span>
+                </td>
+                <td className="px-5 py-4 text-sm">
+                  {nextDate ? formatDate(nextDate) : <span className="text-muted-foreground">Not scheduled</span>}
+                </td>
+                <td className="px-5 py-4 text-center">
+                  {nextDate ? (
+                    <span className={cn(
+                      'text-sm font-medium',
+                      weeksToNext <= 0 ? 'text-muted-foreground' : 'text-foreground'
+                    )}>
+                      {weeksToNext <= 0 ? 'This week' : `${weeksToNext}w`}
+                    </span>
                   ) : (
-                    meetings.map(meeting => (
-                      <div key={meeting.id} className="bg-muted/30 rounded-lg p-4 space-y-2">
-                        <div className="flex items-center gap-3">
-                          <span className="text-sm font-medium">{formatDate(meeting.date)}</span>
-                          <span className="text-xs text-muted-foreground">{daysSince(meeting.date)}d ago</span>
-                        </div>
-                        <p className="text-sm text-foreground/90 leading-relaxed">{meeting.notes}</p>
-                        {meeting.next_steps && (
-                          <div className="text-sm">
-                            <span className="text-muted-foreground font-medium">Next steps: </span>
-                            <span className="text-foreground/80">{meeting.next_steps}</span>
-                          </div>
-                        )}
-                      </div>
-                    ))
+                    <span className={cn('text-sm font-medium', isRed ? 'text-red-400' : 'text-muted-foreground')}>—</span>
                   )}
-                </div>
-              )}
-            </div>
-          )
-        })}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   )

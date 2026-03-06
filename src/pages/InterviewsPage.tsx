@@ -1,13 +1,12 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, Fragment } from 'react'
 import { ChevronDown, ChevronRight, Filter } from 'lucide-react'
 import { cn, formatDate } from '@/lib/utils'
 import candidatesData from '../../data/candidates.json'
 
-const ALL_STATUSES = ['All', 'Phone screen', 'Onsite', 'Offer', 'Hired', 'Rejected'] as const
+const ALL_STATUSES = ['All', 'Active', 'Offer', 'Hired', 'Rejected'] as const
 
 const statusStyles: Record<string, string> = {
-  'Phone screen': 'bg-blue-500/20 text-blue-400',
-  'Onsite': 'bg-purple-500/20 text-purple-400',
+  'Active': 'bg-blue-500/20 text-blue-400',
   'Offer': 'bg-emerald-500/20 text-emerald-400',
   'Hired': 'bg-green-500/20 text-green-400',
   'Rejected': 'bg-red-500/20 text-red-400',
@@ -28,6 +27,8 @@ export default function InterviewsPage() {
     if (statusFilter === 'All') return candidatesData
     return candidatesData.filter(c => c.status === statusFilter)
   }, [statusFilter])
+
+  const COL_COUNT = 6
 
   return (
     <div className="space-y-8">
@@ -63,7 +64,7 @@ export default function InterviewsPage() {
             {filtered.map(candidate => {
               const isExpanded = expandedId === candidate.id
               return (
-                <tbody key={candidate.id}>
+                <Fragment key={candidate.id}>
                   <tr
                     className="border-b border-border hover:bg-accent/30 cursor-pointer transition-colors"
                     onClick={() => setExpandedId(isExpanded ? null : candidate.id)}
@@ -87,7 +88,7 @@ export default function InterviewsPage() {
                   </tr>
                   {isExpanded && (
                     <tr>
-                      <td colSpan={6} className="bg-muted/30 px-5 py-4">
+                      <td colSpan={COL_COUNT} className="bg-muted/30 px-5 py-4">
                         <div className="space-y-4 max-w-3xl">
                           <div>
                             <p className="text-sm text-muted-foreground">Applied {formatDate(candidate.applied_date)}</p>
@@ -126,7 +127,7 @@ export default function InterviewsPage() {
                       </td>
                     </tr>
                   )}
-                </tbody>
+                </Fragment>
               )
             })}
           </tbody>

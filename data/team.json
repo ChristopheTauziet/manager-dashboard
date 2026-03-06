@@ -1,53 +1,1387 @@
 [
   {
     "id": "1",
-    "name": "Jordan Rivera",
-    "email": "jordan.rivera@company.com",
-    "role": "Senior Software Engineer",
-    "level": "IC4",
-    "location": "San Francisco",
-    "gender": "Male",
-    "start_date": "2021-03-15",
+    "name": "Linda Eliasen",
+    "level": "L7",
+    "zone": "Z1",
+    "relationship": "direct_report",
+    "location": "NYC",
+    "gender": "Female",
+    "start_date": "2026-01-01",
+    "last_promo": "No promo yet",
     "compensation": [
-      { "year": 2021, "base_salary": 165000, "bonus_target": 16500, "equity_value": 50000, "total_comp": 231500, "notes": "Initial offer" },
-      { "year": 2022, "base_salary": 175000, "bonus_target": 17500, "equity_value": 65000, "total_comp": 257500, "notes": "Annual review — exceeds expectations" },
-      { "year": 2023, "base_salary": 185000, "bonus_target": 18500, "equity_value": 80000, "total_comp": 283500, "notes": "Promo to IC4" },
-      { "year": 2024, "base_salary": 195000, "bonus_target": 19500, "equity_value": 95000, "total_comp": 309500, "notes": "Strong year, equity refresh" },
-      { "year": 2025, "base_salary": 200000, "bonus_target": 20000, "equity_value": 100000, "total_comp": 320000, "notes": "Market adjustment" }
+      {
+        "year": 2025,
+        "base_salary": 350000,
+        "equity_value": 800000,
+        "total_comp": 1150000,
+        "perf_rating": "",
+        "notes": ""
+      }
     ]
   },
   {
     "id": "2",
-    "name": "Priya Sharma",
-    "email": "priya.sharma@company.com",
-    "role": "Software Engineer",
-    "level": "IC3",
-    "location": "New York",
-    "gender": "Female",
-    "start_date": "2022-08-01",
+    "name": "Ian Jaye",
+    "level": "L7",
+    "zone": "Z1",
+    "relationship": "direct_report",
+    "location": "San Francisco",
+    "gender": "Male",
+    "start_date": "2022-01-01",
+    "last_promo": "Mar 2024",
     "compensation": [
-      { "year": 2022, "base_salary": 140000, "bonus_target": 14000, "equity_value": 40000, "total_comp": 194000, "notes": "Initial offer" },
-      { "year": 2023, "base_salary": 150000, "bonus_target": 15000, "equity_value": 50000, "total_comp": 215000, "notes": "Annual review — meets expectations" },
-      { "year": 2024, "base_salary": 158000, "bonus_target": 15800, "equity_value": 55000, "total_comp": 228800, "notes": "Solid performance" },
-      { "year": 2025, "base_salary": 165000, "bonus_target": 16500, "equity_value": 60000, "total_comp": 241500, "notes": "On track for IC4 promo" }
+      {
+        "year": 2022,
+        "base_salary": 225500,
+        "equity_value": 247350,
+        "total_comp": 472850,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "base_salary": 245000,
+        "equity_value": 168500,
+        "total_comp": 413500,
+        "perf_rating": "Exceptional",
+        "notes": "Promoted"
+      },
+      {
+        "year": 2024,
+        "base_salary": 275000,
+        "equity_value": 349250,
+        "total_comp": 624250,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 300000,
+        "equity_value": 650000,
+        "total_comp": 950000,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      }
     ]
   },
   {
     "id": "3",
-    "name": "Alex Chen",
-    "email": "alex.chen@company.com",
-    "role": "Engineering Manager",
-    "level": "M1",
-    "location": "San Francisco",
-    "gender": "Non-binary",
-    "start_date": "2020-01-10",
+    "name": "Tim Shi",
+    "level": "L7",
+    "zone": "Z2",
+    "relationship": "direct_report",
+    "location": "Los Angeles",
+    "gender": "Male",
+    "start_date": "2021-01-01",
+    "last_promo": "Mar 2024",
     "compensation": [
-      { "year": 2020, "base_salary": 180000, "bonus_target": 27000, "equity_value": 60000, "total_comp": 267000, "notes": "Initial offer as IC5" },
-      { "year": 2021, "base_salary": 190000, "bonus_target": 28500, "equity_value": 75000, "total_comp": 293500, "notes": "Strong IC year" },
-      { "year": 2022, "base_salary": 210000, "bonus_target": 42000, "equity_value": 100000, "total_comp": 352000, "notes": "Promo to M1" },
-      { "year": 2023, "base_salary": 220000, "bonus_target": 44000, "equity_value": 110000, "total_comp": 374000, "notes": "First full year as manager" },
-      { "year": 2024, "base_salary": 230000, "bonus_target": 46000, "equity_value": 120000, "total_comp": 396000, "notes": "Team grew to 6 reports" },
-      { "year": 2025, "base_salary": 240000, "bonus_target": 48000, "equity_value": 130000, "total_comp": 418000, "notes": "Exceeds expectations" }
+      {
+        "year": 2022,
+        "base_salary": 240000,
+        "equity_value": 202682,
+        "total_comp": 442682,
+        "perf_rating": "High",
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "base_salary": 260000,
+        "equity_value": 181500,
+        "total_comp": 441500,
+        "perf_rating": "Very Strong",
+        "notes": "Promoted"
+      },
+      {
+        "year": 2024,
+        "base_salary": 286000,
+        "equity_value": 357000,
+        "total_comp": 643000,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 300000,
+        "equity_value": 441695,
+        "total_comp": 741695,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Heather Mounsey",
+    "level": "L7",
+    "zone": "Z3",
+    "relationship": "direct_report",
+    "location": "New Hampshire",
+    "gender": "Female",
+    "start_date": "2024-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 280000,
+        "equity_value": 280750,
+        "total_comp": 560750,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 292000,
+        "equity_value": 318026,
+        "total_comp": 610026,
+        "perf_rating": "",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Faris Toqan",
+    "level": "L7",
+    "zone": "Z3",
+    "relationship": "direct_report",
+    "location": "Chicago",
+    "gender": "Male",
+    "start_date": "2022-01-01",
+    "last_promo": "2025 - Sept",
+    "compensation": [
+      {
+        "year": 2025,
+        "base_salary": 259423,
+        "equity_value": 555577,
+        "total_comp": 815000,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Joe Christiani",
+    "level": "L7",
+    "zone": "Z1",
+    "relationship": "direct_report",
+    "location": "NYC",
+    "gender": "Male",
+    "start_date": "2020-01-01",
+    "last_promo": "Mar 2026",
+    "compensation": [
+      {
+        "year": 2022,
+        "base_salary": 198000,
+        "equity_value": 505758,
+        "total_comp": 703758,
+        "perf_rating": "High",
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "base_salary": 235000,
+        "equity_value": 245750,
+        "total_comp": 480750,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2024,
+        "base_salary": 247000,
+        "equity_value": 355750,
+        "total_comp": 602750,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 266000,
+        "equity_value": 389325,
+        "total_comp": 655325,
+        "perf_rating": "Very Strong",
+        "notes": "Promoted"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "name": "Ellis Yu",
+    "level": "L6",
+    "zone": "Z2",
+    "relationship": "direct_report",
+    "location": "Seattle",
+    "gender": "Female",
+    "start_date": "2023-01-01",
+    "last_promo": "Mar 2024",
+    "compensation": [
+      {
+        "year": 2023,
+        "base_salary": 204000,
+        "equity_value": 69000,
+        "total_comp": 273000,
+        "perf_rating": "Very Strong",
+        "notes": "Promoted"
+      },
+      {
+        "year": 2024,
+        "base_salary": 224000,
+        "equity_value": 217250,
+        "total_comp": 441250,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 241000,
+        "equity_value": 279220,
+        "total_comp": 520220,
+        "perf_rating": "Exceptional",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "name": "Chris Warner",
+    "level": "L6",
+    "zone": "Z1",
+    "relationship": "direct_report",
+    "location": "San Francisco",
+    "gender": "Male",
+    "start_date": "2019-01-01",
+    "last_promo": "2024 - Sept",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 253000,
+        "equity_value": 225000,
+        "total_comp": 478000,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 261000,
+        "equity_value": 349000,
+        "total_comp": 610000,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "name": "Gabbi Sanchez Mallona",
+    "level": "L6",
+    "zone": "Z1",
+    "relationship": "direct_report",
+    "location": "San Francisco",
+    "gender": "Female",
+    "start_date": "2022-01-01",
+    "last_promo": "2024 - Sept",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 239441,
+        "equity_value": 160250,
+        "total_comp": 399691,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 249000,
+        "equity_value": 351000,
+        "total_comp": 600000,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "name": "Zack Meredith",
+    "level": "L6",
+    "zone": "Z3",
+    "relationship": "designer",
+    "location": "Portland",
+    "gender": "Male",
+    "start_date": "2019-01-01",
+    "last_promo": "2023 - Sept",
+    "compensation": [
+      {
+        "year": 2022,
+        "base_salary": 200000,
+        "equity_value": 256153,
+        "total_comp": 456153,
+        "perf_rating": "High",
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "base_salary": 236000,
+        "equity_value": 204750,
+        "total_comp": 440750,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2024,
+        "base_salary": 245000,
+        "equity_value": 240250,
+        "total_comp": 485250,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 252000,
+        "equity_value": 231496,
+        "total_comp": 483496,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "name": "Ryan Smith",
+    "level": "L6",
+    "zone": "Z4",
+    "relationship": "designer",
+    "location": "New Mexico",
+    "gender": "Male",
+    "start_date": "2017-01-01",
+    "last_promo": "2024 - Sept",
+    "compensation": [
+      {
+        "year": 2022,
+        "base_salary": 197500,
+        "equity_value": 347381,
+        "total_comp": 544881,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "base_salary": 206000,
+        "equity_value": 104250,
+        "total_comp": 310250,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      },
+      {
+        "year": 2024,
+        "base_salary": 239000,
+        "equity_value": 198250,
+        "total_comp": 437250,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 246000,
+        "equity_value": 180720,
+        "total_comp": 426720,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "name": "Justin Cohen",
+    "level": "L6",
+    "zone": "Z4",
+    "relationship": "designer",
+    "location": "Philadelphia",
+    "gender": "Male",
+    "start_date": "2021-01-01",
+    "last_promo": "Mar 2025",
+    "compensation": [
+      {
+        "year": 2022,
+        "base_salary": 195800,
+        "equity_value": 215922,
+        "total_comp": 411722,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "base_salary": 205000,
+        "equity_value": 118250,
+        "total_comp": 323250,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2024,
+        "base_salary": 212000,
+        "equity_value": 126260,
+        "total_comp": 338260,
+        "perf_rating": "Exceptional",
+        "notes": "Promoted"
+      },
+      {
+        "year": 2025,
+        "base_salary": 234000,
+        "equity_value": 167650,
+        "total_comp": 401650,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "name": "Amy Wong",
+    "level": "L6",
+    "zone": "Z4",
+    "relationship": "direct_report",
+    "location": "Maine",
+    "gender": "Female",
+    "start_date": "2022-01-01",
+    "last_promo": "Mar 2026",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 230000,
+        "equity_value": 125000,
+        "total_comp": 355000,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 242000,
+        "equity_value": 150350,
+        "total_comp": 392350,
+        "perf_rating": "Very Strong",
+        "notes": "Promoted"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "name": "Cody Fisher",
+    "level": "L6",
+    "zone": "Z1",
+    "relationship": "designer",
+    "location": "NYC",
+    "gender": "Male",
+    "start_date": "2021-01-01",
+    "last_promo": "Mar 2026",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 185200,
+        "equity_value": 71500,
+        "total_comp": 256700,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 200000,
+        "equity_value": 82912,
+        "total_comp": 282912,
+        "perf_rating": "Strong",
+        "notes": "Promoted"
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "name": "Cici Chen",
+    "level": "L5",
+    "zone": "Z2",
+    "relationship": "designer",
+    "location": "Seattle",
+    "gender": "Female",
+    "start_date": "2025-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 240000,
+        "equity_value": 192000,
+        "total_comp": 432000,
+        "perf_rating": "",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 240000,
+        "equity_value": 192000,
+        "total_comp": 432000,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "name": "Natalie Kim",
+    "level": "L5",
+    "zone": "Z1",
+    "relationship": "designer",
+    "location": "San Francisco",
+    "gender": "Female",
+    "start_date": "2025-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2025,
+        "base_salary": 220800,
+        "equity_value": 184200,
+        "total_comp": 405000,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "name": "Julie Henson",
+    "level": "L5",
+    "zone": "Z1",
+    "relationship": "designer",
+    "location": "San Francisco",
+    "gender": "Female",
+    "start_date": "2026-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2025,
+        "base_salary": 227000,
+        "equity_value": 95000,
+        "total_comp": 322000,
+        "perf_rating": "",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "name": "Tony Murphy",
+    "level": "L5",
+    "zone": "Z2",
+    "relationship": "designer",
+    "location": "Los Angeles",
+    "gender": "Male",
+    "start_date": "2025-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2025,
+        "base_salary": 230000,
+        "equity_value": 175000,
+        "total_comp": 405000,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "20",
+    "name": "Jeremy Tribby",
+    "level": "L5",
+    "zone": "Z1",
+    "relationship": "designer",
+    "location": "San Francisco",
+    "gender": "Male",
+    "start_date": "2019-01-01",
+    "last_promo": "Mar 2023",
+    "compensation": [
+      {
+        "year": 2022,
+        "base_salary": 183000,
+        "equity_value": 324902,
+        "total_comp": 507902,
+        "perf_rating": "High",
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "base_salary": 205000,
+        "equity_value": 134000,
+        "total_comp": 339000,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2024,
+        "base_salary": 212000,
+        "equity_value": 163000,
+        "total_comp": 375000,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 219000,
+        "equity_value": 167540,
+        "total_comp": 386540,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "21",
+    "name": "Simran Jassal",
+    "level": "L5",
+    "zone": "Z1",
+    "relationship": "designer",
+    "location": "NYC",
+    "gender": "Female",
+    "start_date": "2024-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 230000,
+        "equity_value": 164750,
+        "total_comp": 394750,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 237000,
+        "equity_value": 141091,
+        "total_comp": 378091,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "22",
+    "name": "Nikhil Popat",
+    "level": "L5",
+    "zone": "Z1",
+    "relationship": "designer",
+    "location": "San Francisco",
+    "gender": "Male",
+    "start_date": "2022-01-01",
+    "last_promo": "Mar 2024",
+    "compensation": [
+      {
+        "year": 2022,
+        "base_salary": 180000,
+        "equity_value": 98358,
+        "total_comp": 278358,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "base_salary": 188000,
+        "equity_value": 39500,
+        "total_comp": 227500,
+        "perf_rating": "Very Strong",
+        "notes": "Promoted"
+      },
+      {
+        "year": 2024,
+        "base_salary": 206000,
+        "equity_value": 120250,
+        "total_comp": 326250,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 212000,
+        "equity_value": 155958,
+        "total_comp": 367958,
+        "perf_rating": "Inconsistent",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "23",
+    "name": "Liz Reddinger",
+    "level": "L5",
+    "zone": "Z1",
+    "relationship": "designer",
+    "location": "NYC",
+    "gender": "Female",
+    "start_date": "2022-01-01",
+    "last_promo": "2023 - Sept",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 210590,
+        "equity_value": 149500,
+        "total_comp": 360090,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 218000,
+        "equity_value": 147134,
+        "total_comp": 365134,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "24",
+    "name": "Nikki Dahan",
+    "level": "L5",
+    "zone": "Z4",
+    "relationship": "skip",
+    "location": "Pittsburgh",
+    "gender": "Female",
+    "start_date": "2019-01-01",
+    "last_promo": "2022 - Sept",
+    "compensation": [
+      {
+        "year": 2022,
+        "base_salary": 201300,
+        "equity_value": 419913,
+        "total_comp": 621213,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "base_salary": 208500,
+        "equity_value": 144750,
+        "total_comp": 353250,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      },
+      {
+        "year": 2024,
+        "base_salary": 220000,
+        "equity_value": 162000,
+        "total_comp": 382000,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 226000,
+        "equity_value": 134238,
+        "total_comp": 360238,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "25",
+    "name": "Lindsay Grizzard",
+    "level": "L5",
+    "zone": "Z3",
+    "relationship": "designer",
+    "location": "Portland",
+    "gender": "Female",
+    "start_date": "2022-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 211600,
+        "equity_value": 126750,
+        "total_comp": 338350,
+        "perf_rating": "Inconsistent",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 214000,
+        "equity_value": 126135,
+        "total_comp": 340135,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "26",
+    "name": "Phil Nguyen",
+    "level": "L5",
+    "zone": "Z1",
+    "relationship": "designer",
+    "location": "San Francisco",
+    "gender": "Male",
+    "start_date": "2026-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2025,
+        "base_salary": 210000,
+        "equity_value": 130000,
+        "total_comp": 340000,
+        "perf_rating": "",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "27",
+    "name": "Adam Chang",
+    "level": "L5",
+    "zone": "Z1",
+    "relationship": "designer",
+    "location": "San Francisco",
+    "gender": "Male",
+    "start_date": "2025-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2025,
+        "base_salary": 210000,
+        "equity_value": 135000,
+        "total_comp": 345000,
+        "perf_rating": "",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "28",
+    "name": "Melanie Eusebio",
+    "level": "L5",
+    "zone": "Z1",
+    "relationship": "designer",
+    "location": "San Francisco",
+    "gender": "Female",
+    "start_date": "2024-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 215000,
+        "equity_value": 121667,
+        "total_comp": 336667,
+        "perf_rating": "",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 215000,
+        "equity_value": 121667,
+        "total_comp": 336667,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "29",
+    "name": "Jordan Laughlin",
+    "level": "L5",
+    "zone": "Z3",
+    "relationship": "designer",
+    "location": "San Diego",
+    "gender": "Male",
+    "start_date": "2021-01-01",
+    "last_promo": "2023 - Sept",
+    "compensation": [
+      {
+        "year": 2023,
+        "base_salary": 206250,
+        "equity_value": 127750,
+        "total_comp": 334000,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2024,
+        "base_salary": 213000,
+        "equity_value": 140500,
+        "total_comp": 353500,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 220000,
+        "equity_value": 115460,
+        "total_comp": 335460,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "30",
+    "name": "Bruno Olmedo",
+    "level": "L5",
+    "zone": "Z4",
+    "relationship": "designer",
+    "location": "Florida",
+    "gender": "Male",
+    "start_date": "2022-01-01",
+    "last_promo": "2023 - Sept",
+    "compensation": [
+      {
+        "year": 2022,
+        "base_salary": 175000,
+        "equity_value": 104178,
+        "total_comp": 279178,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "base_salary": 200000,
+        "equity_value": 94750,
+        "total_comp": 294750,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2024,
+        "base_salary": 207000,
+        "equity_value": 130750,
+        "total_comp": 337750,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 213000,
+        "equity_value": 120610,
+        "total_comp": 333610,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "31",
+    "name": "Tori Cincotta",
+    "level": "L5",
+    "zone": "Z3",
+    "relationship": "designer",
+    "location": "Sacramento",
+    "gender": "Female",
+    "start_date": "2024-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 185000,
+        "equity_value": 123250,
+        "total_comp": 308250,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 200000,
+        "equity_value": 132290,
+        "total_comp": 332290,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "32",
+    "name": "James Carter",
+    "level": "L5",
+    "zone": "Z2",
+    "relationship": "designer",
+    "location": "Los Angeles",
+    "gender": "Male",
+    "start_date": "2021-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 206500,
+        "equity_value": 120500,
+        "total_comp": 327000,
+        "perf_rating": "Inconsistent",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 209000,
+        "equity_value": 116149,
+        "total_comp": 325149,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "33",
+    "name": "Obada Ghabra",
+    "level": "L5",
+    "zone": "Z2",
+    "relationship": "designer",
+    "location": "Los Angeles",
+    "gender": "Male",
+    "start_date": "2022-01-01",
+    "last_promo": "Mar 2025",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 185592,
+        "equity_value": 88500,
+        "total_comp": 274092,
+        "perf_rating": "Exceptional",
+        "notes": "Promoted"
+      },
+      {
+        "year": 2025,
+        "base_salary": 205000,
+        "equity_value": 118701,
+        "total_comp": 323701,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "34",
+    "name": "Judy Zhong",
+    "level": "L5",
+    "zone": "Z1",
+    "relationship": "designer",
+    "location": "NYC",
+    "gender": "Female",
+    "start_date": "2025-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2025,
+        "base_salary": 190000,
+        "equity_value": 120000,
+        "total_comp": 310000,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "35",
+    "name": "Greg Makrigiorgos",
+    "level": "L5",
+    "zone": "Z3",
+    "relationship": "direct_report",
+    "location": "Massachussets",
+    "gender": "Male",
+    "start_date": "2024-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 200000,
+        "equity_value": 93750,
+        "total_comp": 293750,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 206000,
+        "equity_value": 102630,
+        "total_comp": 308630,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "36",
+    "name": "Ian Dickens",
+    "level": "L5",
+    "zone": "Z4",
+    "relationship": "designer",
+    "location": "Chicago",
+    "gender": "Male",
+    "start_date": "2025-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2025,
+        "base_salary": 185000,
+        "equity_value": 115000,
+        "total_comp": 300000,
+        "perf_rating": "Exceptional",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "37",
+    "name": "Brayden Decker",
+    "level": "L5",
+    "zone": "Z4",
+    "relationship": "designer",
+    "location": "Idaho",
+    "gender": "Male",
+    "start_date": "2022-01-01",
+    "last_promo": "Mar 2025",
+    "compensation": [
+      {
+        "year": 2023,
+        "base_salary": 167000,
+        "equity_value": 34000,
+        "total_comp": 201000,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2024,
+        "base_salary": 173000,
+        "equity_value": 69250,
+        "total_comp": 242250,
+        "perf_rating": "Very Strong",
+        "notes": "Promoted"
+      },
+      {
+        "year": 2025,
+        "base_salary": 190000,
+        "equity_value": 91050,
+        "total_comp": 281050,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "38",
+    "name": "Taryn Arnold Scott",
+    "level": "L5",
+    "zone": "Z2",
+    "relationship": "designer",
+    "location": "Los Angeles",
+    "gender": "Female",
+    "start_date": "2025-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2025,
+        "base_salary": 160000,
+        "equity_value": 75210,
+        "total_comp": 235210,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "39",
+    "name": "Sarah Cantu",
+    "level": "L5",
+    "zone": "Z2",
+    "relationship": "designer",
+    "location": "Los Angeles",
+    "gender": "Female",
+    "start_date": "2022-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 137904,
+        "equity_value": 52000,
+        "total_comp": 189904,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 148800,
+        "equity_value": 68505,
+        "total_comp": 217305,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "40",
+    "name": "Colleen Li",
+    "level": "L4",
+    "zone": "Z1",
+    "relationship": "designer",
+    "location": "NYC",
+    "gender": "Female",
+    "start_date": "2026-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2025,
+        "base_salary": 190000,
+        "equity_value": 95000,
+        "total_comp": 285000,
+        "perf_rating": "",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "41",
+    "name": "Olivia Luo",
+    "level": "L4",
+    "zone": "Z1",
+    "relationship": "designer",
+    "location": "San Francisco",
+    "gender": "Female",
+    "start_date": "2019-01-01",
+    "last_promo": "Mar 2023",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 171014,
+        "equity_value": 89250,
+        "total_comp": 260264,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 177000,
+        "equity_value": 106337,
+        "total_comp": 283337,
+        "perf_rating": "Very Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "42",
+    "name": "Charles Ramsey",
+    "level": "L4",
+    "zone": "Z2",
+    "relationship": "designer",
+    "location": "Los Angeles",
+    "gender": "Male",
+    "start_date": "2024-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 168000,
+        "equity_value": 105750,
+        "total_comp": 273750,
+        "perf_rating": "",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 168000,
+        "equity_value": 105750,
+        "total_comp": 273750,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "43",
+    "name": "David Argueta-Leclercq",
+    "level": "L4",
+    "zone": "Z2",
+    "relationship": "designer",
+    "location": "Maryland",
+    "gender": "Male",
+    "start_date": "2024-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 160000,
+        "equity_value": 87750,
+        "total_comp": 247750,
+        "perf_rating": "Strong",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 166000,
+        "equity_value": 81936,
+        "total_comp": 247936,
+        "perf_rating": "Inconsistent",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "44",
+    "name": "Nnamdi Oghedo",
+    "level": "L4",
+    "zone": "Z1",
+    "relationship": "designer",
+    "location": "NYC",
+    "gender": "Male",
+    "start_date": "2024-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2024,
+        "base_salary": 150000,
+        "equity_value": 46750,
+        "total_comp": 196750,
+        "perf_rating": "",
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "base_salary": 150000,
+        "equity_value": 46750,
+        "total_comp": 196750,
+        "perf_rating": "Strong",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "45",
+    "name": "Danny Barry",
+    "level": "L4",
+    "zone": "Z4",
+    "relationship": "designer",
+    "location": "Chicago",
+    "gender": "Male",
+    "start_date": "2026-01-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2025,
+        "base_salary": 135000,
+        "equity_value": 41500,
+        "total_comp": 176500,
+        "perf_rating": "",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "46",
+    "name": "Joe Causse",
+    "level": "L4",
+    "zone": "Z4",
+    "relationship": "designer",
+    "location": "Chicago",
+    "gender": "Male",
+    "start_date": "2026-03-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2025,
+        "base_salary": 158000,
+        "equity_value": 82000,
+        "total_comp": 240000,
+        "perf_rating": "",
+        "notes": ""
+      }
     ]
   }
 ]
