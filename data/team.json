@@ -1383,5 +1383,26 @@
         "notes": ""
       }
     ]
+  },
+  {
+    "id": "47",
+    "name": "Will Phan",
+    "level": "L4",
+    "zone": "Z1",
+    "relationship": "designer",
+    "location": "NYC",
+    "gender": "Male",
+    "start_date": "2026-03-01",
+    "last_promo": "No promo yet",
+    "compensation": [
+      {
+        "year": 2025,
+        "base_salary": 195000,
+        "equity_value": 95000,
+        "total_comp": 290000,
+        "perf_rating": "",
+        "notes": ""
+      }
+    ]
   }
 ]
