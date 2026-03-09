@@ -83,7 +83,7 @@ function formatTimeInLevel(years: number): string {
 const ALL_LEVELS = ['L4', 'L5', 'L6', 'L7']
 const ALL_ZONES = ['Z1', 'Z2', 'Z3', 'Z4']
 
-export default function TeamPage() {
+export default function TeamPage({ showSensitive }: { showSensitive: boolean }) {
   const [sortKey, setSortKey] = useState<SortKey>('level')
   const [sortDir, setSortDir] = useState<SortDir>('desc')
   const [expandedId, setExpandedId] = useState<string | null>(null)
@@ -205,7 +205,7 @@ export default function TeamPage() {
     }))
   }, [ratingDistribution])
 
-  const COL_COUNT = 6
+  const COL_COUNT = showSensitive ? 6 : 4
 
   return (
     <div className="space-y-8">
@@ -328,8 +328,8 @@ export default function TeamPage() {
               <th className="text-left px-5 py-3"><SortHeader label="Name" field="name" /></th>
               <th className="text-left px-5 py-3"><SortHeader label="Level" field="level" /></th>
               <th className="text-center px-5 py-3"><SortHeader label="Time in Level" field="time_in_level" /></th>
-              <th className="text-right px-5 py-3"><div className="flex justify-end"><SortHeader label="Base" field="base_salary" /></div></th>
-              <th className="text-right px-5 py-3"><div className="flex justify-end"><SortHeader label="Total Comp" field="total_comp" /></div></th>
+              {showSensitive && <th className="text-right px-5 py-3"><div className="flex justify-end"><SortHeader label="Base" field="base_salary" /></div></th>}
+              {showSensitive && <th className="text-right px-5 py-3"><div className="flex justify-end"><SortHeader label="Total Comp" field="total_comp" /></div></th>}
             </tr>
           </thead>
           <tbody>
@@ -364,15 +364,15 @@ export default function TeamPage() {
                     <td className="px-5 py-3 text-center text-sm tabular-nums text-muted-foreground">
                       {formatTimeInLevel(member.til)}
                     </td>
-                    <td className="px-5 py-3 text-right text-sm tabular-nums">{formatCurrency(latest.base_salary)}</td>
-                    <td className="px-5 py-3 text-right text-sm font-medium tabular-nums">{formatCurrency(latest.total_comp)}</td>
+                    {showSensitive && <td className="px-5 py-3 text-right text-sm tabular-nums">{formatCurrency(latest.base_salary)}</td>}
+                    {showSensitive && <td className="px-5 py-3 text-right text-sm font-medium tabular-nums">{formatCurrency(latest.total_comp)}</td>}
                   </tr>
                   {isExpanded && (
                     <tr>
                       <td colSpan={COL_COUNT} className="bg-muted/30 px-5 py-4">
                         <div className="overflow-x-auto">
                           <div className="flex items-baseline gap-4 mb-3 flex-wrap">
-                            <h3 className="text-sm font-semibold">Comp & Performance — {member.name}</h3>
+                            <h3 className="text-sm font-semibold">{showSensitive ? 'Comp & Performance' : 'Performance'} — {member.name}</h3>
                             <span className="text-xs text-muted-foreground">{RELATIONSHIP_LABELS[member.relationship] ?? member.relationship}</span>
                             {member.last_promo && member.last_promo !== 'No promo yet' && (
                               <span className="text-xs text-muted-foreground">Last promo: {member.last_promo}</span>
@@ -383,9 +383,9 @@ export default function TeamPage() {
                               <tr className="text-muted-foreground text-xs uppercase tracking-wider">
                                 <th className="text-left pb-2">Year</th>
                                 <th className="text-left pb-2">Perf Rating</th>
-                                <th className="text-right pb-2">Base</th>
-                                <th className="text-right pb-2">Equity</th>
-                                <th className="text-right pb-2">Total Comp</th>
+                                {showSensitive && <th className="text-right pb-2">Base</th>}
+                                {showSensitive && <th className="text-right pb-2">Equity</th>}
+                                {showSensitive && <th className="text-right pb-2">Total Comp</th>}
                               </tr>
                             </thead>
                             <tbody>
@@ -404,9 +404,9 @@ export default function TeamPage() {
                                       )}
                                     </span>
                                   </td>
-                                  <td className="py-2 text-right tabular-nums">{formatCurrency(c.base_salary)}</td>
-                                  <td className="py-2 text-right tabular-nums">{formatCurrency(c.equity_value)}</td>
-                                  <td className="py-2 text-right tabular-nums font-medium">{formatCurrency(c.total_comp)}</td>
+                                  {showSensitive && <td className="py-2 text-right tabular-nums">{formatCurrency(c.base_salary)}</td>}
+                                  {showSensitive && <td className="py-2 text-right tabular-nums">{formatCurrency(c.equity_value)}</td>}
+                                  {showSensitive && <td className="py-2 text-right tabular-nums font-medium">{formatCurrency(c.total_comp)}</td>}
                                 </tr>
                               ))}
                             </tbody>

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Users, MessageSquare, UserSearch, Archive } from 'lucide-react'
+import { Users, MessageSquare, UserSearch, Archive, Eye, EyeOff } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import TeamPage from './pages/TeamPage'
 import OneOnOnesPage from './pages/OneOnOnesPage'
@@ -17,6 +17,7 @@ type TabId = (typeof tabs)[number]['id']
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabId>('team')
+  const [showSensitive, setShowSensitive] = useState(false)
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -40,13 +41,27 @@ export default function App() {
               </button>
             ))}
           </div>
+          <div className="ml-auto">
+            <button
+              onClick={() => setShowSensitive(s => !s)}
+              className={cn(
+                'flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-colors',
+                showSensitive
+                  ? 'bg-accent text-accent-foreground'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
+              )}
+              title={showSensitive ? 'Hide sensitive data' : 'Show sensitive data'}
+            >
+              {showSensitive ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
+            </button>
+          </div>
         </div>
       </nav>
       <main className="max-w-7xl mx-auto px-6 py-8">
-        {activeTab === 'team' && <TeamPage />}
+        {activeTab === 'team' && <TeamPage showSensitive={showSensitive} />}
         {activeTab === 'one-on-ones' && <OneOnOnesPage />}
         {activeTab === 'interviews' && <InterviewsPage />}
-        {activeTab === 'archive' && <ArchivePage />}
+        {activeTab === 'archive' && <ArchivePage showSensitive={showSensitive} />}
       </main>
     </div>
   )
