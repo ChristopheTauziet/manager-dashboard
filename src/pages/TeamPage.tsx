@@ -75,9 +75,16 @@ function timeInLevel(member: typeof teamData[0]): number {
 }
 
 function formatTimeInLevel(years: number): string {
-  if (years <= 0) return '<1y'
-  if (years % 1 === 0) return `${years}y`
+  if (years < 1) return '<1y'
+  if (years < 2) return '<2y'
   return `${years}y`
+}
+
+function tilColor(years: number): string {
+  if (years < 1) return 'bg-emerald-600/60 text-emerald-100'
+  if (years < 2) return 'bg-purple-600/60 text-purple-100'
+  if (years >= 3.5) return 'bg-red-600/60 text-red-100'
+  return 'bg-orange-600/60 text-orange-100'
 }
 
 const ALL_LEVELS = ['L4', 'L5', 'L6', 'L7']
@@ -361,8 +368,10 @@ export default function TeamPage({ showSensitive }: { showSensitive: boolean }) 
                         {member.level}
                       </span>
                     </td>
-                    <td className="px-5 py-3 text-center text-sm tabular-nums text-muted-foreground">
-                      {formatTimeInLevel(member.til)}
+                    <td className="px-5 py-3 text-center">
+                      <span className={cn('inline-block text-xs font-medium px-2 py-0.5 rounded tabular-nums', tilColor(member.til))}>
+                        {formatTimeInLevel(member.til)}
+                      </span>
                     </td>
                     {showSensitive && <td className="px-5 py-3 text-right text-sm tabular-nums">{formatCurrency(latest.base_salary)}</td>}
                     {showSensitive && <td className="px-5 py-3 text-right text-sm font-medium tabular-nums">{formatCurrency(latest.total_comp)}</td>}
