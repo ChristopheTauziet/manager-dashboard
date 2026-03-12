@@ -3,7 +3,7 @@ import { ArrowUpDown, TrendingUp, TrendingDown, Minus } from 'lucide-react'
 import { cn, formatCurrency } from '@/lib/utils'
 import compData from '../../data/comp_planning.json'
 
-type SortKey = 'name' | 'level' | 'current_base' | 'new_base' | 'base_pct' | 'current_total_comp' | 'new_total_comp' | 'total_pct'
+type SortKey = 'name' | 'level' | 'current_base' | 'new_base' | 'base_pct' | 'current_total_comp' | 'new_total_comp' | 'total_pct' | 'new_total_comp_y2' | 'total_pct_y2'
 type SortDir = 'asc' | 'desc'
 
 const LEVEL_COLORS: Record<string, string> = {
@@ -53,6 +53,7 @@ export default function CompPlanningPage({ showSensitive }: { showSensitive: boo
       ...r,
       base_pct: pctChange(r.current_base, r.new_base),
       total_pct: pctChange(r.current_total_comp, r.new_total_comp),
+      total_pct_y2: pctChange(r.current_total_comp, r.new_total_comp_y2),
     }))
   }, [])
 
@@ -68,6 +69,8 @@ export default function CompPlanningPage({ showSensitive }: { showSensitive: boo
         case 'current_total_comp': cmp = a.current_total_comp - b.current_total_comp; break
         case 'new_total_comp': cmp = a.new_total_comp - b.new_total_comp; break
         case 'total_pct': cmp = a.total_pct - b.total_pct; break
+        case 'new_total_comp_y2': cmp = a.new_total_comp_y2 - b.new_total_comp_y2; break
+        case 'total_pct_y2': cmp = a.total_pct_y2 - b.total_pct_y2; break
       }
       if (cmp === 0) cmp = a.name.localeCompare(b.name)
       return sortDir === 'asc' ? cmp : -cmp
@@ -142,8 +145,10 @@ export default function CompPlanningPage({ showSensitive }: { showSensitive: boo
                 <th className="text-right px-4 py-3"><div className="flex justify-end"><SortHeader label="New Base" field="new_base" align="right" /></div></th>
                 <th className="text-right px-4 py-3"><div className="flex justify-end"><SortHeader label="Δ%" field="base_pct" align="right" /></div></th>
                 <th className="text-right px-4 py-3"><div className="flex justify-end"><SortHeader label="Current Total" field="current_total_comp" align="right" /></div></th>
-                <th className="text-right px-4 py-3"><div className="flex justify-end"><SortHeader label="New Total" field="new_total_comp" align="right" /></div></th>
+                <th className="text-right px-4 py-3"><div className="flex justify-end"><SortHeader label="Y1 Total" field="new_total_comp" align="right" /></div></th>
                 <th className="text-right px-4 py-3"><div className="flex justify-end"><SortHeader label="Δ%" field="total_pct" align="right" /></div></th>
+                <th className="text-right px-4 py-3"><div className="flex justify-end"><SortHeader label="Y2 Total" field="new_total_comp_y2" align="right" /></div></th>
+                <th className="text-right px-4 py-3"><div className="flex justify-end"><SortHeader label="Δ%" field="total_pct_y2" align="right" /></div></th>
               </tr>
             </thead>
             <tbody>
@@ -172,6 +177,8 @@ export default function CompPlanningPage({ showSensitive }: { showSensitive: boo
                   <td className="px-4 py-3 text-right text-sm tabular-nums text-muted-foreground">{formatCurrency(r.current_total_comp)}</td>
                   <td className="px-4 py-3 text-right text-sm tabular-nums font-medium">{formatCurrency(r.new_total_comp)}</td>
                   <td className="px-4 py-3 text-right"><PctBadge pct={r.total_pct} /></td>
+                  <td className="px-4 py-3 text-right text-sm tabular-nums font-medium">{formatCurrency(r.new_total_comp_y2)}</td>
+                  <td className="px-4 py-3 text-right"><PctBadge pct={r.total_pct_y2} /></td>
                 </tr>
               ))}
             </tbody>
