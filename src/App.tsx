@@ -1,15 +1,17 @@
 import { useState } from 'react'
-import { Users, MessageSquare, UserSearch, Archive, Eye, EyeOff } from 'lucide-react'
+import { Users, MessageSquare, UserSearch, Archive, Eye, EyeOff, DollarSign } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import TeamPage from './pages/TeamPage'
 import OneOnOnesPage from './pages/OneOnOnesPage'
 import InterviewsPage from './pages/InterviewsPage'
 import ArchivePage from './pages/ArchivePage'
+import CompPlanningPage from './pages/CompPlanningPage'
 
 const tabs = [
   { id: 'team', label: 'Team', icon: Users },
   { id: 'one-on-ones', label: '1:1s', icon: MessageSquare },
   { id: 'interviews', label: 'Interviews', icon: UserSearch },
+  { id: 'comp-planning', label: 'Comp Planning', icon: DollarSign },
   { id: 'archive', label: 'Archive', icon: Archive },
 ] as const
 
@@ -61,6 +63,7 @@ export default function App() {
         {activeTab === 'team' && <TeamPage showSensitive={showSensitive} />}
         {activeTab === 'one-on-ones' && <OneOnOnesPage />}
         {activeTab === 'interviews' && <InterviewsPage />}
+        {activeTab === 'comp-planning' && <CompPlanningPage showSensitive={showSensitive} />}
         {activeTab === 'archive' && <ArchivePage showSensitive={showSensitive} />}
       </main>
     </div>
