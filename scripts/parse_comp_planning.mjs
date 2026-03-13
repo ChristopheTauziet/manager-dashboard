@@ -48,6 +48,12 @@ const rows = parseCSV(csv)
 const headers = rows[0]
 const data = rows.slice(1)
 
+function col(name) {
+  const idx = headers.findIndex(h => h.includes(name))
+  if (idx === -1) console.warn(`Column not found: "${name}"`)
+  return idx
+}
+
 function parseMoney(s) {
   if (!s) return 0
   return Math.round(Number(s.replace(/[$,\s]/g, '')) || 0)
@@ -60,25 +66,37 @@ function findTeamMember(name) {
   return teamJson.find(m => m.name.toLowerCase() === lower)
 }
 
-// Map name variations
 const NAME_MAP = {
   'Anthony Murphy': 'Tony Murphy',
   'Maria Sanchez Mallona': 'Gabbi Sanchez Mallona',
   'Lindsay Grizzard': 'Lindsay Grizzard',
 }
 
+const COL_EMPLOYEE = col('Employee')
+const COL_LEVEL = col('Level')
+const COL_ZONE = col('Zone')
+const COL_PERF = col('YE25 Performance Score')
+const COL_PROMO = col('YE25 Promotion Decision')
+const COL_CURRENT_BASE = col('Current Base Pay')
+const COL_NEW_BASE = col('New Base Pay')
+const COL_Y1_TOTAL = headers.findIndex(h => h.startsWith('New Total Annual Compensation Apr') && h.includes('26 to Mar\'27'))
+const COL_Y2_TOTAL = col('Target Compensation')
+const COL_EQUITY = col('New Equity Award Total Value')
+
+console.log(`Column indices: Y1=${COL_Y1_TOTAL}, Y2=${COL_Y2_TOTAL}`)
+
 const results = data.map(row => {
-  const csvName = row[0]
+  const csvName = row[COL_EMPLOYEE]
   const displayName = NAME_MAP[csvName] || csvName
   const member = findTeamMember(displayName)
 
-  const currentBase = parseMoney(row[15])
-  const newBase = parseMoney(row[18])
-  const newTotalCompY1 = parseMoney(row[25])
-  const newTotalCompY2 = parseMoney(row[26])
-  const perfScore = row[11] || ''
-  const promotion = (row[13] || '').toLowerCase() === 'yes'
-  const newEquityTotal = parseMoney(row[29])
+  const currentBase = parseMoney(row[COL_CURRENT_BASE])
+  const newBase = parseMoney(row[COL_NEW_BASE])
+  const newTotalCompY1 = parseMoney(row[COL_Y1_TOTAL])
+  const newTotalCompY2 = parseMoney(row[COL_Y2_TOTAL])
+  const perfScore = row[COL_PERF] || ''
+  const promotion = (row[COL_PROMO] || '').toLowerCase() === 'yes'
+  const newEquityTotal = parseMoney(row[COL_EQUITY])
 
   let currentTotalComp = 0
   if (member) {
@@ -88,8 +106,8 @@ const results = data.map(row => {
 
   return {
     name: displayName,
-    level: row[3],
-    zone: row[6],
+    level: row[COL_LEVEL],
+    zone: row[COL_ZONE],
     perf_score: perfScore,
     promotion,
     current_base: currentBase,
