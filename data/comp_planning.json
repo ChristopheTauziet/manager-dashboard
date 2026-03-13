@@ -35,8 +35,8 @@
     "new_base": 313000,
     "current_total_comp": 741695,
     "new_total_comp": 930000,
-    "new_total_comp_y2": 780000,
-    "new_equity_total": 472278
+    "new_total_comp_y2": 810000,
+    "new_equity_total": 502278
   },
   {
     "name": "Joe Christiani",
@@ -113,8 +113,8 @@
     "new_base": 260000,
     "current_total_comp": 483496,
     "new_total_comp": 581000,
-    "new_total_comp_y2": 500000,
-    "new_equity_total": 240453
+    "new_total_comp_y2": 510000,
+    "new_equity_total": 250453
   },
   {
     "name": "Justin Cohen",
@@ -125,9 +125,9 @@
     "current_base": 234000,
     "new_base": 248000,
     "current_total_comp": 401650,
-    "new_total_comp": 544000,
-    "new_total_comp_y2": 544000,
-    "new_equity_total": 359851
+    "new_total_comp": 524000,
+    "new_total_comp_y2": 483000,
+    "new_equity_total": 278851
   },
   {
     "name": "Ryan Smith",
@@ -139,8 +139,8 @@
     "new_base": 255000,
     "current_total_comp": 426720,
     "new_total_comp": 506000,
-    "new_total_comp_y2": 470000,
-    "new_equity_total": 215776
+    "new_total_comp_y2": 460000,
+    "new_equity_total": 205776
   },
   {
     "name": "Amy Wong",
@@ -165,8 +165,8 @@
     "new_base": 237000,
     "current_total_comp": 405000,
     "new_total_comp": 480000,
-    "new_total_comp_y2": 410000,
-    "new_equity_total": 52526
+    "new_total_comp_y2": 420000,
+    "new_equity_total": 62526
   },
   {
     "name": "Cody Fisher",
@@ -178,8 +178,8 @@
     "new_base": 225000,
     "current_total_comp": 282912,
     "new_total_comp": 459000,
-    "new_total_comp_y2": 459000,
-    "new_equity_total": 353055
+    "new_total_comp_y2": 408000,
+    "new_equity_total": 302055
   },
   {
     "name": "Jeremy Tribby",
@@ -208,6 +208,32 @@
     "new_equity_total": 105591
   },
   {
+    "name": "Cici Chen",
+    "level": "Level 5",
+    "zone": "Zone 1",
+    "perf_score": "Strong",
+    "promotion": false,
+    "current_base": 240000,
+    "new_base": 247000,
+    "current_total_comp": 432000,
+    "new_total_comp": 449000,
+    "new_total_comp_y2": 440000,
+    "new_equity_total": 137150
+  },
+  {
+    "name": "Melanie Eusebio",
+    "level": "Level 5",
+    "zone": "Zone 1",
+    "perf_score": "Very Strong",
+    "promotion": false,
+    "current_base": 215000,
+    "new_base": 230000,
+    "current_total_comp": 336667,
+    "new_total_comp": 445000,
+    "new_total_comp_y2": 425000,
+    "new_equity_total": 199032
+  },
+  {
     "name": "Simran Jassal",
     "level": "Level 5",
     "zone": "Zone 1",
@@ -217,8 +243,8 @@
     "new_base": 244000,
     "current_total_comp": 378091,
     "new_total_comp": 444000,
-    "new_total_comp_y2": 412000,
-    "new_equity_total": 155620
+    "new_total_comp_y2": 401000,
+    "new_equity_total": 144620
   },
   {
     "name": "Liz Reddinger",
@@ -230,8 +256,8 @@
     "new_base": 232000,
     "current_total_comp": 365134,
     "new_total_comp": 436000,
-    "new_total_comp_y2": 436000,
-    "new_equity_total": 204093
+    "new_total_comp_y2": 412000,
+    "new_equity_total": 180093
   },
   {
     "name": "Tori Cincotta",
@@ -243,21 +269,8 @@
     "new_base": 212000,
     "current_total_comp": 332290,
     "new_total_comp": 435000,
-    "new_total_comp_y2": 435000,
-    "new_equity_total": 250000
-  },
-  {
-    "name": "Cici Chen",
-    "level": "Level 5",
-    "zone": "Zone 1",
-    "perf_score": "Strong",
-    "promotion": false,
-    "current_base": 240000,
-    "new_base": 247000,
-    "current_total_comp": 432000,
-    "new_total_comp": 433000,
-    "new_total_comp_y2": 427000,
-    "new_equity_total": 108150
+    "new_total_comp_y2": 405000,
+    "new_equity_total": 220000
   },
   {
     "name": "Nikhil Popat",
@@ -269,21 +282,8 @@
     "new_base": 215000,
     "current_total_comp": 367958,
     "new_total_comp": 432000,
-    "new_total_comp_y2": 269000,
-    "new_equity_total": 54949
-  },
-  {
-    "name": "Melanie Eusebio",
-    "level": "Level 5",
-    "zone": "Zone 1",
-    "perf_score": "Very Strong",
-    "promotion": false,
-    "current_base": 215000,
-    "new_base": 230000,
-    "current_total_comp": 336667,
-    "new_total_comp": 425000,
-    "new_total_comp_y2": 425000,
-    "new_equity_total": 179032
+    "new_total_comp_y2": 272000,
+    "new_equity_total": 57949
   },
   {
     "name": "Nikki Dahan",
@@ -295,8 +295,8 @@
     "new_base": 233000,
     "current_total_comp": 360238,
     "new_total_comp": 420000,
-    "new_total_comp_y2": 401000,
-    "new_equity_total": 168885
+    "new_total_comp_y2": 371000,
+    "new_equity_total": 138885
   },
   {
     "name": "Ian Dickens",
@@ -308,8 +308,8 @@
     "new_base": 207000,
     "current_total_comp": 300000,
     "new_total_comp": 417000,
-    "new_total_comp_y2": 417000,
-    "new_equity_total": 220894
+    "new_total_comp_y2": 385000,
+    "new_equity_total": 188894
   },
   {
     "name": "Lindsay Grizzard",
@@ -321,8 +321,8 @@
     "new_base": 220000,
     "current_total_comp": 340135,
     "new_total_comp": 395000,
-    "new_total_comp_y2": 350000,
-    "new_equity_total": 130182
+    "new_total_comp_y2": 355000,
+    "new_equity_total": 135182
   },
   {
     "name": "Jordan Laughlin",
@@ -334,8 +334,8 @@
     "new_base": 227000,
     "current_total_comp": 335460,
     "new_total_comp": 388000,
-    "new_total_comp_y2": 364000,
-    "new_equity_total": 137868
+    "new_total_comp_y2": 354000,
+    "new_equity_total": 127868
   },
   {
     "name": "Bruno Olmedo",
@@ -360,8 +360,8 @@
     "new_base": 215000,
     "current_total_comp": 325149,
     "new_total_comp": 377000,
-    "new_total_comp_y2": 356000,
-    "new_equity_total": 142021
+    "new_total_comp_y2": 340000,
+    "new_equity_total": 126021
   },
   {
     "name": "Obada Ghabra",
@@ -386,8 +386,8 @@
     "new_base": 200000,
     "current_total_comp": 310000,
     "new_total_comp": 371000,
-    "new_total_comp_y2": 371000,
-    "new_equity_total": 92623
+    "new_total_comp_y2": 330000,
+    "new_equity_total": 51623
   },
   {
     "name": "Greg Makrigiorgos",
@@ -425,8 +425,8 @@
     "new_base": 196000,
     "current_total_comp": 281050,
     "new_total_comp": 333000,
-    "new_total_comp_y2": 333000,
-    "new_equity_total": 147758
+    "new_total_comp_y2": 307000,
+    "new_equity_total": 121758
   },
   {
     "name": "Charles Ramsey",
@@ -438,8 +438,8 @@
     "new_base": 178000,
     "current_total_comp": 273750,
     "new_total_comp": 290000,
-    "new_total_comp_y2": 290000,
-    "new_equity_total": 101712
+    "new_total_comp_y2": 280000,
+    "new_equity_total": 91712
   },
   {
     "name": "David Argueta-Leclercq",
@@ -461,11 +461,11 @@
     "perf_score": "Very Strong",
     "promotion": false,
     "current_base": 148800,
-    "new_base": 161000,
+    "new_base": 163000,
     "current_total_comp": 217305,
     "new_total_comp": 272000,
     "new_total_comp_y2": 260000,
-    "new_equity_total": 115107
+    "new_equity_total": 111107
   },
   {
     "name": "Taryn Arnold Scott",
@@ -474,11 +474,11 @@
     "perf_score": "Strong",
     "promotion": false,
     "current_base": 160000,
-    "new_base": 168000,
+    "new_base": 170000,
     "current_total_comp": 235210,
     "new_total_comp": 272000,
     "new_total_comp_y2": 260000,
-    "new_equity_total": 65804
+    "new_equity_total": 61804
   },
   {
     "name": "Nnamdi Oghedo",
@@ -487,10 +487,10 @@
     "perf_score": "Strong",
     "promotion": false,
     "current_base": 150000,
-    "new_base": 158000,
+    "new_base": 160000,
     "current_total_comp": 196750,
     "new_total_comp": 225000,
     "new_total_comp_y2": 225000,
-    "new_equity_total": 79775
+    "new_equity_total": 75775
   }
 ]
