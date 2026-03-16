@@ -1,0 +1,165 @@
+{
+  "people": [
+    {
+      "name": "Claire",
+      "relation": "Wife",
+      "gifts": [
+        { "year": 2022, "occasion": "Christmas", "items": ["Cashmere cardigan", "Air Fryer", "Knife block"] },
+        { "year": 2023, "occasion": "Birthday", "items": ["Dyson Hair dryer", "Manucure"] },
+        { "year": 2023, "occasion": "Christmas", "items": ["Electric Bike", "Woobles"] },
+        { "year": 2024, "occasion": "Birthday", "items": ["Robe", "Fitbit"] },
+        { "year": 2024, "occasion": "Anniversary", "items": ["Rolex Datejust", "Veste et chemise Sézane"] },
+        { "year": 2024, "occasion": "Christmas", "items": ["Chapeau", "Faux flowers", "Nook", "Merino Sweatshirt", "Minifigs", "Puzzles", "Kindle"] },
+        { "year": 2025, "occasion": "Birthday", "items": ["Photo shoot", "Puzzle"] },
+        { "year": 2025, "occasion": "Anniversary", "items": ["Cartier necklace"] },
+        { "year": 2025, "occasion": "Mother's Day", "items": ["Sézane dress + earrings"] },
+        { "year": 2025, "occasion": "Christmas", "items": ["LED mask Foreo", "Cozy hoodie Madhappy", "Magic puzzles"] },
+        { "year": 2026, "occasion": "Birthday", "items": ["Hot water faucet", "Box One escape game"] },
+        { "year": 2026, "occasion": "Valentine's Day", "items": ["Sézane earrings"] }
+      ],
+      "ideas": ["Le Creuset salt and pepper or other dinnerware", "Massage"]
+    },
+    {
+      "name": "Papa",
+      "relation": "Father",
+      "gifts": [
+        { "year": 2022, "occasion": "Birthday", "items": ["Une du Monde et de l'Équipe May 1954"] },
+        { "year": 2023, "occasion": "Birthday", "items": ["Whiskey decanter", "Meater"] },
+        { "year": 2023, "occasion": "Christmas", "items": ["Apple Watch S9", "Whiskey tasting kit"] },
+        { "year": 2024, "occasion": "Birthday", "items": ["Paris trip + Champions League (PSG x Barça)"] },
+        { "year": 2024, "occasion": "Christmas", "items": ["Headphones"] },
+        { "year": 2025, "occasion": "Birthday", "items": ["Coffee subscription"] },
+        { "year": 2025, "occasion": "Father's Day", "items": ["Couch caddy"] },
+        { "year": 2025, "occasion": "Christmas", "items": ["Fauteuil électrique"] }
+      ],
+      "ideas": ["Hoto Toolbox", "Super papy book", "Comment ne pas devenir un vieux con", "Rugby World Cup tickets", "Casque audio (Beats)", "Battery Tesla"]
+    },
+    {
+      "name": "Maman",
+      "relation": "Mother",
+      "gifts": [
+        { "year": 2022, "occasion": "Christmas", "items": ["Dock iPhone/Watch", "Chaussons", "Toothbrush"] },
+        { "year": 2023, "occasion": "Birthday", "items": ["Starmania tickets"] },
+        { "year": 2023, "occasion": "Christmas", "items": ["iPad 10"] },
+        { "year": 2024, "occasion": "Birthday", "items": ["Concerts 15000 voix + Beatles"] },
+        { "year": 2024, "occasion": "Mother's Day", "items": ["Cours d'aquagym à Calicéo"] },
+        { "year": 2024, "occasion": "Christmas", "items": ["Hiking gear"] },
+        { "year": 2025, "occasion": "Birthday", "items": ["Tablier et livre recettes"] },
+        { "year": 2025, "occasion": "Mother's Day", "items": ["Manuka honey"] },
+        { "year": 2025, "occasion": "Christmas", "items": ["Cocotte Le Creuset"] }
+      ],
+      "ideas": ["Omega De Ville Prestige ($4,200)", "Ballon Bleu Cartier ($6,200)", "Rolex Lady-Datejust steel pink dial ($7,150)", "Mamie, raconte nous ton histoire"]
+    },
+    {
+      "name": "Sandra",
+      "relation": "Sister",
+      "gifts": [
+        { "year": 2022, "occasion": "Christmas", "items": ["Theraface Pro"] },
+        { "year": 2023, "occasion": "Christmas", "items": ["Ricky Martin tickets", "Travel mug"] },
+        { "year": 2024, "occasion": "Christmas", "items": ["TV"] },
+        { "year": 2025, "occasion": "Birthday", "items": ["Purple Pillow"] },
+        { "year": 2025, "occasion": "Christmas", "items": ["Theraface Glo"] }
+      ],
+      "ideas": ["Fellow Kettle"]
+    },
+    {
+      "name": "Manu",
+      "relation": "Brother-in-law",
+      "gifts": [
+        { "year": 2022, "occasion": "Christmas", "items": ["Maillot Nike FFF"] },
+        { "year": 2023, "occasion": "Christmas", "items": ["Nest doorbell", "Travel mug"] },
+        { "year": 2024, "occasion": "Christmas", "items": ["TV"] },
+        { "year": 2025, "occasion": "Christmas", "items": ["Watch Winder duo"] }
+      ],
+      "ideas": ["Tire-bouchon", "Boîte à outils Hoto", "Watch box", "Reigning Champ clothing", "Battery Tesla"]
+    },
+    {
+      "name": "Charlie",
+      "relation": "Son",
+      "gifts": [
+        { "year": 2023, "occasion": "Christmas", "items": ["Big Mack", "Garage", "Tonies box", "Mercedes truck", "Forklift", "Chase plushie", "Monster Truck Shark"] },
+        { "year": 2024, "occasion": "Birthday", "items": ["Four à pizza", "Moteur à réparer", "Barbecue"] },
+        { "year": 2024, "occasion": "Christmas", "items": ["Vélo", "Car Wash Hot Wheels", "Panier basket", "Circuit billes", "Tonies", "Masque Spidey", "Lego train", "Lego box", "Qui est-ce"] },
+        { "year": 2025, "occasion": "Birthday", "items": ["Lego Formule 1", "Lego foot", "Lego 4x4", "Lego Monster Truck", "Lego police", "Lego rouleau compresseur", "Jenga", "Marble run", "Monopoly", "Kit peinture"] },
+        { "year": 2025, "occasion": "Christmas", "items": ["Lego City Tower", "Flipper", "Lego château fort", "Mini jeu basket", "Tir à l'arc", "Cage foot"] }
+      ],
+      "ideas": []
+    },
+    {
+      "name": "Chloé",
+      "relation": "Daughter",
+      "gifts": [
+        { "year": 2023, "occasion": "Christmas", "items": ["Big plushie", "Skye plushie", "Frozen dolls", "Timber Tots treehouse", "Wooden fruits", "Duplo Town life"] },
+        { "year": 2024, "occasion": "Birthday", "items": ["Cheval", "Poussette", "Balais", "Livre escargot"] },
+        { "year": 2024, "occasion": "Christmas", "items": ["Cuisine", "Bureau", "Tablette à dessiner", "Little Pony", "Maison Mickey", "Mr Patate"] },
+        { "year": 2025, "occasion": "Birthday", "items": ["Gâteau en bois", "Tonies box", "Lego château Mickey", "Robe Elsa", "Karaoké", "Peppa Pig books"] },
+        { "year": 2025, "occasion": "Christmas", "items": ["Lego Bluey", "Jeu docteur", "Lego Toucan", "Tablette dessin", "Caddie/caisse", "Coiffeuse"] }
+      ],
+      "ideas": []
+    },
+    {
+      "name": "Seb",
+      "relation": "Friend",
+      "gifts": [
+        { "year": 2022, "occasion": "Christmas", "items": ["Personalized Decanter"] },
+        { "year": 2023, "occasion": "Christmas", "items": ["Star Wars mug"] },
+        { "year": 2024, "occasion": "Birthday", "items": ["Hibiki"] }
+      ],
+      "ideas": []
+    },
+    {
+      "name": "Adrien",
+      "relation": "Friend",
+      "gifts": [
+        { "year": 2023, "occasion": "Christmas", "items": ["Mugs Fellow"] },
+        { "year": 2024, "occasion": "Christmas", "items": ["Boîte montres", "Bouteille champagne"] }
+      ],
+      "ideas": []
+    },
+    {
+      "name": "Domi",
+      "relation": "Family",
+      "gifts": [
+        { "year": 2023, "occasion": "Christmas", "items": ["Nespresso", "Apple TV"] },
+        { "year": 2024, "occasion": "Christmas", "items": ["Guadeloupe excursion"] }
+      ],
+      "ideas": ["Couteau de chez Atelier Deejo (Paris)"]
+    },
+    {
+      "name": "Brigitte",
+      "relation": "Family",
+      "gifts": [
+        { "year": 2023, "occasion": "Christmas", "items": ["Places spectacle humour"] },
+        { "year": 2024, "occasion": "Christmas", "items": ["Guadeloupe excursion"] }
+      ],
+      "ideas": []
+    },
+    {
+      "name": "Léon",
+      "relation": "Family",
+      "gifts": [
+        { "year": 2023, "occasion": "Christmas", "items": ["Magnatiles"] },
+        { "year": 2024, "occasion": "Christmas", "items": ["Panier basket"] },
+        { "year": 2025, "occasion": "Birthday", "items": ["Caisse enregistreuse + caddy"] }
+      ],
+      "ideas": []
+    },
+    {
+      "name": "Lucas",
+      "relation": "Family",
+      "gifts": [
+        { "year": 2025, "occasion": "Birthday", "items": ["Légumes en bois"] },
+        { "year": 2025, "occasion": "Christmas", "items": ["Meuble rangement jouets"] }
+      ],
+      "ideas": []
+    },
+    {
+      "name": "Mathéo",
+      "relation": "Family",
+      "gifts": [
+        { "year": 2025, "occasion": "Christmas", "items": ["Lego Panda"] }
+      ],
+      "ideas": []
+    }
+  ]
+}

@@ -1,107 +1,122 @@
 [
   {
     "name": "Omega Speedmaster First Omega in Space",
+    "ref": "311.32.40.30.01.001",
     "price": 6435,
     "date": null,
-    "image": "speedmaster-fios.jpg",
+    "image": "speedmaster-fios.png",
     "notes": null
   },
   {
     "name": "Nomos Metro 38 Urban Gray",
+    "ref": null,
     "price": 2860,
     "date": "2019-01-15",
-    "image": "nomos-metro-38.jpg",
+    "image": "nomos-metro-38.png",
     "notes": null
   },
   {
     "name": "Omega CK 2505 38mm",
+    "ref": "CK 2505",
     "price": 1071,
     "date": "2019-01-30",
-    "image": "omega-ck2505.jpg",
+    "image": "omega-ck2505.png",
     "notes": null
   },
   {
     "name": "Omega De Ville Prestige",
+    "ref": "434.20.34.20.05.002",
     "price": 8176,
     "date": "2019-05-11",
-    "image": "omega-deville-prestige.jpg",
+    "image": "omega-deville-prestige.png",
     "notes": null
   },
   {
-    "name": "Rolex Milgauss 116400",
+    "name": "Rolex Milgauss",
+    "ref": "116400",
     "price": 7839,
     "date": "2019-07-23",
-    "image": "rolex-milgauss-116400.jpg",
+    "image": "rolex-milgauss-116400.png",
     "notes": null
   },
   {
     "name": "Omega Speedmaster Apollo 11 50th Anniversary",
+    "ref": "310.20.42.50.01.001",
     "price": 10470,
     "date": "2019-08-01",
-    "image": "speedmaster-apollo-11.jpg",
+    "image": "speedmaster-apollo-11.png",
     "notes": "Sold $16,250 in Dec 2025"
   },
   {
-    "name": "Rolex Day-Date 18038",
+    "name": "Rolex Day-Date",
+    "ref": "18038",
     "price": 21287,
     "date": "2019-09-11",
-    "image": "rolex-day-date-18038.jpg",
+    "image": "rolex-day-date-18038.png",
     "notes": null
   },
   {
     "name": "Rolex Datejust 41",
+    "ref": "126334",
     "price": 11053,
     "date": "2019-10-23",
-    "image": "rolex-datejust-41.jpg",
+    "image": "rolex-datejust-41.png",
     "notes": null
   },
   {
-    "name": "Rolex Daytona 116500LN",
+    "name": "Rolex Daytona",
+    "ref": "116500LN",
     "price": 25012,
     "date": "2020-03-10",
-    "image": "rolex-daytona-116500ln.jpg",
+    "image": "rolex-daytona-116500ln.png",
     "notes": null
   },
   {
-    "name": "Patek Philippe Pocket Watch 1887",
+    "name": "Patek Philippe Pocket Watch",
+    "ref": "1887",
     "price": 4500,
     "date": "2021-01-26",
-    "image": "patek-pocket-watch-1887.jpg",
+    "image": "patek-pocket-watch-1887.png",
     "notes": null
   },
   {
-    "name": "A. Lange & Söhne Langematik Perpetual Platinum",
+    "name": "A. Lange & Söhne Langematik Perpetual",
+    "ref": "310.025",
     "price": 54875,
     "date": "2021-03-01",
-    "image": "lange-langematik-perpetual.jpg",
+    "image": "lange-langematik-perpetual.png",
     "notes": null
   },
   {
-    "name": "Patek Philippe 5396R",
+    "name": "Patek Philippe Annual Calendar",
+    "ref": "5396R",
     "price": 58271,
     "date": "2021-05-01",
-    "image": "patek-5396r.jpg",
+    "image": "patek-5396r.png",
     "notes": null
   },
   {
     "name": "Zenith Defy Skyline Skeleton",
+    "ref": "03.9300.3620/79.I001",
     "price": 12086,
     "date": "2023-04-29",
-    "image": "zenith-defy-skyline-skeleton.jpg",
+    "image": "zenith-defy-skyline-skeleton.png",
     "notes": null
   },
   {
     "name": "Omega Speedmaster Chronoscope Paris 2024",
+    "ref": "522.30.43.51.02.001",
     "price": 12532,
     "date": "2024-08-06",
-    "image": "speedmaster-chronoscope-paris.jpg",
+    "image": "speedmaster-chronoscope-paris.png",
     "notes": null
   },
   {
-    "name": "Audemars Piguet Royal Oak 15510ST Blue",
+    "name": "Audemars Piguet Royal Oak",
+    "ref": "15510ST",
     "price": 52500,
     "date": "2025-03-11",
-    "image": "ap-royal-oak-15510st.jpg",
+    "image": "ap-royal-oak-15510st.png",
     "notes": null
   }
 ]

@@ -1,0 +1,52 @@
+{
+  "currentSharePrice": 282,
+  "baseSalary": 400000,
+  "grants": [
+    {
+      "id": "ES-4660",
+      "label": "New Hire Grant",
+      "totalShares": 7558,
+      "vesting": { "2023": 1889, "2024": 1890, "2025": 1889, "2026": 1890 }
+    },
+    {
+      "id": "ES-4731",
+      "label": "2023 Refresh",
+      "totalShares": 1323,
+      "vesting": { "2023": 496, "2024": 661, "2025": 166 }
+    },
+    {
+      "id": "ES-6438",
+      "label": "2024 Refresh",
+      "totalShares": 7000,
+      "vesting": { "2024": 1750, "2025": 2333, "2026": 2333, "2027": 584 }
+    },
+    {
+      "id": "ES-7316",
+      "label": "2025 Refresh",
+      "totalShares": 7714,
+      "vesting": { "2025": 2717, "2026": 3974, "2027": 1023 }
+    },
+    {
+      "id": "ES-8321",
+      "label": "2025 Additional",
+      "totalShares": 2941,
+      "vesting": { "2025": 490, "2026": 1961, "2027": 490 }
+    }
+  ],
+  "compHistory": [
+    { "year": 2011, "company": "Lucca", "base": 40000, "bonus": 0, "equity": 0 },
+    { "year": 2012, "company": "Parse", "base": 100000, "bonus": 0, "equity": 120000 },
+    { "year": 2013, "company": "Facebook", "base": 145000, "bonus": 21750, "equity": 130000 },
+    { "year": 2014, "company": "Facebook", "base": 156000, "bonus": 23400, "equity": 488462 },
+    { "year": 2015, "company": "Facebook", "base": 167000, "bonus": 25050, "equity": 498022 },
+    { "year": 2016, "company": "Facebook", "base": 178848, "bonus": 26827, "equity": 689234 },
+    { "year": 2017, "company": "Facebook", "base": 188908, "bonus": 28336, "equity": 605667 },
+    { "year": 2019, "company": "Uber", "base": 173200, "bonus": 30000, "equity": 266880 },
+    { "year": 2020, "company": "Uber", "base": 186800, "bonus": 50000, "equity": 370585 },
+    { "year": 2021, "company": "Alto", "base": 286500, "bonus": 100000, "equity": 291840 },
+    { "year": 2022, "company": "Alto", "base": 334750, "bonus": 50000, "equity": 520000 },
+    { "year": 2023, "company": "Plaid", "base": 350000, "bonus": 0, "equity": 637750 },
+    { "year": 2024, "company": "Plaid", "base": 385000, "bonus": 0, "equity": 1220000 },
+    { "year": 2025, "company": "Plaid", "base": 400000, "bonus": 0, "equity": 2000000 }
+  ]
+}
