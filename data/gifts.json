@@ -1,8 +1,28 @@
 {
+  "events": [
+    { "name": "Claire", "occasion": "Birthday", "month": 1, "day": 7 },
+    { "name": "Claire", "occasion": "Valentine's Day", "month": 2, "day": 14 },
+    { "name": "Brigitte", "occasion": "Birthday", "month": 3, "day": 18 },
+    { "name": "Manu", "occasion": "Birthday", "month": 4, "day": 4 },
+    { "name": "Claire", "occasion": "Anniversary", "month": 4, "day": 11 },
+    { "name": "Papa", "occasion": "Birthday", "month": 5, "day": 22 },
+    { "name": "Mathéo", "occasion": "Birthday", "month": 7, "day": 20 },
+    { "name": "Charlie", "occasion": "Birthday", "month": 7, "day": 24 },
+    { "name": "Adrien", "occasion": "Birthday", "month": 7, "day": 28 },
+    { "name": "Léon", "occasion": "Birthday", "month": 8, "day": 6 },
+    { "name": "Chloé", "occasion": "Birthday", "month": 8, "day": 21 },
+    { "name": "Domi", "occasion": "Birthday", "month": 9, "day": 23 },
+    { "name": "Sandra", "occasion": "Birthday", "month": 10, "day": 13 },
+    { "name": "Seb", "occasion": "Birthday", "month": 11, "day": 4 },
+    { "name": "Lucas", "occasion": "Birthday", "month": 12, "day": 15 },
+    { "name": "Maman", "occasion": "Birthday", "month": 12, "day": 20 },
+    { "name": "Everyone", "occasion": "Christmas", "month": 12, "day": 25 }
+  ],
   "people": [
     {
       "name": "Claire",
       "relation": "Wife",
+      "birthday": "01-07",
       "gifts": [
         { "year": 2022, "occasion": "Christmas", "items": ["Cashmere cardigan", "Air Fryer", "Knife block"] },
         { "year": 2023, "occasion": "Birthday", "items": ["Dyson Hair dryer", "Manucure"] },
@@ -22,6 +42,7 @@
     {
       "name": "Papa",
       "relation": "Father",
+      "birthday": "05-22",
       "gifts": [
         { "year": 2022, "occasion": "Birthday", "items": ["Une du Monde et de l'Équipe May 1954"] },
         { "year": 2023, "occasion": "Birthday", "items": ["Whiskey decanter", "Meater"] },
@@ -37,6 +58,7 @@
     {
       "name": "Maman",
       "relation": "Mother",
+      "birthday": "12-20",
       "gifts": [
         { "year": 2022, "occasion": "Christmas", "items": ["Dock iPhone/Watch", "Chaussons", "Toothbrush"] },
         { "year": 2023, "occasion": "Birthday", "items": ["Starmania tickets"] },
@@ -53,6 +75,7 @@
     {
       "name": "Sandra",
       "relation": "Sister",
+      "birthday": "10-13",
       "gifts": [
         { "year": 2022, "occasion": "Christmas", "items": ["Theraface Pro"] },
         { "year": 2023, "occasion": "Christmas", "items": ["Ricky Martin tickets", "Travel mug"] },
@@ -65,6 +88,7 @@
     {
       "name": "Manu",
       "relation": "Brother-in-law",
+      "birthday": "04-04",
       "gifts": [
         { "year": 2022, "occasion": "Christmas", "items": ["Maillot Nike FFF"] },
         { "year": 2023, "occasion": "Christmas", "items": ["Nest doorbell", "Travel mug"] },
@@ -76,6 +100,7 @@
     {
       "name": "Charlie",
       "relation": "Son",
+      "birthday": "07-24",
       "gifts": [
         { "year": 2023, "occasion": "Christmas", "items": ["Big Mack", "Garage", "Tonies box", "Mercedes truck", "Forklift", "Chase plushie", "Monster Truck Shark"] },
         { "year": 2024, "occasion": "Birthday", "items": ["Four à pizza", "Moteur à réparer", "Barbecue"] },
@@ -88,6 +113,7 @@
     {
       "name": "Chloé",
       "relation": "Daughter",
+      "birthday": "08-21",
       "gifts": [
         { "year": 2023, "occasion": "Christmas", "items": ["Big plushie", "Skye plushie", "Frozen dolls", "Timber Tots treehouse", "Wooden fruits", "Duplo Town life"] },
         { "year": 2024, "occasion": "Birthday", "items": ["Cheval", "Poussette", "Balais", "Livre escargot"] },
@@ -100,6 +126,7 @@
     {
       "name": "Seb",
       "relation": "Friend",
+      "birthday": "11-04",
       "gifts": [
         { "year": 2022, "occasion": "Christmas", "items": ["Personalized Decanter"] },
         { "year": 2023, "occasion": "Christmas", "items": ["Star Wars mug"] },
@@ -110,6 +137,7 @@
     {
       "name": "Adrien",
       "relation": "Friend",
+      "birthday": "07-28",
       "gifts": [
         { "year": 2023, "occasion": "Christmas", "items": ["Mugs Fellow"] },
         { "year": 2024, "occasion": "Christmas", "items": ["Boîte montres", "Bouteille champagne"] }
@@ -119,6 +147,7 @@
     {
       "name": "Domi",
       "relation": "Family",
+      "birthday": "09-23",
       "gifts": [
         { "year": 2023, "occasion": "Christmas", "items": ["Nespresso", "Apple TV"] },
         { "year": 2024, "occasion": "Christmas", "items": ["Guadeloupe excursion"] }
@@ -128,6 +157,7 @@
     {
       "name": "Brigitte",
       "relation": "Family",
+      "birthday": "03-18",
       "gifts": [
         { "year": 2023, "occasion": "Christmas", "items": ["Places spectacle humour"] },
         { "year": 2024, "occasion": "Christmas", "items": ["Guadeloupe excursion"] }
@@ -137,6 +167,7 @@
     {
       "name": "Léon",
       "relation": "Family",
+      "birthday": "08-06",
       "gifts": [
         { "year": 2023, "occasion": "Christmas", "items": ["Magnatiles"] },
         { "year": 2024, "occasion": "Christmas", "items": ["Panier basket"] },
@@ -147,6 +178,7 @@
     {
       "name": "Lucas",
       "relation": "Family",
+      "birthday": "12-15",
       "gifts": [
         { "year": 2025, "occasion": "Birthday", "items": ["Légumes en bois"] },
         { "year": 2025, "occasion": "Christmas", "items": ["Meuble rangement jouets"] }
@@ -156,6 +188,7 @@
     {
       "name": "Mathéo",
       "relation": "Family",
+      "birthday": "07-20",
       "gifts": [
         { "year": 2025, "occasion": "Christmas", "items": ["Lego Panda"] }
       ],

@@ -2,7 +2,7 @@ import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-
 import { LayoutDashboard, DollarSign, Briefcase, Receipt, Gift, Watch, Home, ArrowLeft } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import OverviewPage from './pages/OverviewPage'
-import FinancePage from './pages/FinancePage'
+import AssetsPage from './pages/AssetsPage'
 import CompensationPage from './pages/CompensationPage'
 import TaxesPage from './pages/TaxesPage'
 import GiftTrackerPage from './pages/GiftTrackerPage'
@@ -11,7 +11,7 @@ import HomePage from './pages/HomePage'
 
 const tabs = [
   { id: 'overview', label: 'Overview', icon: LayoutDashboard, path: '' },
-  { id: 'finance', label: 'Finance', icon: DollarSign, path: 'finance' },
+  { id: 'assets', label: 'Assets', icon: DollarSign, path: 'assets' },
   { id: 'compensation', label: 'Compensation', icon: Briefcase, path: 'compensation' },
   { id: 'taxes', label: 'Taxes', icon: Receipt, path: 'taxes' },
   { id: 'gifts', label: 'Gift Tracker', icon: Gift, path: 'gifts' },
@@ -64,7 +64,7 @@ export default function PersonalApp() {
       <main className="max-w-7xl mx-auto px-6 py-8">
         <Routes>
           <Route index element={<OverviewPage />} />
-          <Route path="finance" element={<FinancePage />} />
+          <Route path="assets" element={<AssetsPage />} />
           <Route path="compensation" element={<CompensationPage />} />
           <Route path="taxes" element={<TaxesPage />} />
           <Route path="gifts" element={<GiftTrackerPage />} />

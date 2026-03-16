@@ -1,0 +1,30 @@
+{
+  "stocks": [
+    { "ticker": "GOOG", "name": "Alphabet", "shares": 3276, "avgCost": 176.49 },
+    { "ticker": "QQQ", "name": "Invesco QQQ Trust", "shares": 945, "avgCost": 412.01 },
+    { "ticker": "VOO", "name": "Vanguard S&P 500", "shares": 311, "avgCost": 541.55 },
+    { "ticker": "TSLA", "name": "Tesla", "shares": 380, "avgCost": 165.28 },
+    { "ticker": "NVDA", "name": "NVIDIA", "shares": 550, "avgCost": 82.92 },
+    { "ticker": "META", "name": "Meta Platforms", "shares": 45, "avgCost": 73.77 },
+    { "ticker": "COIN", "name": "Coinbase Global", "shares": 110, "avgCost": 45.60 },
+    { "ticker": "UBER", "name": "Uber Technologies", "shares": 340, "avgCost": 31.08 },
+    { "ticker": "AMZN", "name": "Amazon", "shares": 130, "avgCost": 100.95 },
+    { "ticker": "MSFT", "name": "Microsoft", "shares": 65, "avgCost": 288.59 },
+    { "ticker": "AAPL", "name": "Apple", "shares": 110, "avgCost": 182.05 }
+  ],
+  "crypto": [
+    { "id": "bitcoin", "ticker": "BTC", "amount": 5.5566, "avgCost": 41188 },
+    { "id": "ethereum", "ticker": "ETH", "amount": 34.6029, "avgCost": 2885.56 },
+    { "id": "dogecoin", "ticker": "DOGE", "amount": 89086, "avgCost": 0.10 }
+  ],
+  "house": {
+    "address": "3079 Oak Knoll Dr, Redwood City, CA",
+    "estimatedValue": 3875000
+  },
+  "plaid": {
+    "commonShares": 2519,
+    "rsus": 9268,
+    "netSharePercent": 0.60,
+    "sharePrice": 282
+  }
+}
