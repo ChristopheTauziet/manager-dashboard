@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Omega Speedmaster First Omega in Space",
+    "price": 6435,
+    "date": null,
+    "image": "speedmaster-fios.jpg",
+    "notes": null
+  },
+  {
+    "name": "Nomos Metro 38 Urban Gray",
+    "price": 2860,
+    "date": "2019-01-15",
+    "image": "nomos-metro-38.jpg",
+    "notes": null
+  },
+  {
+    "name": "Omega CK 2505 38mm",
+    "price": 1071,
+    "date": "2019-01-30",
+    "image": "omega-ck2505.jpg",
+    "notes": null
+  },
+  {
+    "name": "Omega De Ville Prestige",
+    "price": 8176,
+    "date": "2019-05-11",
+    "image": "omega-deville-prestige.jpg",
+    "notes": null
+  },
+  {
+    "name": "Rolex Milgauss 116400",
+    "price": 7839,
+    "date": "2019-07-23",
+    "image": "rolex-milgauss-116400.jpg",
+    "notes": null
+  },
+  {
+    "name": "Omega Speedmaster Apollo 11 50th Anniversary",
+    "price": 10470,
+    "date": "2019-08-01",
+    "image": "speedmaster-apollo-11.jpg",
+    "notes": "Sold $16,250 in Dec 2025"
+  },
+  {
+    "name": "Rolex Day-Date 18038",
+    "price": 21287,
+    "date": "2019-09-11",
+    "image": "rolex-day-date-18038.jpg",
+    "notes": null
+  },
+  {
+    "name": "Rolex Datejust 41",
+    "price": 11053,
+    "date": "2019-10-23",
+    "image": "rolex-datejust-41.jpg",
+    "notes": null
+  },
+  {
+    "name": "Rolex Daytona 116500LN",
+    "price": 25012,
+    "date": "2020-03-10",
+    "image": "rolex-daytona-116500ln.jpg",
+    "notes": null
+  },
+  {
+    "name": "Patek Philippe Pocket Watch 1887",
+    "price": 4500,
+    "date": "2021-01-26",
+    "image": "patek-pocket-watch-1887.jpg",
+    "notes": null
+  },
+  {
+    "name": "A. Lange & Söhne Langematik Perpetual Platinum",
+    "price": 54875,
+    "date": "2021-03-01",
+    "image": "lange-langematik-perpetual.jpg",
+    "notes": null
+  },
+  {
+    "name": "Patek Philippe 5396R",
+    "price": 58271,
+    "date": "2021-05-01",
+    "image": "patek-5396r.jpg",
+    "notes": null
+  },
+  {
+    "name": "Zenith Defy Skyline Skeleton",
+    "price": 12086,
+    "date": "2023-04-29",
+    "image": "zenith-defy-skyline-skeleton.jpg",
+    "notes": null
+  },
+  {
+    "name": "Omega Speedmaster Chronoscope Paris 2024",
+    "price": 12532,
+    "date": "2024-08-06",
+    "image": "speedmaster-chronoscope-paris.jpg",
+    "notes": null
+  },
+  {
+    "name": "Audemars Piguet Royal Oak 15510ST Blue",
+    "price": 52500,
+    "date": "2025-03-11",
+    "image": "ap-royal-oak-15510st.jpg",
+    "notes": null
+  }
+]
