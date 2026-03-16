@@ -3,7 +3,7 @@ import {
   PieChart, Pie, Cell, ResponsiveContainer, Tooltip,
   BarChart, Bar, XAxis, YAxis, CartesianGrid,
 } from 'recharts'
-import { ChevronDown, ChevronRight, ArrowUpDown } from 'lucide-react'
+import { ChevronDown, ChevronRight, ArrowUpDown, Star } from 'lucide-react'
 import { cn, formatCurrency } from '@/lib/utils'
 import teamData from '../../data/team.json'
 
@@ -90,7 +90,7 @@ function tilColor(years: number): string {
 const ALL_LEVELS = ['L4', 'L5', 'L6', 'L7']
 const ALL_ZONES = ['Z1', 'Z2', 'Z3', 'Z4']
 
-export default function TeamPage({ showSensitive }: { showSensitive: boolean }) {
+export default function TeamPage({ showSensitive, highlightTopPerformers }: { showSensitive: boolean; highlightTopPerformers: boolean }) {
   const [sortKey, setSortKey] = useState<SortKey>('level')
   const [sortDir, setSortDir] = useState<SortDir>('desc')
   const [expandedId, setExpandedId] = useState<string | null>(null)
@@ -346,14 +346,22 @@ export default function TeamPage({ showSensitive }: { showSensitive: boolean }) 
               return (
                 <Fragment key={member.id}>
                   <tr
-                    className="border-b border-border hover:bg-accent/30 cursor-pointer transition-colors"
+                    className={cn(
+                      'border-b border-border hover:bg-accent/30 cursor-pointer transition-colors',
+                      highlightTopPerformers && member.top_performer && 'bg-yellow-500/[0.07]'
+                    )}
                     onClick={() => setExpandedId(isExpanded ? null : member.id)}
                   >
                     <td className="px-5 py-3 text-muted-foreground">
                       {isExpanded ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
                     </td>
                     <td className="px-5 py-3">
-                      <div className="font-medium">{member.name}</div>
+                      <div className="font-medium flex items-center gap-1.5">
+                        {member.name}
+                        {highlightTopPerformers && member.top_performer && (
+                          <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
+                        )}
+                      </div>
                       <div className="flex items-center gap-1.5 mt-0.5">
                         <span className="text-xs text-muted-foreground">{member.location}</span>
                         {member.zone && (

@@ -116,6 +116,7 @@ const results = data.map(row => {
     new_total_comp: newTotalCompY1,
     new_total_comp_y2: newTotalCompY2,
     new_equity_total: newEquityTotal,
+    top_performer: member?.top_performer ?? false,
   }
 }).filter(r => r.current_base > 0)
 

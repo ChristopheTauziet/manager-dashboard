@@ -18,7 +18,8 @@
         "perf_rating": "",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "2",
@@ -63,7 +64,8 @@
         "perf_rating": "Very Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "3",
@@ -108,7 +110,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "5",
@@ -137,7 +140,8 @@
         "perf_rating": "",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "6",
@@ -158,7 +162,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "7",
@@ -203,7 +208,8 @@
         "perf_rating": "Very Strong",
         "notes": "Promoted"
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "8",
@@ -240,7 +246,8 @@
         "perf_rating": "Exceptional",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "9",
@@ -269,7 +276,8 @@
         "perf_rating": "Very Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "10",
@@ -298,7 +306,8 @@
         "perf_rating": "Very Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "11",
@@ -343,7 +352,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "12",
@@ -388,7 +398,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "13",
@@ -433,7 +444,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "14",
@@ -462,7 +474,8 @@
         "perf_rating": "Very Strong",
         "notes": "Promoted"
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "15",
@@ -491,7 +504,8 @@
         "perf_rating": "Strong",
         "notes": "Promoted"
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "16",
@@ -520,7 +534,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "17",
@@ -541,7 +556,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "18",
@@ -562,7 +578,8 @@
         "perf_rating": "",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "19",
@@ -583,7 +600,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "20",
@@ -628,7 +646,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "21",
@@ -657,7 +676,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "22",
@@ -702,7 +722,8 @@
         "perf_rating": "Inconsistent",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "23",
@@ -731,7 +752,8 @@
         "perf_rating": "Very Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "24",
@@ -776,7 +798,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "25",
@@ -805,7 +828,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "26",
@@ -826,7 +850,8 @@
         "perf_rating": "",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "27",
@@ -847,7 +872,8 @@
         "perf_rating": "",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "28",
@@ -876,7 +902,8 @@
         "perf_rating": "Very Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "29",
@@ -913,7 +940,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "30",
@@ -958,7 +986,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "31",
@@ -987,7 +1016,8 @@
         "perf_rating": "Very Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "32",
@@ -1016,7 +1046,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "33",
@@ -1045,7 +1076,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "34",
@@ -1066,7 +1098,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "35",
@@ -1095,7 +1128,8 @@
         "perf_rating": "Very Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "36",
@@ -1116,7 +1150,8 @@
         "perf_rating": "Exceptional",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": true
   },
   {
     "id": "37",
@@ -1153,7 +1188,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "38",
@@ -1174,7 +1210,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "39",
@@ -1203,7 +1240,8 @@
         "perf_rating": "Very Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "40",
@@ -1224,7 +1262,8 @@
         "perf_rating": "",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "41",
@@ -1253,7 +1292,8 @@
         "perf_rating": "Very Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "42",
@@ -1282,7 +1322,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "43",
@@ -1311,7 +1352,8 @@
         "perf_rating": "Inconsistent",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "44",
@@ -1340,7 +1382,8 @@
         "perf_rating": "Strong",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "45",
@@ -1361,7 +1404,8 @@
         "perf_rating": "",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "46",
@@ -1382,7 +1426,8 @@
         "perf_rating": "",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   },
   {
     "id": "47",
@@ -1403,6 +1448,7 @@
         "perf_rating": "",
         "notes": ""
       }
-    ]
+    ],
+    "top_performer": false
   }
 ]

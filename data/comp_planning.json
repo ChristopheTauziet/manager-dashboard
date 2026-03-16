@@ -10,7 +10,8 @@
     "current_total_comp": 392350,
     "new_total_comp": 500000,
     "new_total_comp_y2": 500000,
-    "new_equity_total": 249574
+    "new_equity_total": 249574,
+    "top_performer": true
   },
   {
     "name": "Tony Murphy",
@@ -23,7 +24,8 @@
     "current_total_comp": 405000,
     "new_total_comp": 480000,
     "new_total_comp_y2": 440000,
-    "new_equity_total": 82526
+    "new_equity_total": 82526,
+    "top_performer": false
   },
   {
     "name": "Brayden Decker",
@@ -36,7 +38,8 @@
     "current_total_comp": 281050,
     "new_total_comp": 333000,
     "new_total_comp_y2": 307000,
-    "new_equity_total": 121758
+    "new_equity_total": 121758,
+    "top_performer": false
   },
   {
     "name": "Bruno Olmedo",
@@ -49,7 +52,8 @@
     "current_total_comp": 333610,
     "new_total_comp": 387000,
     "new_total_comp_y2": 345000,
-    "new_equity_total": 126807
+    "new_equity_total": 126807,
+    "top_performer": false
   },
   {
     "name": "Charles Ramsey",
@@ -62,7 +66,8 @@
     "current_total_comp": 273750,
     "new_total_comp": 290000,
     "new_total_comp_y2": 280000,
-    "new_equity_total": 91712
+    "new_equity_total": 91712,
+    "top_performer": false
   },
   {
     "name": "Chris Warner",
@@ -75,7 +80,8 @@
     "current_total_comp": 610000,
     "new_total_comp": 765000,
     "new_total_comp_y2": 675000,
-    "new_equity_total": 396779
+    "new_equity_total": 396779,
+    "top_performer": true
   },
   {
     "name": "Cici Chen",
@@ -88,7 +94,8 @@
     "current_total_comp": 432000,
     "new_total_comp": 450000,
     "new_total_comp_y2": 450000,
-    "new_equity_total": 148150
+    "new_equity_total": 148150,
+    "top_performer": false
   },
   {
     "name": "Cody Fisher",
@@ -101,7 +108,8 @@
     "current_total_comp": 282912,
     "new_total_comp": 460000,
     "new_total_comp_y2": 410000,
-    "new_equity_total": 305055
+    "new_equity_total": 305055,
+    "top_performer": true
   },
   {
     "name": "David Argueta-Leclercq",
@@ -114,7 +122,8 @@
     "current_total_comp": 247936,
     "new_total_comp": 282000,
     "new_total_comp_y2": 185000,
-    "new_equity_total": 8430
+    "new_equity_total": 8430,
+    "top_performer": false
   },
   {
     "name": "Ellis Yu",
@@ -127,7 +136,8 @@
     "current_total_comp": 520220,
     "new_total_comp": 675000,
     "new_total_comp_y2": 665000,
-    "new_equity_total": 409367
+    "new_equity_total": 409367,
+    "top_performer": true
   },
   {
     "name": "Faris Toqan",
@@ -140,7 +150,8 @@
     "current_total_comp": 815000,
     "new_total_comp": 1072000,
     "new_total_comp_y2": 715000,
-    "new_equity_total": 445210
+    "new_equity_total": 445210,
+    "top_performer": true
   },
   {
     "name": "Greg Makrigiorgos",
@@ -153,7 +164,8 @@
     "current_total_comp": 308630,
     "new_total_comp": 370000,
     "new_total_comp_y2": 370000,
-    "new_equity_total": 145798
+    "new_equity_total": 145798,
+    "top_performer": true
   },
   {
     "name": "Heather Mounsey",
@@ -166,7 +178,8 @@
     "current_total_comp": 610026,
     "new_total_comp": 741613,
     "new_total_comp_y2": 626950,
-    "new_equity_total": 0
+    "new_equity_total": 0,
+    "top_performer": true
   },
   {
     "name": "Ian Dickens",
@@ -179,7 +192,8 @@
     "current_total_comp": 300000,
     "new_total_comp": 417000,
     "new_total_comp_y2": 385000,
-    "new_equity_total": 188894
+    "new_equity_total": 188894,
+    "top_performer": true
   },
   {
     "name": "Ian Jaye",
@@ -192,7 +206,8 @@
     "current_total_comp": 950000,
     "new_total_comp": 1221000,
     "new_total_comp_y2": 1020000,
-    "new_equity_total": 700645
+    "new_equity_total": 700645,
+    "top_performer": true
   },
   {
     "name": "James Carter",
@@ -205,7 +220,8 @@
     "current_total_comp": 325149,
     "new_total_comp": 377000,
     "new_total_comp_y2": 340000,
-    "new_equity_total": 126021
+    "new_equity_total": 126021,
+    "top_performer": false
   },
   {
     "name": "Jeremy Tribby",
@@ -218,7 +234,8 @@
     "current_total_comp": 386540,
     "new_total_comp": 460000,
     "new_total_comp_y2": 405000,
-    "new_equity_total": 180851
+    "new_equity_total": 180851,
+    "top_performer": false
   },
   {
     "name": "Joe Christiani",
@@ -231,7 +248,8 @@
     "current_total_comp": 655325,
     "new_total_comp": 840000,
     "new_total_comp_y2": 840000,
-    "new_equity_total": 540578
+    "new_equity_total": 540578,
+    "top_performer": true
   },
   {
     "name": "Jordan Laughlin",
@@ -244,7 +262,8 @@
     "current_total_comp": 335460,
     "new_total_comp": 388000,
     "new_total_comp_y2": 355000,
-    "new_equity_total": 128868
+    "new_equity_total": 128868,
+    "top_performer": false
   },
   {
     "name": "Judy Zhong",
@@ -257,7 +276,8 @@
     "current_total_comp": 310000,
     "new_total_comp": 371000,
     "new_total_comp_y2": 330000,
-    "new_equity_total": 51623
+    "new_equity_total": 51623,
+    "top_performer": false
   },
   {
     "name": "Justin Cohen",
@@ -270,7 +290,8 @@
     "current_total_comp": 401650,
     "new_total_comp": 524000,
     "new_total_comp_y2": 460000,
-    "new_equity_total": 255851
+    "new_equity_total": 255851,
+    "top_performer": true
   },
   {
     "name": "Lindsay Grizzard",
@@ -283,7 +304,8 @@
     "current_total_comp": 340135,
     "new_total_comp": 395000,
     "new_total_comp_y2": 355000,
-    "new_equity_total": 135182
+    "new_equity_total": 135182,
+    "top_performer": false
   },
   {
     "name": "Liz Reddinger",
@@ -296,7 +318,8 @@
     "current_total_comp": 365134,
     "new_total_comp": 436000,
     "new_total_comp_y2": 412000,
-    "new_equity_total": 180093
+    "new_equity_total": 180093,
+    "top_performer": true
   },
   {
     "name": "Gabbi Sanchez Mallona",
@@ -309,7 +332,8 @@
     "current_total_comp": 600000,
     "new_total_comp": 765000,
     "new_total_comp_y2": 650000,
-    "new_equity_total": 396696
+    "new_equity_total": 396696,
+    "top_performer": true
   },
   {
     "name": "Melanie Eusebio",
@@ -322,7 +346,8 @@
     "current_total_comp": 336667,
     "new_total_comp": 445000,
     "new_total_comp_y2": 425000,
-    "new_equity_total": 199032
+    "new_equity_total": 199032,
+    "top_performer": true
   },
   {
     "name": "Natalie Kim",
@@ -335,7 +360,8 @@
     "current_total_comp": 405000,
     "new_total_comp": 457000,
     "new_total_comp_y2": 410000,
-    "new_equity_total": 125591
+    "new_equity_total": 125591,
+    "top_performer": true
   },
   {
     "name": "Nikhil Popat",
@@ -348,7 +374,8 @@
     "current_total_comp": 367958,
     "new_total_comp": 432000,
     "new_total_comp_y2": 272000,
-    "new_equity_total": 57949
+    "new_equity_total": 57949,
+    "top_performer": false
   },
   {
     "name": "Nikki Dahan",
@@ -361,7 +388,8 @@
     "current_total_comp": 360238,
     "new_total_comp": 420000,
     "new_total_comp_y2": 371000,
-    "new_equity_total": 138885
+    "new_equity_total": 138885,
+    "top_performer": false
   },
   {
     "name": "Nnamdi Oghedo",
@@ -374,7 +402,8 @@
     "current_total_comp": 196750,
     "new_total_comp": 225000,
     "new_total_comp_y2": 225000,
-    "new_equity_total": 75775
+    "new_equity_total": 75775,
+    "top_performer": false
   },
   {
     "name": "Obada Ghabra",
@@ -387,7 +416,8 @@
     "current_total_comp": 323701,
     "new_total_comp": 377000,
     "new_total_comp_y2": 360000,
-    "new_equity_total": 148632
+    "new_equity_total": 148632,
+    "top_performer": true
   },
   {
     "name": "Olivia Luo",
@@ -400,7 +430,8 @@
     "current_total_comp": 283337,
     "new_total_comp": 336000,
     "new_total_comp_y2": 306000,
-    "new_equity_total": 120577
+    "new_equity_total": 120577,
+    "top_performer": false
   },
   {
     "name": "Ryan Smith",
@@ -413,7 +444,8 @@
     "current_total_comp": 426720,
     "new_total_comp": 506000,
     "new_total_comp_y2": 460000,
-    "new_equity_total": 205776
+    "new_equity_total": 205776,
+    "top_performer": true
   },
   {
     "name": "Sarah Cantu",
@@ -426,7 +458,8 @@
     "current_total_comp": 217305,
     "new_total_comp": 272000,
     "new_total_comp_y2": 272000,
-    "new_equity_total": 123107
+    "new_equity_total": 123107,
+    "top_performer": false
   },
   {
     "name": "Simran Jassal",
@@ -439,7 +472,8 @@
     "current_total_comp": 378091,
     "new_total_comp": 444000,
     "new_total_comp_y2": 401000,
-    "new_equity_total": 144620
+    "new_equity_total": 144620,
+    "top_performer": false
   },
   {
     "name": "Taryn Arnold Scott",
@@ -452,7 +486,8 @@
     "current_total_comp": 235210,
     "new_total_comp": 274000,
     "new_total_comp_y2": 272000,
-    "new_equity_total": 75804
+    "new_equity_total": 75804,
+    "top_performer": false
   },
   {
     "name": "Tim Shi",
@@ -465,7 +500,8 @@
     "current_total_comp": 741695,
     "new_total_comp": 930000,
     "new_total_comp_y2": 820000,
-    "new_equity_total": 512278
+    "new_equity_total": 512278,
+    "top_performer": true
   },
   {
     "name": "Tori Cincotta",
@@ -478,7 +514,8 @@
     "current_total_comp": 332290,
     "new_total_comp": 435000,
     "new_total_comp_y2": 405000,
-    "new_equity_total": 220000
+    "new_equity_total": 220000,
+    "top_performer": true
   },
   {
     "name": "Zack Meredith",
@@ -491,6 +528,7 @@
     "current_total_comp": 483496,
     "new_total_comp": 581000,
     "new_total_comp_y2": 520000,
-    "new_equity_total": 260453
+    "new_equity_total": 260453,
+    "top_performer": true
   }
 ]

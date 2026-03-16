@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { ArrowUpDown, TrendingUp, TrendingDown, Minus } from 'lucide-react'
+import { ArrowUpDown, TrendingUp, TrendingDown, Minus, Star } from 'lucide-react'
 import { cn, formatCurrency } from '@/lib/utils'
 import compData from '../../data/comp_planning.json'
 
@@ -35,7 +35,7 @@ function PctBadge({ pct }: { pct: number }) {
   )
 }
 
-export default function CompPlanningPage({ showSensitive }: { showSensitive: boolean }) {
+export default function CompPlanningPage({ showSensitive, highlightTopPerformers }: { showSensitive: boolean; highlightTopPerformers: boolean }) {
   const [sortKey, setSortKey] = useState<SortKey>('level')
   const [sortDir, setSortDir] = useState<SortDir>('desc')
 
@@ -153,9 +153,17 @@ export default function CompPlanningPage({ showSensitive }: { showSensitive: boo
             </thead>
             <tbody>
               {sorted.map(r => (
-                <tr key={r.name} className="border-b border-border hover:bg-accent/30 transition-colors">
+                <tr key={r.name} className={cn(
+                  'border-b border-border hover:bg-accent/30 transition-colors',
+                  highlightTopPerformers && r.top_performer && 'bg-yellow-500/[0.07]'
+                )}>
                   <td className="px-5 py-3">
-                    <div className="font-medium">{r.name}</div>
+                    <div className="font-medium flex items-center gap-1.5">
+                      {r.name}
+                      {highlightTopPerformers && r.top_performer && (
+                        <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
+                      )}
+                    </div>
                     <div className="flex items-center gap-1.5 mt-0.5">
                       <span className="text-xs text-muted-foreground">{r.zone}</span>
                       {r.promotion && (

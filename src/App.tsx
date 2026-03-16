@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Users, MessageSquare, UserSearch, Archive, Eye, EyeOff, DollarSign, User } from 'lucide-react'
+import { Users, MessageSquare, UserSearch, Archive, Eye, EyeOff, DollarSign, User, Star } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import TeamPage from './pages/TeamPage'
 import OneOnOnesPage from './pages/OneOnOnesPage'
@@ -22,6 +22,7 @@ export default function App() {
   const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState<TabId>('team')
   const [showSensitive, setShowSensitive] = useState(false)
+  const [highlightTopPerformers, setHighlightTopPerformers] = useState(false)
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -59,6 +60,18 @@ export default function App() {
               {showSensitive ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
             </button>
             <button
+              onClick={() => setHighlightTopPerformers(h => !h)}
+              className={cn(
+                'flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-colors',
+                highlightTopPerformers
+                  ? 'bg-yellow-500/20 text-yellow-300'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
+              )}
+              title={highlightTopPerformers ? 'Hide top performer highlights' : 'Highlight top performers'}
+            >
+              <Star className={cn('h-4 w-4', highlightTopPerformers && 'fill-yellow-400')} />
+            </button>
+            <button
               onClick={() => navigate('/personal')}
               className="flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-colors text-muted-foreground hover:text-foreground hover:bg-accent/50"
               title="Personal Dashboard"
@@ -69,10 +82,10 @@ export default function App() {
         </div>
       </nav>
       <main className="max-w-7xl mx-auto px-6 py-8">
-        {activeTab === 'team' && <TeamPage showSensitive={showSensitive} />}
+        {activeTab === 'team' && <TeamPage showSensitive={showSensitive} highlightTopPerformers={highlightTopPerformers} />}
         {activeTab === 'one-on-ones' && <OneOnOnesPage />}
         {activeTab === 'interviews' && <InterviewsPage />}
-        {activeTab === 'comp-planning' && <CompPlanningPage showSensitive={showSensitive} />}
+        {activeTab === 'comp-planning' && <CompPlanningPage showSensitive={showSensitive} highlightTopPerformers={highlightTopPerformers} />}
         {activeTab === 'archive' && <ArchivePage showSensitive={showSensitive} />}
       </main>
     </div>
