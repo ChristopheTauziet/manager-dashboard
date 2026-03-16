@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { TrendingUp, TrendingDown, RefreshCw, Home, Building2, BarChart3, Bitcoin } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import assetsData from '../../../data/assets.json'
+import cachedStockPrices from '../../../data/stock-prices.json'
 
 // ── Types ───────────────────────────────────────────────────
 
@@ -26,19 +27,6 @@ interface Prices {
 
 // ── Price Fetching ──────────────────────────────────────────
 
-async function fetchStockPrice(ticker: string): Promise<number | null> {
-  try {
-    const res = await fetch(
-      `https://query1.finance.yahoo.com/v8/finance/chart/${ticker}?interval=1d&range=1d`
-    )
-    if (!res.ok) return null
-    const data = await res.json()
-    return data.chart?.result?.[0]?.meta?.regularMarketPrice ?? null
-  } catch {
-    return null
-  }
-}
-
 async function fetchCryptoPrices(): Promise<Record<string, number>> {
   try {
     const ids = assetsData.crypto.map(c => c.id).join(',')
@@ -58,31 +46,22 @@ async function fetchCryptoPrices(): Promise<Record<string, number>> {
 }
 
 function usePrices() {
-  const [prices, setPrices] = useState<Prices>({ stocks: {}, crypto: {} })
+  const [prices, setPrices] = useState<Prices>({
+    stocks: cachedStockPrices as Record<string, number>,
+    crypto: {},
+  })
   const [loading, setLoading] = useState(true)
-  const [lastUpdated, setLastUpdated] = useState<Date | null>(null)
 
   async function refresh() {
     setLoading(true)
-
-    const [cryptoPrices, ...stockResults] = await Promise.all([
-      fetchCryptoPrices(),
-      ...assetsData.stocks.map(s => fetchStockPrice(s.ticker)),
-    ])
-
-    const stockPrices: Record<string, number> = {}
-    assetsData.stocks.forEach((s, i) => {
-      if (stockResults[i] != null) stockPrices[s.ticker] = stockResults[i]!
-    })
-
-    setPrices({ stocks: stockPrices, crypto: cryptoPrices })
-    setLastUpdated(new Date())
+    const cryptoPrices = await fetchCryptoPrices()
+    setPrices(prev => ({ stocks: prev.stocks, crypto: cryptoPrices }))
     setLoading(false)
   }
 
   useEffect(() => { refresh() }, [])
 
-  return { prices, loading, lastUpdated, refresh }
+  return { prices, loading, refresh }
 }
 
 // ── Formatting ──────────────────────────────────────────────
@@ -314,13 +293,12 @@ function PlaidSection() {
 
 // ── Net Worth Banner ────────────────────────────────────────
 
-function NetWorthBanner({ stocksTotal, cryptoTotal, houseValue, plaidTotal, loading, lastUpdated, onRefresh }: {
+function NetWorthBanner({ stocksTotal, cryptoTotal, houseValue, plaidTotal, loading, onRefresh }: {
   stocksTotal: number
   cryptoTotal: number
   houseValue: number
   plaidTotal: number
   loading: boolean
-  lastUpdated: Date | null
   onRefresh: () => void
 }) {
   const total = stocksTotal + cryptoTotal + houseValue + plaidTotal
@@ -337,19 +315,13 @@ function NetWorthBanner({ stocksTotal, cryptoTotal, houseValue, plaidTotal, load
       <div className="flex items-start justify-between mb-4">
         <div>
           <p className="text-sm text-muted-foreground">Net Worth</p>
-          <p className="text-3xl font-bold tabular-nums mt-1">
-            {loading && total === 0 ? (
-              <span className="text-muted-foreground">Loading...</span>
-            ) : (
-              fmt(total)
-            )}
-          </p>
+          <p className="text-3xl font-bold tabular-nums mt-1">{fmt(total)}</p>
         </div>
         <button
           onClick={onRefresh}
           disabled={loading}
           className="text-muted-foreground hover:text-foreground transition-colors disabled:opacity-50"
-          title="Refresh prices"
+          title="Refresh crypto prices"
         >
           <RefreshCw className={cn('h-4 w-4', loading && 'animate-spin')} />
         </button>
@@ -362,11 +334,6 @@ function NetWorthBanner({ stocksTotal, cryptoTotal, houseValue, plaidTotal, load
           </div>
         ))}
       </div>
-      {lastUpdated && (
-        <p className="text-[10px] text-muted-foreground mt-3">
-          Prices as of {lastUpdated.toLocaleTimeString()}
-        </p>
-      )}
     </div>
   )
 }
@@ -374,7 +341,7 @@ function NetWorthBanner({ stocksTotal, cryptoTotal, houseValue, plaidTotal, load
 // ── Main Page ───────────────────────────────────────────────
 
 export default function AssetsPage() {
-  const { prices, loading, lastUpdated, refresh } = usePrices()
+  const { prices, loading, refresh } = usePrices()
 
   const stocksTotal = assetsData.stocks.reduce((s, h) => {
     const price = prices.stocks[h.ticker]
@@ -401,7 +368,6 @@ export default function AssetsPage() {
         houseValue={houseValue}
         plaidTotal={plaidTotal}
         loading={loading}
-        lastUpdated={lastUpdated}
         onRefresh={refresh}
       />
 
