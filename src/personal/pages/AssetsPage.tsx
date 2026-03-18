@@ -10,7 +10,7 @@ interface StockHolding {
   ticker: string
   name: string
   shares: number
-  avgCost: number
+  avgCost: number | null
 }
 
 interface CryptoHolding {
@@ -76,16 +76,17 @@ function StocksSection({ holdings, prices }: { holdings: StockHolding[]; prices:
   const rows = holdings.map(h => {
     const price = prices[h.ticker]
     const value = price != null ? price * h.shares : null
-    const cost = h.avgCost * h.shares
-    const gain = value != null ? value - cost : null
-    const gainPct = gain != null ? gain / cost : null
+    const cost = h.avgCost != null ? h.avgCost * h.shares : null
+    const gain = value != null && cost != null ? value - cost : null
+    const gainPct = gain != null && cost != null && cost > 0 ? gain / cost : null
     return { ...h, price, value, gain, gainPct }
   })
 
   const totalValue = rows.reduce((s, r) => s + (r.value ?? 0), 0)
-  const totalCost = rows.reduce((s, r) => s + r.avgCost * r.shares, 0)
-  const totalGain = totalValue - totalCost
-  const totalGainPct = totalGain / totalCost
+  const totalCostKnown = rows.reduce((s, r) => s + (r.avgCost != null ? r.avgCost * r.shares : 0), 0)
+  const totalValueOfKnown = rows.reduce((s, r) => s + (r.avgCost != null && r.value != null ? r.value : 0), 0)
+  const totalGain = totalValueOfKnown - totalCostKnown
+  const totalGainPct = totalCostKnown > 0 ? totalGain / totalCostKnown : 0
 
   return (
     <div className="bg-card border border-border rounded-xl overflow-hidden">
@@ -120,8 +121,10 @@ function StocksSection({ holdings, prices }: { holdings: StockHolding[]; prices:
                   <span className="font-medium">{r.ticker}</span>
                   <span className="text-xs text-muted-foreground ml-2 hidden sm:inline">{r.name}</span>
                 </td>
-                <td className="text-right px-5 py-2.5 tabular-nums">{r.shares.toLocaleString()}</td>
-                <td className="text-right px-5 py-2.5 tabular-nums text-muted-foreground">{fmtExact(r.avgCost)}</td>
+                <td className="text-right px-5 py-2.5 tabular-nums">{r.shares.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                <td className="text-right px-5 py-2.5 tabular-nums text-muted-foreground">
+                  {r.avgCost != null ? fmtExact(r.avgCost) : <span>—</span>}
+                </td>
                 <td className="text-right px-5 py-2.5 tabular-nums">
                   {r.price != null ? fmtExact(r.price) : <span className="text-muted-foreground">—</span>}
                 </td>
@@ -134,7 +137,7 @@ function StocksSection({ holdings, prices }: { holdings: StockHolding[]; prices:
                       {r.gain >= 0 ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
                       {fmt(r.gain)} ({fmtPct(r.gainPct!)})
                     </span>
-                  ) : '—'}
+                  ) : <span className="text-muted-foreground">—</span>}
                 </td>
               </tr>
             ))}
@@ -376,7 +379,7 @@ export default function AssetsPage() {
         onRefresh={refresh}
       />
 
-      <StocksSection holdings={assetsData.stocks} prices={prices.stocks} />
+      <StocksSection holdings={assetsData.stocks as StockHolding[]} prices={prices.stocks} />
       <CryptoSection holdings={assetsData.crypto as CryptoHolding[]} prices={prices.crypto} />
       <RealEstateSection address={assetsData.house.address} estimatedValue={assetsData.house.estimatedValue} mortgage={assetsData.house.mortgage} />
       <PlaidSection />

@@ -10,11 +10,14 @@
     { "ticker": "UBER", "name": "Uber Technologies", "shares": 281, "avgCost": 31.08 },
     { "ticker": "AMZN", "name": "Amazon", "shares": 168, "avgCost": 100.95 },
     { "ticker": "MSFT", "name": "Microsoft", "shares": 90, "avgCost": 288.59 },
-    { "ticker": "AAPL", "name": "Apple", "shares": 162, "avgCost": 182.05 }
+    { "ticker": "AAPL", "name": "Apple", "shares": 162, "avgCost": 182.05 },
+    { "ticker": "VFFVX", "name": "Vanguard Target Retirement 2055", "shares": 2109.41, "avgCost": null },
+    { "ticker": "VIGAX", "name": "Vanguard Growth Index Admiral", "shares": 230.16, "avgCost": null },
+    { "ticker": "IAU", "name": "iShares Gold Trust", "shares": 114, "avgCost": null }
   ],
   "crypto": [
-    { "id": "bitcoin", "ticker": "BTC", "amount": 5.5566, "avgCost": 41188 },
-    { "id": "ethereum", "ticker": "ETH", "amount": 34.6029, "avgCost": 2885.56 },
+    { "id": "bitcoin", "ticker": "BTC", "amount": 5.42, "avgCost": 41188 },
+    { "id": "ethereum", "ticker": "ETH", "amount": 34.81, "avgCost": 2885.56 },
     { "id": "dogecoin", "ticker": "DOGE", "amount": 89086, "avgCost": 0.10 }
   ],
   "house": {
