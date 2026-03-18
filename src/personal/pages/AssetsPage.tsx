@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { TrendingUp, TrendingDown, RefreshCw, Home, Building2, BarChart3, Bitcoin } from 'lucide-react'
+import { TrendingUp, TrendingDown, RefreshCw, Home, Building2, BarChart3, Bitcoin, PiggyBank } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import assetsData from '../../../data/assets.json'
 import cachedStockPrices from '../../../data/stock-prices.json'
@@ -256,6 +256,26 @@ function RealEstateSection({ address, estimatedValue, mortgage }: { address: str
   )
 }
 
+// ── Retirement ──────────────────────────────────────────────
+
+function RetirementSection({ value }: { value: number }) {
+  return (
+    <div className="bg-card border border-border rounded-xl overflow-hidden">
+      <div className="px-5 py-4 border-b border-border flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <PiggyBank className="h-4 w-4 text-primary" />
+          <h2 className="text-sm font-semibold">Retirement</h2>
+        </div>
+        <span className="text-sm font-semibold">{fmt(value)}</span>
+      </div>
+      <div className="px-5 py-3 flex items-center justify-between">
+        <p className="text-sm font-medium">401(k) &amp; IRA</p>
+        <span className="text-sm font-medium tabular-nums">{fmt(value)}</span>
+      </div>
+    </div>
+  )
+}
+
 // ── Plaid ───────────────────────────────────────────────────
 
 function PlaidSection() {
@@ -301,20 +321,22 @@ function PlaidSection() {
 
 // ── Net Worth Banner ────────────────────────────────────────
 
-function NetWorthBanner({ stocksTotal, cryptoTotal, houseValue, plaidTotal, loading, onRefresh }: {
+function NetWorthBanner({ stocksTotal, cryptoTotal, houseValue, retirementTotal, plaidTotal, loading, onRefresh }: {
   stocksTotal: number
   cryptoTotal: number
   houseValue: number
+  retirementTotal: number
   plaidTotal: number
   loading: boolean
   onRefresh: () => void
 }) {
-  const total = stocksTotal + cryptoTotal + houseValue + plaidTotal
+  const total = stocksTotal + cryptoTotal + houseValue + retirementTotal + plaidTotal
 
   const breakdown = [
     { label: 'Stocks & ETFs', value: stocksTotal },
     { label: 'Crypto', value: cryptoTotal },
     { label: 'Real Estate', value: houseValue },
+    { label: 'Retirement', value: retirementTotal },
     { label: 'Plaid', value: plaidTotal },
   ]
 
@@ -363,6 +385,8 @@ export default function AssetsPage() {
 
   const houseEquity = (assetsData.house.estimatedValue ?? 0) - (assetsData.house.mortgage ?? 0)
 
+  const retirementTotal = assetsData.retirement
+
   const { commonShares, rsus, netSharePercent, sharePrice } = assetsData.plaid
   const plaidTotal = (commonShares + Math.floor(rsus * netSharePercent)) * sharePrice
 
@@ -374,6 +398,7 @@ export default function AssetsPage() {
         stocksTotal={stocksTotal}
         cryptoTotal={cryptoTotal}
         houseValue={houseEquity}
+        retirementTotal={retirementTotal}
         plaidTotal={plaidTotal}
         loading={loading}
         onRefresh={refresh}
@@ -382,6 +407,7 @@ export default function AssetsPage() {
       <StocksSection holdings={assetsData.stocks as StockHolding[]} prices={prices.stocks} />
       <CryptoSection holdings={assetsData.crypto as CryptoHolding[]} prices={prices.crypto} />
       <RealEstateSection address={assetsData.house.address} estimatedValue={assetsData.house.estimatedValue} mortgage={assetsData.house.mortgage} />
+      <RetirementSection value={retirementTotal} />
       <PlaidSection />
     </div>
   )
