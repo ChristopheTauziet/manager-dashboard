@@ -219,7 +219,9 @@ function CryptoSection({ holdings, prices }: { holdings: CryptoHolding[]; prices
 
 // ── Real Estate ─────────────────────────────────────────────
 
-function RealEstateSection({ address, estimatedValue }: { address: string; estimatedValue: number | null }) {
+function RealEstateSection({ address, estimatedValue, mortgage }: { address: string; estimatedValue: number | null; mortgage: number | null }) {
+  const equity = (estimatedValue ?? 0) - (mortgage ?? 0)
+
   return (
     <div className="bg-card border border-border rounded-xl overflow-hidden">
       <div className="px-5 py-4 border-b border-border flex items-center justify-between">
@@ -227,22 +229,25 @@ function RealEstateSection({ address, estimatedValue }: { address: string; estim
           <Home className="h-4 w-4 text-primary" />
           <h2 className="text-sm font-semibold">Real Estate</h2>
         </div>
-        {estimatedValue != null && (
-          <span className="text-sm font-semibold">{fmt(estimatedValue)}</span>
-        )}
+        <span className="text-sm font-semibold">{fmt(equity)}</span>
       </div>
-      <div className="px-5 py-4 flex items-center justify-between">
-        <div>
-          <p className="text-sm font-medium">{address}</p>
-          <p className="text-xs text-muted-foreground mt-0.5">Primary residence</p>
+      <div className="divide-y divide-border/30">
+        <div className="px-5 py-3 flex items-center justify-between">
+          <div>
+            <p className="text-sm font-medium">{address}</p>
+            <p className="text-xs text-muted-foreground mt-0.5">Estimated value</p>
+          </div>
+          <span className="text-sm font-medium tabular-nums">{estimatedValue != null ? fmt(estimatedValue) : '—'}</span>
         </div>
-        <div className="text-right">
-          {estimatedValue != null ? (
-            <span className="text-sm font-medium tabular-nums">{fmt(estimatedValue)}</span>
-          ) : (
-            <span className="text-xs text-muted-foreground">Update in data/assets.json</span>
-          )}
-        </div>
+        {mortgage != null && (
+          <div className="px-5 py-3 flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium">Mortgage</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Outstanding balance</p>
+            </div>
+            <span className="text-sm font-medium tabular-nums text-red-400">−{fmt(mortgage)}</span>
+          </div>
+        )}
       </div>
     </div>
   )
@@ -353,7 +358,7 @@ export default function AssetsPage() {
     return s + (price != null ? price * h.amount : 0)
   }, 0)
 
-  const houseValue = assetsData.house.estimatedValue ?? 0
+  const houseEquity = (assetsData.house.estimatedValue ?? 0) - (assetsData.house.mortgage ?? 0)
 
   const { commonShares, rsus, netSharePercent, sharePrice } = assetsData.plaid
   const plaidTotal = (commonShares + Math.floor(rsus * netSharePercent)) * sharePrice
@@ -365,7 +370,7 @@ export default function AssetsPage() {
       <NetWorthBanner
         stocksTotal={stocksTotal}
         cryptoTotal={cryptoTotal}
-        houseValue={houseValue}
+        houseValue={houseEquity}
         plaidTotal={plaidTotal}
         loading={loading}
         onRefresh={refresh}
@@ -373,7 +378,7 @@ export default function AssetsPage() {
 
       <StocksSection holdings={assetsData.stocks} prices={prices.stocks} />
       <CryptoSection holdings={assetsData.crypto as CryptoHolding[]} prices={prices.crypto} />
-      <RealEstateSection address={assetsData.house.address} estimatedValue={assetsData.house.estimatedValue} />
+      <RealEstateSection address={assetsData.house.address} estimatedValue={assetsData.house.estimatedValue} mortgage={assetsData.house.mortgage} />
       <PlaidSection />
     </div>
   )
