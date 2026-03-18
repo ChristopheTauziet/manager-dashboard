@@ -1,7 +1,20 @@
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Gift, Cake, Heart, Calendar, ArrowRight, TreePine } from 'lucide-react'
+import { Gift, Cake, Heart, Calendar, ArrowRight, TreePine, DollarSign, Briefcase, Receipt } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import giftsData from '../../../data/gifts.json'
+import assetsData from '../../../data/assets.json'
+import cachedStockPrices from '../../../data/stock-prices.json'
+import compData from '../../../data/compensation.json'
+import taxesData from '../../../data/taxes.json'
+
+interface StockHolding {
+  ticker: string
+  shares: number
+  fixedValue?: number
+}
+
+const fmt = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
@@ -188,11 +201,181 @@ function UpcomingEventsWidget() {
   )
 }
 
+function NetWorthWidget() {
+  const navigate = useNavigate()
+  const [cryptoPrices, setCryptoPrices] = useState<Record<string, number>>({})
+
+  useEffect(() => {
+    const ids = assetsData.crypto.map(c => c.id).join(',')
+    fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd`)
+      .then(r => r.json())
+      .then(data => {
+        const prices: Record<string, number> = {}
+        for (const c of assetsData.crypto) {
+          if (data[c.id]?.usd) prices[c.ticker] = data[c.id].usd
+        }
+        setCryptoPrices(prices)
+      })
+      .catch(() => {})
+  }, [])
+
+  const stockPrices = cachedStockPrices as Record<string, number>
+
+  const stocksTotal = (assetsData.stocks as StockHolding[]).reduce((s, h) => {
+    if (h.fixedValue != null) return s + h.fixedValue
+    const price = stockPrices[h.ticker]
+    return s + (price != null ? price * h.shares : 0)
+  }, 0)
+
+  const cryptoTotal = assetsData.crypto.reduce((s, h) => {
+    const price = cryptoPrices[h.ticker]
+    return s + (price != null ? price * h.amount : 0)
+  }, 0)
+
+  const houseEquity = (assetsData.house.estimatedValue ?? 0) - (assetsData.house.mortgage ?? 0)
+  const retirementTotal = assetsData.retirement
+  const { commonShares, rsus, netSharePercent, sharePrice } = assetsData.plaid
+  const plaidTotal = (commonShares + Math.floor(rsus * netSharePercent)) * sharePrice
+
+  const total = stocksTotal + cryptoTotal + houseEquity + retirementTotal + plaidTotal
+
+  const breakdown = [
+    { label: 'Stocks & ETFs', value: stocksTotal },
+    { label: 'Crypto', value: cryptoTotal },
+    { label: 'Real Estate', value: houseEquity },
+    { label: 'Retirement', value: retirementTotal },
+    { label: 'Plaid', value: plaidTotal },
+  ]
+
+  return (
+    <div className="bg-card border border-border rounded-xl overflow-hidden">
+      <div className="px-5 py-4 border-b border-border flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <DollarSign className="h-4 w-4 text-primary" />
+          <h2 className="text-sm font-semibold">Net Worth</h2>
+        </div>
+        <button
+          onClick={() => navigate('/personal/assets')}
+          className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
+        >
+          Assets <ArrowRight className="h-3 w-3" />
+        </button>
+      </div>
+      <div className="px-5 py-4">
+        <p className="text-2xl font-bold tabular-nums">{fmt(total)}</p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 mt-3">
+          {breakdown.map(b => (
+            <div key={b.label}>
+              <p className="text-[11px] text-muted-foreground">{b.label}</p>
+              <p className="text-sm font-medium tabular-nums">{fmt(b.value)}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function CompensationWidget() {
+  const navigate = useNavigate()
+  const CURRENT_YEAR = 2026
+  const { baseSalary, grants, currentSharePrice } = compData
+
+  const equityShares = grants.reduce((s, g) => {
+    const vesting = g.vesting as unknown as Record<string, number>
+    return s + (vesting[String(CURRENT_YEAR)] ?? 0)
+  }, 0)
+  const equityValue = equityShares * currentSharePrice
+  const totalComp = baseSalary + equityValue
+
+  return (
+    <div className="bg-card border border-border rounded-xl overflow-hidden">
+      <div className="px-5 py-4 border-b border-border flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Briefcase className="h-4 w-4 text-primary" />
+          <h2 className="text-sm font-semibold">{CURRENT_YEAR} Compensation</h2>
+        </div>
+        <button
+          onClick={() => navigate('/personal/compensation')}
+          className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
+        >
+          Details <ArrowRight className="h-3 w-3" />
+        </button>
+      </div>
+      <div className="px-5 py-4">
+        <p className="text-2xl font-bold tabular-nums">{fmt(totalComp)}</p>
+        <div className="grid grid-cols-3 gap-x-4 mt-3">
+          <div>
+            <p className="text-[11px] text-muted-foreground">Base Salary</p>
+            <p className="text-sm font-medium tabular-nums">{fmt(baseSalary)}</p>
+          </div>
+          <div>
+            <p className="text-[11px] text-muted-foreground">Equity ({equityShares.toLocaleString()} shares)</p>
+            <p className="text-sm font-medium tabular-nums">{fmt(equityValue)}</p>
+          </div>
+          <div>
+            <p className="text-[11px] text-muted-foreground">Share Price</p>
+            <p className="text-sm font-medium tabular-nums">${currentSharePrice}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function TaxesWidget() {
+  const navigate = useNavigate()
+  const taxYears = taxesData as { year: number; taxableIncome: number; federalTax: number; stateTax: number; federalDue: number; stateDue: number }[]
+  const latest = [...taxYears].sort((a, b) => b.year - a.year)[0]
+  const totalTax = latest.federalTax + latest.stateTax
+  const effectiveRate = totalTax / latest.taxableIncome
+
+  return (
+    <div className="bg-card border border-border rounded-xl overflow-hidden">
+      <div className="px-5 py-4 border-b border-border flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Receipt className="h-4 w-4 text-primary" />
+          <h2 className="text-sm font-semibold">{latest.year} Taxes</h2>
+        </div>
+        <button
+          onClick={() => navigate('/personal/taxes')}
+          className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
+        >
+          All Years <ArrowRight className="h-3 w-3" />
+        </button>
+      </div>
+      <div className="px-5 py-4">
+        <div className="flex items-baseline gap-2">
+          <p className="text-2xl font-bold tabular-nums">{fmt(totalTax)}</p>
+          <span className="text-xs text-muted-foreground">{(effectiveRate * 100).toFixed(1)}% effective</span>
+        </div>
+        <div className="grid grid-cols-3 gap-x-4 mt-3">
+          <div>
+            <p className="text-[11px] text-muted-foreground">Taxable Income</p>
+            <p className="text-sm font-medium tabular-nums">{fmt(latest.taxableIncome)}</p>
+          </div>
+          <div>
+            <p className="text-[11px] text-muted-foreground">Federal</p>
+            <p className="text-sm font-medium tabular-nums">{fmt(latest.federalTax)}</p>
+          </div>
+          <div>
+            <p className="text-[11px] text-muted-foreground">California</p>
+            <p className="text-sm font-medium tabular-nums">{fmt(latest.stateTax)}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function OverviewPage() {
   return (
     <div className="space-y-8">
       <h1 className="text-2xl font-semibold">Overview</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <NetWorthWidget />
+        <CompensationWidget />
+        <TaxesWidget />
         <UpcomingEventsWidget />
       </div>
     </div>
