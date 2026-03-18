@@ -11,7 +11,8 @@
     { "ticker": "AMZN", "name": "Amazon", "shares": 168, "avgCost": 100.95 },
     { "ticker": "MSFT", "name": "Microsoft", "shares": 90, "avgCost": 288.59 },
     { "ticker": "AAPL", "name": "Apple", "shares": 162, "avgCost": 182.05 },
-    { "ticker": "IAU", "name": "iShares Gold Trust", "shares": 114, "avgCost": null }
+    { "ticker": "IAU", "name": "iShares Gold Trust", "shares": 114, "avgCost": null },
+    { "ticker": "_MISC", "name": "Other positions (<$10k each)", "shares": 1, "avgCost": null, "fixedValue": 170000 }
   ],
   "crypto": [
     { "id": "bitcoin", "ticker": "BTC", "amount": 5.42, "avgCost": 41188 },
@@ -23,7 +24,7 @@
     "estimatedValue": 3875000,
     "mortgage": 1868000
   },
-  "retirement": 935000,
+  "retirement": 765000,
   "plaid": {
     "commonShares": 2519,
     "rsus": 9268,

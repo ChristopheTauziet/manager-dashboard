@@ -11,6 +11,7 @@ interface StockHolding {
   name: string
   shares: number
   avgCost: number | null
+  fixedValue?: number
 }
 
 interface CryptoHolding {
@@ -74,12 +75,13 @@ const fmtPct = (n: number) => `${n >= 0 ? '+' : ''}${(n * 100).toFixed(1)}%`
 
 function StocksSection({ holdings, prices }: { holdings: StockHolding[]; prices: Record<string, number> }) {
   const rows = holdings.map(h => {
-    const price = prices[h.ticker]
-    const value = price != null ? price * h.shares : null
+    const isMisc = h.fixedValue != null
+    const price = isMisc ? null : prices[h.ticker]
+    const value = isMisc ? h.fixedValue! : (price != null ? price * h.shares : null)
     const cost = h.avgCost != null ? h.avgCost * h.shares : null
     const gain = value != null && cost != null ? value - cost : null
     const gainPct = gain != null && cost != null && cost > 0 ? gain / cost : null
-    return { ...h, price, value, gain, gainPct }
+    return { ...h, isMisc, price, value, gain, gainPct }
   })
 
   const totalValue = rows.reduce((s, r) => s + (r.value ?? 0), 0)
@@ -117,28 +119,40 @@ function StocksSection({ holdings, prices }: { holdings: StockHolding[]; prices:
           <tbody className="divide-y divide-border/30">
             {rows.map(r => (
               <tr key={r.ticker} className="hover:bg-accent/10 transition-colors">
-                <td className="px-5 py-2.5">
-                  <span className="font-medium">{r.ticker}</span>
-                  <span className="text-xs text-muted-foreground ml-2 hidden sm:inline">{r.name}</span>
-                </td>
-                <td className="text-right px-5 py-2.5 tabular-nums">{r.shares.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-                <td className="text-right px-5 py-2.5 tabular-nums text-muted-foreground">
-                  {r.avgCost != null ? fmtExact(r.avgCost) : <span>—</span>}
-                </td>
-                <td className="text-right px-5 py-2.5 tabular-nums">
-                  {r.price != null ? fmtExact(r.price) : <span className="text-muted-foreground">—</span>}
-                </td>
-                <td className="text-right px-5 py-2.5 tabular-nums font-medium">
-                  {r.value != null ? fmt(r.value) : '—'}
-                </td>
-                <td className={cn('text-right px-5 py-2.5 tabular-nums text-xs', r.gain != null && r.gain >= 0 ? 'text-emerald-400' : 'text-red-400')}>
-                  {r.gain != null ? (
-                    <span className="flex items-center justify-end gap-1">
-                      {r.gain >= 0 ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
-                      {fmt(r.gain)} ({fmtPct(r.gainPct!)})
-                    </span>
-                  ) : <span className="text-muted-foreground">—</span>}
-                </td>
+                {r.isMisc ? (
+                  <>
+                    <td className="px-5 py-2.5" colSpan={4}>
+                      <span className="text-sm text-muted-foreground">{r.name}</span>
+                    </td>
+                    <td className="text-right px-5 py-2.5 tabular-nums font-medium">{fmt(r.value!)}</td>
+                    <td className="text-right px-5 py-2.5 tabular-nums text-xs text-muted-foreground">—</td>
+                  </>
+                ) : (
+                  <>
+                    <td className="px-5 py-2.5">
+                      <span className="font-medium">{r.ticker}</span>
+                      <span className="text-xs text-muted-foreground ml-2 hidden sm:inline">{r.name}</span>
+                    </td>
+                    <td className="text-right px-5 py-2.5 tabular-nums">{r.shares.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                    <td className="text-right px-5 py-2.5 tabular-nums text-muted-foreground">
+                      {r.avgCost != null ? fmtExact(r.avgCost) : <span>—</span>}
+                    </td>
+                    <td className="text-right px-5 py-2.5 tabular-nums">
+                      {r.price != null ? fmtExact(r.price) : <span className="text-muted-foreground">—</span>}
+                    </td>
+                    <td className="text-right px-5 py-2.5 tabular-nums font-medium">
+                      {r.value != null ? fmt(r.value) : '—'}
+                    </td>
+                    <td className={cn('text-right px-5 py-2.5 tabular-nums text-xs', r.gain != null && r.gain >= 0 ? 'text-emerald-400' : 'text-red-400')}>
+                      {r.gain != null ? (
+                        <span className="flex items-center justify-end gap-1">
+                          {r.gain >= 0 ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
+                          {fmt(r.gain)} ({fmtPct(r.gainPct!)})
+                        </span>
+                      ) : <span className="text-muted-foreground">—</span>}
+                    </td>
+                  </>
+                )}
               </tr>
             ))}
           </tbody>
