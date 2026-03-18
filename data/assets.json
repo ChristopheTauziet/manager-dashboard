@@ -7,10 +7,10 @@
     { "ticker": "NVDA", "name": "NVIDIA", "shares": 574, "avgCost": 82.92 },
     { "ticker": "META", "name": "Meta Platforms", "shares": 117, "avgCost": 73.77 },
     { "ticker": "COIN", "name": "Coinbase Global", "shares": 110, "avgCost": 45.60 },
-    { "ticker": "UBER", "name": "Uber Technologies", "shares": 340, "avgCost": 31.08 },
+    { "ticker": "UBER", "name": "Uber Technologies", "shares": 281, "avgCost": 31.08 },
     { "ticker": "AMZN", "name": "Amazon", "shares": 168, "avgCost": 100.95 },
     { "ticker": "MSFT", "name": "Microsoft", "shares": 90, "avgCost": 288.59 },
-    { "ticker": "AAPL", "name": "Apple", "shares": 110, "avgCost": 182.05 }
+    { "ticker": "AAPL", "name": "Apple", "shares": 162, "avgCost": 182.05 }
   ],
   "crypto": [
     { "id": "bitcoin", "ticker": "BTC", "amount": 5.5566, "avgCost": 41188 },
