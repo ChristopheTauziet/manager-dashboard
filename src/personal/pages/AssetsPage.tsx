@@ -387,7 +387,8 @@ function NetWorthBanner({ stocksTotal, cryptoTotal, houseValue, retirementTotal,
 export default function AssetsPage() {
   const { prices, loading, refresh } = usePrices()
 
-  const stocksTotal = assetsData.stocks.reduce((s, h) => {
+  const stocksTotal = (assetsData.stocks as StockHolding[]).reduce((s, h) => {
+    if (h.fixedValue != null) return s + h.fixedValue
     const price = prices.stocks[h.ticker]
     return s + (price != null ? price * h.shares : 0)
   }, 0)
