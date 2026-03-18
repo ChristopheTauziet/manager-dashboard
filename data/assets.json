@@ -11,8 +11,6 @@
     { "ticker": "AMZN", "name": "Amazon", "shares": 168, "avgCost": 100.95 },
     { "ticker": "MSFT", "name": "Microsoft", "shares": 90, "avgCost": 288.59 },
     { "ticker": "AAPL", "name": "Apple", "shares": 162, "avgCost": 182.05 },
-    { "ticker": "VFFVX", "name": "Vanguard Target Retirement 2055", "shares": 2109.41, "avgCost": null },
-    { "ticker": "VIGAX", "name": "Vanguard Growth Index Admiral", "shares": 230.16, "avgCost": null },
     { "ticker": "IAU", "name": "iShares Gold Trust", "shares": 114, "avgCost": null }
   ],
   "crypto": [
