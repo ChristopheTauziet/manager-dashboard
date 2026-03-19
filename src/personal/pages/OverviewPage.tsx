@@ -309,7 +309,7 @@ function ComingUpWidget() {
   const items = getComingUp()
 
   return (
-    <div className="bg-card border border-border rounded-xl overflow-hidden lg:col-span-2">
+    <div className="bg-card border border-border rounded-xl overflow-hidden">
       <div className="px-5 py-4 border-b border-border flex items-center justify-between">
         <div className="flex items-center gap-2">
           <CalendarDays className="h-4 w-4 text-primary" />
@@ -379,11 +379,15 @@ export default function OverviewPage() {
   return (
     <div className="space-y-8">
       <h1 className="text-2xl font-semibold">Overview</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        <NetWorthWidget />
-        <ComingUpWidget />
-        <CompensationWidget />
-        <TaxesWidget />
+      <div className="flex flex-col xl:flex-row gap-5">
+        <div className="xl:w-1/2 flex-shrink-0">
+          <ComingUpWidget />
+        </div>
+        <div className="xl:w-1/2 flex flex-col gap-5">
+          <NetWorthWidget />
+          <CompensationWidget />
+          <TaxesWidget />
+        </div>
       </div>
     </div>
   )
