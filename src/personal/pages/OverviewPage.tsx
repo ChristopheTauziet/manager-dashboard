@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Cake, Heart, Calendar, ArrowRight, TreePine, DollarSign, Briefcase, Receipt, CalendarDays, Plane, GraduationCap, Trophy, Cross, MapPin } from 'lucide-react'
+import { Cake, Heart, Calendar, ArrowRight, TreePine, DollarSign, Briefcase, Receipt, CalendarDays, Plane, GraduationCap, Trophy, Cross, MapPin, Check } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import giftsData from '../../../data/gifts.json'
 import { getAllEvents } from '../eventUtils'
@@ -21,6 +21,13 @@ const fmt = (n: number) => n.toLocaleString('en-US', { style: 'currency', curren
 function getIdeasForPerson(name: string) {
   const person = giftsData.people.find(p => p.name === name)
   return person?.ideas || []
+}
+
+function getGiftForEvent(name: string, occasion: string, year: number): string[] | undefined {
+  const person = giftsData.people.find(p => p.name === name)
+  if (!person) return undefined
+  const gift = person.gifts.find(g => g.year === year && g.occasion === occasion)
+  return gift?.items
 }
 
 const HEART_OCCASIONS = ["Anniversary", "Valentine's Day", "Mother's Day", "Father's Day", "Fête des Mères", "Fête des Pères", "Fête des grands-mères", "Fête des grands-pères"]
@@ -200,6 +207,7 @@ interface ComingUpItem {
   colorCls: string
   daysUntil: number
   ideas?: string[]
+  giftReady?: string[]
 }
 
 const CATEGORY_ICON: Record<string, typeof Calendar> = {
@@ -251,6 +259,7 @@ function getComingUp(): ComingUpItem[] {
       : CATEGORY_ICON[category] || Calendar
 
     const ideas = ev.name.includes('&') ? [] : getIdeasForPerson(ev.name)
+    const giftItems = ev.name.includes('&') ? undefined : getGiftForEvent(ev.name, ev.occasion, eventDate.getFullYear())
 
     results.push({
       date: eventDate,
@@ -259,7 +268,8 @@ function getComingUp(): ComingUpItem[] {
       icon,
       colorCls: CATEGORY_COLORS[category] || 'bg-purple-500/15 text-purple-400',
       daysUntil: diff,
-      ideas: ideas.length > 0 ? ideas : undefined,
+      ideas: !giftItems && ideas.length > 0 ? ideas : undefined,
+      giftReady: giftItems,
     })
   }
 
@@ -346,6 +356,12 @@ function ComingUpWidget() {
                 <span className="text-[11px] text-muted-foreground">
                   {ev.date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}
                 </span>
+                {ev.giftReady && (
+                  <div className="flex gap-1 mt-1 overflow-hidden items-center">
+                    <Check className="h-3 w-3 text-emerald-400 flex-shrink-0" />
+                    <span className="text-[10px] text-emerald-400 truncate">{ev.giftReady.join(', ')}</span>
+                  </div>
+                )}
                 {ev.ideas && ev.ideas.length > 0 && (
                   <div className="flex gap-1 mt-1 overflow-hidden">
                     {ev.ideas.slice(0, 2).map((idea, j) => (

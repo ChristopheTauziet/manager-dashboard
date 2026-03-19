@@ -93,9 +93,10 @@
         { "year": 2022, "occasion": "Christmas", "items": ["Maillot Nike FFF"] },
         { "year": 2023, "occasion": "Christmas", "items": ["Nest doorbell", "Travel mug"] },
         { "year": 2024, "occasion": "Christmas", "items": ["TV"] },
-        { "year": 2025, "occasion": "Christmas", "items": ["Watch Winder duo"] }
+        { "year": 2025, "occasion": "Christmas", "items": ["Watch Winder duo"] },
+        { "year": 2026, "occasion": "Birthday", "items": ["Hoto Toolbox"] }
       ],
-      "ideas": ["Tire-bouchon", "Boîte à outils Hoto", "Watch box", "Reigning Champ clothing", "Battery Tesla"]
+      "ideas": ["Tire-bouchon", "Watch box", "Reigning Champ clothing", "Battery Tesla"]
     },
     {
       "name": "Charlie",
