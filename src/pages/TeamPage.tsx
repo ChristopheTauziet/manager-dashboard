@@ -228,7 +228,6 @@ export default function TeamPage({ showSensitive, highlightTopPerformers }: { sh
       <h1 className="text-2xl font-semibold">Team</h1>
 
       <div className="flex items-center gap-3 flex-wrap">
-        <span className="text-xs text-muted-foreground uppercase tracking-wider">Filter</span>
         <div className="flex gap-1.5">
           <button
             onClick={() => setFilterLevel(null)}
