@@ -19,7 +19,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "creative"
   },
   {
     "id": "2",
@@ -65,7 +66,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "product"
   },
   {
     "id": "3",
@@ -111,7 +113,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "product"
   },
   {
     "id": "5",
@@ -141,7 +144,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "creative"
   },
   {
     "id": "6",
@@ -163,7 +167,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "product"
   },
   {
     "id": "7",
@@ -209,7 +214,8 @@
         "notes": "Promoted"
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "product"
   },
   {
     "id": "8",
@@ -247,7 +253,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "agnostic"
   },
   {
     "id": "9",
@@ -277,7 +284,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "creative"
   },
   {
     "id": "10",
@@ -307,7 +315,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "creative"
   },
   {
     "id": "11",
@@ -353,7 +362,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "product"
   },
   {
     "id": "12",
@@ -399,7 +409,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "product"
   },
   {
     "id": "13",
@@ -445,7 +456,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "product"
   },
   {
     "id": "14",
@@ -475,7 +487,8 @@
         "notes": "Promoted"
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "creative"
   },
   {
     "id": "15",
@@ -505,7 +518,8 @@
         "notes": "Promoted"
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "creative"
   },
   {
     "id": "16",
@@ -535,7 +549,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "product"
   },
   {
     "id": "17",
@@ -557,7 +572,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "product"
   },
   {
     "id": "18",
@@ -579,7 +595,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "agnostic"
   },
   {
     "id": "19",
@@ -601,7 +618,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "creative"
   },
   {
     "id": "20",
@@ -647,7 +665,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "product"
   },
   {
     "id": "21",
@@ -677,7 +696,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "product"
   },
   {
     "id": "22",
@@ -723,7 +743,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "product"
   },
   {
     "id": "23",
@@ -753,7 +774,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "creative"
   },
   {
     "id": "24",
@@ -799,7 +821,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "product"
   },
   {
     "id": "25",
@@ -829,7 +852,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "product"
   },
   {
     "id": "26",
@@ -851,7 +875,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "creative"
   },
   {
     "id": "27",
@@ -873,7 +898,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "creative"
   },
   {
     "id": "28",
@@ -903,7 +929,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "creative"
   },
   {
     "id": "29",
@@ -941,7 +968,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "product"
   },
   {
     "id": "30",
@@ -987,7 +1015,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "product"
   },
   {
     "id": "31",
@@ -1017,7 +1046,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "creative"
   },
   {
     "id": "32",
@@ -1047,7 +1077,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "product"
   },
   {
     "id": "33",
@@ -1077,7 +1108,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "creative"
   },
   {
     "id": "34",
@@ -1099,7 +1131,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "product"
   },
   {
     "id": "35",
@@ -1129,7 +1162,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "creative"
   },
   {
     "id": "36",
@@ -1151,7 +1185,8 @@
         "notes": ""
       }
     ],
-    "top_performer": true
+    "top_performer": true,
+    "discipline": "product"
   },
   {
     "id": "37",
@@ -1189,7 +1224,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "product"
   },
   {
     "id": "38",
@@ -1211,7 +1247,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "creative"
   },
   {
     "id": "39",
@@ -1241,7 +1278,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "creative"
   },
   {
     "id": "40",
@@ -1263,7 +1301,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "product"
   },
   {
     "id": "41",
@@ -1293,7 +1332,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "creative"
   },
   {
     "id": "42",
@@ -1323,7 +1363,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "creative"
   },
   {
     "id": "43",
@@ -1353,7 +1394,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "creative"
   },
   {
     "id": "44",
@@ -1383,7 +1425,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "creative"
   },
   {
     "id": "45",
@@ -1405,7 +1448,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "creative"
   },
   {
     "id": "46",
@@ -1427,7 +1471,8 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "creative"
   },
   {
     "id": "47",
@@ -1449,6 +1494,7 @@
         "notes": ""
       }
     ],
-    "top_performer": false
+    "top_performer": false,
+    "discipline": "product"
   }
 ]

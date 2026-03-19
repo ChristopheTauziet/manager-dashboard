@@ -214,77 +214,18 @@ export default function TeamPage({ showSensitive, highlightTopPerformers }: { sh
 
   const COL_COUNT = showSensitive ? 6 : 4
 
+  const disciplineCounts = useMemo(() => {
+    const counts: Record<string, number> = { product: 0, creative: 0 }
+    teamData.forEach(m => {
+      const d = (m as Record<string, unknown>).discipline as string
+      if (d === 'product' || d === 'creative') counts[d]++
+    })
+    return counts
+  }, [])
+
   return (
     <div className="space-y-8">
       <h1 className="text-2xl font-semibold">Team</h1>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-card border border-border rounded-xl p-5">
-          <p className="text-sm text-muted-foreground mb-1">Team Size</p>
-          <p className="text-3xl font-bold">{teamData.length}</p>
-        </div>
-
-        <div className="bg-card border border-border rounded-xl p-5">
-          <p className="text-sm text-muted-foreground mb-2">Gender</p>
-          <div className="h-28">
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie data={genderData} dataKey="value" cx="50%" cy="50%" innerRadius={30} outerRadius={48} paddingAngle={3} strokeWidth={0}>
-                  {genderData.map((_, i) => <Cell key={i} fill={CHART_COLORS[i % CHART_COLORS.length]} />)}
-                </Pie>
-                <Tooltip contentStyle={{ backgroundColor: '#18181b', border: '1px solid #27272a', borderRadius: '8px', fontSize: '12px' }} itemStyle={{ color: '#fafafa' }} />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
-          <div className="flex gap-3 justify-center mt-1">
-            {genderData.map((d, i) => (
-              <span key={d.name} className="flex items-center gap-1 text-xs text-muted-foreground">
-                <span className="w-2 h-2 rounded-full" style={{ backgroundColor: CHART_COLORS[i % CHART_COLORS.length] }} />
-                {d.name} ({d.value})
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="bg-card border border-border rounded-xl p-5">
-          <p className="text-sm text-muted-foreground mb-2">Location</p>
-          <div className="h-28">
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie data={locationData} dataKey="value" cx="50%" cy="50%" innerRadius={30} outerRadius={48} paddingAngle={2} strokeWidth={0}>
-                  {locationData.map((_, i) => <Cell key={i} fill={CHART_COLORS[i % CHART_COLORS.length]} />)}
-                </Pie>
-                <Tooltip contentStyle={{ backgroundColor: '#18181b', border: '1px solid #27272a', borderRadius: '8px', fontSize: '12px' }} itemStyle={{ color: '#fafafa' }} />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
-          <div className="flex flex-wrap gap-x-3 gap-y-1 justify-center mt-1">
-            {locationData.slice(0, 5).map((d, i) => (
-              <span key={d.name} className="flex items-center gap-1 text-xs text-muted-foreground">
-                <span className="w-2 h-2 rounded-full" style={{ backgroundColor: CHART_COLORS[i % CHART_COLORS.length] }} />
-                {d.name} ({d.value})
-              </span>
-            ))}
-            {locationData.length > 5 && (
-              <span className="text-xs text-muted-foreground">+{locationData.length - 5} more</span>
-            )}
-          </div>
-        </div>
-
-        <div className="bg-card border border-border rounded-xl p-5">
-          <p className="text-sm text-muted-foreground mb-2">Levels</p>
-          <div className="h-32">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={levelData} margin={{ top: 18, right: 4, bottom: 4, left: 4 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#27272a" />
-                <XAxis dataKey="name" tick={{ fill: '#a1a1aa', fontSize: 10 }} axisLine={false} tickLine={false} />
-                <YAxis allowDecimals={false} tick={{ fill: '#a1a1aa', fontSize: 11 }} axisLine={false} tickLine={false} width={20} />
-                <Bar dataKey="value" fill="#3b82f6" radius={[4, 4, 0, 0]} label={{ position: 'top', fill: '#a1a1aa', fontSize: 11 }} />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-      </div>
 
       <div className="flex items-center gap-3 flex-wrap">
         <span className="text-xs text-muted-foreground uppercase tracking-wider">Filter</span>
@@ -437,6 +378,84 @@ export default function TeamPage({ showSensitive, highlightTopPerformers }: { sh
             })}
           </tbody>
         </table>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="bg-card border border-border rounded-xl p-5">
+          <p className="text-sm text-muted-foreground mb-1">Team Size</p>
+          <p className="text-3xl font-bold">{teamData.length}</p>
+          <div className="flex gap-4 mt-3">
+            <div>
+              <p className="text-[11px] text-muted-foreground">Product Design</p>
+              <p className="text-lg font-semibold">{disciplineCounts.product}</p>
+            </div>
+            <div>
+              <p className="text-[11px] text-muted-foreground">Creative</p>
+              <p className="text-lg font-semibold">{disciplineCounts.creative}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-card border border-border rounded-xl p-5">
+          <p className="text-sm text-muted-foreground mb-2">Gender</p>
+          <div className="h-28">
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie data={genderData} dataKey="value" cx="50%" cy="50%" innerRadius={30} outerRadius={48} paddingAngle={3} strokeWidth={0}>
+                  {genderData.map((_, i) => <Cell key={i} fill={CHART_COLORS[i % CHART_COLORS.length]} />)}
+                </Pie>
+                <Tooltip contentStyle={{ backgroundColor: '#18181b', border: '1px solid #27272a', borderRadius: '8px', fontSize: '12px' }} itemStyle={{ color: '#fafafa' }} />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+          <div className="flex gap-3 justify-center mt-1">
+            {genderData.map((d, i) => (
+              <span key={d.name} className="flex items-center gap-1 text-xs text-muted-foreground">
+                <span className="w-2 h-2 rounded-full" style={{ backgroundColor: CHART_COLORS[i % CHART_COLORS.length] }} />
+                {d.name} ({d.value})
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-card border border-border rounded-xl p-5">
+          <p className="text-sm text-muted-foreground mb-2">Location</p>
+          <div className="h-28">
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie data={locationData} dataKey="value" cx="50%" cy="50%" innerRadius={30} outerRadius={48} paddingAngle={2} strokeWidth={0}>
+                  {locationData.map((_, i) => <Cell key={i} fill={CHART_COLORS[i % CHART_COLORS.length]} />)}
+                </Pie>
+                <Tooltip contentStyle={{ backgroundColor: '#18181b', border: '1px solid #27272a', borderRadius: '8px', fontSize: '12px' }} itemStyle={{ color: '#fafafa' }} />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+          <div className="flex flex-wrap gap-x-3 gap-y-1 justify-center mt-1">
+            {locationData.slice(0, 5).map((d, i) => (
+              <span key={d.name} className="flex items-center gap-1 text-xs text-muted-foreground">
+                <span className="w-2 h-2 rounded-full" style={{ backgroundColor: CHART_COLORS[i % CHART_COLORS.length] }} />
+                {d.name} ({d.value})
+              </span>
+            ))}
+            {locationData.length > 5 && (
+              <span className="text-xs text-muted-foreground">+{locationData.length - 5} more</span>
+            )}
+          </div>
+        </div>
+
+        <div className="bg-card border border-border rounded-xl p-5">
+          <p className="text-sm text-muted-foreground mb-2">Levels</p>
+          <div className="h-32">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={levelData} margin={{ top: 18, right: 4, bottom: 4, left: 4 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#27272a" />
+                <XAxis dataKey="name" tick={{ fill: '#a1a1aa', fontSize: 10 }} axisLine={false} tickLine={false} />
+                <YAxis allowDecimals={false} tick={{ fill: '#a1a1aa', fontSize: 11 }} axisLine={false} tickLine={false} width={20} />
+                <Bar dataKey="value" fill="#3b82f6" radius={[4, 4, 0, 0]} label={{ position: 'top', fill: '#a1a1aa', fontSize: 11 }} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
       </div>
 
       {/* Rating Distribution */}
