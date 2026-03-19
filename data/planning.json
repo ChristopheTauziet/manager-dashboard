@@ -1,0 +1,141 @@
+{
+  "trips": [
+    {
+      "id": "france-2026",
+      "name": "France 🇫🇷",
+      "startDate": "2026-06-04",
+      "endDate": "2026-06-21",
+      "itinerary": [
+        {
+          "date": "2026-06-04", "day": "Thu", "calendarLabel": "✈ SF → Paris",
+          "transport": "SF → Orly", "stay": "Flight",
+          "reservations": [
+            { "type": "flight", "label": "Booking: G5X3QG" }
+          ]
+        },
+        {
+          "date": "2026-06-05", "day": "Fri", "calendarLabel": "Paris",
+          "transport": null, "stay": "Paris",
+          "reservations": [
+            { "type": "lodging", "label": "Airbnb — Paris", "url": "https://www.airbnb.com/l/t2DLgoq5?s=67&unique_share_id=a474bc51-f8f8-4109-8e5e-5d12a636c078" }
+          ]
+        },
+        {
+          "date": "2026-06-06", "day": "Sat", "calendarLabel": "Paris",
+          "transport": null, "stay": "Paris",
+          "reservations": []
+        },
+        {
+          "date": "2026-06-07", "day": "Sun", "calendarLabel": "Paris",
+          "transport": null, "stay": "Paris",
+          "reservations": []
+        },
+        {
+          "date": "2026-06-08", "day": "Mon", "calendarLabel": "Paris",
+          "transport": null, "stay": "Paris",
+          "reservations": [
+            { "type": "restaurant", "label": "Alléno Paris — 7:15 PM, dinner for 2" }
+          ]
+        },
+        {
+          "date": "2026-06-09", "day": "Tue", "calendarLabel": "Lescar",
+          "transport": "Paris → Pau (AM)", "stay": "Lescar",
+          "reservations": [
+            { "type": "flight", "label": "AirFrance ZS8PAT" },
+            { "type": "car", "label": "Car rental (Booking Enterprise)" },
+            { "type": "lodging", "label": "Airbnb — Lescar", "url": "https://www.airbnb.com/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HM9H2WDDHN" }
+          ]
+        },
+        {
+          "date": "2026-06-10", "day": "Wed", "calendarLabel": "Lescar",
+          "transport": null, "stay": "Lescar",
+          "reservations": []
+        },
+        {
+          "date": "2026-06-11", "day": "Thu", "calendarLabel": "Lescar",
+          "transport": null, "stay": "Lescar",
+          "reservations": []
+        },
+        {
+          "date": "2026-06-12", "day": "Fri", "calendarLabel": "Toulouse",
+          "transport": "Pau → Toulouse (PM)", "stay": "Toulouse",
+          "reservations": [
+            { "type": "lodging", "label": "Airbnb — Toulouse", "url": "https://www.airbnb.com/trips/shared/4d8738c3-4320-4e3c-b333-f6f59c722047?confCode=HM8M8Z8AAW&principal_token=51e4be3e-4423-4b3b-8614-0022cebea595&s=67&unique_share_id=82922389-8e87-480b-9c1c-3b2b97e19381" }
+          ]
+        },
+        {
+          "date": "2026-06-13", "day": "Sat", "calendarLabel": "Toulouse",
+          "transport": null, "stay": "Toulouse",
+          "reservations": []
+        },
+        {
+          "date": "2026-06-14", "day": "Sun", "calendarLabel": "Toulouse",
+          "transport": null, "stay": "Toulouse",
+          "reservations": []
+        },
+        {
+          "date": "2026-06-15", "day": "Mon", "calendarLabel": "Bordeaux",
+          "transport": "Toulouse → Bordeaux (AM)", "stay": "Bordeaux",
+          "reservations": [
+            { "type": "lodging", "label": "Airbnb — Bordeaux", "url": "https://www.airbnb.com/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMHBZ5EJ39" }
+          ]
+        },
+        {
+          "date": "2026-06-16", "day": "Tue", "calendarLabel": "Bordeaux",
+          "transport": null, "stay": "Bordeaux",
+          "reservations": []
+        },
+        {
+          "date": "2026-06-17", "day": "Wed", "calendarLabel": "Bordeaux",
+          "transport": null, "stay": "Bordeaux",
+          "reservations": [
+            { "type": "restaurant", "label": "Maison Nouvelle (Etchebest) — 7 PM, dinner for 2" }
+          ]
+        },
+        {
+          "date": "2026-06-18", "day": "Thu", "calendarLabel": "Asson",
+          "transport": "Bordeaux → Pau (AM)", "stay": "Asson",
+          "reservations": []
+        },
+        {
+          "date": "2026-06-19", "day": "Fri", "calendarLabel": "Asson",
+          "transport": null, "stay": "Asson",
+          "reservations": []
+        },
+        {
+          "date": "2026-06-20", "day": "Sat", "calendarLabel": "Asson",
+          "transport": null, "stay": "Asson",
+          "reservations": []
+        },
+        {
+          "date": "2026-06-21", "day": "Sun", "calendarLabel": "✈ Paris → SF",
+          "transport": "Paris → SF", "stay": "Flight",
+          "reservations": [
+            { "type": "flight", "label": "AirFrance ZS8PAT — 6:30 AM" },
+            { "type": "car", "label": "Car rental return" }
+          ]
+        }
+      ]
+    }
+  ],
+  "schoolEvents": [
+    { "date": "2026-03-27", "label": "No school" }
+  ],
+  "otherEvents": [
+    { "date": "2026-04-03", "label": "Tahoe", "endDate": "2026-04-06", "category": "trip" },
+    { "date": "2026-04-07", "label": "UCL Quarter-final", "category": "sports" },
+    { "date": "2026-04-08", "label": "UCL Quarter-final", "category": "sports" },
+    { "date": "2026-04-14", "label": "UCL Quarter-final", "category": "sports" },
+    { "date": "2026-04-15", "label": "Sequoia Hospital — 8:45 AM", "category": "medical" },
+    { "date": "2026-04-15", "label": "UCL Quarter-final", "category": "sports" },
+    { "date": "2026-04-27", "label": "UCL Semi-final", "category": "sports" },
+    { "date": "2026-04-28", "label": "UCL Semi-final", "category": "sports" },
+    { "date": "2026-05-05", "label": "UCL Semi-final", "category": "sports" },
+    { "date": "2026-05-06", "label": "UCL Semi-final", "category": "sports" },
+    { "date": "2026-05-25", "label": "Memorial Day", "category": "holiday" },
+    { "date": "2026-05-30", "label": "UCL Final", "category": "sports" },
+    { "date": "2026-06-23", "label": "Config", "endDate": "2026-06-25", "category": "trip" },
+    { "date": "2026-06-29", "label": "Charlie — Real Madrid Camp", "endDate": "2026-07-03", "category": "camp" },
+    { "date": "2026-07-20", "label": "Charlie — PSG Camp", "endDate": "2026-07-24", "category": "camp" }
+  ]
+}

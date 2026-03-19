@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Gift, Cake, Heart, Calendar, ArrowRight, TreePine, DollarSign, Briefcase, Receipt } from 'lucide-react'
+import { Gift, Cake, Heart, Calendar, ArrowRight, TreePine, DollarSign, Briefcase, Receipt, CalendarDays, Plane, GraduationCap, Trophy, Cross, MapPin } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import giftsData from '../../../data/gifts.json'
+import { getAllEvents } from '../eventUtils'
+import planningData from '../../../data/planning.json'
 import assetsData from '../../../data/assets.json'
 import cachedStockPrices from '../../../data/stock-prices.json'
 import compData from '../../../data/compensation.json'
@@ -18,85 +20,10 @@ const fmt = (n: number) => n.toLocaleString('en-US', { style: 'currency', curren
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
-interface EventEntry {
-  name: string
-  occasion: string
-  month: number
-  day: number
-}
-
-const jsonEvents: EventEntry[] = giftsData.events as EventEntry[]
-
-function nthSundayOf(year: number, month: number, n: number) {
-  const first = new Date(year, month, 1)
-  const firstSunday = (7 - first.getDay()) % 7 + 1
-  return firstSunday + (n - 1) * 7
-}
-
-function lastSundayOf(year: number, month: number) {
-  const last = new Date(year, month + 1, 0)
-  return last.getDate() - last.getDay()
-}
-
-function getEasterSunday(year: number) {
-  const a = year % 19, b = Math.floor(year / 100), c = year % 100
-  const d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25)
-  const g = Math.floor((b - f + 1) / 3), h = (19 * a + b - d - g + 15) % 30
-  const i = Math.floor(c / 4), k = c % 4
-  const l = (32 + 2 * e + 2 * i - h - k) % 7
-  const m = Math.floor((a + 11 * h + 22 * l) / 451)
-  const month = Math.floor((h + l - 7 * m + 114) / 31) - 1
-  const day = ((h + l - 7 * m + 114) % 31) + 1
-  return new Date(year, month, day)
-}
-
-function getUSMothersDay(year: number) {
-  return { month: 5, day: nthSundayOf(year, 4, 2) }
-}
-
-function getFrenchMothersDay(year: number) {
-  const lastSunMay = lastSundayOf(year, 4)
-  const pentecost = new Date(getEasterSunday(year).getTime() + 49 * 86400000)
-  if (pentecost.getMonth() === 4 && pentecost.getDate() === lastSunMay) {
-    return { month: 6, day: nthSundayOf(year, 5, 1) }
-  }
-  return { month: 5, day: lastSunMay }
-}
-
-function getFathersDay(year: number) {
-  return { month: 6, day: nthSundayOf(year, 5, 3) }
-}
-
-function getGrandmasDay(year: number) {
-  return { month: 3, day: nthSundayOf(year, 2, 1) }
-}
-
-function getGrandpasDay(year: number) {
-  return { month: 10, day: nthSundayOf(year, 9, 1) }
-}
-
-function getAllEvents(): EventEntry[] {
-  const year = new Date().getFullYear()
-  const usMom = getUSMothersDay(year)
-  const frMom = getFrenchMothersDay(year)
-  const dad = getFathersDay(year)
-  const grandma = getGrandmasDay(year)
-  const grandpa = getGrandpasDay(year)
-
-  const dynamicEvents: EventEntry[] = [
-    { name: "Maman & Brigitte", occasion: "Fête des grands-mères", ...grandma },
-    { name: "Claire", occasion: "Mother's Day", ...usMom },
-    { name: "Maman", occasion: "Fête des Mères", ...frMom },
-    { name: "Papa", occasion: "Fête des Pères", ...dad },
-    { name: "Papa & Domi", occasion: "Fête des grands-pères", ...grandpa },
-  ]
-  return [...jsonEvents, ...dynamicEvents]
-}
-
 function getUpcomingEvents() {
   const today = new Date()
   const maxDays = 61
-  const events = getAllEvents()
+  const events = getAllEvents(today.getFullYear())
 
   const withDaysUntil = events.map(ev => {
     const thisYear = today.getFullYear()
@@ -368,6 +295,126 @@ function TaxesWidget() {
   )
 }
 
+interface PlanningEvent {
+  date: Date
+  label: string
+  category: string
+  daysUntil: number
+}
+
+function getUpcomingPlanningEvents(): PlanningEvent[] {
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  const maxDays = 61
+  const seen = new Set<string>()
+  const results: PlanningEvent[] = []
+
+  for (const trip of planningData.trips) {
+    const start = new Date(trip.startDate + 'T12:00:00')
+    const diff = Math.ceil((start.getTime() - today.getTime()) / 86400000)
+    if (diff >= 0 && diff <= maxDays) {
+      results.push({ date: start, label: trip.name, category: 'trip', daysUntil: diff })
+    }
+  }
+
+  for (const ev of planningData.schoolEvents) {
+    const d = new Date(ev.date + 'T12:00:00')
+    const diff = Math.ceil((d.getTime() - today.getTime()) / 86400000)
+    if (diff >= 0 && diff <= maxDays) {
+      results.push({ date: d, label: ev.label, category: 'school', daysUntil: diff })
+    }
+  }
+
+  for (const ev of planningData.otherEvents as { date: string; label: string; endDate?: string; category?: string }[]) {
+    const key = ev.label
+    if (seen.has(key)) continue
+    seen.add(key)
+    const d = new Date(ev.date + 'T12:00:00')
+    const diff = Math.ceil((d.getTime() - today.getTime()) / 86400000)
+    if (diff >= 0 && diff <= maxDays) {
+      const endStr = ev.endDate ? ` (${new Date(ev.date + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}–${new Date(ev.endDate + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' })})` : ''
+      results.push({ date: d, label: ev.label + endStr, category: ev.category || 'other', daysUntil: diff })
+    }
+  }
+
+  return results.sort((a, b) => a.daysUntil - b.daysUntil)
+}
+
+const PLANNING_ICON: Record<string, typeof Calendar> = {
+  trip: Plane,
+  school: GraduationCap,
+  sports: Trophy,
+  medical: Cross,
+  holiday: Calendar,
+  camp: MapPin,
+}
+
+const PLANNING_COLORS: Record<string, string> = {
+  trip: 'bg-blue-500/15 text-blue-400',
+  school: 'bg-amber-500/15 text-amber-400',
+  sports: 'bg-emerald-500/15 text-emerald-400',
+  medical: 'bg-rose-500/15 text-rose-400',
+  holiday: 'bg-purple-500/15 text-purple-400',
+  camp: 'bg-cyan-500/15 text-cyan-400',
+}
+
+function PlanningWidget() {
+  const navigate = useNavigate()
+  const upcoming = getUpcomingPlanningEvents()
+
+  return (
+    <div className="bg-card border border-border rounded-xl overflow-hidden">
+      <div className="px-5 py-4 border-b border-border flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <CalendarDays className="h-4 w-4 text-primary" />
+          <h2 className="text-sm font-semibold">Coming Up</h2>
+        </div>
+        <button
+          onClick={() => navigate('/personal/planning')}
+          className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
+        >
+          Planning <ArrowRight className="h-3 w-3" />
+        </button>
+      </div>
+      <div className="divide-y divide-border/50">
+        {upcoming.length === 0 && (
+          <div className="px-5 py-6 text-center text-sm text-muted-foreground">
+            Nothing planned in the next 2 months
+          </div>
+        )}
+        {upcoming.map((ev, i) => {
+          const Icon = PLANNING_ICON[ev.category] || Calendar
+          const colorCls = PLANNING_COLORS[ev.category] || 'bg-muted text-muted-foreground'
+          const isUrgent = ev.daysUntil <= 7
+          const isSoon = ev.daysUntil <= 21
+
+          return (
+            <div key={i} className="px-5 py-3 flex items-center gap-4">
+              <div className={cn('w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0', colorCls)}>
+                <Icon className="h-4 w-4" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <span className="text-sm font-medium truncate block">{ev.label}</span>
+                <span className="text-[11px] text-muted-foreground">
+                  {ev.date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}
+                </span>
+              </div>
+              <div className="text-right flex-shrink-0">
+                <span className={cn(
+                  'text-xs font-medium',
+                  isUrgent ? 'text-destructive' : isSoon ? 'text-warning' : 'text-muted-foreground'
+                )}>
+                  {ev.daysUntil === 0 ? 'Today' : ev.daysUntil === 1 ? 'Tomorrow' : `${ev.daysUntil}d`}
+                </span>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
 export default function OverviewPage() {
   return (
     <div className="space-y-8">
@@ -376,6 +423,7 @@ export default function OverviewPage() {
         <NetWorthWidget />
         <CompensationWidget />
         <TaxesWidget />
+        <PlanningWidget />
         <UpcomingEventsWidget />
       </div>
     </div>
