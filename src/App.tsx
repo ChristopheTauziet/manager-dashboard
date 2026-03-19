@@ -77,8 +77,33 @@ export default function App() {
 
       {/* Mobile top bar */}
       <nav className="md:hidden border-b border-border bg-card sticky top-0 z-50">
-        <div className="px-4 flex items-center justify-center h-12">
+        <div className="px-4 flex items-center justify-between h-12">
+          <div className="w-16" />
           <DashboardToggle />
+          <div className="flex items-center gap-1 w-16 justify-end">
+            <button
+              onClick={() => setShowSensitive(s => !s)}
+              className={cn(
+                'p-1.5 rounded-md transition-colors',
+                showSensitive
+                  ? 'bg-accent text-accent-foreground'
+                  : 'text-muted-foreground hover:text-foreground'
+              )}
+            >
+              {showSensitive ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
+            </button>
+            <button
+              onClick={() => setHighlightTopPerformers(h => !h)}
+              className={cn(
+                'p-1.5 rounded-md transition-colors',
+                highlightTopPerformers
+                  ? 'bg-yellow-500/20 text-yellow-300'
+                  : 'text-muted-foreground hover:text-foreground'
+              )}
+            >
+              <Star className={cn('h-4 w-4', highlightTopPerformers && 'fill-yellow-400')} />
+            </button>
+          </div>
         </div>
       </nav>
 
