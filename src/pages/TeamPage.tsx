@@ -467,7 +467,7 @@ export default function TeamPage({ showSensitive, highlightTopPerformers }: { sh
             <div key={year} className="flex flex-col items-center">
               <h3 className="text-sm font-semibold mb-1">{year}</h3>
               <p className="text-xs text-muted-foreground mb-3">{total} rated</p>
-              <div className="h-48 w-full">
+              <div className="h-56 w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
                     <Pie
@@ -476,15 +476,15 @@ export default function TeamPage({ showSensitive, highlightTopPerformers }: { sh
                       nameKey="name"
                       cx="50%"
                       cy="50%"
-                      innerRadius={40}
-                      outerRadius={70}
+                      innerRadius={36}
+                      outerRadius={62}
                       paddingAngle={2}
                       label={((props: Record<string, unknown>) => {
                         const pct = props.pct as number
                         const count = props.count as number
                         return `${pct}% (${count})`
                       }) as never}
-                      labelLine={false}
+                      labelLine={true}
                     >
                       {slices.map(s => (
                         <Cell key={s.name} fill={PERF_COLORS[s.name] || '#a1a1aa'} />
