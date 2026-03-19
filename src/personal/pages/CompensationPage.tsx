@@ -1,7 +1,6 @@
 import { useState, useMemo } from 'react'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, Cell } from 'recharts'
 import { formatCurrency } from '@/lib/utils'
-import { cn } from '@/lib/utils'
 import compData from '../../../data/compensation.json'
 
 const { currentSharePrice, baseSalary, grants, compHistory } = compData
@@ -54,25 +53,22 @@ function SharePriceScenarios() {
 
   return (
     <div className="bg-card border border-border rounded-xl overflow-hidden">
-      <div className="px-6 py-4 border-b border-border flex items-center justify-between">
-        <div>
+      <div className="px-4 md:px-6 py-4 border-b border-border flex items-center justify-between gap-3">
+        <div className="min-w-0">
           <h2 className="text-lg font-semibold">Current Compensation</h2>
           <p className="text-xs text-muted-foreground mt-0.5">
             {totalSharesThisYear.toLocaleString()} shares vesting in {CURRENT_YEAR} &middot; Base {formatCurrency(baseSalary)}
           </p>
         </div>
-        <div className="flex items-center gap-2">
-          <span className="text-xs text-muted-foreground">Custom price</span>
-          <div className="relative">
-            <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-xs text-muted-foreground">$</span>
-            <input
-              type="number"
-              value={customPrice}
-              onChange={e => setCustomPrice(e.target.value)}
-              placeholder={String(currentSharePrice)}
-              className="w-24 bg-background border border-border rounded-md pl-6 pr-2 py-1.5 text-xs tabular-nums focus:outline-none focus:ring-1 focus:ring-primary"
-            />
-          </div>
+        <div className="relative flex-shrink-0">
+          <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-xs text-muted-foreground">$</span>
+          <input
+            type="number"
+            value={customPrice}
+            onChange={e => setCustomPrice(e.target.value)}
+            placeholder={String(currentSharePrice)}
+            className="w-20 md:w-24 bg-background border border-border rounded-md pl-6 pr-2 py-1.5 text-xs tabular-nums focus:outline-none focus:ring-1 focus:ring-primary"
+          />
         </div>
       </div>
       <div className="overflow-x-auto">
@@ -224,50 +220,21 @@ function EquityVesting() {
 }
 
 function CompHistoryChart() {
-  const [selectedCompany, setSelectedCompany] = useState<string | null>(null)
-
   const data = useMemo(() => {
-    return compHistory
-      .filter(c => !selectedCompany || c.company === selectedCompany)
-      .map(c => ({
-        year: String(c.year),
-        company: c.company,
-        base: c.base,
-        bonus: c.bonus,
-        equity: c.equity,
-        total: c.base + c.bonus + c.equity,
-      }))
-  }, [selectedCompany])
-
-  const companies = [...new Set(compHistory.map(c => c.company))]
+    return compHistory.map(c => ({
+      year: String(c.year),
+      company: c.company,
+      base: c.base,
+      bonus: c.bonus,
+      equity: c.equity,
+      total: c.base + c.bonus + c.equity,
+    }))
+  }, [])
 
   return (
     <div className="bg-card border border-border rounded-xl overflow-hidden">
-      <div className="px-6 py-4 border-b border-border flex items-center justify-between">
+      <div className="px-6 py-4 border-b border-border">
         <h2 className="text-lg font-semibold">Compensation History</h2>
-        <div className="flex gap-1">
-          <button
-            onClick={() => setSelectedCompany(null)}
-            className={cn(
-              'px-2.5 py-1 rounded text-xs font-medium transition-colors',
-              !selectedCompany ? 'bg-accent text-accent-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
-            )}
-          >
-            All
-          </button>
-          {companies.map(c => (
-            <button
-              key={c}
-              onClick={() => setSelectedCompany(selectedCompany === c ? null : c)}
-              className={cn(
-                'px-2.5 py-1 rounded text-xs font-medium transition-colors',
-                selectedCompany === c ? 'bg-accent text-accent-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
-              )}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
       </div>
       <div className="px-6 py-4">
         <div className="h-80">
