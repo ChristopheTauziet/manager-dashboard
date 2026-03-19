@@ -44,8 +44,8 @@ export default function ArchivePage({ showSensitive }: { showSensitive: boolean 
               <th className="text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">Name</th>
               <th className={cn('text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider', showSensitive && 'hidden md:table-cell')}>Level</th>
               <th className={cn('text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider hidden sm:table-cell', showSensitive && 'hidden md:table-cell')}>Location</th>
-              {showSensitive && <th className="text-right px-5 py-3"><span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Last Base</span></th>}
-              {showSensitive && <th className="text-right px-5 py-3"><span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Last Total Comp</span></th>}
+              {showSensitive && <th className="text-right px-5 py-3"><span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Base</span></th>}
+              {showSensitive && <th className="text-right px-5 py-3"><span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Total Comp</span></th>}
             </tr>
           </thead>
           <tbody>
