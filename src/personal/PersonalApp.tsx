@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom'
-import { LayoutDashboard, DollarSign, Briefcase, Receipt, Gift, Watch, Home, ArrowLeft, CalendarDays } from 'lucide-react'
+import { LayoutDashboard, DollarSign, Briefcase, Receipt, Gift, Watch, Home, CalendarDays } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import DashboardToggle from '../components/DashboardToggle'
 import OverviewPage from './pages/OverviewPage'
 import AssetsPage from './pages/AssetsPage'
 import CompensationPage from './pages/CompensationPage'
@@ -37,14 +38,7 @@ export default function PersonalApp() {
       {/* Desktop top nav */}
       <nav className="hidden md:block border-b border-border bg-card sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 flex items-center h-14 gap-8">
-          <button
-            onClick={() => navigate('/')}
-            className="text-muted-foreground hover:text-foreground transition-colors"
-            title="Back to Manager Dashboard"
-          >
-            <ArrowLeft className="h-4 w-4" />
-          </button>
-          <span className="text-lg font-semibold tracking-tight">Personal</span>
+          <DashboardToggle />
           <div className="flex gap-1">
             {tabs.map(({ id, label, icon: Icon, path }) => (
               <button
@@ -67,14 +61,8 @@ export default function PersonalApp() {
 
       {/* Mobile top bar */}
       <nav className="md:hidden border-b border-border bg-card sticky top-0 z-50">
-        <div className="px-4 flex items-center h-12 gap-3">
-          <button
-            onClick={() => navigate('/')}
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" />
-          </button>
-          <span className="text-base font-semibold tracking-tight">Personal</span>
+        <div className="px-4 flex items-center justify-center h-12">
+          <DashboardToggle />
         </div>
       </nav>
 

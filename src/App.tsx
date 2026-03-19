@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Users, MessageSquare, UserSearch, Archive, Eye, EyeOff, DollarSign, User, Star } from 'lucide-react'
+import { Users, MessageSquare, UserSearch, Archive, Eye, EyeOff, DollarSign, Star } from 'lucide-react'
+import DashboardToggle from './components/DashboardToggle'
 import { cn } from '@/lib/utils'
 import TeamPage from './pages/TeamPage'
 import OneOnOnesPage from './pages/OneOnOnesPage'
@@ -19,7 +19,6 @@ const tabs = [
 type TabId = (typeof tabs)[number]['id']
 
 export default function App() {
-  const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState<TabId>('team')
   const [showSensitive, setShowSensitive] = useState(false)
   const [highlightTopPerformers, setHighlightTopPerformers] = useState(false)
@@ -28,7 +27,7 @@ export default function App() {
     <div className="min-h-screen bg-background text-foreground">
       <nav className="border-b border-border bg-card sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 flex items-center h-14 gap-8">
-          <span className="text-lg font-semibold tracking-tight">Dashboard</span>
+          <DashboardToggle />
           <div className="flex gap-1">
             {tabs.map(({ id, label, icon: Icon }) => (
               <button
@@ -70,13 +69,6 @@ export default function App() {
               title={highlightTopPerformers ? 'Hide top performer highlights' : 'Highlight top performers'}
             >
               <Star className={cn('h-4 w-4', highlightTopPerformers && 'fill-yellow-400')} />
-            </button>
-            <button
-              onClick={() => navigate('/personal')}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-colors text-muted-foreground hover:text-foreground hover:bg-accent/50"
-              title="Personal Dashboard"
-            >
-              <User className="h-4 w-4" />
             </button>
           </div>
         </div>
