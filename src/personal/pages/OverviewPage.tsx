@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Gift, Cake, Heart, Calendar, ArrowRight, TreePine, DollarSign, Briefcase, Receipt, CalendarDays, Plane, GraduationCap, Trophy, Cross, MapPin } from 'lucide-react'
+import { Cake, Heart, Calendar, ArrowRight, TreePine, DollarSign, Briefcase, Receipt, CalendarDays, Plane, GraduationCap, Trophy, Cross, MapPin } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import giftsData from '../../../data/gifts.json'
 import { getAllEvents } from '../eventUtils'
@@ -18,115 +18,12 @@ interface StockHolding {
 
 const fmt = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
 
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-
-function getUpcomingEvents() {
-  const today = new Date()
-  const maxDays = 61
-  const events = getAllEvents(today.getFullYear())
-
-  const withDaysUntil = events.map(ev => {
-    const thisYear = today.getFullYear()
-    let eventDate = new Date(thisYear, ev.month - 1, ev.day)
-    if (eventDate < today) {
-      eventDate = new Date(thisYear + 1, ev.month - 1, ev.day)
-    }
-    const diff = Math.ceil((eventDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24))
-    return { ...ev, daysUntil: diff, eventDate }
-  })
-
-  return withDaysUntil
-    .filter(ev => ev.daysUntil <= maxDays)
-    .sort((a, b) => a.daysUntil - b.daysUntil)
-}
-
 function getIdeasForPerson(name: string) {
   const person = giftsData.people.find(p => p.name === name)
   return person?.ideas || []
 }
 
 const HEART_OCCASIONS = ["Anniversary", "Valentine's Day", "Mother's Day", "Father's Day", "Fête des Mères", "Fête des Pères", "Fête des grands-mères", "Fête des grands-pères"]
-
-function getIcon(occasion: string) {
-  if (occasion === 'Birthday') return Cake
-  if (HEART_OCCASIONS.includes(occasion)) return Heart
-  if (occasion === 'Christmas') return TreePine
-  return Calendar
-}
-
-function UpcomingEventsWidget() {
-  const navigate = useNavigate()
-  const upcoming = getUpcomingEvents()
-
-  return (
-    <div className="bg-card border border-border rounded-xl overflow-hidden">
-      <div className="px-5 py-4 border-b border-border flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Gift className="h-4 w-4 text-primary" />
-          <h2 className="text-sm font-semibold">Upcoming Events</h2>
-        </div>
-        <button
-          onClick={() => navigate('/personal/gifts')}
-          className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
-        >
-          Gift Tracker <ArrowRight className="h-3 w-3" />
-        </button>
-      </div>
-      <div className="divide-y divide-border/50">
-        {upcoming.length === 0 && (
-          <div className="px-5 py-6 text-center text-sm text-muted-foreground">
-            No events in the next 2 months
-          </div>
-        )}
-        {upcoming.map((ev) => {
-          const ideas = ev.name.includes('&') ? [] : getIdeasForPerson(ev.name)
-          const Icon = getIcon(ev.occasion)
-          const isUrgent = ev.daysUntil <= 14
-          const isSoon = ev.daysUntil <= 30
-
-          return (
-            <div key={`${ev.name}-${ev.occasion}`} className="px-5 py-3 flex items-center gap-4">
-              <div className={cn(
-                'w-10 h-10 rounded-lg flex flex-col items-center justify-center text-xs flex-shrink-0',
-                isUrgent ? 'bg-destructive/15 text-destructive' : isSoon ? 'bg-warning/15 text-warning' : 'bg-muted text-muted-foreground'
-              )}>
-                <span className="font-semibold leading-none">{ev.day}</span>
-                <span className="text-[10px] leading-none mt-0.5">{MONTHS[ev.month - 1]}</span>
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-1.5">
-                  <Icon className="h-3.5 w-3.5 text-muted-foreground flex-shrink-0" />
-                  <span className="text-sm font-medium truncate">{ev.name}</span>
-                  <span className="text-xs text-muted-foreground">{ev.occasion}</span>
-                </div>
-                {ideas.length > 0 && (
-                  <div className="flex gap-1 mt-1 overflow-hidden">
-                    {ideas.slice(0, 2).map((idea, j) => (
-                      <span key={j} className="text-[10px] bg-warning/10 text-warning border border-warning/20 px-1.5 py-0.5 rounded truncate">
-                        {idea}
-                      </span>
-                    ))}
-                    {ideas.length > 2 && (
-                      <span className="text-[10px] text-muted-foreground">+{ideas.length - 2}</span>
-                    )}
-                  </div>
-                )}
-              </div>
-              <div className="text-right flex-shrink-0">
-                <span className={cn(
-                  'text-xs font-medium',
-                  isUrgent ? 'text-destructive' : isSoon ? 'text-warning' : 'text-muted-foreground'
-                )}>
-                  {ev.daysUntil === 0 ? 'Today' : ev.daysUntil === 1 ? 'Tomorrow' : `${ev.daysUntil}d`}
-                </span>
-              </div>
-            </div>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
 
 function NetWorthWidget() {
   const navigate = useNavigate()
@@ -295,25 +192,82 @@ function TaxesWidget() {
   )
 }
 
-interface PlanningEvent {
+interface ComingUpItem {
   date: Date
   label: string
-  category: string
+  subtitle?: string
+  icon: typeof Calendar
+  colorCls: string
   daysUntil: number
+  ideas?: string[]
 }
 
-function getUpcomingPlanningEvents(): PlanningEvent[] {
+const CATEGORY_ICON: Record<string, typeof Calendar> = {
+  trip: Plane,
+  school: GraduationCap,
+  sports: Trophy,
+  medical: Cross,
+  holiday: Calendar,
+  camp: MapPin,
+  birthday: Cake,
+  anniversary: Heart,
+}
+
+const CATEGORY_COLORS: Record<string, string> = {
+  trip: 'bg-blue-500/15 text-blue-400',
+  school: 'bg-amber-500/15 text-amber-400',
+  sports: 'bg-emerald-500/15 text-emerald-400',
+  medical: 'bg-rose-500/15 text-rose-400',
+  holiday: 'bg-purple-500/15 text-purple-400',
+  camp: 'bg-cyan-500/15 text-cyan-400',
+  birthday: 'bg-pink-500/15 text-pink-400',
+  anniversary: 'bg-red-500/15 text-red-400',
+}
+
+function getComingUp(): ComingUpItem[] {
   const today = new Date()
   today.setHours(0, 0, 0, 0)
   const maxDays = 61
-  const seen = new Set<string>()
-  const results: PlanningEvent[] = []
+  const results: ComingUpItem[] = []
+
+  const giftEvents = getAllEvents(today.getFullYear())
+  for (const ev of giftEvents) {
+    let eventDate = new Date(today.getFullYear(), ev.month - 1, ev.day)
+    if (eventDate < today) {
+      eventDate = new Date(today.getFullYear() + 1, ev.month - 1, ev.day)
+    }
+    const diff = Math.ceil((eventDate.getTime() - today.getTime()) / 86400000)
+    if (diff > maxDays) continue
+
+    const isBirthday = ev.occasion === 'Birthday'
+    const isAnniversary = ev.occasion === 'Anniversary'
+    const isChristmas = ev.occasion === 'Christmas'
+    let category = 'holiday'
+    if (isBirthday) category = 'birthday'
+    else if (isAnniversary) category = 'anniversary'
+
+    const icon = isChristmas ? TreePine
+      : HEART_OCCASIONS.includes(ev.occasion) ? Heart
+      : CATEGORY_ICON[category] || Calendar
+
+    const ideas = ev.name.includes('&') ? [] : getIdeasForPerson(ev.name)
+
+    results.push({
+      date: eventDate,
+      label: ev.name,
+      subtitle: ev.occasion,
+      icon,
+      colorCls: CATEGORY_COLORS[category] || 'bg-purple-500/15 text-purple-400',
+      daysUntil: diff,
+      ideas: ideas.length > 0 ? ideas : undefined,
+    })
+  }
 
   for (const trip of planningData.trips) {
     const start = new Date(trip.startDate + 'T12:00:00')
     const diff = Math.ceil((start.getTime() - today.getTime()) / 86400000)
     if (diff >= 0 && diff <= maxDays) {
-      results.push({ date: start, label: trip.name, category: 'trip', daysUntil: diff })
+      results.push({ date: start, label: trip.name, icon: Plane, colorCls: CATEGORY_COLORS.trip, daysUntil: diff })
     }
   }
 
@@ -321,10 +275,11 @@ function getUpcomingPlanningEvents(): PlanningEvent[] {
     const d = new Date(ev.date + 'T12:00:00')
     const diff = Math.ceil((d.getTime() - today.getTime()) / 86400000)
     if (diff >= 0 && diff <= maxDays) {
-      results.push({ date: d, label: ev.label, category: 'school', daysUntil: diff })
+      results.push({ date: d, label: ev.label, icon: GraduationCap, colorCls: CATEGORY_COLORS.school, daysUntil: diff })
     }
   }
 
+  const seen = new Set<string>()
   for (const ev of planningData.otherEvents as { date: string; label: string; endDate?: string; category?: string }[]) {
     const key = ev.label
     if (seen.has(key)) continue
@@ -332,38 +287,29 @@ function getUpcomingPlanningEvents(): PlanningEvent[] {
     const d = new Date(ev.date + 'T12:00:00')
     const diff = Math.ceil((d.getTime() - today.getTime()) / 86400000)
     if (diff >= 0 && diff <= maxDays) {
-      const endStr = ev.endDate ? ` (${new Date(ev.date + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}–${new Date(ev.endDate + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' })})` : ''
-      results.push({ date: d, label: ev.label + endStr, category: ev.category || 'other', daysUntil: diff })
+      const cat = ev.category || 'other'
+      const endStr = ev.endDate
+        ? ` (${d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}–${new Date(ev.endDate + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' })})`
+        : ''
+      results.push({
+        date: d,
+        label: ev.label + endStr,
+        icon: CATEGORY_ICON[cat] || Calendar,
+        colorCls: CATEGORY_COLORS[cat] || 'bg-muted text-muted-foreground',
+        daysUntil: diff,
+      })
     }
   }
 
   return results.sort((a, b) => a.daysUntil - b.daysUntil)
 }
 
-const PLANNING_ICON: Record<string, typeof Calendar> = {
-  trip: Plane,
-  school: GraduationCap,
-  sports: Trophy,
-  medical: Cross,
-  holiday: Calendar,
-  camp: MapPin,
-}
-
-const PLANNING_COLORS: Record<string, string> = {
-  trip: 'bg-blue-500/15 text-blue-400',
-  school: 'bg-amber-500/15 text-amber-400',
-  sports: 'bg-emerald-500/15 text-emerald-400',
-  medical: 'bg-rose-500/15 text-rose-400',
-  holiday: 'bg-purple-500/15 text-purple-400',
-  camp: 'bg-cyan-500/15 text-cyan-400',
-}
-
-function PlanningWidget() {
+function ComingUpWidget() {
   const navigate = useNavigate()
-  const upcoming = getUpcomingPlanningEvents()
+  const items = getComingUp()
 
   return (
-    <div className="bg-card border border-border rounded-xl overflow-hidden">
+    <div className="bg-card border border-border rounded-xl overflow-hidden lg:col-span-2">
       <div className="px-5 py-4 border-b border-border flex items-center justify-between">
         <div className="flex items-center gap-2">
           <CalendarDays className="h-4 w-4 text-primary" />
@@ -377,27 +323,41 @@ function PlanningWidget() {
         </button>
       </div>
       <div className="divide-y divide-border/50">
-        {upcoming.length === 0 && (
+        {items.length === 0 && (
           <div className="px-5 py-6 text-center text-sm text-muted-foreground">
-            Nothing planned in the next 2 months
+            Nothing coming up in the next 2 months
           </div>
         )}
-        {upcoming.map((ev, i) => {
-          const Icon = PLANNING_ICON[ev.category] || Calendar
-          const colorCls = PLANNING_COLORS[ev.category] || 'bg-muted text-muted-foreground'
+        {items.map((ev, i) => {
+          const Icon = ev.icon
           const isUrgent = ev.daysUntil <= 7
           const isSoon = ev.daysUntil <= 21
 
           return (
             <div key={i} className="px-5 py-3 flex items-center gap-4">
-              <div className={cn('w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0', colorCls)}>
+              <div className={cn('w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0', ev.colorCls)}>
                 <Icon className="h-4 w-4" />
               </div>
               <div className="flex-1 min-w-0">
-                <span className="text-sm font-medium truncate block">{ev.label}</span>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-sm font-medium truncate">{ev.label}</span>
+                  {ev.subtitle && <span className="text-xs text-muted-foreground flex-shrink-0">{ev.subtitle}</span>}
+                </div>
                 <span className="text-[11px] text-muted-foreground">
                   {ev.date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}
                 </span>
+                {ev.ideas && ev.ideas.length > 0 && (
+                  <div className="flex gap-1 mt-1 overflow-hidden">
+                    {ev.ideas.slice(0, 2).map((idea, j) => (
+                      <span key={j} className="text-[10px] bg-warning/10 text-warning border border-warning/20 px-1.5 py-0.5 rounded truncate">
+                        {idea}
+                      </span>
+                    ))}
+                    {ev.ideas.length > 2 && (
+                      <span className="text-[10px] text-muted-foreground">+{ev.ideas.length - 2}</span>
+                    )}
+                  </div>
+                )}
               </div>
               <div className="text-right flex-shrink-0">
                 <span className={cn(
@@ -421,10 +381,9 @@ export default function OverviewPage() {
       <h1 className="text-2xl font-semibold">Overview</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         <NetWorthWidget />
+        <ComingUpWidget />
         <CompensationWidget />
         <TaxesWidget />
-        <PlanningWidget />
-        <UpcomingEventsWidget />
       </div>
     </div>
   )
