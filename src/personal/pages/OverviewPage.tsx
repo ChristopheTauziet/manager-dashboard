@@ -17,6 +17,7 @@ interface StockHolding {
 }
 
 const fmt = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
+const HIDDEN = '••••••'
 
 function getIdeasForPerson(name: string) {
   const person = giftsData.people.find(p => p.name === name)
@@ -32,7 +33,7 @@ function getGiftForEvent(name: string, occasion: string, year: number): string[]
 
 const HEART_OCCASIONS = ["Anniversary", "Valentine's Day", "Mother's Day", "Father's Day", "Fête des Mères", "Fête des Pères", "Fête des grands-mères", "Fête des grands-pères"]
 
-function NetWorthWidget() {
+function NetWorthWidget({ showSensitive }: { showSensitive: boolean }) {
   const navigate = useNavigate()
   const [cryptoPrices, setCryptoPrices] = useState<Record<string, number>>({})
 
@@ -93,12 +94,12 @@ function NetWorthWidget() {
         </button>
       </div>
       <div className="px-5 py-4">
-        <p className="text-2xl font-bold tabular-nums">{fmt(total)}</p>
+        <p className="text-2xl font-bold tabular-nums">{showSensitive ? fmt(total) : HIDDEN}</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 mt-3">
           {breakdown.map(b => (
             <div key={b.label}>
               <p className="text-[11px] text-muted-foreground">{b.label}</p>
-              <p className="text-sm font-medium tabular-nums">{fmt(b.value)}</p>
+              <p className="text-sm font-medium tabular-nums">{showSensitive ? fmt(b.value) : HIDDEN}</p>
             </div>
           ))}
         </div>
@@ -107,7 +108,7 @@ function NetWorthWidget() {
   )
 }
 
-function CompensationWidget() {
+function CompensationWidget({ showSensitive }: { showSensitive: boolean }) {
   const navigate = useNavigate()
   const CURRENT_YEAR = 2026
   const { baseSalary, grants, currentSharePrice } = compData
@@ -134,19 +135,19 @@ function CompensationWidget() {
         </button>
       </div>
       <div className="px-5 py-4">
-        <p className="text-2xl font-bold tabular-nums">{fmt(totalComp)}</p>
+        <p className="text-2xl font-bold tabular-nums">{showSensitive ? fmt(totalComp) : HIDDEN}</p>
         <div className="grid grid-cols-3 gap-x-4 mt-3">
           <div>
             <p className="text-[11px] text-muted-foreground">Base Salary</p>
-            <p className="text-sm font-medium tabular-nums">{fmt(baseSalary)}</p>
+            <p className="text-sm font-medium tabular-nums">{showSensitive ? fmt(baseSalary) : HIDDEN}</p>
           </div>
           <div>
-            <p className="text-[11px] text-muted-foreground">Equity ({equityShares.toLocaleString()} shares)</p>
-            <p className="text-sm font-medium tabular-nums">{fmt(equityValue)}</p>
+            <p className="text-[11px] text-muted-foreground">Equity ({showSensitive ? equityShares.toLocaleString() + ' shares' : ''})</p>
+            <p className="text-sm font-medium tabular-nums">{showSensitive ? fmt(equityValue) : HIDDEN}</p>
           </div>
           <div>
             <p className="text-[11px] text-muted-foreground">Share Price</p>
-            <p className="text-sm font-medium tabular-nums">${currentSharePrice}</p>
+            <p className="text-sm font-medium tabular-nums">{showSensitive ? `$${currentSharePrice}` : HIDDEN}</p>
           </div>
         </div>
       </div>
@@ -154,7 +155,7 @@ function CompensationWidget() {
   )
 }
 
-function TaxesWidget() {
+function TaxesWidget({ showSensitive }: { showSensitive: boolean }) {
   const navigate = useNavigate()
   const taxYears = taxesData as { year: number; taxableIncome: number; federalTax: number; stateTax: number; federalDue: number; stateDue: number }[]
   const latest = [...taxYears].sort((a, b) => b.year - a.year)[0]
@@ -177,21 +178,21 @@ function TaxesWidget() {
       </div>
       <div className="px-5 py-4">
         <div className="flex items-baseline gap-2">
-          <p className="text-2xl font-bold tabular-nums">{fmt(totalTax)}</p>
-          <span className="text-xs text-muted-foreground">{(effectiveRate * 100).toFixed(1)}% effective</span>
+          <p className="text-2xl font-bold tabular-nums">{showSensitive ? fmt(totalTax) : HIDDEN}</p>
+          {showSensitive && <span className="text-xs text-muted-foreground">{(effectiveRate * 100).toFixed(1)}% effective</span>}
         </div>
         <div className="grid grid-cols-3 gap-x-4 mt-3">
           <div>
             <p className="text-[11px] text-muted-foreground">Taxable Income</p>
-            <p className="text-sm font-medium tabular-nums">{fmt(latest.taxableIncome)}</p>
+            <p className="text-sm font-medium tabular-nums">{showSensitive ? fmt(latest.taxableIncome) : HIDDEN}</p>
           </div>
           <div>
             <p className="text-[11px] text-muted-foreground">Federal</p>
-            <p className="text-sm font-medium tabular-nums">{fmt(latest.federalTax)}</p>
+            <p className="text-sm font-medium tabular-nums">{showSensitive ? fmt(latest.federalTax) : HIDDEN}</p>
           </div>
           <div>
             <p className="text-[11px] text-muted-foreground">California</p>
-            <p className="text-sm font-medium tabular-nums">{fmt(latest.stateTax)}</p>
+            <p className="text-sm font-medium tabular-nums">{showSensitive ? fmt(latest.stateTax) : HIDDEN}</p>
           </div>
         </div>
       </div>
@@ -391,7 +392,7 @@ function ComingUpWidget() {
   )
 }
 
-export default function OverviewPage() {
+export default function OverviewPage({ showSensitive }: { showSensitive: boolean }) {
   return (
     <div className="space-y-8">
       <h1 className="text-2xl font-semibold">Overview</h1>
@@ -400,9 +401,9 @@ export default function OverviewPage() {
           <ComingUpWidget />
         </div>
         <div className="xl:w-1/2 flex flex-col gap-5">
-          <NetWorthWidget />
-          <CompensationWidget />
-          <TaxesWidget />
+          <NetWorthWidget showSensitive={showSensitive} />
+          <CompensationWidget showSensitive={showSensitive} />
+          <TaxesWidget showSensitive={showSensitive} />
         </div>
       </div>
     </div>

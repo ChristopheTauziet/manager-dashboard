@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom'
-import { LayoutDashboard, DollarSign, Briefcase, Receipt, Gift, Watch, Home, CalendarDays } from 'lucide-react'
+import { LayoutDashboard, DollarSign, Briefcase, Receipt, Gift, Watch, Home, CalendarDays, Eye, EyeOff } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import DashboardToggle from '../components/DashboardToggle'
 import OverviewPage from './pages/OverviewPage'
@@ -25,6 +26,7 @@ const tabs = [
 export default function PersonalApp() {
   const navigate = useNavigate()
   const location = useLocation()
+  const [showSensitive, setShowSensitive] = useState(false)
 
   const currentPath = location.pathname.replace('/personal', '').replace(/^\//, '')
 
@@ -56,13 +58,39 @@ export default function PersonalApp() {
               </button>
             ))}
           </div>
+          <div className="ml-auto">
+            <button
+              onClick={() => setShowSensitive(s => !s)}
+              className={cn(
+                'flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-colors',
+                showSensitive
+                  ? 'bg-accent text-accent-foreground'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
+              )}
+              title={showSensitive ? 'Hide sensitive data' : 'Show sensitive data'}
+            >
+              {showSensitive ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
+            </button>
+          </div>
         </div>
       </nav>
 
       {/* Mobile top bar */}
       <nav className="md:hidden border-b border-border bg-card sticky top-0 z-50">
-        <div className="px-4 flex items-center justify-center h-12">
+        <div className="px-4 flex items-center justify-between h-12">
+          <div className="w-10" />
           <DashboardToggle />
+          <button
+            onClick={() => setShowSensitive(s => !s)}
+            className={cn(
+              'p-1.5 rounded-md transition-colors',
+              showSensitive
+                ? 'bg-accent text-accent-foreground'
+                : 'text-muted-foreground hover:text-foreground'
+            )}
+          >
+            {showSensitive ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
+          </button>
         </div>
       </nav>
 
@@ -89,7 +117,7 @@ export default function PersonalApp() {
 
       <main className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
         <Routes>
-          <Route index element={<OverviewPage />} />
+          <Route index element={<OverviewPage showSensitive={showSensitive} />} />
           <Route path="planning" element={<PlanningPage />} />
           <Route path="assets" element={<AssetsPage />} />
           <Route path="compensation" element={<CompensationPage />} />
