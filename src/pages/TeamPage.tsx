@@ -212,7 +212,7 @@ export default function TeamPage({ showSensitive, highlightTopPerformers }: { sh
     }))
   }, [ratingDistribution])
 
-  const COL_COUNT = 4
+  const COL_COUNT = showSensitive ? 6 : 4
 
   const disciplineCounts = useMemo(() => {
     const counts: Record<string, number> = { product: 0, creative: 0 }
@@ -274,17 +274,10 @@ export default function TeamPage({ showSensitive, highlightTopPerformers }: { sh
             <tr className="border-b border-border">
               <th className="text-left px-5 py-3 w-8"></th>
               <th className="text-left px-5 py-3"><SortHeader label="Name" field="name" /></th>
-              {showSensitive ? (
-                <>
-                  <th className="text-right px-5 py-3"><div className="flex justify-end"><SortHeader label="Base" field="base_salary" /></div></th>
-                  <th className="text-right px-5 py-3"><div className="flex justify-end"><SortHeader label="Total Comp" field="total_comp" /></div></th>
-                </>
-              ) : (
-                <>
-                  <th className="text-left px-5 py-3"><SortHeader label="Level" field="level" /></th>
-                  <th className="text-center px-5 py-3"><SortHeader label="Time in Level" field="time_in_level" /></th>
-                </>
-              )}
+              <th className={cn('text-left px-5 py-3', showSensitive && 'hidden md:table-cell')}><SortHeader label="Level" field="level" /></th>
+              <th className={cn('text-center px-5 py-3', showSensitive && 'hidden md:table-cell')}><SortHeader label="Time in Level" field="time_in_level" /></th>
+              {showSensitive && <th className="text-right px-5 py-3"><div className="flex justify-end"><SortHeader label="Base" field="base_salary" /></div></th>}
+              {showSensitive && <th className="text-right px-5 py-3"><div className="flex justify-end"><SortHeader label="Total Comp" field="total_comp" /></div></th>}
             </tr>
           </thead>
           <tbody>
@@ -313,7 +306,7 @@ export default function TeamPage({ showSensitive, highlightTopPerformers }: { sh
                       <div className="flex items-center gap-1.5 mt-0.5">
                         <span className="text-xs text-muted-foreground">{member.location}</span>
                         {showSensitive && (
-                          <span className={cn('text-[10px] font-medium px-1.5 py-0.5 rounded', LEVEL_COLORS[member.level] || 'bg-accent text-accent-foreground')}>
+                          <span className={cn('text-[10px] font-medium px-1.5 py-0.5 rounded md:hidden', LEVEL_COLORS[member.level] || 'bg-accent text-accent-foreground')}>
                             {member.level}
                           </span>
                         )}
@@ -324,25 +317,18 @@ export default function TeamPage({ showSensitive, highlightTopPerformers }: { sh
                         )}
                       </div>
                     </td>
-                    {showSensitive ? (
-                      <>
-                        <td className="px-5 py-3 text-right text-sm tabular-nums">{formatCurrency(latest.base_salary)}</td>
-                        <td className="px-5 py-3 text-right text-sm font-medium tabular-nums">{formatCurrency(latest.total_comp)}</td>
-                      </>
-                    ) : (
-                      <>
-                        <td className="px-5 py-3">
-                          <span className={cn('inline-block text-xs font-medium px-2 py-0.5 rounded', LEVEL_COLORS[member.level] || 'bg-accent text-accent-foreground')}>
-                            {member.level}
-                          </span>
-                        </td>
-                        <td className="px-5 py-3 text-center">
-                          <span className={cn('inline-block text-xs font-medium px-2 py-0.5 rounded tabular-nums', tilColor(member.til))}>
-                            {formatTimeInLevel(member.til)}
-                          </span>
-                        </td>
-                      </>
-                    )}
+                    <td className={cn('px-5 py-3', showSensitive && 'hidden md:table-cell')}>
+                      <span className={cn('inline-block text-xs font-medium px-2 py-0.5 rounded', LEVEL_COLORS[member.level] || 'bg-accent text-accent-foreground')}>
+                        {member.level}
+                      </span>
+                    </td>
+                    <td className={cn('px-5 py-3 text-center', showSensitive && 'hidden md:table-cell')}>
+                      <span className={cn('inline-block text-xs font-medium px-2 py-0.5 rounded tabular-nums', tilColor(member.til))}>
+                        {formatTimeInLevel(member.til)}
+                      </span>
+                    </td>
+                    {showSensitive && <td className="px-5 py-3 text-right text-sm tabular-nums">{formatCurrency(latest.base_salary)}</td>}
+                    {showSensitive && <td className="px-5 py-3 text-right text-sm font-medium tabular-nums">{formatCurrency(latest.total_comp)}</td>}
                   </tr>
                   {isExpanded && (
                     <tr>
