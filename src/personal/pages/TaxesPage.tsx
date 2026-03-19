@@ -1,8 +1,23 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { formatCurrency } from '@/lib/utils'
 import { cn } from '@/lib/utils'
 import { TrendingUp, TrendingDown, ChevronDown, ChevronRight } from 'lucide-react'
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import taxesData from '../../../data/taxes.json'
+
+const CHART_AXIS = '#a1a1aa'
+const CHART_GRID = '#27272a'
+const CHART_TOOLTIP_BG = '#18181b'
+const CHART_TOOLTIP_BORDER = '#27272a'
+const COL_WITHHELD = '#3b82f6'
+const COL_OWED = '#eab308'
+const COL_REFUND = '#22c55e'
+
+function axisTickMoney(n: number) {
+  if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`
+  if (n >= 1000) return `$${(n / 1000).toFixed(0)}K`
+  return formatCurrency(n)
+}
 
 interface TaxDetails {
   incomeChristophe: number
@@ -37,6 +52,212 @@ interface TaxYear {
 }
 
 const taxes: TaxYear[] = (taxesData as TaxYear[]).sort((a, b) => b.year - a.year)
+
+type TaxStackChartRow = {
+  year: string
+  federalDue: number
+  stateDue: number
+  fedBase: number
+  fedOwed: number
+  fedRefund: number
+  caBase: number
+  caOwed: number
+  caRefund: number
+}
+
+function TaxStackTooltip({
+  active,
+  payload,
+  label,
+}: {
+  active?: boolean
+  payload?: Array<{
+    dataKey?: string | number
+    value?: number
+    color?: string
+    payload?: TaxStackChartRow
+  }>
+  label?: string
+}) {
+  if (!active || !payload?.length || !payload[0]?.payload) return null
+  const row = payload[0].payload
+  const lines: { key: string; label: string; value: number; color: string }[] = []
+
+  if (row.fedBase > 0) {
+    lines.push({
+      key: 'fb',
+      label: row.federalDue >= 0 ? 'Federal — Withheld' : 'Federal — Tax (liability)',
+      value: row.fedBase,
+      color: COL_WITHHELD,
+    })
+  }
+  if (row.fedOwed > 0) {
+    lines.push({ key: 'fo', label: 'Federal — Owed at filing', value: row.fedOwed, color: COL_OWED })
+  }
+  if (row.fedRefund > 0) {
+    lines.push({
+      key: 'fr',
+      label: 'Federal — Refund (over-withheld)',
+      value: row.fedRefund,
+      color: COL_REFUND,
+    })
+  }
+  if (row.caBase > 0) {
+    lines.push({
+      key: 'cb',
+      label: row.stateDue >= 0 ? 'CA — Withheld' : 'CA — Tax (liability)',
+      value: row.caBase,
+      color: COL_WITHHELD,
+    })
+  }
+  if (row.caOwed > 0) {
+    lines.push({ key: 'co', label: 'CA — Owed at filing', value: row.caOwed, color: COL_OWED })
+  }
+  if (row.caRefund > 0) {
+    lines.push({
+      key: 'cr',
+      label: 'CA — Refund (over-withheld)',
+      value: row.caRefund,
+      color: COL_REFUND,
+    })
+  }
+
+  return (
+    <div
+      className="rounded-lg border px-3 py-2 text-xs shadow-lg"
+      style={{ backgroundColor: CHART_TOOLTIP_BG, borderColor: CHART_TOOLTIP_BORDER }}
+    >
+      <p className="font-semibold mb-1" style={{ color: '#fafafa' }}>
+        {label}
+      </p>
+      <div className="space-y-1">
+        {lines.map(l => (
+          <div key={l.key} className="flex items-center justify-between gap-6 tabular-nums">
+            <span className="flex items-center gap-2" style={{ color: CHART_AXIS }}>
+              <span className="h-2 w-2 rounded-sm shrink-0" style={{ backgroundColor: l.color }} />
+              {l.label}
+            </span>
+            <span style={{ color: '#fafafa' }}>{formatCurrency(l.value)}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function TaxesOverviewCharts({ data }: { data: TaxYear[] }) {
+  const chronological = useMemo(() => [...data].sort((a, b) => a.year - b.year), [data])
+
+  const incomeChartData = useMemo(
+    () => chronological.map(t => ({ year: String(t.year), taxableIncome: t.taxableIncome })),
+    [chronological]
+  )
+
+  const taxStackData = useMemo<TaxStackChartRow[]>(
+    () =>
+      chronological.map(t => {
+        const stateWithheld = t.stateTax - t.stateDue
+        const fd = t.federalDue
+        const sd = t.stateDue
+        return {
+          year: String(t.year),
+          federalDue: fd,
+          stateDue: sd,
+          fedBase: fd >= 0 ? t.federalWithholding : t.federalTax,
+          fedOwed: fd > 0 ? fd : 0,
+          fedRefund: fd < 0 ? -fd : 0,
+          caBase: sd >= 0 ? stateWithheld : t.stateTax,
+          caOwed: sd > 0 ? sd : 0,
+          caRefund: sd < 0 ? -sd : 0,
+        }
+      }),
+    [chronological]
+  )
+
+  return (
+    <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+      <div className="bg-card border border-border rounded-xl overflow-hidden">
+        <div className="px-6 py-4 border-b border-border">
+          <h2 className="text-lg font-semibold">Taxable income</h2>
+          <p className="text-xs text-muted-foreground mt-0.5">Federal taxable income by tax year</p>
+        </div>
+        <div className="px-4 sm:px-6 py-4 h-72">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={incomeChartData} barCategoryGap="18%" margin={{ top: 8, right: 8, left: 4, bottom: 4 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke={CHART_GRID} vertical={false} />
+              <XAxis dataKey="year" tick={{ fontSize: 12, fill: CHART_AXIS }} axisLine={false} tickLine={false} />
+              <YAxis
+                tick={{ fontSize: 11, fill: CHART_AXIS }}
+                axisLine={false}
+                tickLine={false}
+                width={52}
+                tickFormatter={axisTickMoney}
+              />
+              <Tooltip
+                cursor={{ fill: 'rgba(63, 63, 70, 0.35)' }}
+                contentStyle={{
+                  backgroundColor: CHART_TOOLTIP_BG,
+                  border: `1px solid ${CHART_TOOLTIP_BORDER}`,
+                  borderRadius: 8,
+                  fontSize: 12,
+                }}
+                labelStyle={{ color: '#fafafa', fontWeight: 600, marginBottom: 4 }}
+                formatter={(value: unknown) => [formatCurrency(Number(value)), 'Taxable income']}
+              />
+              <Bar dataKey="taxableIncome" fill={COL_WITHHELD} radius={[4, 4, 0, 0]} name="Taxable income" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+
+      <div className="bg-card border border-border rounded-xl overflow-hidden">
+        <div className="px-6 py-4 border-b border-border">
+          <h2 className="text-lg font-semibold">Federal &amp; California tax</h2>
+          <p className="text-xs text-muted-foreground mt-0.5">
+            Stacked bars: withheld (or full liability in refund years), plus owed at filing or refund of over-withholding.
+            Two columns per year — federal and CA.
+          </p>
+        </div>
+        <div className="px-4 sm:px-6 py-4 h-80">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={taxStackData} barGap={4} barCategoryGap="22%" margin={{ top: 8, right: 8, left: 4, bottom: 4 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke={CHART_GRID} vertical={false} />
+              <XAxis dataKey="year" tick={{ fontSize: 12, fill: CHART_AXIS }} axisLine={false} tickLine={false} />
+              <YAxis
+                tick={{ fontSize: 11, fill: CHART_AXIS }}
+                axisLine={false}
+                tickLine={false}
+                width={52}
+                tickFormatter={axisTickMoney}
+              />
+              <Tooltip content={<TaxStackTooltip />} cursor={{ fill: 'rgba(63, 63, 70, 0.35)' }} />
+              <Bar stackId="fed" dataKey="fedBase" fill={COL_WITHHELD} name="Withheld" />
+              <Bar stackId="fed" dataKey="fedOwed" fill={COL_OWED} name="Owed at filing" />
+              <Bar stackId="fed" dataKey="fedRefund" fill={COL_REFUND} name="Refund" />
+              <Bar stackId="ca" dataKey="caBase" fill={COL_WITHHELD} name="Withheld" />
+              <Bar stackId="ca" dataKey="caOwed" fill={COL_OWED} name="Owed at filing" />
+              <Bar stackId="ca" dataKey="caRefund" fill={COL_REFUND} name="Refund" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+        <div className="px-6 pb-4 flex flex-wrap gap-x-5 gap-y-2 text-xs text-muted-foreground border-t border-border/50 pt-3">
+          <span className="inline-flex items-center gap-2">
+            <span className="h-2 w-2 rounded-sm shrink-0" style={{ backgroundColor: COL_WITHHELD }} />
+            Blue: withheld (refund years: tax liability)
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <span className="h-2 w-2 rounded-sm shrink-0" style={{ backgroundColor: COL_OWED }} />
+            Amber: owed at filing
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <span className="h-2 w-2 rounded-sm shrink-0" style={{ backgroundColor: COL_REFUND }} />
+            Green: refund from over-withholding
+          </span>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 function rate(tax: number, income: number) {
   if (income === 0) return '0%'
@@ -160,6 +381,8 @@ export default function TaxesPage() {
   return (
     <div className="space-y-8">
       <h1 className="text-2xl font-semibold">Taxes</h1>
+
+      <TaxesOverviewCharts data={taxes} />
 
       <div className="space-y-5">
         {taxes.map(t => {

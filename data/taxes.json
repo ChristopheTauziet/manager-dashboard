@@ -7,7 +7,7 @@
     "federalWithholding": 243507,
     "federalDue": 137743,
     "stateTax": 97318,
-    "stateDue": 262,
+    "stateDue": 26118,
     "details": {
       "incomeChristophe": 836849,
       "incomeClaire": 205340,
@@ -23,8 +23,8 @@
       "fedWithholdingChristophe": 195558,
       "fedWithholdingClaire": 47949,
       "additionalMedicareWithholding": null,
-      "stateWithholdingChristophe": 77956,
-      "stateWithholdingClaire": 19100,
+      "stateWithholdingChristophe": 57159,
+      "stateWithholdingClaire": 14041,
       "capitalLossCarryover": -3000
     }
   },
@@ -36,7 +36,7 @@
     "federalWithholding": 260498,
     "federalDue": 61553,
     "stateTax": 99377,
-    "stateDue": 309,
+    "stateDue": 3829,
     "details": {
       "incomeChristophe": 822911,
       "incomeClaire": 202279,
@@ -52,8 +52,8 @@
       "fedWithholdingChristophe": 211447,
       "fedWithholdingClaire": 49051,
       "additionalMedicareWithholding": null,
-      "stateWithholdingChristophe": 79500,
-      "stateWithholdingClaire": 19568,
+      "stateWithholdingChristophe": 76669,
+      "stateWithholdingClaire": 18879,
       "capitalLossCarryover": null
     }
   },
@@ -65,7 +65,7 @@
     "federalWithholding": 10316,
     "federalDue": 9664,
     "stateTax": 17290,
-    "stateDue": 12558,
+    "stateDue": 12847,
     "details": {
       "incomeChristophe": 0,
       "incomeClaire": 37530,
@@ -285,7 +285,7 @@
       "fedWithholdingClaire": 78460,
       "additionalMedicareWithholding": 15279,
       "stateWithholdingChristophe": 222603,
-      "stateWithholdingClaire": 34152,
+      "stateWithholdingClaire": 34151,
       "capitalLossCarryover": null
     }
   }
