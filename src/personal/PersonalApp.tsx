@@ -33,8 +33,9 @@ export default function PersonalApp() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <nav className="border-b border-border bg-card sticky top-0 z-50">
+    <div className="min-h-screen bg-background text-foreground pb-16 md:pb-0">
+      {/* Desktop top nav */}
+      <nav className="hidden md:block border-b border-border bg-card sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 flex items-center h-14 gap-8">
           <button
             onClick={() => navigate('/')}
@@ -63,7 +64,42 @@ export default function PersonalApp() {
           </div>
         </div>
       </nav>
-      <main className="max-w-7xl mx-auto px-6 py-8">
+
+      {/* Mobile top bar */}
+      <nav className="md:hidden border-b border-border bg-card sticky top-0 z-50">
+        <div className="px-4 flex items-center h-12 gap-3">
+          <button
+            onClick={() => navigate('/')}
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ArrowLeft className="h-4 w-4" />
+          </button>
+          <span className="text-base font-semibold tracking-tight">Personal</span>
+        </div>
+      </nav>
+
+      {/* Mobile bottom tab bar */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-card">
+        <div className="flex overflow-x-auto scrollbar-none">
+          {tabs.map(({ id, label, icon: Icon, path }) => (
+            <button
+              key={id}
+              onClick={() => navigate(`/personal/${path}`)}
+              className={cn(
+                'flex flex-col items-center gap-0.5 py-2 px-3 min-w-[4.5rem] flex-shrink-0 transition-colors',
+                isActive(path)
+                  ? 'text-primary'
+                  : 'text-muted-foreground'
+              )}
+            >
+              <Icon className="h-5 w-5" />
+              <span className="text-[10px] font-medium leading-none">{label}</span>
+            </button>
+          ))}
+        </div>
+      </nav>
+
+      <main className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
         <Routes>
           <Route index element={<OverviewPage />} />
           <Route path="planning" element={<PlanningPage />} />
