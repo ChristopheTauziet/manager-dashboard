@@ -15,29 +15,12 @@ jobs:
   update-prices:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Fetch stock prices
         run: |
-          TICKERS=$(python3 -c "import json; d=json.load(open('data/assets.json')); print(' '.join(s['ticker'] for s in d['stocks']))")
-          echo "{" > data/stock-prices.json
-          FIRST=true
-          for TICKER in $TICKERS; do
-            PRICE=$(curl -sf -H "User-Agent: Mozilla/5.0" \
-              "https://query1.finance.yahoo.com/v8/finance/chart/${TICKER}?interval=1d&range=1d" \
-              | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['chart']['result'][0]['meta']['regularMarketPrice'])" 2>/dev/null)
-            if [ -n "$PRICE" ]; then
-              if [ "$FIRST" = true ]; then
-                FIRST=false
-              else
-                echo "," >> data/stock-prices.json
-              fi
-              printf '  "%s": %s' "$TICKER" "$PRICE" >> data/stock-prices.json
-            fi
-            sleep 1
-          done
-          echo "" >> data/stock-prices.json
-          echo "}" >> data/stock-prices.json
+          set -euo pipefail
+          python3 scripts/update_stock_prices.py
           echo "Updated at: $(date -u)"
           cat data/stock-prices.json
 
