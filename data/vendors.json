@@ -1,0 +1,52 @@
+[
+  {
+    "id": "plumbing",
+    "title": "Plumbing",
+    "description": "Water heaters, filtration, and fixtures",
+    "vendors": [
+      { "service": "Water heater install", "name": "Handy Plumbing Man", "contact": null },
+      { "service": "Water filtration system install", "name": "Troy Long", "contact": "troylong101@gmail.com" },
+      { "service": "Faucet install", "name": "Antonio Plumbing", "contact": "(707) 384-8157" }
+    ]
+  },
+  {
+    "id": "outdoors",
+    "title": "Outdoors & pool",
+    "description": "Landscaping, fence, patio, pool, and solar heating",
+    "vendors": [
+      { "service": "Gardening & trees", "name": "Life Gardens", "contact": "life.gardens@yahoo.com" },
+      { "service": "Fence", "name": "A1 Fence", "contact": null },
+      { "service": "Patio maintenance", "name": "Cal Preserving & Total Wood Preservation", "contact": null },
+      { "service": "Pool leak detection", "name": "Bullseye Leak Detection", "contact": null },
+      { "service": "Solar heater installation", "name": "Vara Company", "contact": null },
+      { "service": "Pool maintenance", "name": "Rene Pool Service", "contact": null }
+    ]
+  },
+  {
+    "id": "hvac",
+    "title": "HVAC",
+    "description": "Heating and cooling",
+    "vendors": [
+      { "service": "A/C maintenance", "name": "Sunny HVAC", "contact": null }
+    ]
+  },
+  {
+    "id": "tile",
+    "title": "Tile & countertops",
+    "description": "Stone and surface work",
+    "vendors": [
+      { "service": "Countertop drilling", "name": "Hasan — Diamond Tile Restoration", "contact": "(510) 666-6697" }
+    ]
+  },
+  {
+    "id": "handyman",
+    "title": "Handyman & installs",
+    "description": "General work and fixture installs",
+    "vendors": [
+      { "service": "Wood panel install", "name": "Fullhouse Handyman Service", "contact": "Thumbtack" },
+      { "service": "Mailbox install", "name": "Greg Cala", "contact": "Thumbtack" },
+      { "service": "TV install", "name": "FixTman LLC", "contact": "Thumbtack" },
+      { "service": "Doorbell install", "name": "AA Ortega Construction", "contact": "Thumbtack" }
+    ]
+  }
+]
