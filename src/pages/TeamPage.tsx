@@ -272,7 +272,7 @@ export default function TeamPage({ showSensitive, highlightTopPerformers }: { sh
         <table className="w-full">
           <thead>
             <tr className="border-b border-border">
-              <th className="text-left px-5 py-3 w-8"></th>
+              <th className="text-left px-5 py-3 w-8 hidden md:table-cell"></th>
               <th className="text-left px-5 py-3"><SortHeader label="Name" field="name" /></th>
               <th className={cn('text-left px-5 py-3', showSensitive && 'hidden md:table-cell')}><SortHeader label="Level" field="level" /></th>
               <th className={cn('text-center px-5 py-3', showSensitive && 'hidden md:table-cell')}><SortHeader label="Time in Level" field="time_in_level" /></th>
@@ -293,7 +293,7 @@ export default function TeamPage({ showSensitive, highlightTopPerformers }: { sh
                     )}
                     onClick={() => setExpandedId(isExpanded ? null : member.id)}
                   >
-                    <td className="px-5 py-3 text-muted-foreground">
+                    <td className="px-5 py-3 text-muted-foreground hidden md:table-cell">
                       {isExpanded ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
                     </td>
                     <td className="px-5 py-3">
