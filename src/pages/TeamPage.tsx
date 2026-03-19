@@ -304,7 +304,6 @@ export default function TeamPage({ showSensitive, highlightTopPerformers }: { sh
                         )}
                       </div>
                       <div className="flex items-center gap-1.5 mt-0.5">
-                        <span className="text-xs text-muted-foreground">{member.location}</span>
                         {showSensitive && (
                           <span className={cn('text-[10px] font-medium px-1.5 py-0.5 rounded md:hidden', LEVEL_COLORS[member.level] || 'bg-accent text-accent-foreground')}>
                             {member.level}
@@ -315,6 +314,7 @@ export default function TeamPage({ showSensitive, highlightTopPerformers }: { sh
                             {member.zone}
                           </span>
                         )}
+                        <span className="text-xs text-muted-foreground">{member.location}</span>
                       </div>
                     </td>
                     <td className={cn('px-5 py-3', showSensitive && 'hidden md:table-cell')}>
