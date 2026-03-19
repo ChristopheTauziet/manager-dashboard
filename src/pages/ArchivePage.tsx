@@ -40,10 +40,10 @@ export default function ArchivePage({ showSensitive }: { showSensitive: boolean 
         <table className="w-full">
           <thead>
             <tr className="border-b border-border">
-              <th className="text-left px-5 py-3 w-8"></th>
+              <th className="text-left px-5 py-3 w-8 hidden md:table-cell"></th>
               <th className="text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">Name</th>
-              <th className="text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">Level</th>
-              <th className="text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider hidden sm:table-cell">Location</th>
+              <th className={cn('text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider', showSensitive && 'hidden md:table-cell')}>Level</th>
+              <th className={cn('text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider hidden sm:table-cell', showSensitive && 'hidden md:table-cell')}>Location</th>
               {showSensitive && <th className="text-right px-5 py-3"><span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Last Base</span></th>}
               {showSensitive && <th className="text-right px-5 py-3"><span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Last Total Comp</span></th>}
             </tr>
@@ -58,19 +58,26 @@ export default function ArchivePage({ showSensitive }: { showSensitive: boolean 
                     className="border-b border-border hover:bg-accent/30 cursor-pointer transition-colors"
                     onClick={() => setExpandedId(isExpanded ? null : member.id)}
                   >
-                    <td className="px-5 py-3 text-muted-foreground">
+                    <td className="px-5 py-3 text-muted-foreground hidden md:table-cell">
                       {isExpanded ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
                     </td>
                     <td className="px-5 py-3">
                       <div className="font-medium">{member.name}</div>
-                      <div className="text-xs text-muted-foreground sm:hidden">{member.location}</div>
+                      <div className="flex items-center gap-1.5 mt-0.5">
+                        {showSensitive && (
+                          <span className={cn('text-[10px] font-medium px-1.5 py-0.5 rounded md:hidden', LEVEL_COLORS[member.level] || 'bg-accent text-accent-foreground')}>
+                            {member.level}
+                          </span>
+                        )}
+                        <span className={cn('text-xs text-muted-foreground', showSensitive ? 'md:hidden' : 'sm:hidden')}>{member.location}</span>
+                      </div>
                     </td>
-                    <td className="px-5 py-3">
+                    <td className={cn('px-5 py-3', showSensitive && 'hidden md:table-cell')}>
                       <span className={cn('inline-block text-xs font-medium px-2 py-0.5 rounded', LEVEL_COLORS[member.level] || 'bg-accent text-accent-foreground')}>
                         {member.level}
                       </span>
                     </td>
-                    <td className="px-5 py-3 text-sm text-muted-foreground hidden sm:table-cell">{member.location}</td>
+                    <td className={cn('px-5 py-3 text-sm text-muted-foreground hidden sm:table-cell', showSensitive && 'hidden md:table-cell')}>{member.location}</td>
                     {showSensitive && <td className="px-5 py-3 text-right text-sm tabular-nums">{latest.base_salary ? formatCurrency(latest.base_salary) : '—'}</td>}
                     {showSensitive && <td className="px-5 py-3 text-right text-sm font-medium tabular-nums">{latest.total_comp ? formatCurrency(latest.total_comp) : '—'}</td>}
                   </tr>
