@@ -38,7 +38,7 @@ export default function PersonalApp() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground pb-16 md:pb-0">
+    <div className="min-h-screen bg-background text-foreground pb-[calc(3.5rem+env(safe-area-inset-bottom,0px))] md:pb-0">
       {/* Desktop top nav */}
       <nav className="hidden md:block border-b border-border bg-card sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 flex items-center h-14 gap-8">
@@ -97,8 +97,8 @@ export default function PersonalApp() {
       </nav>
 
       {/* Mobile bottom tab bar */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-card">
-        <div className="flex overflow-x-auto scrollbar-none">
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-card pb-[env(safe-area-inset-bottom,0px)]">
+        <div className="flex h-14 min-h-[3.5rem] overflow-x-auto scrollbar-none">
           {tabs.map(({ id, label, icon: Icon, path }) => (
             <button
               key={id}

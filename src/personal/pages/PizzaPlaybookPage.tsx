@@ -532,9 +532,9 @@ function ShoppingListDock({
   return (
     <div
       className={cn(
-        'fixed inset-x-0 z-[60] border-t border-border bg-card/95 backdrop-blur-md shadow-[0_-8px_30px_rgba(0,0,0,0.35)]',
-        'bottom-16 max-h-[min(50vh,22rem)] md:bottom-0 md:max-h-[min(45vh,24rem)]',
-        'flex flex-col'
+        'fixed inset-x-0 z-[60] flex flex-col rounded-t-xl border-t border-border bg-card/95 shadow-[0_-8px_30px_rgba(0,0,0,0.35)] backdrop-blur-md',
+        // Align with PersonalApp mobile tab bar: h-14 (3.5rem) + safe-area padding on the nav.
+        'max-h-[min(50vh,22rem)] max-md:bottom-[calc(3.5rem+env(safe-area-inset-bottom,0px))] md:bottom-0 md:max-h-[min(45vh,24rem)]'
       )}
       role="region"
       aria-label="Shopping list"
@@ -575,12 +575,7 @@ function ShoppingListDock({
       </div>
 
       <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-2 py-2">
-        {total === 0 ? (
-          <p className="px-2 py-6 text-center text-sm text-muted-foreground">
-            Tap one or more pizza cards to merge ingredients here. Duplicates are merged automatically.
-          </p>
-        ) : (
-          <div className="space-y-4 pb-2">
+        <div className="space-y-4 pb-2">
             {grouped.map(group => (
               <div key={group.category}>
                 <h4 className="mb-1.5 px-2 text-[10px] font-bold uppercase tracking-wider text-orange-400/95">
@@ -618,8 +613,7 @@ function ShoppingListDock({
                 </ul>
               </div>
             ))}
-          </div>
-        )}
+        </div>
       </div>
     </div>
   )
@@ -659,8 +653,15 @@ export default function PizzaPlaybookPage() {
     setChecked(prev => ({ ...prev, [key]: !prev[key] }))
   }
 
+  const showShoppingList = selectedRecipeIds.length > 0
+
   return (
-    <div className="space-y-10 pb-44 md:pb-40">
+    <div
+      className={cn(
+        'space-y-10',
+        showShoppingList ? 'pb-44 md:pb-40' : ''
+      )}
+    >
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <h1 className="flex items-center gap-2 text-2xl font-semibold">
@@ -682,12 +683,14 @@ export default function PizzaPlaybookPage() {
           >
             Pizza recipes
           </a>
-          <a
-            href="#shopping-list"
-            className="rounded-full border border-orange-500/50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-orange-400 hover:bg-orange-500/15 transition-colors"
-          >
-            Shopping list
-          </a>
+          {showShoppingList && (
+            <a
+              href="#shopping-list"
+              className="rounded-full border border-orange-500/50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-orange-400 hover:bg-orange-500/15 transition-colors"
+            >
+              Shopping list
+            </a>
+          )}
         </nav>
       </div>
 
@@ -727,20 +730,24 @@ export default function PizzaPlaybookPage() {
         </div>
       </section>
 
-      <div id="shopping-list" className="h-px scroll-mt-28 w-full shrink-0" aria-hidden />
+      {showShoppingList && (
+        <div id="shopping-list" className="h-px scroll-mt-28 w-full shrink-0" aria-hidden />
+      )}
 
       <footer className="border-t border-border pt-8 text-center text-xs text-muted-foreground">
         {meta.footer}
       </footer>
 
-      <ShoppingListDock
-        grouped={groupedShopping}
-        checked={checked}
-        onToggleItem={toggleCheck}
-        onResetChecks={() => setChecked(Object.fromEntries(aggregated.map(i => [i.key, false])))}
-        recipeCount={selectedRecipeIds.length}
-        onClearRecipes={() => setSelectedRecipeIds([])}
-      />
+      {showShoppingList && (
+        <ShoppingListDock
+          grouped={groupedShopping}
+          checked={checked}
+          onToggleItem={toggleCheck}
+          onResetChecks={() => setChecked(Object.fromEntries(aggregated.map(i => [i.key, false])))}
+          recipeCount={selectedRecipeIds.length}
+          onClearRecipes={() => setSelectedRecipeIds([])}
+        />
+      )}
     </div>
   )
 }
