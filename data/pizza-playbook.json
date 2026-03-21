@@ -1,0 +1,297 @@
+{
+  "meta": {
+    "subtitle": "Ooni Koda 16 · Neapolitan style · Doughs, recipes & party planning",
+    "footer": "Pizza Playbook · Ooni Koda 16 · Updated March 2026 · Tell me your guest count, date & recipes and I'll plan the full prep & shopping list 🍕"
+  },
+  "staticDoughs": [
+    {
+      "id": "cold-ferment",
+      "title": "Cold Ferment (Direct)",
+      "meta": "September 2025 · 9 balls × 320g · 67% hydration",
+      "ingredients": [
+        { "name": "Type 00 Flour", "amount": "1 700g" },
+        { "name": "Water", "amount": "1 140g (67%)" },
+        { "name": "Instant dry yeast", "amount": "1.86g" },
+        { "name": "Salt", "amount": "50g" }
+      ],
+      "steps": [
+        "Mix cold water + yeast, then incorporate into flour at medium-low speed",
+        "Add salt last. Knead 10 min total.",
+        "Cold ferment in fridge 24h",
+        "Remove 2h before. Form balls, let double in size."
+      ]
+    },
+    {
+      "id": "halo",
+      "title": "Halo Pro Recipe",
+      "meta": "5 balls × 12\" · 60% hydration",
+      "ingredients": [
+        { "name": "Type 00 Flour", "amount": "607g" },
+        { "name": "Water", "amount": "364g (60%)" },
+        { "name": "Salt", "amount": "18g" },
+        { "name": "Instant dried yeast", "amount": "7g" }
+      ],
+      "tip": "Also works with 9.2g active dry yeast or 20g fresh yeast.",
+      "steps": [
+        "Mix water + salt, then add yeast",
+        "Incorporate into flour. Mix then rest 20 min.",
+        "Knead 10 min (no extra flour needed)",
+        "Coat bowl with olive oil. Proof 8–24h at room temp or in fridge overnight"
+      ]
+    }
+  ],
+  "pizzas": [
+    {
+      "emoji": "🌹",
+      "name": "Rosa",
+      "subtitle": "Chris Bianco",
+      "starred": true,
+      "sections": [
+        {
+          "phase": "pre",
+          "label": "🔥 Pre-bake",
+          "items": [
+            "Olive oil base",
+            "Parmigiano Reggiano",
+            "Red onion (thinly sliced, tossed in oil + salt)",
+            "Fresh rosemary"
+          ]
+        },
+        {
+          "phase": "post",
+          "label": "✨ Post-bake",
+          "items": ["Crushed pistachios", "Extra olive oil drizzle"]
+        }
+      ]
+    },
+    {
+      "emoji": "🌿",
+      "name": "Summer Margherita",
+      "subtitle": "Pesto, Heirloom & Burrata",
+      "starred": true,
+      "sections": [
+        {
+          "phase": "pre",
+          "label": "🔥 Pre-bake",
+          "items": ["Pesto base", "Heirloom tomato slices"]
+        },
+        {
+          "phase": "post",
+          "label": "✨ Post-bake",
+          "items": ["Burrata (torn)", "Olive oil drizzle", "Pine nuts", "Fresh basil"]
+        }
+      ]
+    },
+    {
+      "emoji": "🇮🇹",
+      "name": "Parma Pazza",
+      "starred": true,
+      "sections": [
+        {
+          "phase": "pre",
+          "label": "🔥 Pre-bake",
+          "items": ["Tomato sauce", "Mozzarella fior di latte"]
+        },
+        {
+          "phase": "post",
+          "label": "✨ Post-bake",
+          "items": [
+            "Burratina",
+            "Prosciutto di Parma",
+            "Arugula",
+            "Shaved Grana Padano",
+            "Fresh basil"
+          ]
+        }
+      ]
+    },
+    {
+      "emoji": "🐟",
+      "name": "Salmon Pizza",
+      "starred": true,
+      "sections": [
+        { "phase": "pre", "label": "🔥 Pre-bake", "items": ["Tzatziki base"] },
+        {
+          "phase": "post",
+          "label": "✨ Post-bake",
+          "items": ["Smoked salmon slices", "Arugula"]
+        }
+      ],
+      "note": "Optional: olive oil drizzle or lemon zest before serving"
+    },
+    {
+      "emoji": "🍑",
+      "name": "Peach, Brie & Balsamic",
+      "starred": true,
+      "sections": [
+        {
+          "phase": "pre",
+          "label": "🔥 Pre-bake",
+          "items": ["Olive oil base", "Mozzarella", "Brie (sliced)"]
+        },
+        {
+          "phase": "post",
+          "label": "✨ Post-bake",
+          "items": ["Caramelized peach slices", "Fresh basil", "Balsamic glaze"]
+        }
+      ],
+      "note": "Prep: cook peach slices in butter + sugar for 5 min until caramelized"
+    },
+    {
+      "emoji": "🍄",
+      "name": "Mushroom Gorgonzola",
+      "starred": true,
+      "sections": [
+        {
+          "phase": "pre",
+          "label": "🔥 Pre-bake (all toppings baked)",
+          "items": [
+            "Mozzarella",
+            "Mushrooms",
+            "Gorgonzola",
+            "Pancetta",
+            "Thyme",
+            "Black pepper"
+          ]
+        }
+      ]
+    },
+    {
+      "emoji": "🌰",
+      "name": "Mortadelle Pistache",
+      "starred": false,
+      "sections": [
+        {
+          "phase": "pre",
+          "label": "🔥 Pre-bake",
+          "items": [
+            "Ricotta cream base",
+            "Mozzarella fior di latte",
+            "Olive oil drizzle"
+          ]
+        },
+        {
+          "phase": "post",
+          "label": "✨ Post-bake",
+          "items": [
+            "Mortadella slices",
+            "Stracciatella",
+            "Pistachio pesto",
+            "Crushed pistachios"
+          ]
+        }
+      ]
+    },
+    {
+      "emoji": "🖤",
+      "name": "Truffle Mafia",
+      "starred": false,
+      "sections": [
+        {
+          "phase": "pre",
+          "label": "🔥 Pre-bake",
+          "items": ["Truffle cream base", "Mozzarella fior di latte", "Mushrooms"]
+        },
+        {
+          "phase": "post",
+          "label": "✨ Post-bake",
+          "items": [
+            "Fresh summer truffle (shaved)",
+            "Basil",
+            "Burratina"
+          ]
+        }
+      ]
+    },
+    {
+      "emoji": "🥓",
+      "name": "Carbonara",
+      "starred": false,
+      "sections": [
+        {
+          "phase": "pre",
+          "label": "🔥 Pre-bake",
+          "items": ["Pecorino base", "Bacon slices"]
+        },
+        {
+          "phase": "post",
+          "label": "✨ Post-bake (brief re-bake)",
+          "items": [
+            "Shaved Parmesan",
+            "Egg yolk (added then briefly re-baked)",
+            "Olive oil",
+            "Basil"
+          ]
+        }
+      ]
+    },
+    {
+      "emoji": "🥗",
+      "name": "Prosciutto & Burrata",
+      "starred": false,
+      "sections": [
+        {
+          "phase": "pre",
+          "label": "🔥 Pre-bake",
+          "items": ["Tomato sauce", "Parmesan", "Mozzarella (a little)"]
+        },
+        {
+          "phase": "post",
+          "label": "✨ Post-bake",
+          "items": ["Prosciutto", "Burrata", "Fresh basil", "Olive oil"]
+        }
+      ]
+    },
+    {
+      "emoji": "🧀",
+      "name": "Four Cheese",
+      "starred": false,
+      "sections": [
+        {
+          "phase": "pre",
+          "label": "🔥 Option A (tomato base)",
+          "items": [
+            "Tomato sauce",
+            "Mozzarella",
+            "Cheddar (shredded)",
+            "Feta (crumbled)",
+            "Blue cheese"
+          ]
+        },
+        {
+          "phase": "pre",
+          "label": "🔥 Option B (white)",
+          "items": [
+            "Olive oil base",
+            "Fior di latte",
+            "Pecorino",
+            "Ricotta",
+            "Gorgonzola"
+          ]
+        },
+        {
+          "phase": "post",
+          "label": "✨ Post-bake",
+          "items": ["Basil"]
+        }
+      ]
+    },
+    {
+      "emoji": "🍒",
+      "name": "Cherry Tomato, Ricotta & Basil",
+      "starred": false,
+      "sections": [
+        {
+          "phase": "pre",
+          "label": "🔥 Pre-bake",
+          "items": ["Ricotta base", "Cherry tomatoes (halved)"]
+        },
+        {
+          "phase": "post",
+          "label": "✨ Post-bake",
+          "items": ["Fresh basil", "Olive oil drizzle"]
+        }
+      ]
+    }
+  ]
+}

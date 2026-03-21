@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom'
-import { LayoutDashboard, DollarSign, Briefcase, Receipt, Gift, Watch, Home, CalendarDays, Eye, EyeOff } from 'lucide-react'
+import { LayoutDashboard, DollarSign, Briefcase, Receipt, Gift, Watch, Home, CalendarDays, Eye, EyeOff, Pizza } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import DashboardToggle from '../components/DashboardToggle'
 import OverviewPage from './pages/OverviewPage'
@@ -11,10 +11,12 @@ import GiftTrackerPage from './pages/GiftTrackerPage'
 import WatchesPage from './pages/WatchesPage'
 import HomePage from './pages/HomePage'
 import PlanningPage from './pages/PlanningPage'
+import PizzaPlaybookPage from './pages/PizzaPlaybookPage'
 
 const tabs = [
   { id: 'overview', label: 'Overview', icon: LayoutDashboard, path: '' },
   { id: 'planning', label: 'Planning', icon: CalendarDays, path: 'planning' },
+  { id: 'pizza', label: 'Pizza', icon: Pizza, path: 'pizza' },
   { id: 'assets', label: 'Assets', icon: DollarSign, path: 'assets' },
   { id: 'compensation', label: 'Compensation', icon: Briefcase, path: 'compensation' },
   { id: 'taxes', label: 'Taxes', icon: Receipt, path: 'taxes' },
@@ -119,6 +121,7 @@ export default function PersonalApp() {
         <Routes>
           <Route index element={<OverviewPage showSensitive={showSensitive} />} />
           <Route path="planning" element={<PlanningPage />} />
+          <Route path="pizza" element={<PizzaPlaybookPage />} />
           <Route path="assets" element={<AssetsPage />} />
           <Route path="compensation" element={<CompensationPage />} />
           <Route path="taxes" element={<TaxesPage />} />

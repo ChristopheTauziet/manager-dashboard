@@ -9,7 +9,16 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173/manager-dashboard](http://localhost:5173/manager-dashboard)
+**Local dev** uses `base: '/'`, so open:
+
+- Manager: [http://localhost:5173/](http://localhost:5173/)
+- Personal: [http://localhost:5173/personal](http://localhost:5173/personal)
+
+(`npm run dev` may open your browser automatically.)
+
+**Production** (GitHub Pages) uses `base: '/manager-dashboard/'`. The built site lives at  
+`https://<user>.github.io/manager-dashboard/`.  
+Builds copy `dist/index.html` → `dist/404.html` so deep links work.
 
 ## Updating data
 
