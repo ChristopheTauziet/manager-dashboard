@@ -9,12 +9,16 @@ npm install
 npm run dev
 ```
 
-**Local dev** uses `base: '/'`, so open:
+**Local dev** uses `base: '/'`. After `npm run dev`, **use the exact URL printed in the terminal** (usually `http://localhost:5173/`, but if that port is busy Vite uses **5174**, **5175**, etc.).
 
-- Manager: [http://localhost:5173/](http://localhost:5173/)
-- Personal: [http://localhost:5173/personal](http://localhost:5173/personal)
+- Manager: `http://localhost:<port>/`
+- Personal: `http://localhost:<port>/personal`
 
-(`npm run dev` may open your browser automatically.)
+**Troubleshooting**
+
+- **Nothing loads / wrong app** — You’re probably on the wrong port. Check the terminal line `➜  Local:   http://localhost:…` and use that host and port.
+- **Port 5173 already in use** — Stop the other dev server, or just use the new port Vite chose (e.g. `5174`).
+- **On macOS**, see what’s using a port: `lsof -i :5173`
 
 **Production** (GitHub Pages) uses `base: '/manager-dashboard/'`. The built site lives at  
 `https://<user>.github.io/manager-dashboard/`.  

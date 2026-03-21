@@ -16,7 +16,9 @@ export default defineConfig(({ command }) => ({
     },
   },
   server: {
+    // If 5173 is taken (another tab, Cursor, etc.), Vite picks the next free port — use the URL it prints.
     port: 5173,
     strictPort: false,
+    host: true,
   },
 }))

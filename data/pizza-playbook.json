@@ -42,6 +42,7 @@
   ],
   "pizzas": [
     {
+      "id": "rosa",
       "emoji": "🌹",
       "name": "Rosa",
       "subtitle": "Chris Bianco",
@@ -65,6 +66,7 @@
       ]
     },
     {
+      "id": "summer-margherita",
       "emoji": "🌿",
       "name": "Summer Margherita",
       "subtitle": "Pesto, Heirloom & Burrata",
@@ -83,6 +85,7 @@
       ]
     },
     {
+      "id": "parma-pazza",
       "emoji": "🇮🇹",
       "name": "Parma Pazza",
       "starred": true,
@@ -106,6 +109,7 @@
       ]
     },
     {
+      "id": "salmon-pizza",
       "emoji": "🐟",
       "name": "Salmon Pizza",
       "starred": true,
@@ -120,6 +124,7 @@
       "note": "Optional: olive oil drizzle or lemon zest before serving"
     },
     {
+      "id": "peach-brie-balsamic",
       "emoji": "🍑",
       "name": "Peach, Brie & Balsamic",
       "starred": true,
@@ -138,6 +143,7 @@
       "note": "Prep: cook peach slices in butter + sugar for 5 min until caramelized"
     },
     {
+      "id": "mushroom-gorgonzola",
       "emoji": "🍄",
       "name": "Mushroom Gorgonzola",
       "starred": true,
@@ -157,6 +163,7 @@
       ]
     },
     {
+      "id": "mortadelle-pistache",
       "emoji": "🌰",
       "name": "Mortadelle Pistache",
       "starred": false,
@@ -183,6 +190,7 @@
       ]
     },
     {
+      "id": "truffle-mafia",
       "emoji": "🖤",
       "name": "Truffle Mafia",
       "starred": false,
@@ -204,6 +212,7 @@
       ]
     },
     {
+      "id": "carbonara",
       "emoji": "🥓",
       "name": "Carbonara",
       "starred": false,
@@ -226,6 +235,7 @@
       ]
     },
     {
+      "id": "prosciutto-burrata",
       "emoji": "🥗",
       "name": "Prosciutto & Burrata",
       "starred": false,
@@ -243,6 +253,7 @@
       ]
     },
     {
+      "id": "four-cheese",
       "emoji": "🧀",
       "name": "Four Cheese",
       "starred": false,
@@ -277,6 +288,7 @@
       ]
     },
     {
+      "id": "cherry-tomato-ricotta-basil",
       "emoji": "🍒",
       "name": "Cherry Tomato, Ricotta & Basil",
       "starred": false,
