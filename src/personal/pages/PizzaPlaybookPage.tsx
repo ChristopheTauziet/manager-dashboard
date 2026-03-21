@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { cn } from '@/lib/utils'
-import { Check, Pizza, ShoppingBasket, X } from 'lucide-react'
+import { Check, ChevronDown, ChevronRight, Pizza, ShoppingBasket, X } from 'lucide-react'
 import playbookData from '../../../data/pizza-playbook.json'
 
 // ── Types ───────────────────────────────────────────────────
@@ -386,32 +386,55 @@ function Step({ n, children }: { n: number; children: React.ReactNode }) {
   )
 }
 
-function StaticDoughCard({ d }: { d: StaticDough }) {
+function StaticDoughCard({ d, defaultCollapsed = false }: { d: StaticDough; defaultCollapsed?: boolean }) {
+  const [expanded, setExpanded] = useState(!defaultCollapsed)
+
   return (
-    <div className="rounded-xl border border-border bg-card p-6 md:p-8 shadow-sm">
-      <h3 className="text-lg font-semibold">{d.title}</h3>
-      <p className="mt-1 text-sm text-muted-foreground">{d.meta}</p>
-      <div className="mt-6 grid gap-8 md:grid-cols-2">
-        <div>
-          <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-orange-400">Ingredients</div>
-          <IngredientTable rows={d.ingredients} />
-          {d.tip && (
-            <div className="mt-3 rounded-md border-l-2 border-emerald-500/60 bg-emerald-500/10 px-3 py-2 text-xs italic text-emerald-300/90">
-              {d.tip}
-            </div>
+    <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+      <button
+        type="button"
+        onClick={() => setExpanded(e => !e)}
+        aria-expanded={expanded}
+        className="flex w-full items-start justify-between gap-3 p-6 text-left transition-colors hover:bg-accent/30 md:p-8"
+      >
+        <div className="min-w-0 flex-1">
+          <h3 className="text-lg font-semibold">{d.title}</h3>
+          <p className="mt-1 text-sm text-muted-foreground">{d.meta}</p>
+          {!expanded && (
+            <p className="mt-2 text-[11px] font-medium uppercase tracking-wide text-orange-400">
+              Tap to expand recipe
+            </p>
           )}
         </div>
-        <div>
-          <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-orange-400">Steps</div>
-          <div className="rounded-lg bg-muted/50 px-4 py-3 text-sm leading-relaxed space-y-2">
-            {d.steps.map((text, i) => (
-              <Step key={i} n={i + 1}>
-                {text}
-              </Step>
-            ))}
+        <span className="mt-0.5 shrink-0 text-muted-foreground" aria-hidden>
+          {expanded ? <ChevronDown className="h-5 w-5" /> : <ChevronRight className="h-5 w-5" />}
+        </span>
+      </button>
+      {expanded && (
+        <div className="border-t border-border px-6 pb-6 md:px-8 md:pb-8">
+          <div className="mt-6 grid gap-8 md:grid-cols-2">
+            <div>
+              <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-orange-400">Ingredients</div>
+              <IngredientTable rows={d.ingredients} />
+              {d.tip && (
+                <div className="mt-3 rounded-md border-l-2 border-emerald-500/60 bg-emerald-500/10 px-3 py-2 text-xs italic text-emerald-300/90">
+                  {d.tip}
+                </div>
+              )}
+            </div>
+            <div>
+              <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-orange-400">Steps</div>
+              <div className="space-y-2 rounded-lg bg-muted/50 px-4 py-3 text-sm leading-relaxed">
+                {d.steps.map((text, i) => (
+                  <Step key={i} n={i + 1}>
+                    {text}
+                  </Step>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }
@@ -705,7 +728,11 @@ export default function PizzaPlaybookPage() {
         </div>
         <BigaDoughCard />
         {staticDoughs.map(d => (
-          <StaticDoughCard key={d.id} d={d} />
+          <StaticDoughCard
+            key={d.id}
+            d={d}
+            defaultCollapsed={d.id === 'cold-ferment' || d.id === 'halo'}
+          />
         ))}
       </section>
 
