@@ -4,6 +4,7 @@
   "windows": [
     {
       "id": "pre-emergent-spring",
+      "window": { "start": [2, 20], "end": [3, 5] },
       "emoji": "🌱",
       "rangeLabel": "FEB 20 – MAR 5",
       "reminder": "Prevent weeds (Pre-emergent)",
@@ -14,6 +15,7 @@
     },
     {
       "id": "turf-builder-spring",
+      "window": { "start": [3, 20], "end": [4, 5] },
       "emoji": "🌿",
       "rangeLabel": "MAR 20 – APR 5",
       "reminder": "Fertilize lawn (Turf Builder)",
@@ -21,6 +23,7 @@
     },
     {
       "id": "green-max-spring",
+      "window": { "start": [4, 25], "end": [5, 10] },
       "emoji": "🌱",
       "rangeLabel": "APR 25 – MAY 10",
       "reminder": "Boost color (Green Max)",
@@ -29,6 +32,7 @@
     },
     {
       "id": "light-fert-early-summer",
+      "window": { "start": [6, 10], "end": [6, 25] },
       "emoji": "☀️",
       "rangeLabel": "JUNE 10 – JUNE 25",
       "reminder": "Light fertilizer (optional)",
@@ -40,6 +44,8 @@
     },
     {
       "id": "summer-maintain",
+      "window": { "start": [7, 1], "end": [8, 31] },
+      "overview": false,
       "emoji": "☀️",
       "rangeLabel": "JULY – AUGUST",
       "reminder": "Maintain only",
@@ -51,6 +57,7 @@
     },
     {
       "id": "turf-builder-fall",
+      "window": { "start": [9, 10], "end": [9, 25] },
       "emoji": "🍂",
       "rangeLabel": "SEPT 10 – SEPT 25",
       "reminder": "Fertilize lawn (Turf Builder)",
@@ -58,6 +65,7 @@
     },
     {
       "id": "pre-emergent-fall",
+      "window": { "start": [10, 1], "end": [10, 15] },
       "emoji": "🍂",
       "rangeLabel": "OCT 1 – OCT 15",
       "reminder": "Prevent weeds again (Pre-emergent)",
@@ -65,6 +73,7 @@
     },
     {
       "id": "green-max-late-fall",
+      "window": { "start": [10, 20], "end": [11, 5] },
       "emoji": "🍂",
       "rangeLabel": "OCT 20 – NOV 5",
       "reminder": "Final color boost (optional)",
@@ -73,6 +82,7 @@
     },
     {
       "id": "winter-rest",
+      "window": { "start": [11, 1], "end": [1, 31] },
       "emoji": "❄️",
       "rangeLabel": "NOV – JAN",
       "reminder": "Do nothing",

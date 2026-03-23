@@ -375,13 +375,11 @@ function ExpandedDetails({ t }: { t: TaxYear }) {
   )
 }
 
-export default function TaxesPage() {
+export function TaxesSection() {
   const [expandedYear, setExpandedYear] = useState<number | null>(null)
 
   return (
     <div className="space-y-8">
-      <h1 className="text-2xl font-semibold">Taxes</h1>
-
       <TaxesOverviewCharts data={taxes} />
 
       <div className="space-y-5">

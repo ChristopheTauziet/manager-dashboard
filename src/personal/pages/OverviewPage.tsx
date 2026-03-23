@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Cake, Heart, Calendar, ArrowRight, TreePine, DollarSign, Briefcase, Receipt, CalendarDays, Plane, GraduationCap, Trophy, Cross, MapPin, Check } from 'lucide-react'
+import { Cake, Heart, Calendar, ArrowRight, TreePine, DollarSign, Briefcase, Receipt, CalendarDays, Plane, GraduationCap, Trophy, Cross, MapPin, Check, Sprout } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import giftsData from '../../../data/gifts.json'
 import { getAllEvents } from '../eventUtils'
@@ -9,6 +9,7 @@ import assetsData from '../../../data/assets.json'
 import cachedStockPrices from '../../../data/stock-prices.json'
 import compData from '../../../data/compensation.json'
 import taxesData from '../../../data/taxes.json'
+import { getActiveLawnWindowsForOverview } from '../lawnSchedule'
 
 interface StockHolding {
   ticker: string
@@ -32,6 +33,56 @@ function getGiftForEvent(name: string, occasion: string, year: number): string[]
 }
 
 const HEART_OCCASIONS = ["Anniversary", "Valentine's Day", "Mother's Day", "Father's Day", "Fête des Mères", "Fête des Pères", "Fête des grands-mères", "Fête des grands-pères"]
+
+function LawnReminderWidget() {
+  const navigate = useNavigate()
+  const active = getActiveLawnWindowsForOverview()
+
+  if (active.length === 0) return null
+
+  return (
+    <div className="bg-card border border-emerald-500/25 rounded-xl overflow-hidden shadow-sm shadow-emerald-500/5">
+      <div className="px-5 py-4 border-b border-border flex items-center justify-between gap-3">
+        <div className="flex items-center gap-2 min-w-0">
+          <Sprout className="h-4 w-4 text-emerald-400 flex-shrink-0" aria-hidden />
+          <h2 className="text-sm font-semibold">Front yard lawn</h2>
+        </div>
+        <button
+          type="button"
+          onClick={() => navigate('/personal/home#lawn')}
+          className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors flex-shrink-0"
+        >
+          Home <ArrowRight className="h-3 w-3" />
+        </button>
+      </div>
+      <div className="px-5 py-4 space-y-5">
+        {active.map(w => (
+          <div key={w.id}>
+            <div className="flex flex-wrap items-center gap-2 gap-y-1">
+              <span className="text-lg leading-none" aria-hidden>
+                {w.emoji}
+              </span>
+              <span className="text-[11px] font-semibold uppercase tracking-wide text-emerald-400/95 tabular-nums">
+                {w.rangeLabel}
+              </span>
+              {w.optional && (
+                <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-400">
+                  Optional
+                </span>
+              )}
+            </div>
+            <p className="text-sm font-semibold text-foreground mt-2">{w.reminder}</p>
+            <ul className="mt-2 space-y-1 text-sm text-muted-foreground list-disc pl-4 marker:text-muted-foreground/60">
+              {w.items.map((line, i) => (
+                <li key={i}>{line}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 function NetWorthWidget({ showSensitive }: { showSensitive: boolean }) {
   const navigate = useNavigate()
@@ -87,7 +138,7 @@ function NetWorthWidget({ showSensitive }: { showSensitive: boolean }) {
           <h2 className="text-sm font-semibold">Net Worth</h2>
         </div>
         <button
-          onClick={() => navigate('/personal/assets')}
+          onClick={() => navigate('/personal/finance#assets')}
           className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
         >
           Assets <ArrowRight className="h-3 w-3" />
@@ -128,7 +179,7 @@ function CompensationWidget({ showSensitive }: { showSensitive: boolean }) {
           <h2 className="text-sm font-semibold">{CURRENT_YEAR} Compensation</h2>
         </div>
         <button
-          onClick={() => navigate('/personal/compensation')}
+          onClick={() => navigate('/personal/finance#compensation')}
           className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
         >
           Details <ArrowRight className="h-3 w-3" />
@@ -170,7 +221,7 @@ function TaxesWidget({ showSensitive }: { showSensitive: boolean }) {
           <h2 className="text-sm font-semibold">{latest.year} Taxes</h2>
         </div>
         <button
-          onClick={() => navigate('/personal/taxes')}
+          onClick={() => navigate('/personal/finance#taxes')}
           className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
         >
           All Years <ArrowRight className="h-3 w-3" />
@@ -397,7 +448,8 @@ export default function OverviewPage({ showSensitive }: { showSensitive: boolean
     <div className="space-y-8">
       <h1 className="text-2xl font-semibold">Overview</h1>
       <div className="flex flex-col xl:flex-row gap-5">
-        <div className="xl:w-1/2 flex-shrink-0">
+        <div className="xl:w-1/2 flex-shrink-0 flex flex-col gap-5">
+          <LawnReminderWidget />
           <ComingUpWidget />
         </div>
         <div className="xl:w-1/2 flex flex-col gap-5">

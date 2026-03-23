@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import type { LucideIcon } from 'lucide-react'
 import { ChevronRight, Droplets, Leaf, Wind, Hammer, Wrench, Sprout, Table2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import vendorsData from '../../../data/vendors.json'
 import lawnData from '../../../data/lawn-calendar.json'
 import teakData from '../../../data/teak-table.json'
+import { WatchesSection } from './WatchesPage'
 
 type VendorRow = { service: string; name: string; contact: string | null }
 
@@ -44,6 +46,7 @@ function ContactLink({ contact }: { contact: string }) {
 }
 
 function LawnCalendarSection() {
+  const location = useLocation()
   const [open, setOpen] = useState(false)
   const { title, subtitle, windows } = lawnData as {
     title: string
@@ -51,8 +54,12 @@ function LawnCalendarSection() {
     windows: LawnWindow[]
   }
 
+  useEffect(() => {
+    if (location.hash === '#lawn') setOpen(true)
+  }, [location.hash])
+
   return (
-    <section className="space-y-4">
+    <section id="lawn" className="scroll-mt-24 space-y-4">
       <button
         type="button"
         onClick={() => setOpen(o => !o)}
@@ -252,7 +259,8 @@ function TeakTableSection() {
   )
 }
 
-export default function HomePage() {
+function ContractorsSection() {
+  const [open, setOpen] = useState(false)
   const groups = vendorsData as {
     id: string
     title: string
@@ -261,23 +269,32 @@ export default function HomePage() {
   }[]
 
   return (
-    <div className="space-y-10">
-      <div>
-        <h1 className="text-2xl font-semibold">Home</h1>
-        <p className="text-sm text-muted-foreground mt-1">
-          Lawn care, teak table maintenance, contractors, and services for the house.
-        </p>
-      </div>
+    <section className="space-y-4">
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        className="flex w-full items-start gap-3 rounded-xl border border-border bg-card px-4 py-3 text-left transition-colors hover:bg-muted/30"
+        aria-expanded={open}
+      >
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sky-500/15">
+          <Wrench className="h-5 w-5 text-sky-400" aria-hidden />
+        </div>
+        <div className="min-w-0 flex-1">
+          <h2 className="text-lg font-semibold">Contractors & services</h2>
+          <p className="text-sm text-muted-foreground mt-0.5">
+            People you’ve used for the house, grouped by type.
+          </p>
+        </div>
+        <ChevronRight
+          className={cn(
+            'mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200',
+            open && 'rotate-90'
+          )}
+          aria-hidden
+        />
+      </button>
 
-      <LawnCalendarSection />
-
-      <TeakTableSection />
-
-      <section className="space-y-4">
-        <h2 className="text-lg font-semibold">Contractors & services</h2>
-        <p className="text-sm text-muted-foreground -mt-2">
-          People you’ve used for the house, grouped by type.
-        </p>
+      {open && (
         <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {groups.map(group => {
             const Icon = GROUP_ICONS[group.id] ?? Wrench
@@ -316,7 +333,37 @@ export default function HomePage() {
             )
           })}
         </div>
-      </section>
+      )}
+    </section>
+  )
+}
+
+export default function HomePage() {
+  const location = useLocation()
+
+  useLayoutEffect(() => {
+    const id = location.hash.replace(/^#/, '')
+    if (!id) return
+    const el = document.getElementById(id)
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }, [location.pathname, location.hash])
+
+  return (
+    <div className="space-y-10">
+      <div>
+        <h1 className="text-2xl font-semibold">Home</h1>
+        <p className="text-sm text-muted-foreground mt-1">
+          Lawn care, teak table, contractors, watch collection, and services for the house.
+        </p>
+      </div>
+
+      <LawnCalendarSection />
+
+      <TeakTableSection />
+
+      <ContractorsSection />
+
+      <WatchesSection />
     </div>
   )
 }

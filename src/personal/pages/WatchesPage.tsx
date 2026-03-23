@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import { LayoutGrid, List, ArrowUpDown, Watch } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
+import { ChevronRight, LayoutGrid, List, ArrowUpDown, Watch } from 'lucide-react'
 import { cn, formatCurrency, formatDate } from '@/lib/utils'
 import watchesData from '../../../data/watches.json'
 
@@ -32,12 +33,18 @@ function sortWatches(items: WatchEntry[], field: SortField, dir: SortDir) {
   })
 }
 
-export default function WatchesPage() {
+export function WatchesSection() {
+  const location = useLocation()
+  const [open, setOpen] = useState(false)
   const [view, setView] = useState<ViewMode>('cards')
   const [sortField, setSortField] = useState<SortField>('date')
   const [sortDir, setSortDir] = useState<SortDir>('desc')
 
   const sorted = sortWatches(watches, sortField, sortDir)
+
+  useEffect(() => {
+    if (location.hash === '#watches') setOpen(true)
+  }, [location.hash])
 
   function toggleSort(field: SortField) {
     if (sortField === field) {
@@ -49,48 +56,72 @@ export default function WatchesPage() {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-semibold">Watches</h1>
-          <p className="text-sm text-muted-foreground mt-1">
+    <section id="watches" className="scroll-mt-24 space-y-4">
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        className="flex w-full items-start gap-3 rounded-xl border border-border bg-card px-4 py-3 text-left transition-colors hover:bg-muted/30"
+        aria-expanded={open}
+      >
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-violet-500/15">
+          <Watch className="h-5 w-5 text-violet-400" aria-hidden />
+        </div>
+        <div className="min-w-0 flex-1">
+          <h2 className="text-lg font-semibold">Watches</h2>
+          <p className="text-sm text-muted-foreground mt-0.5">
             {watches.length} pieces &middot; {formatCurrency(totalSpent)} total
           </p>
         </div>
-        <div className="flex items-center gap-1 bg-card border border-border rounded-lg p-1">
-          <button
-            onClick={() => setView('cards')}
-            className={cn(
-              'flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors',
-              view === 'cards'
-                ? 'bg-accent text-accent-foreground'
-                : 'text-muted-foreground hover:text-foreground'
-            )}
-          >
-            <LayoutGrid className="h-4 w-4" />
-            Cards
-          </button>
-          <button
-            onClick={() => setView('table')}
-            className={cn(
-              'flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors',
-              view === 'table'
-                ? 'bg-accent text-accent-foreground'
-                : 'text-muted-foreground hover:text-foreground'
-            )}
-          >
-            <List className="h-4 w-4" />
-            Table
-          </button>
-        </div>
-      </div>
+        <ChevronRight
+          className={cn(
+            'mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200',
+            open && 'rotate-90'
+          )}
+          aria-hidden
+        />
+      </button>
 
-      {view === 'cards' ? (
-        <CardView watches={sorted} sortField={sortField} sortDir={sortDir} onToggleSort={toggleSort} />
-      ) : (
-        <TableView watches={sorted} sortField={sortField} sortDir={sortDir} onToggleSort={toggleSort} />
+      {open && (
+        <div className="space-y-6">
+          <div className="flex items-center justify-end">
+            <div className="flex items-center gap-1 bg-card border border-border rounded-lg p-1">
+              <button
+                type="button"
+                onClick={() => setView('cards')}
+                className={cn(
+                  'flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors',
+                  view === 'cards'
+                    ? 'bg-accent text-accent-foreground'
+                    : 'text-muted-foreground hover:text-foreground'
+                )}
+              >
+                <LayoutGrid className="h-4 w-4" />
+                Cards
+              </button>
+              <button
+                type="button"
+                onClick={() => setView('table')}
+                className={cn(
+                  'flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors',
+                  view === 'table'
+                    ? 'bg-accent text-accent-foreground'
+                    : 'text-muted-foreground hover:text-foreground'
+                )}
+              >
+                <List className="h-4 w-4" />
+                Table
+              </button>
+            </div>
+          </div>
+
+          {view === 'cards' ? (
+            <CardView watches={sorted} sortField={sortField} sortDir={sortDir} onToggleSort={toggleSort} />
+          ) : (
+            <TableView watches={sorted} sortField={sortField} sortDir={sortDir} onToggleSort={toggleSort} />
+          )}
+        </div>
       )}
-    </div>
+    </section>
   )
 }
 

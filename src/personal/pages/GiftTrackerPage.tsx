@@ -220,7 +220,7 @@ export default function GiftTrackerPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-semibold">Gift Tracker</h1>
+        <h1 className="text-2xl font-semibold">Gifts</h1>
         <p className="text-sm text-muted-foreground mt-1">
           {people.length} people &middot; {totalGifts} gifts tracked
         </p>

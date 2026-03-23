@@ -382,9 +382,9 @@ function NetWorthBanner({ stocksTotal, cryptoTotal, houseValue, retirementTotal,
   )
 }
 
-// ── Main Page ───────────────────────────────────────────────
+// ── Section (used on Finance page) ──────────────────────────
 
-export default function AssetsPage() {
+export function AssetsSection() {
   const { prices, loading, refresh } = usePrices()
 
   const stocksTotal = (assetsData.stocks as StockHolding[]).reduce((s, h) => {
@@ -407,8 +407,6 @@ export default function AssetsPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-semibold">Assets</h1>
-
       <NetWorthBanner
         stocksTotal={stocksTotal}
         cryptoTotal={cryptoTotal}

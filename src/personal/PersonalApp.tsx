@@ -1,14 +1,11 @@
 import { useState } from 'react'
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom'
-import { LayoutDashboard, DollarSign, Briefcase, Receipt, Gift, Watch, Home, CalendarDays, Eye, EyeOff, Pizza } from 'lucide-react'
+import { LayoutDashboard, Wallet, Gift, Home, CalendarDays, Eye, EyeOff, Pizza } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import DashboardToggle from '../components/DashboardToggle'
 import OverviewPage from './pages/OverviewPage'
-import AssetsPage from './pages/AssetsPage'
-import CompensationPage from './pages/CompensationPage'
-import TaxesPage from './pages/TaxesPage'
+import FinancePage from './pages/FinancePage'
 import GiftTrackerPage from './pages/GiftTrackerPage'
-import WatchesPage from './pages/WatchesPage'
 import HomePage from './pages/HomePage'
 import PlanningPage from './pages/PlanningPage'
 import PizzaPlaybookPage from './pages/PizzaPlaybookPage'
@@ -16,13 +13,10 @@ import PizzaPlaybookPage from './pages/PizzaPlaybookPage'
 const tabs = [
   { id: 'overview', label: 'Overview', icon: LayoutDashboard, path: '' },
   { id: 'planning', label: 'Planning', icon: CalendarDays, path: 'planning' },
-  { id: 'pizza', label: 'Pizza', icon: Pizza, path: 'pizza' },
-  { id: 'assets', label: 'Assets', icon: DollarSign, path: 'assets' },
-  { id: 'compensation', label: 'Compensation', icon: Briefcase, path: 'compensation' },
-  { id: 'taxes', label: 'Taxes', icon: Receipt, path: 'taxes' },
-  { id: 'gifts', label: 'Gift Tracker', icon: Gift, path: 'gifts' },
-  { id: 'watches', label: 'Watches', icon: Watch, path: 'watches' },
+  { id: 'finance', label: 'Finance', icon: Wallet, path: 'finance' },
   { id: 'home', label: 'Home', icon: Home, path: 'home' },
+  { id: 'pizza', label: 'Pizza', icon: Pizza, path: 'pizza' },
+  { id: 'gifts', label: 'Gifts', icon: Gift, path: 'gifts' },
 ] as const
 
 export default function PersonalApp() {
@@ -122,11 +116,12 @@ export default function PersonalApp() {
           <Route index element={<OverviewPage showSensitive={showSensitive} />} />
           <Route path="planning" element={<PlanningPage />} />
           <Route path="pizza" element={<PizzaPlaybookPage />} />
-          <Route path="assets" element={<AssetsPage />} />
-          <Route path="compensation" element={<CompensationPage />} />
-          <Route path="taxes" element={<TaxesPage />} />
+          <Route path="finance" element={<FinancePage />} />
+          <Route path="assets" element={<Navigate to="/personal/finance#assets" replace />} />
+          <Route path="compensation" element={<Navigate to="/personal/finance#compensation" replace />} />
+          <Route path="taxes" element={<Navigate to="/personal/finance#taxes" replace />} />
           <Route path="gifts" element={<GiftTrackerPage />} />
-          <Route path="watches" element={<WatchesPage />} />
+          <Route path="watches" element={<Navigate to="/personal/home#watches" replace />} />
           <Route path="home" element={<HomePage />} />
           <Route path="*" element={<Navigate to="/personal" replace />} />
         </Routes>

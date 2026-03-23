@@ -287,10 +287,9 @@ function CompHistoryChart() {
   )
 }
 
-export default function CompensationPage() {
+export function CompensationSection() {
   return (
     <div className="space-y-8">
-      <h1 className="text-2xl font-semibold">Compensation</h1>
       <SharePriceScenarios />
       <EquityVesting />
       <CompHistoryChart />
