@@ -124,7 +124,7 @@
         { "year": 2025, "occasion": "Birthday", "items": ["Lego Formule 1", "Lego foot", "Lego 4x4", "Lego Monster Truck", "Lego police", "Lego rouleau compresseur", "Jenga", "Marble run", "Monopoly", "Kit peinture"] },
         { "year": 2025, "occasion": "Christmas", "items": ["Lego City Tower", "Flipper", "Lego château fort", "Mini jeu basket", "Tir à l'arc", "Cage foot"] }
       ],
-      "ideas": []
+      "ideas": ["Tin can phones"]
     },
     {
       "name": "Chloé",
@@ -137,7 +137,7 @@
         { "year": 2025, "occasion": "Birthday", "items": ["Gâteau en bois", "Tonies box", "Lego château Mickey", "Robe Elsa", "Karaoké", "Peppa Pig books"] },
         { "year": 2025, "occasion": "Christmas", "items": ["Lego Bluey", "Jeu docteur", "Lego Toucan", "Tablette dessin", "Caddie/caisse", "Coiffeuse"] }
       ],
-      "ideas": []
+      "ideas": ["A camera"]
     },
     {
       "name": "Seb",
@@ -208,7 +208,7 @@
       "gifts": [
         { "year": 2025, "occasion": "Christmas", "items": ["Lego Panda"] }
       ],
-      "ideas": []
+      "ideas": ["Tin can phones"]
     }
   ]
 }
