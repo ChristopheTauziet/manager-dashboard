@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import type { LucideIcon } from 'lucide-react'
-import { Droplets, Leaf, Wind, Hammer, Wrench, Sprout, Table2 } from 'lucide-react'
+import { ChevronRight, Droplets, Leaf, Wind, Hammer, Wrench, Sprout, Table2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import vendorsData from '../../../data/vendors.json'
 import lawnData from '../../../data/lawn-calendar.json'
@@ -43,6 +44,7 @@ function ContactLink({ contact }: { contact: string }) {
 }
 
 function LawnCalendarSection() {
+  const [open, setOpen] = useState(false)
   const { title, subtitle, windows } = lawnData as {
     title: string
     subtitle: string
@@ -51,16 +53,30 @@ function LawnCalendarSection() {
 
   return (
     <section className="space-y-4">
-      <div className="flex items-start gap-3">
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        className="flex w-full items-start gap-3 rounded-xl border border-border bg-card px-4 py-3 text-left transition-colors hover:bg-muted/30"
+        aria-expanded={open}
+      >
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-emerald-500/15">
           <Sprout className="h-5 w-5 text-emerald-400" aria-hidden />
         </div>
-        <div>
+        <div className="min-w-0 flex-1">
           <h2 className="text-lg font-semibold">{title}</h2>
           <p className="text-sm text-muted-foreground mt-0.5">{subtitle}</p>
         </div>
-      </div>
+        <ChevronRight
+          className={cn(
+            'mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200',
+            open && 'rotate-90'
+          )}
+          aria-hidden
+        />
+      </button>
 
+      {open && (
+        <>
       <div className="relative border border-border rounded-xl bg-card overflow-hidden">
         <div className="absolute left-[1.125rem] top-6 bottom-6 w-px bg-border md:left-5" aria-hidden />
         <ul className="divide-y divide-border">
@@ -108,6 +124,8 @@ function LawnCalendarSection() {
         Products: <span className="text-foreground/90">middle bottle</span> = Turf Builder ·{' '}
         <span className="text-foreground/90">left bottle</span> = Green Max · pre-emergent = granular + spreader.
       </p>
+        </>
+      )}
     </section>
   )
 }
@@ -124,6 +142,7 @@ type TeakStep = {
 }
 
 function TeakTableSection() {
+  const [open, setOpen] = useState(false)
   const data = teakData as {
     title: string
     subtitle: string
@@ -136,17 +155,31 @@ function TeakTableSection() {
 
   return (
     <section className="space-y-4">
-      <div className="flex items-start gap-3">
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        className="flex w-full items-start gap-3 rounded-xl border border-border bg-card px-4 py-3 text-left transition-colors hover:bg-muted/30"
+        aria-expanded={open}
+      >
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-amber-500/15">
           <Table2 className="h-5 w-5 text-amber-400" aria-hidden />
         </div>
-        <div>
+        <div className="min-w-0 flex-1">
           <h2 className="text-lg font-semibold">{data.title}</h2>
           <p className="text-sm text-muted-foreground mt-0.5">{data.subtitle}</p>
           <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-amber-400/90">{data.cadence}</p>
         </div>
-      </div>
+        <ChevronRight
+          className={cn(
+            'mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200',
+            open && 'rotate-90'
+          )}
+          aria-hidden
+        />
+      </button>
 
+      {open && (
+        <>
       <div className="relative border border-border rounded-xl bg-card overflow-hidden">
         <div className="absolute left-[1.125rem] top-6 bottom-6 w-px bg-border md:left-5" aria-hidden />
         <ul className="divide-y divide-border">
@@ -213,6 +246,8 @@ function TeakTableSection() {
           </ul>
         </div>
       </div>
+        </>
+      )}
     </section>
   )
 }
