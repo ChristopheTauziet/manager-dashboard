@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { cn } from '@/lib/utils'
-import { Check, ChevronDown, ChevronRight, Pizza, ShoppingBasket, X } from 'lucide-react'
+import { Check, ChevronDown, ChevronRight, ShoppingBasket, X } from 'lucide-react'
 import playbookData from '../../../data/pizza-playbook.json'
 
 // ── Types ───────────────────────────────────────────────────
@@ -35,7 +35,7 @@ interface PizzaRecipe {
   note?: string
 }
 
-const meta = playbookData.meta as { subtitle: string; footer: string }
+const meta = playbookData.meta as { subtitle: string }
 const staticDoughs = playbookData.staticDoughs as StaticDough[]
 const pizzas = playbookData.pizzas as PizzaRecipe[]
 
@@ -255,8 +255,14 @@ function fmtWithNote(grams: number, note?: string) {
   return fmtGrams(grams) + (note ? ` ${note}` : '')
 }
 
+const BALLS_RANGE_MIN = 1
+const BALLS_RANGE_MAX = 20
+
 function BigaDoughCard() {
   const [balls, setBalls] = useState(9)
+
+  const ballsFillPct =
+    ((balls - BALLS_RANGE_MIN) / (BALLS_RANGE_MAX - BALLS_RANGE_MIN)) * 100
 
   const scaled = useMemo(() => {
     const ratio = balls / BIGA_BASE.balls
@@ -288,17 +294,27 @@ function BigaDoughCard() {
         November 2025 · <span className="tabular-nums">{balls}</span> balls × 360g · ~63% hydration total
       </p>
 
-      <div className="mt-5 flex flex-wrap items-center gap-4 rounded-lg border border-orange-500/40 bg-orange-500/10 px-4 py-3">
+      <div className="mt-5 flex flex-wrap items-center gap-4 py-1">
         <span className="text-xs font-bold uppercase tracking-wide text-orange-400 whitespace-nowrap">
           Number of balls
         </span>
         <input
           type="range"
-          min={1}
-          max={20}
+          min={BALLS_RANGE_MIN}
+          max={BALLS_RANGE_MAX}
           value={balls}
           onChange={e => setBalls(Number(e.target.value))}
-          className="min-w-[120px] flex-1 accent-orange-500 h-2 cursor-pointer"
+          className={cn(
+            'min-w-[120px] flex-1 h-2.5 cursor-pointer appearance-none rounded-full',
+            '[&::-webkit-slider-runnable-track]:h-2.5 [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-runnable-track]:bg-transparent',
+            '[&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-orange-500 [&::-webkit-slider-thumb]:shadow-none [&::-webkit-slider-thumb]:border-0',
+            '[&::-webkit-slider-thumb]:mt-[-5px]',
+            '[&::-moz-range-track]:h-2.5 [&::-moz-range-track]:rounded-full [&::-moz-range-track]:bg-transparent',
+            '[&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-orange-500 [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:shadow-none'
+          )}
+          style={{
+            background: `linear-gradient(to right, rgb(249 115 22) 0%, rgb(249 115 22) ${ballsFillPct}%, rgb(39 39 42) ${ballsFillPct}%, rgb(39 39 42) 100%)`,
+          }}
         />
         <span className="min-w-[3rem] rounded-md bg-orange-500 px-3 py-1 text-center text-sm font-bold tabular-nums text-white">
           {balls}
@@ -680,46 +696,29 @@ export default function PizzaPlaybookPage() {
 
   const showShoppingList = selectedRecipeIds.length > 0
 
+  const quickLinkClass =
+    'rounded-full border border-orange-500/50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-orange-400 hover:bg-orange-500/15 transition-colors'
+
   return (
-    <div
-      className={cn(
-        'space-y-10',
-        showShoppingList ? 'pb-44 md:pb-40' : ''
-      )}
-    >
+    <div className={cn(showShoppingList ? 'pb-44 md:pb-40' : '')}>
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <h1 className="flex items-center gap-2 text-2xl font-semibold">
-            <Pizza className="h-7 w-7 text-orange-400" aria-hidden />
-            Pizza Playbook
-          </h1>
+          <h1 className="text-2xl font-semibold">Pizza Playbook</h1>
           <p className="mt-1 text-sm text-muted-foreground">{meta.subtitle}</p>
         </div>
-        <nav className="flex flex-wrap gap-2 pt-1">
-          <a
-            href="#dough"
-            className="rounded-full border border-orange-500/50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-orange-400 hover:bg-orange-500/15 transition-colors"
-          >
-            Dough recipes
-          </a>
-          <a
-            href="#pizzas"
-            className="rounded-full border border-orange-500/50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-orange-400 hover:bg-orange-500/15 transition-colors"
-          >
+        <nav className="flex flex-wrap gap-2 pt-1" aria-label="Jump to section">
+          <a href="#pizzas" className={quickLinkClass}>
             Pizza recipes
           </a>
           {showShoppingList && (
-            <a
-              href="#shopping-list"
-              className="rounded-full border border-orange-500/50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-orange-400 hover:bg-orange-500/15 transition-colors"
-            >
+            <a href="#shopping-list" className={quickLinkClass}>
               Shopping list
             </a>
           )}
         </nav>
       </div>
 
-      <section id="dough" className="scroll-mt-24 space-y-6">
+      <section id="dough" className="mt-8 scroll-mt-24 space-y-6">
         <div>
           <h2 className="text-xl font-semibold border-b border-orange-500/40 pb-2 text-orange-400">
             Dough recipes
@@ -738,7 +737,7 @@ export default function PizzaPlaybookPage() {
         ))}
       </section>
 
-      <section id="pizzas" className="scroll-mt-24 space-y-6">
+      <section id="pizzas" className="mt-24 scroll-mt-24 space-y-6">
         <div>
           <h2 className="text-xl font-semibold border-b border-orange-500/40 pb-2 text-orange-400">
             Pizza recipes
@@ -760,12 +759,8 @@ export default function PizzaPlaybookPage() {
       </section>
 
       {showShoppingList && (
-        <div id="shopping-list" className="h-px scroll-mt-28 w-full shrink-0" aria-hidden />
+        <div id="shopping-list" className="mt-24 h-px scroll-mt-28 w-full shrink-0" aria-hidden />
       )}
-
-      <footer className="border-t border-border pt-8 text-center text-xs text-muted-foreground">
-        {meta.footer}
-      </footer>
 
       {showShoppingList && (
         <ShoppingListDock

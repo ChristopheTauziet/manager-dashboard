@@ -18,7 +18,7 @@ export default function FinancePage() {
     'rounded-full border border-primary/50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary hover:bg-primary/10 transition-colors'
 
   return (
-    <div className="space-y-12">
+    <div>
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <h1 className="text-2xl font-semibold">Finance</h1>
@@ -36,17 +36,17 @@ export default function FinancePage() {
         </nav>
       </div>
 
-      <section id="assets" className="scroll-mt-24 space-y-6">
+      <section id="assets" className="mt-8 scroll-mt-24 space-y-6">
         <h2 className="text-xl font-semibold border-b border-border pb-2">Assets</h2>
         <AssetsSection />
       </section>
 
-      <section id="compensation" className="scroll-mt-24 space-y-6">
+      <section id="compensation" className="mt-24 scroll-mt-24 space-y-6">
         <h2 className="text-xl font-semibold border-b border-border pb-2">Compensation</h2>
         <CompensationSection />
       </section>
 
-      <section id="taxes" className="scroll-mt-24 space-y-6">
+      <section id="taxes" className="mt-24 scroll-mt-24 space-y-6">
         <h2 className="text-xl font-semibold border-b border-border pb-2">Taxes</h2>
         <TaxesSection />
       </section>

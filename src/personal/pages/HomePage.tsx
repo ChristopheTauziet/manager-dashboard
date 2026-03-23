@@ -349,7 +349,7 @@ export default function HomePage() {
   }, [location.pathname, location.hash])
 
   return (
-    <div className="space-y-10">
+    <div>
       <div>
         <h1 className="text-2xl font-semibold">Home</h1>
         <p className="text-sm text-muted-foreground mt-1">
@@ -357,13 +357,21 @@ export default function HomePage() {
         </p>
       </div>
 
-      <LawnCalendarSection />
+      <div className="mt-8">
+        <LawnCalendarSection />
+      </div>
 
-      <TeakTableSection />
+      <div className="mt-20">
+        <TeakTableSection />
+      </div>
 
-      <ContractorsSection />
+      <div className="mt-20">
+        <ContractorsSection />
+      </div>
 
-      <WatchesSection />
+      <div className="mt-20">
+        <WatchesSection />
+      </div>
     </div>
   )
 }
