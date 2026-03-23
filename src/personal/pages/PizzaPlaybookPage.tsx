@@ -341,10 +341,12 @@ function BigaDoughCard() {
           <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-orange-400">Steps</div>
           <div className="rounded-lg bg-muted/50 px-4 py-3 text-sm leading-relaxed space-y-2">
             <Step n={1}>
-              Add biga + half the cold water to mixer on <strong>slow</strong> speed for 5 min
+              At least <strong>three hours before lunch</strong>, add biga + half the cold water to mixer on{' '}
+              <strong>slow</strong> speed (<strong>15%</strong>) for <strong>10 min</strong>
             </Step>
             <Step n={2}>
-              Add remaining water + salt, switch to <strong>high</strong> speed for 5 more min
+              Add remaining water + salt, switch to <strong>medium</strong> speed (<strong>25%</strong>) for{' '}
+              <strong>10 min</strong>
             </Step>
             <Step n={3}>
               <strong>Fold</strong> the dough to build strength. Rest 20 min.
