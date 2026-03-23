@@ -1,0 +1,94 @@
+{
+  "title": "Teak table",
+  "subtitle": "Outdoor table refresh — plan for once per year.",
+  "cadence": "1× per year",
+  "steps": [
+    {
+      "id": "prep",
+      "n": 1,
+      "emoji": "🪵",
+      "title": "Prep",
+      "timeLabel": "5 min",
+      "items": [
+        "Move table to shade",
+        "Lay down plastic drop cloth",
+        "Quickly rinse table with water"
+      ]
+    },
+    {
+      "id": "clean",
+      "n": 2,
+      "emoji": "🧽",
+      "title": "Clean",
+      "timeLabel": "10–15 min",
+      "items": [
+        "Apply teak cleaner",
+        "Scrub with soft brush (with the grain)",
+        "Let sit ~2–3 min (don’t let it dry)",
+        "Rinse thoroughly"
+      ]
+    },
+    {
+      "id": "brighten",
+      "n": 3,
+      "emoji": "✨",
+      "title": "Brighten",
+      "timeLabel": "5–10 min",
+      "items": [
+        "Apply brightener",
+        "Light scrub if needed",
+        "Wait ~2–3 min",
+        "Rinse well"
+      ]
+    },
+    {
+      "id": "dry",
+      "n": 4,
+      "emoji": "🌤️",
+      "title": "Dry",
+      "timeLabel": "24h ideal",
+      "important": true,
+      "items": [
+        "Let dry completely (ideally 24h)",
+        "Must feel fully dry, no damp spots"
+      ]
+    },
+    {
+      "id": "seal",
+      "n": 5,
+      "emoji": "🖌️",
+      "title": "Seal",
+      "timeLabel": "10–15 min",
+      "items": [
+        "Apply thin coat of sealer with foam brush",
+        "Go with the grain",
+        "Let absorb ~5–10 min",
+        "Wipe excess with cloth (key step)"
+      ],
+      "optionalNote": "Apply 2nd thin coat after ~1 hour for better protection"
+    }
+  ],
+  "rules": {
+    "title": "Rules (don’t skip)",
+    "items": [
+      "Always thin coats, never flood",
+      "Always wipe excess or it gets sticky",
+      "Never do it in direct sun",
+      "Always scrub with the grain"
+    ]
+  },
+  "timeSummary": {
+    "title": "Total time",
+    "items": [
+      "Active work: ~30–45 min",
+      "Total with drying: 1 day"
+    ]
+  },
+  "ongoingMaintenance": {
+    "title": "Maintenance during the year (optional but helps)",
+    "items": [
+      "Quick wipe with water every few weeks",
+      "If stains appear → spot clean only (no full reset)"
+    ]
+  }
+}

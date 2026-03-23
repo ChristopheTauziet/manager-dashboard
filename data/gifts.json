@@ -38,7 +38,21 @@
         { "year": 2026, "occasion": "Valentine's Day", "items": ["Sézane earrings"] },
         { "year": 2026, "occasion": "Anniversary", "items": ["Margaux Sandals"] }
       ],
-      "ideas": ["Le Creuset salt and pepper or other dinnerware", "Massage", "Full spa day for 2", "Fancy dinner", "Weekend getaway", "Photo timeline or book", "Customized jewelry"]
+      "ideas": [
+        "Le Creuset salt and pepper or other dinnerware",
+        "Massage",
+        "Full spa day for 2",
+        "Fancy dinner",
+        "Weekend getaway",
+        "Photo timeline or book",
+        "Customized jewelry",
+        "Statement kitchen piece (e.g. cake stand or a serving tray)",
+        "Annotated map of our travels",
+        "A printed photo book of our trips",
+        "A pottery kit",
+        "A monthly flower subscription or plant care service",
+        "A gift basket from GoldBelly"
+      ]
     },
     {
       "name": "Papa",

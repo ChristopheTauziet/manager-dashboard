@@ -1,0 +1,83 @@
+{
+  "title": "Front yard lawn",
+  "subtitle": "Treatment calendar — use these windows to set reminders and apply products.",
+  "windows": [
+    {
+      "id": "pre-emergent-spring",
+      "emoji": "🌱",
+      "rangeLabel": "FEB 20 – MAR 5",
+      "reminder": "Prevent weeds (Pre-emergent)",
+      "items": [
+        "Buy + apply pre-emergent (granular, with spreader)",
+        "This is the only thing missing from your setup"
+      ]
+    },
+    {
+      "id": "turf-builder-spring",
+      "emoji": "🌿",
+      "rangeLabel": "MAR 20 – APR 5",
+      "reminder": "Fertilize lawn (Turf Builder)",
+      "items": ["Use your middle bottle", "Light watering after"]
+    },
+    {
+      "id": "green-max-spring",
+      "emoji": "🌱",
+      "rangeLabel": "APR 25 – MAY 10",
+      "reminder": "Boost color (Green Max)",
+      "items": ["Use left bottle", "Optional but recommended for that deep green look"],
+      "optional": true
+    },
+    {
+      "id": "light-fert-early-summer",
+      "emoji": "☀️",
+      "rangeLabel": "JUNE 10 – JUNE 25",
+      "reminder": "Light fertilizer (optional)",
+      "items": [
+        "If lawn looks pale → use Turf Builder again",
+        "If still green → skip"
+      ],
+      "optional": true
+    },
+    {
+      "id": "summer-maintain",
+      "emoji": "☀️",
+      "rangeLabel": "JULY – AUGUST",
+      "reminder": "Maintain only",
+      "items": [
+        "No products unless lawn struggles",
+        "Focus on watering",
+        "Mowing height 3–3.5 inches"
+      ]
+    },
+    {
+      "id": "turf-builder-fall",
+      "emoji": "🍂",
+      "rangeLabel": "SEPT 10 – SEPT 25",
+      "reminder": "Fertilize lawn (Turf Builder)",
+      "items": ["This is a key feeding", "Helps lawn recover + stay thick"]
+    },
+    {
+      "id": "pre-emergent-fall",
+      "emoji": "🍂",
+      "rangeLabel": "OCT 1 – OCT 15",
+      "reminder": "Prevent weeds again (Pre-emergent)",
+      "items": ["Second annual application", "Prevents winter weeds"]
+    },
+    {
+      "id": "green-max-late-fall",
+      "emoji": "🍂",
+      "rangeLabel": "OCT 20 – NOV 5",
+      "reminder": "Final color boost (optional)",
+      "items": ["Use Green Max if you want it looking sharp before winter"],
+      "optional": true
+    },
+    {
+      "id": "winter-rest",
+      "emoji": "❄️",
+      "rangeLabel": "NOV – JAN",
+      "reminder": "Do nothing",
+      "items": ["Just mow occasionally", "No fertilizer needed"],
+      "dormant": true
+    }
+  ]
+}
