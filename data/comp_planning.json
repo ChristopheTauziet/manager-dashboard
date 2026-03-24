@@ -1,7 +1,7 @@
 [
   {
     "name": "Cody Fisher",
-    "level": "Level 5",
+    "level": "Level 6",
     "zone": "Zone 1",
     "perf_score": "Exceptional",
     "promotion": true,
@@ -85,7 +85,7 @@
   },
   {
     "name": "Joe Christiani",
-    "level": "Level 6",
+    "level": "Level 7",
     "zone": "Zone 1",
     "perf_score": "Very Strong",
     "promotion": true,
@@ -99,7 +99,7 @@
   },
   {
     "name": "Amy Wong",
-    "level": "Level 5",
+    "level": "Level 6",
     "zone": "Zone 4",
     "perf_score": "Very Strong",
     "promotion": true,
