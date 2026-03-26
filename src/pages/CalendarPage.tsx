@@ -522,8 +522,8 @@ export default function CalendarPage() {
       <WeeklyDistribution weeks={insightsData.weeks as Week[]} />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <PrivacyHoldsCheck events={snapshotData.events as CalendarEvent[]} />
         <RoomCheck events={snapshotData.events as CalendarEvent[]} />
+        <PrivacyHoldsCheck events={snapshotData.events as CalendarEvent[]} />
       </div>
     </div>
   )

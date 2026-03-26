@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-25T09:25:00-07:00",
-  "snapshotGeneratedAt": "2026-03-25T09:15:00-07:00",
+  "generatedAt": "2026-03-26T16:34:43Z",
+  "snapshotGeneratedAt": "2026-03-26T16:17:51.669448+00:00",
   "lookaheadWeeks": 7,
   "summary": {
-    "avgMeetingsPerWeek": 41.3,
-    "avgMeetingHoursPerWeek": 13.8,
-    "heaviestWeek": "Apr 20 \u2013 Apr 26",
-    "lightestWeek": "Apr 06 \u2013 Apr 12",
+    "avgMeetingsPerWeek": 37.7,
+    "avgMeetingHoursPerWeek": 29.2,
+    "heaviestWeek": "Apr 13 \u2013 Apr 19",
+    "lightestWeek": "Mar 23 \u2013 Mar 29",
     "flaggedWeeks": [
       "Mar 30 \u2013 Apr 05",
       "Apr 06 \u2013 Apr 12",
@@ -23,83 +23,61 @@
       "endDate": "2026-03-29",
       "label": "Mar 23 \u2013 Mar 29",
       "saturation": "medium",
-      "totalMeetings": 32,
-      "meetingHours": 11.8,
-      "focusHours": 44.3,
-      "deepWorkHours": 28.2,
+      "totalMeetings": 22,
+      "meetingHours": 15.8,
+      "focusHours": 7.8,
+      "deepWorkHours": 24.2,
       "breakdown": {
         "zach": {
-          "count": 2,
-          "hours": 1.0,
-          "names": [
-            "amertes",
-            "hhughes"
-          ]
+          "count": 0,
+          "hours": 0
         },
         "direct_1on1": {
           "count": 3,
           "hours": 1.5,
           "names": [
-            "eyu",
-            "ijaye",
-            "leliasen"
+            "Ijaye",
+            "Eyu",
+            "Leliasen"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "gmakrigiorgos"
+            "Gmakrigiorgos"
           ]
         },
         "interview": {
           "count": 0,
-          "hours": 0.0
+          "hours": 0
         },
         "review": {
-          "count": 4,
-          "hours": 2.2
+          "count": 3,
+          "hours": 1.8
         },
         "design_1on1": {
           "count": 3,
           "hours": 1.8,
           "names": [
-            "eyu",
-            "hhughes",
-            "lkosak"
+            "Lkosak",
+            "Hhughes",
+            "Eyu"
           ]
         },
         "xfn": {
-          "count": 7,
-          "hours": 4.8
+          "count": 4,
+          "hours": 2.5
         },
         "focus": {
-          "count": 12,
-          "hours": 44.3
+          "count": 8,
+          "hours": 7.8
         },
         "one_off": {
           "count": 0,
-          "hours": 0.0
+          "hours": 0
         }
       },
-      "visibilityFlags": [
-        {
-          "title": "[DNB] Deep Work Wednesday",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Kids",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        }
-      ],
       "rescheduleOpportunities": []
     },
     {
@@ -108,36 +86,37 @@
       "endDate": "2026-04-05",
       "label": "Mar 30 \u2013 Apr 05",
       "saturation": "overloaded",
-      "totalMeetings": 44,
-      "meetingHours": 15.1,
-      "focusHours": 60.9,
-      "deepWorkHours": 24.9,
+      "totalMeetings": 41,
+      "meetingHours": 31.1,
+      "focusHours": 16.0,
+      "deepWorkHours": 8.9,
       "breakdown": {
         "zach": {
           "count": 2,
           "hours": 2.5,
           "names": [
-            "bdammeir",
-            "jkovler"
+            "Bdammeir",
+            "Jkovler"
           ]
         },
         "direct_1on1": {
           "count": 6,
           "hours": 2.8,
           "names": [
-            "eyu",
-            "ftoqan",
-            "jchristiani",
-            "leliasen",
-            "tshi"
+            "Jchristiani",
+            "Tshi",
+            "Leliasen",
+            "Leliasen",
+            "Eyu",
+            "Ftoqan"
           ]
         },
         "skip_1on1": {
           "count": 2,
           "hours": 0.8,
           "names": [
-            "amwong",
-            "ndahan"
+            "Amwong",
+            "Ndahan"
           ]
         },
         "interview": {
@@ -150,13 +129,15 @@
         },
         "design_1on1": {
           "count": 7,
-          "hours": 4.4,
+          "hours": 4.3,
           "names": [
-            "eyu",
-            "hhughes",
-            "jcarter",
-            "oghabra",
-            "scantu"
+            "Eyu",
+            "Scantu",
+            "Oghabra",
+            "Jcarter",
+            "Eyu",
+            "Hhughes",
+            "Eyu"
           ]
         },
         "xfn": {
@@ -164,54 +145,15 @@
           "hours": 1.3
         },
         "focus": {
-          "count": 20,
-          "hours": 60.9
+          "count": 17,
+          "hours": 15.8
         },
         "one_off": {
           "count": 0,
-          "hours": 0.0
+          "hours": 0
         }
       },
-      "visibilityFlags": [
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Kids",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Deep Work Wednesday",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Kids",
-          "visibility": "public"
-        }
-      ],
-      "rescheduleOpportunities": [
-        {
-          "meeting": "Amy / Christophe",
-          "currentWeek": "Mar 30 \u2013 Apr 05",
-          "suggestedWeek": "Mar 23 \u2013 Mar 29",
-          "reason": "Week is overloaded \u2014 lighter week available"
-        },
-        {
-          "meeting": "Nikki / Christophe",
-          "currentWeek": "Mar 30 \u2013 Apr 05",
-          "suggestedWeek": "Mar 23 \u2013 Mar 29",
-          "reason": "Week is overloaded \u2014 lighter week available"
-        }
-      ]
+      "rescheduleOpportunities": []
     },
     {
       "weekNumber": 3,
@@ -219,40 +161,40 @@
       "endDate": "2026-04-12",
       "label": "Apr 06 \u2013 Apr 12",
       "saturation": "high",
-      "totalMeetings": 36,
-      "meetingHours": 11.5,
-      "focusHours": 153.6,
-      "deepWorkHours": 28.5,
+      "totalMeetings": 32,
+      "meetingHours": 25.2,
+      "focusHours": 13.8,
+      "deepWorkHours": 14.8,
       "breakdown": {
         "zach": {
           "count": 2,
           "hours": 2.0,
           "names": [
-            "hhughes",
-            "jkovler"
+            "Jkovler",
+            "Hhughes"
           ]
         },
         "direct_1on1": {
           "count": 5,
-          "hours": 2.2,
+          "hours": 2.1,
           "names": [
-            "eyu",
-            "ftoqan",
-            "ijaye",
-            "jchristiani",
-            "leliasen"
+            "Ijaye",
+            "Leliasen",
+            "Jchristiani",
+            "Ftoqan",
+            "Eyu"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "cwarner"
+            "Cwarner"
           ]
         },
         "interview": {
           "count": 0,
-          "hours": 0.0
+          "hours": 0
         },
         "review": {
           "count": 2,
@@ -260,11 +202,13 @@
         },
         "design_1on1": {
           "count": 5,
-          "hours": 3.9,
+          "hours": 3.8,
           "names": [
-            "bwstell",
-            "eyu",
-            "hhughes"
+            "Eyu",
+            "Bwstell",
+            "Eyu",
+            "Hhughes",
+            "Eyu"
           ]
         },
         "xfn": {
@@ -272,48 +216,15 @@
           "hours": 2.0
         },
         "focus": {
-          "count": 18,
-          "hours": 153.6
+          "count": 14,
+          "hours": 13.7
         },
         "one_off": {
           "count": 0,
-          "hours": 0.0
+          "hours": 0
         }
       },
-      "visibilityFlags": [
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Kids",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Deep Work Wednesday",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Kids",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        }
-      ],
-      "rescheduleOpportunities": [
-        {
-          "meeting": "Chris / Christophe",
-          "currentWeek": "Apr 06 \u2013 Apr 12",
-          "suggestedWeek": "Mar 23 \u2013 Mar 29",
-          "reason": "Week is high \u2014 lighter week available"
-        }
-      ]
+      "rescheduleOpportunities": []
     },
     {
       "weekNumber": 4,
@@ -321,33 +232,34 @@
       "endDate": "2026-04-19",
       "label": "Apr 13 \u2013 Apr 19",
       "saturation": "overloaded",
-      "totalMeetings": 51,
-      "meetingHours": 14.8,
-      "focusHours": 59.6,
-      "deepWorkHours": 25.2,
+      "totalMeetings": 49,
+      "meetingHours": 40.1,
+      "focusHours": 25.3,
+      "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 3,
           "hours": 3.0,
           "names": [
-            "bdammeir",
-            "jkovler"
+            "Bdammeir",
+            "Jkovler",
+            "Jkovler"
           ]
         },
         "direct_1on1": {
           "count": 3,
           "hours": 1.2,
           "names": [
-            "jchristiani",
-            "leliasen",
-            "tshi"
+            "Jchristiani",
+            "Tshi",
+            "Leliasen"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "gsanchezmallona"
+            "Gsanchezmallona"
           ]
         },
         "interview": {
@@ -360,68 +272,33 @@
         },
         "design_1on1": {
           "count": 9,
-          "hours": 5.4,
+          "hours": 5.3,
           "names": [
-            "darguetaleclercq",
-            "esager",
-            "eyu",
-            "hhughes",
-            "jlaughlin",
-            "rsmith",
-            "sarad"
+            "Sarad",
+            "Eyu",
+            "Esager",
+            "Darguetaleclercq",
+            "Rsmith",
+            "Eyu",
+            "Hhughes",
+            "Eyu",
+            "Jlaughlin"
           ]
         },
         "xfn": {
           "count": 5,
-          "hours": 3.2
+          "hours": 3.3
         },
         "focus": {
-          "count": 27,
-          "hours": 59.6
+          "count": 25,
+          "hours": 25.1
         },
         "one_off": {
           "count": 0,
-          "hours": 0.0
+          "hours": 0
         }
       },
-      "visibilityFlags": [
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Kids",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Deep Work Wednesday",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Kids",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        }
-      ],
-      "rescheduleOpportunities": [
-        {
-          "meeting": "Gabbi / Christophe",
-          "currentWeek": "Apr 13 \u2013 Apr 19",
-          "suggestedWeek": "Mar 23 \u2013 Mar 29",
-          "reason": "Week is overloaded \u2014 lighter week available"
-        }
-      ]
+      "rescheduleOpportunities": []
     },
     {
       "weekNumber": 5,
@@ -429,35 +306,36 @@
       "endDate": "2026-04-26",
       "label": "Apr 20 \u2013 Apr 26",
       "saturation": "high",
-      "totalMeetings": 43,
-      "meetingHours": 15.2,
-      "focusHours": 50.2,
-      "deepWorkHours": 24.8,
+      "totalMeetings": 41,
+      "meetingHours": 31.1,
+      "focusHours": 15.9,
+      "deepWorkHours": 8.9,
       "breakdown": {
         "zach": {
           "count": 3,
           "hours": 3.0,
           "names": [
-            "jkovler",
-            "mruiz",
-            "zach"
+            "Mruiz",
+            "Zach",
+            "Jkovler"
           ]
         },
         "direct_1on1": {
           "count": 5,
-          "hours": 2.1,
+          "hours": 2.0,
           "names": [
-            "eyu",
-            "ftoqan",
-            "jchristiani",
-            "leliasen"
+            "Jchristiani",
+            "Jchristiani",
+            "Leliasen",
+            "Ftoqan",
+            "Eyu"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "ndahan"
+            "Ndahan"
           ]
         },
         "interview": {
@@ -470,65 +348,30 @@
         },
         "design_1on1": {
           "count": 6,
-          "hours": 4.0,
+          "hours": 3.9,
           "names": [
-            "amurphy",
-            "eyu",
-            "hhughes",
-            "noghedo"
+            "Eyu",
+            "Noghedo",
+            "Eyu",
+            "Hhughes",
+            "Eyu",
+            "Amurphy"
           ]
         },
         "xfn": {
           "count": 6,
-          "hours": 4.2
+          "hours": 4.3
         },
         "focus": {
-          "count": 19,
-          "hours": 50.2
+          "count": 17,
+          "hours": 15.7
         },
         "one_off": {
           "count": 0,
-          "hours": 0.0
+          "hours": 0
         }
       },
-      "visibilityFlags": [
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Kids",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Deep Work Wednesday",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Kids",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        }
-      ],
-      "rescheduleOpportunities": [
-        {
-          "meeting": "Nikki / Christophe",
-          "currentWeek": "Apr 20 \u2013 Apr 26",
-          "suggestedWeek": "Mar 23 \u2013 Mar 29",
-          "reason": "Week is high \u2014 lighter week available"
-        }
-      ]
+      "rescheduleOpportunities": []
     },
     {
       "weekNumber": 6,
@@ -536,35 +379,35 @@
       "endDate": "2026-05-03",
       "label": "Apr 27 \u2013 May 03",
       "saturation": "high",
-      "totalMeetings": 41,
-      "meetingHours": 13.3,
-      "focusHours": 51.0,
-      "deepWorkHours": 26.7,
+      "totalMeetings": 39,
+      "meetingHours": 30.0,
+      "focusHours": 16.7,
+      "deepWorkHours": 10.0,
       "breakdown": {
         "zach": {
           "count": 3,
           "hours": 3.0,
           "names": [
-            "bdammeir",
-            "hhughes",
-            "jkovler"
+            "Bdammeir",
+            "Jkovler",
+            "Hhughes"
           ]
         },
         "direct_1on1": {
           "count": 4,
-          "hours": 1.8,
+          "hours": 1.7,
           "names": [
-            "ijaye",
-            "jchristiani",
-            "leliasen",
-            "tshi"
+            "Jchristiani",
+            "Tshi",
+            "Ijaye",
+            "Leliasen"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "gmakrigiorgos"
+            "Gmakrigiorgos"
           ]
         },
         "interview": {
@@ -577,12 +420,14 @@
         },
         "design_1on1": {
           "count": 6,
-          "hours": 4.0,
+          "hours": 3.9,
           "names": [
-            "eyu",
-            "hhughes",
-            "idickens",
-            "nkim"
+            "Eyu",
+            "Idickens",
+            "Eyu",
+            "Hhughes",
+            "Eyu",
+            "Nkim"
           ]
         },
         "xfn": {
@@ -590,52 +435,15 @@
           "hours": 2.8
         },
         "focus": {
-          "count": 20,
-          "hours": 51.0
+          "count": 18,
+          "hours": 16.4
         },
         "one_off": {
           "count": 0,
-          "hours": 0.0
+          "hours": 0
         }
       },
-      "visibilityFlags": [
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Kids",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Deep Work Wednesday",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Kids",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        }
-      ],
-      "rescheduleOpportunities": [
-        {
-          "meeting": "Greg / Christophe",
-          "currentWeek": "Apr 27 \u2013 May 03",
-          "suggestedWeek": "Mar 23 \u2013 Mar 29",
-          "reason": "Week is high \u2014 lighter week available"
-        }
-      ]
+      "rescheduleOpportunities": []
     },
     {
       "weekNumber": 7,
@@ -643,32 +451,33 @@
       "endDate": "2026-05-10",
       "label": "May 04 \u2013 May 10",
       "saturation": "overloaded",
-      "totalMeetings": 42,
-      "meetingHours": 15.0,
-      "focusHours": 50.0,
-      "deepWorkHours": 25.0,
+      "totalMeetings": 40,
+      "meetingHours": 30.8,
+      "focusHours": 15.8,
+      "deepWorkHours": 9.2,
       "breakdown": {
         "zach": {
           "count": 2,
           "hours": 2.5,
           "names": [
-            "jkovler",
-            "mruiz"
+            "Mruiz",
+            "Jkovler"
           ]
         },
         "direct_1on1": {
           "count": 5,
-          "hours": 2.1,
+          "hours": 2.0,
           "names": [
-            "eyu",
-            "ftoqan",
-            "jchristiani",
-            "leliasen"
+            "Jchristiani",
+            "Jchristiani",
+            "Leliasen",
+            "Ftoqan",
+            "Eyu"
           ]
         },
         "skip_1on1": {
           "count": 0,
-          "hours": 0.0
+          "hours": 0
         },
         "interview": {
           "count": 1,
@@ -680,15 +489,17 @@
         },
         "design_1on1": {
           "count": 9,
-          "hours": 5.2,
+          "hours": 5.1,
           "names": [
-            "bdecker",
-            "cfisher",
-            "eyu",
-            "hhughes",
-            "jzhong",
-            "lgrizzard",
-            "zmeredith"
+            "Zmeredith",
+            "Jzhong",
+            "Eyu",
+            "Lgrizzard",
+            "Eyu",
+            "Hhughes",
+            "Eyu",
+            "Cfisher",
+            "Bdecker"
           ]
         },
         "xfn": {
@@ -696,44 +507,14 @@
           "hours": 2.8
         },
         "focus": {
-          "count": 18,
-          "hours": 50.0
+          "count": 16,
+          "hours": 15.5
         },
         "one_off": {
           "count": 0,
-          "hours": 0.0
+          "hours": 0
         }
       },
-      "visibilityFlags": [
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Kids",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Deep Work Wednesday",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        },
-        {
-          "title": "[DNB] Kids",
-          "visibility": "public"
-        },
-        {
-          "title": "DNB [Kids]",
-          "visibility": "public"
-        }
-      ],
       "rescheduleOpportunities": []
     }
   ]
