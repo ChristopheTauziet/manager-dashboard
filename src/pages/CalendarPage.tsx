@@ -249,59 +249,49 @@ function PrivacyHoldsCheck({ events }: { events: CalendarEvent[] }) {
   const monStr = dateStr(getMonday(now))
   const sunStr = dateStr(getSunday(now))
 
-  const thisWeek = useMemo(() =>
+  const nonPrivateHolds = useMemo(() =>
     events.filter(e =>
       e.date >= monStr && e.date <= sunStr &&
       !e.isAllDay &&
-      e.myResponseStatus !== 'declined'
+      e.myResponseStatus !== 'declined' &&
+      e.meetingType === 'focus' &&
+      e.visibility !== 'private' &&
+      e.humanAttendees.length <= 1
     ), [events, monStr, sunStr])
-
-  const privateEvents = thisWeek.filter(e => e.visibility === 'private')
-  const nonPrivateHolds = thisWeek.filter(e => e.meetingType === 'focus' && e.visibility !== 'private')
 
   return (
     <div className="bg-card border border-border rounded-xl p-5">
-      <h2 className="text-lg font-semibold mb-4">Privacy & Holds Check</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-3">Private Meetings</h3>
-          {privateEvents.length === 0 ? (
-            <p className="text-sm text-muted-foreground/60 italic">No private meetings this week</p>
-          ) : (
-            <div className="space-y-2">
-              {privateEvents.map(e => (
-                <div key={e.id} className="flex items-center gap-2 text-sm">
-                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: MEETING_COLORS[e.meetingType]?.hex || '#757575' }} />
-                  <span className="text-muted-foreground tabular-nums w-16 flex-shrink-0">{formatDayTime(e.date, e.startTime)}</span>
-                  <span className="truncate" title={e.title}>{truncate(e.title)}</span>
-                </div>
-              ))}
+      <h2 className="text-lg font-semibold mb-4">Holds Not Set to Private</h2>
+      {nonPrivateHolds.length === 0 ? (
+        <p className="text-sm text-emerald-400/80 italic">All holds are private ✓</p>
+      ) : (
+        <div className="space-y-2">
+          {nonPrivateHolds.map(e => (
+            <div key={e.id} className="flex items-center gap-2 text-sm">
+              <Lock className="h-3 w-3 text-amber-400 flex-shrink-0" />
+              <span className="text-muted-foreground tabular-nums w-16 flex-shrink-0">{formatDayTime(e.date, e.startTime)}</span>
+              <span className="truncate" title={e.title}>{truncate(e.title)}</span>
             </div>
-          )}
+          ))}
         </div>
-
-        <div>
-          <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-3">Holds Not Set to Private</h3>
-          {nonPrivateHolds.length === 0 ? (
-            <p className="text-sm text-emerald-400/80 italic">All holds are private ✓</p>
-          ) : (
-            <div className="space-y-2">
-              {nonPrivateHolds.map(e => (
-                <div key={e.id} className="flex items-center gap-2 text-sm">
-                  <Lock className="h-3 w-3 text-amber-400 flex-shrink-0" />
-                  <span className="text-muted-foreground tabular-nums w-16 flex-shrink-0">{formatDayTime(e.date, e.startTime)}</span>
-                  <span className="truncate" title={e.title}>{truncate(e.title)}</span>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
+      )}
     </div>
   )
 }
 
-// ── Widget 3: Room Check ───────────────────────────────────────────────────────
+// ── Widget 3: Room Check (Calendar View) ───────────────────────────────────────
+
+function timeToMinutes(t: string): number {
+  const [h, m] = t.split(':').map(Number)
+  return h * 60 + m
+}
+
+function formatHour(hour: number): string {
+  if (hour === 0) return '12 AM'
+  if (hour < 12) return `${hour} AM`
+  if (hour === 12) return '12 PM'
+  return `${hour - 12} PM`
+}
 
 function RoomCheck({ events }: { events: CalendarEvent[] }) {
   const nextTue = getNextWeekday(2)
@@ -320,9 +310,117 @@ function RoomCheck({ events }: { events: CalendarEvent[] }) {
   const tueMeetings = useMemo(() => filterDay(nextTue), [filterDay, nextTue])
   const thuMeetings = useMemo(() => filterDay(nextThu), [filterDay, nextThu])
 
-  const formatDayHeader = (dateStr: string) => {
-    const d = new Date(dateStr + 'T12:00:00')
+  const formatDayHeader = (ds: string) => {
+    const d = new Date(ds + 'T12:00:00')
     return d.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })
+  }
+
+  const allMeetings = [...tueMeetings, ...thuMeetings]
+  const startHour = allMeetings.length > 0
+    ? Math.floor(Math.min(...allMeetings.map(e => timeToMinutes(e.startTime || '09:00'))) / 60)
+    : 9
+  const endHour = allMeetings.length > 0
+    ? Math.ceil(Math.max(...allMeetings.map(e => timeToMinutes(e.endTime || '17:00'))) / 60)
+    : 17
+  const totalMinutes = (endHour - startHour) * 60
+  const hourSlots = Array.from({ length: endHour - startHour + 1 }, (_, i) => startHour + i)
+  const PX_PER_MINUTE = 2.0
+
+  const layoutColumns = (meetings: CalendarEvent[]) => {
+    const positioned: { event: CalendarEvent; col: number; totalCols: number }[] = []
+    const columns: { end: number }[] = []
+
+    for (const e of meetings) {
+      const start = timeToMinutes(e.startTime || '09:00')
+      const end = start + e.durationMinutes
+
+      let placed = -1
+      for (let c = 0; c < columns.length; c++) {
+        if (columns[c].end <= start) {
+          placed = c
+          columns[c].end = end
+          break
+        }
+      }
+      if (placed === -1) {
+        placed = columns.length
+        columns.push({ end })
+      }
+      positioned.push({ event: e, col: placed, totalCols: 0 })
+    }
+
+    const totalCols = columns.length
+    positioned.forEach(p => { p.totalCols = totalCols })
+    return positioned
+  }
+
+  const renderDay = (meetings: CalendarEvent[]) => {
+    const laid = layoutColumns(meetings)
+
+    return (
+      <div className="relative" style={{ height: totalMinutes * PX_PER_MINUTE }}>
+        {hourSlots.map(hour => {
+          const top = (hour - startHour) * 60 * PX_PER_MINUTE
+          return (
+            <div key={hour} className="absolute left-0 right-0 border-t border-border/30" style={{ top }}>
+              <span className="absolute -top-2.5 -left-1 text-[10px] text-muted-foreground/50 tabular-nums select-none w-10 text-right pr-2">
+                {formatHour(hour)}
+              </span>
+            </div>
+          )
+        })}
+
+        <div className="ml-10 relative">
+          {laid.map(({ event: e, col, totalCols }) => {
+            const startMin = timeToMinutes(e.startTime || '09:00') - startHour * 60
+            const height = Math.max(e.durationMinutes * PX_PER_MINUTE, 24)
+            const top = startMin * PX_PER_MINUTE
+            const color = MEETING_COLORS[e.meetingType]?.hex || '#757575'
+
+            const sfRooms = e.roomAttendees.filter(r => r.displayName.startsWith('HQ'))
+            const hasRoom = sfRooms.length > 0
+            const roomAccepted = sfRooms.some(r => r.responseStatus === 'accepted')
+            const roomName = hasRoom ? stripRoomPrefix(sfRooms[0].displayName) : null
+
+            const widthPct = 100 / totalCols
+            const leftPct = col * widthPct
+
+            return (
+              <div
+                key={e.id}
+                className="absolute rounded-md overflow-hidden cursor-default"
+                style={{
+                  top,
+                  height,
+                  left: `${leftPct}%`,
+                  width: `calc(${widthPct}% - 2px)`,
+                  backgroundColor: color + '20',
+                  borderLeft: `3px solid ${color}`,
+                }}
+                title={e.title}
+              >
+                <div className="px-2 py-1 h-full flex flex-col justify-center">
+                  <div className="text-xs font-medium truncate leading-tight" style={{ color }}>
+                    {truncate(e.title, 24)}
+                  </div>
+                  {height > 28 && (
+                    <div className="text-[10px] text-muted-foreground mt-0.5 truncate">
+                      {hasRoom ? (
+                        <span className={roomAccepted ? 'text-emerald-400' : 'text-amber-400'}>
+                          {roomAccepted ? '✓' : '?'} {roomName && truncate(roomName, 16)}
+                        </span>
+                      ) : (
+                        <span className="text-red-400">No room</span>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -335,38 +433,7 @@ function RoomCheck({ events }: { events: CalendarEvent[] }) {
             {meetings.length === 0 ? (
               <p className="text-sm text-muted-foreground/60 italic">No in-person meetings</p>
             ) : (
-              <div className="space-y-2">
-                {meetings.map(e => {
-                  const hasRoom = e.roomAttendees.length > 0
-                  const roomAccepted = e.roomAttendees.some(r => r.responseStatus === 'accepted')
-                  const roomName = hasRoom ? stripRoomPrefix(e.roomAttendees[0].displayName) : null
-
-                  return (
-                    <div key={e.id} className="flex items-center gap-2 bg-muted/20 rounded-lg px-3 py-2">
-                      <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: MEETING_COLORS[e.meetingType]?.hex || '#757575' }} />
-                      <div className="flex-1 min-w-0">
-                        <div className="text-sm truncate" title={e.title}>{truncate(e.title, 32)}</div>
-                        <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
-                          <span className="tabular-nums">{e.startTime} – {e.endTime}</span>
-                          <span>{e.humanAttendees.length} attendee{e.humanAttendees.length !== 1 ? 's' : ''}</span>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-1.5 flex-shrink-0 text-xs">
-                        {hasRoom ? (
-                          <>
-                            <span className={roomAccepted ? 'text-emerald-400' : 'text-amber-400'}>
-                              {roomAccepted ? '✅' : '🟡'}
-                            </span>
-                            {roomName && <span className="text-muted-foreground truncate max-w-[100px]" title={roomName}>{truncate(roomName, 18)}</span>}
-                          </>
-                        ) : (
-                          <span className="text-red-400">🔴 No room</span>
-                        )}
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
+              renderDay(meetings)
             )}
           </div>
         ))}

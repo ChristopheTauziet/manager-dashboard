@@ -11,10 +11,10 @@ import CalendarPage from './pages/CalendarPage'
 
 const tabs = [
   { id: 'team', label: 'Team', icon: Users },
+  { id: 'calendar', label: 'Calendar', icon: Calendar },
   { id: 'one-on-ones', label: '1:1s', icon: MessageSquare },
   { id: 'interviews', label: 'Interviews', icon: UserSearch },
   { id: 'comp-planning', label: 'Comp Planning', icon: DollarSign },
-  { id: 'calendar', label: 'Calendar', icon: Calendar },
   { id: 'archive', label: 'Archive', icon: Archive },
 ] as const
 

@@ -1,19 +1,16 @@
 {
-  "generatedAt": "2026-03-26T16:34:43Z",
-  "snapshotGeneratedAt": "2026-03-26T16:17:51.669448+00:00",
+  "generatedAt": "2026-03-26T18:56:50Z",
+  "snapshotGeneratedAt": "2026-03-26T18:53:46.425067+00:00",
   "lookaheadWeeks": 7,
   "summary": {
-    "avgMeetingsPerWeek": 37.7,
-    "avgMeetingHoursPerWeek": 29.2,
+    "avgMeetingsPerWeek": 37.6,
+    "avgMeetingHoursPerWeek": 29.0,
     "heaviestWeek": "Apr 13 \u2013 Apr 19",
     "lightestWeek": "Mar 23 \u2013 Mar 29",
     "flaggedWeeks": [
       "Mar 30 \u2013 Apr 05",
       "Apr 06 \u2013 Apr 12",
-      "Apr 13 \u2013 Apr 19",
-      "Apr 20 \u2013 Apr 26",
-      "Apr 27 \u2013 May 03",
-      "May 04 \u2013 May 10"
+      "Apr 20 \u2013 Apr 26"
     ]
   },
   "weeks": [
@@ -30,7 +27,8 @@
       "breakdown": {
         "zach": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0,
+          "names": []
         },
         "direct_1on1": {
           "count": 3,
@@ -50,24 +48,22 @@
         },
         "interview": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         },
         "review": {
           "count": 3,
           "hours": 1.8
         },
         "design_1on1": {
-          "count": 3,
-          "hours": 1.8,
+          "count": 1,
+          "hours": 0.9,
           "names": [
-            "Lkosak",
-            "Hhughes",
             "Eyu"
           ]
         },
         "xfn": {
-          "count": 4,
-          "hours": 2.5
+          "count": 6,
+          "hours": 3.4
         },
         "focus": {
           "count": 8,
@@ -75,7 +71,7 @@
         },
         "one_off": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         }
       },
       "rescheduleOpportunities": []
@@ -85,18 +81,17 @@
       "startDate": "2026-03-30",
       "endDate": "2026-04-05",
       "label": "Mar 30 \u2013 Apr 05",
-      "saturation": "overloaded",
-      "totalMeetings": 41,
-      "meetingHours": 31.1,
-      "focusHours": 16.0,
-      "deepWorkHours": 8.9,
+      "saturation": "high",
+      "totalMeetings": 40,
+      "meetingHours": 29.8,
+      "focusHours": 15.3,
+      "deepWorkHours": 10.2,
       "breakdown": {
         "zach": {
-          "count": 2,
-          "hours": 2.5,
+          "count": 1,
+          "hours": 1.0,
           "names": [
-            "Bdammeir",
-            "Jkovler"
+            "Bdammeir"
           ]
         },
         "direct_1on1": {
@@ -105,7 +100,6 @@
           "names": [
             "Jchristiani",
             "Tshi",
-            "Leliasen",
             "Leliasen",
             "Eyu",
             "Ftoqan"
@@ -124,36 +118,43 @@
           "hours": 0.4
         },
         "review": {
-          "count": 4,
-          "hours": 2.8
+          "count": 5,
+          "hours": 3.8
         },
         "design_1on1": {
-          "count": 7,
-          "hours": 4.3,
+          "count": 3,
+          "hours": 2.8,
           "names": [
-            "Eyu",
-            "Scantu",
-            "Oghabra",
-            "Jcarter",
-            "Eyu",
-            "Hhughes",
             "Eyu"
           ]
         },
         "xfn": {
-          "count": 2,
-          "hours": 1.3
+          "count": 6,
+          "hours": 3.0
         },
         "focus": {
-          "count": 17,
-          "hours": 15.8
+          "count": 16,
+          "hours": 15.3
         },
         "one_off": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         }
       },
-      "rescheduleOpportunities": []
+      "rescheduleOpportunities": [
+        {
+          "meetingTitle": "Amy / Christophe",
+          "currentWeek": "Mar 30 \u2013 Apr 05",
+          "suggestedWeek": "Apr 13 \u2013 Apr 19",
+          "reason": "Week 2 is high (11 1:1s); week 4 has more capacity (medium)"
+        },
+        {
+          "meetingTitle": "Nikki / Christophe",
+          "currentWeek": "Mar 30 \u2013 Apr 05",
+          "suggestedWeek": "Apr 13 \u2013 Apr 19",
+          "reason": "Week 2 is high (11 1:1s); week 4 has more capacity (medium)"
+        }
+      ]
     },
     {
       "weekNumber": 3,
@@ -162,9 +163,9 @@
       "label": "Apr 06 \u2013 Apr 12",
       "saturation": "high",
       "totalMeetings": 32,
-      "meetingHours": 25.2,
+      "meetingHours": 25.3,
       "focusHours": 13.8,
-      "deepWorkHours": 14.8,
+      "deepWorkHours": 14.7,
       "breakdown": {
         "zach": {
           "count": 2,
@@ -176,7 +177,7 @@
         },
         "direct_1on1": {
           "count": 5,
-          "hours": 2.1,
+          "hours": 2.2,
           "names": [
             "Ijaye",
             "Leliasen",
@@ -194,55 +195,57 @@
         },
         "interview": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         },
         "review": {
           "count": 2,
           "hours": 1.0
         },
         "design_1on1": {
-          "count": 5,
-          "hours": 3.8,
+          "count": 3,
+          "hours": 2.8,
           "names": [
-            "Eyu",
-            "Bwstell",
-            "Eyu",
-            "Hhughes",
             "Eyu"
           ]
         },
         "xfn": {
-          "count": 3,
-          "hours": 2.0
+          "count": 5,
+          "hours": 3.2
         },
         "focus": {
           "count": 14,
-          "hours": 13.7
+          "hours": 13.8
         },
         "one_off": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         }
       },
-      "rescheduleOpportunities": []
+      "rescheduleOpportunities": [
+        {
+          "meetingTitle": "Chris / Christophe",
+          "currentWeek": "Apr 06 \u2013 Apr 12",
+          "suggestedWeek": "Apr 13 \u2013 Apr 19",
+          "reason": "Week 3 is high (9 1:1s); week 4 has more capacity (medium)"
+        }
+      ]
     },
     {
       "weekNumber": 4,
       "startDate": "2026-04-13",
       "endDate": "2026-04-19",
       "label": "Apr 13 \u2013 Apr 19",
-      "saturation": "overloaded",
+      "saturation": "medium",
       "totalMeetings": 49,
       "meetingHours": 40.1,
       "focusHours": 25.3,
-      "deepWorkHours": 0,
+      "deepWorkHours": 0.0,
       "breakdown": {
         "zach": {
           "count": 3,
           "hours": 3.0,
           "names": [
             "Bdammeir",
-            "Jkovler",
             "Jkovler"
           ]
         },
@@ -271,31 +274,23 @@
           "hours": 1.0
         },
         "design_1on1": {
-          "count": 9,
-          "hours": 5.3,
+          "count": 3,
+          "hours": 2.8,
           "names": [
-            "Sarad",
-            "Eyu",
-            "Esager",
-            "Darguetaleclercq",
-            "Rsmith",
-            "Eyu",
-            "Hhughes",
-            "Eyu",
-            "Jlaughlin"
+            "Eyu"
           ]
         },
         "xfn": {
-          "count": 5,
-          "hours": 3.3
+          "count": 11,
+          "hours": 5.9
         },
         "focus": {
           "count": 25,
-          "hours": 25.1
+          "hours": 25.3
         },
         "one_off": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         }
       },
       "rescheduleOpportunities": []
@@ -322,9 +317,8 @@
         },
         "direct_1on1": {
           "count": 5,
-          "hours": 2.0,
+          "hours": 2.1,
           "names": [
-            "Jchristiani",
             "Jchristiani",
             "Leliasen",
             "Ftoqan",
@@ -347,38 +341,40 @@
           "hours": 1.0
         },
         "design_1on1": {
-          "count": 6,
-          "hours": 3.9,
+          "count": 3,
+          "hours": 2.8,
           "names": [
-            "Eyu",
-            "Noghedo",
-            "Eyu",
-            "Hhughes",
-            "Eyu",
-            "Amurphy"
+            "Eyu"
           ]
         },
         "xfn": {
-          "count": 6,
-          "hours": 4.3
+          "count": 9,
+          "hours": 5.5
         },
         "focus": {
           "count": 17,
-          "hours": 15.7
+          "hours": 15.9
         },
         "one_off": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         }
       },
-      "rescheduleOpportunities": []
+      "rescheduleOpportunities": [
+        {
+          "meetingTitle": "Nikki / Christophe",
+          "currentWeek": "Apr 20 \u2013 Apr 26",
+          "suggestedWeek": "Apr 27 \u2013 May 03",
+          "reason": "Week 5 is high (9 1:1s); week 6 has more capacity (medium)"
+        }
+      ]
     },
     {
       "weekNumber": 6,
       "startDate": "2026-04-27",
       "endDate": "2026-05-03",
       "label": "Apr 27 \u2013 May 03",
-      "saturation": "high",
+      "saturation": "medium",
       "totalMeetings": 39,
       "meetingHours": 30.0,
       "focusHours": 16.7,
@@ -395,7 +391,7 @@
         },
         "direct_1on1": {
           "count": 4,
-          "hours": 1.7,
+          "hours": 1.8,
           "names": [
             "Jchristiani",
             "Tshi",
@@ -419,28 +415,23 @@
           "hours": 1.0
         },
         "design_1on1": {
-          "count": 6,
-          "hours": 3.9,
+          "count": 3,
+          "hours": 2.8,
           "names": [
-            "Eyu",
-            "Idickens",
-            "Eyu",
-            "Hhughes",
-            "Eyu",
-            "Nkim"
+            "Eyu"
           ]
         },
         "xfn": {
-          "count": 4,
-          "hours": 2.8
+          "count": 7,
+          "hours": 4.0
         },
         "focus": {
           "count": 18,
-          "hours": 16.4
+          "hours": 16.7
         },
         "one_off": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         }
       },
       "rescheduleOpportunities": []
@@ -450,7 +441,7 @@
       "startDate": "2026-05-04",
       "endDate": "2026-05-10",
       "label": "May 04 \u2013 May 10",
-      "saturation": "overloaded",
+      "saturation": "medium",
       "totalMeetings": 40,
       "meetingHours": 30.8,
       "focusHours": 15.8,
@@ -466,9 +457,8 @@
         },
         "direct_1on1": {
           "count": 5,
-          "hours": 2.0,
+          "hours": 2.1,
           "names": [
-            "Jchristiani",
             "Jchristiani",
             "Leliasen",
             "Ftoqan",
@@ -477,7 +467,8 @@
         },
         "skip_1on1": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0,
+          "names": []
         },
         "interview": {
           "count": 1,
@@ -488,31 +479,23 @@
           "hours": 2.0
         },
         "design_1on1": {
-          "count": 9,
-          "hours": 5.1,
+          "count": 3,
+          "hours": 2.8,
           "names": [
-            "Zmeredith",
-            "Jzhong",
-            "Eyu",
-            "Lgrizzard",
-            "Eyu",
-            "Hhughes",
-            "Eyu",
-            "Cfisher",
-            "Bdecker"
+            "Eyu"
           ]
         },
         "xfn": {
-          "count": 4,
-          "hours": 2.8
+          "count": 10,
+          "hours": 5.2
         },
         "focus": {
           "count": 16,
-          "hours": 15.5
+          "hours": 15.8
         },
         "one_off": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         }
       },
       "rescheduleOpportunities": []
