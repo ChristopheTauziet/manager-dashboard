@@ -78,21 +78,10 @@ function truncate(s: string, max = 40) {
   return s.length > max ? s.slice(0, max) + '…' : s
 }
 
-function formatDayTime(date: string, startTime: string | null) {
-  const d = new Date(date + 'T00:00:00')
-  const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][d.getDay()]
-  return startTime ? `${day} ${startTime}` : day
-}
-
 function getMonday(d: Date): Date {
   const day = d.getDay()
   const diff = d.getDate() - day + (day === 0 ? -6 : 1)
   return new Date(d.getFullYear(), d.getMonth(), diff)
-}
-
-function getSunday(d: Date): Date {
-  const mon = getMonday(d)
-  return new Date(mon.getFullYear(), mon.getMonth(), mon.getDate() + 6)
 }
 
 function dateStr(d: Date): string {
@@ -334,44 +323,7 @@ function WeeklyDistribution({ weeks }: { weeks: Week[] }) {
   )
 }
 
-// ── Widget 2: Privacy & Holds Check ────────────────────────────────────────────
-
-function PrivacyHoldsCheck({ events }: { events: CalendarEvent[] }) {
-  const now = new Date()
-  const monStr = dateStr(getMonday(now))
-  const sunStr = dateStr(getSunday(now))
-
-  const nonPrivateHolds = useMemo(() =>
-    events.filter(e =>
-      e.date >= monStr && e.date <= sunStr &&
-      !e.isAllDay &&
-      e.myResponseStatus !== 'declined' &&
-      e.meetingType === 'focus' &&
-      e.visibility !== 'private' &&
-      e.humanAttendees.length <= 1
-    ), [events, monStr, sunStr])
-
-  return (
-    <div className="bg-card border border-border rounded-xl p-5">
-      <h2 className="text-lg font-semibold mb-4">Holds Not Set to Private</h2>
-      {nonPrivateHolds.length === 0 ? (
-        <p className="text-sm text-emerald-400/80 italic">All holds are private ✓</p>
-      ) : (
-        <div className="space-y-2">
-          {nonPrivateHolds.map(e => (
-            <div key={e.id} className="flex items-center gap-2 text-sm">
-              <Lock className="h-3 w-3 text-amber-400 flex-shrink-0" />
-              <span className="text-muted-foreground tabular-nums w-16 flex-shrink-0">{formatDayTime(e.date, e.startTime)}</span>
-              <span className="truncate" title={e.title}>{truncate(e.title)}</span>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  )
-}
-
-// ── Widget 3: Room Check (Calendar View) ───────────────────────────────────────
+// ── Widget 2: Room Check (Calendar View) ───────────────────────────────────────
 
 function timeToMinutes(t: string): number {
   const [h, m] = t.split(':').map(Number)
@@ -547,30 +499,26 @@ function QuickInsights({ weeks, events }: { weeks: Week[]; events: CalendarEvent
     display.reduce((best, w) => w.deepWorkHours > best.deepWorkHours ? w : best, display[0]),
   [display])
 
-  const backToBacks = useMemo(() => {
-    const now = new Date()
-    const monStr = dateStr(getMonday(now))
-    const sunStr = dateStr(getSunday(now))
-    const thisWeek = events
-      .filter(e => e.date >= monStr && e.date <= sunStr && !e.isAllDay && e.myResponseStatus !== 'declined' && e.meetingType !== 'focus')
+  const HOLDS_IGNORE = /epd no meeting wednesday/i
+
+  const nonPrivateHolds = useMemo(() => {
+    const today = dateStr(new Date())
+    return events
+      .filter(e =>
+        e.date >= today &&
+        !e.isAllDay &&
+        e.myResponseStatus !== 'declined' &&
+        e.meetingType === 'focus' &&
+        e.visibility !== 'private' &&
+        e.humanAttendees.length <= 1 &&
+        !HOLDS_IGNORE.test(e.title)
+      )
       .sort((a, b) => {
         const cmp = a.date.localeCompare(b.date)
         if (cmp !== 0) return cmp
         return (a.startTime || '').localeCompare(b.startTime || '')
       })
-
-    let count = 0
-    for (let i = 0; i < thisWeek.length - 1; i++) {
-      if (thisWeek[i].date !== thisWeek[i + 1].date) continue
-      const endA = thisWeek[i].endTime
-      const startB = thisWeek[i + 1].startTime
-      if (!endA || !startB) continue
-      const [eh, em] = endA.split(':').map(Number)
-      const [sh, sm] = startB.split(':').map(Number)
-      const gapMin = (sh * 60 + sm) - (eh * 60 + em)
-      if (gapMin >= 0 && gapMin <= 5) count++
-    }
-    return count
+      .slice(0, 3)
   }, [events])
 
   const zachMeetings = useMemo(() => {
@@ -607,11 +555,21 @@ function QuickInsights({ weeks, events }: { weeks: Week[]; events: CalendarEvent
         <p className="text-lg font-bold tabular-nums text-emerald-400">{bestDeepWork?.deepWorkHours ?? '—'}h</p>
       </div>
 
-      <div className={cn('bg-card border border-border rounded-xl p-4', backToBacks > 10 ? 'border-red-500/30' : backToBacks > 5 ? 'border-amber-500/30' : '')}>
-        <p className="text-xs text-muted-foreground mb-1">Back-to-backs this week</p>
-        <p className={cn('text-lg font-bold tabular-nums', backToBacks > 10 ? 'text-red-400' : backToBacks > 5 ? 'text-amber-400' : '')}>
-          {backToBacks} gap{backToBacks !== 1 ? 's' : ''}
-        </p>
+      <div className={cn('bg-card border border-border rounded-xl p-4', nonPrivateHolds.length > 0 ? 'border-amber-500/30' : '')}>
+        <p className="text-xs text-muted-foreground mb-1">Holds not private</p>
+        {nonPrivateHolds.length === 0 ? (
+          <p className="text-sm text-emerald-400/80 italic">All holds are private ✓</p>
+        ) : (
+          <div className="space-y-1">
+            {nonPrivateHolds.map(e => (
+              <div key={e.id} className="flex items-center gap-1.5 text-sm">
+                <Lock className="h-3 w-3 text-amber-400 flex-shrink-0" />
+                <span className="tabular-nums text-muted-foreground text-xs">{formatShortDate(e.date, e.startTime)}</span>
+                <span className="truncate text-muted-foreground" title={e.title}>{truncate(e.title, 20)}</span>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="bg-card border border-border rounded-xl p-4" style={{ borderColor: 'rgba(213, 0, 0, 0.3)' }}>
@@ -677,10 +635,7 @@ export default function CalendarPage() {
 
       <WeeklyDistribution weeks={weeks} />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <RoomCheck events={events} />
-        <PrivacyHoldsCheck events={events} />
-      </div>
+      <RoomCheck events={events} />
     </div>
   )
 }
