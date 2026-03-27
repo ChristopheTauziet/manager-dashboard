@@ -10,8 +10,8 @@ import CompPlanningPage from './pages/CompPlanningPage'
 import CalendarPage from './pages/CalendarPage'
 
 const tabs = [
-  { id: 'team', label: 'Team', icon: Users },
   { id: 'calendar', label: 'Calendar', icon: Calendar },
+  { id: 'team', label: 'Team', icon: Users },
   { id: 'one-on-ones', label: '1:1s', icon: MessageSquare },
   { id: 'interviews', label: 'Interviews', icon: UserSearch },
   { id: 'comp-planning', label: 'Comp Planning', icon: DollarSign },
@@ -23,7 +23,7 @@ type TabId = (typeof tabs)[number]['id']
 function getTabFromHash(): TabId {
   const hash = window.location.hash.slice(1)
   const valid = tabs.find(t => t.id === hash)
-  return valid ? valid.id : 'team'
+  return valid ? valid.id : 'calendar'
 }
 
 export default function App() {
