@@ -499,7 +499,7 @@ function QuickInsights({ weeks, events }: { weeks: Week[]; events: CalendarEvent
     display.reduce((best, w) => w.deepWorkHours > best.deepWorkHours ? w : best, display[0]),
   [display])
 
-  const HOLDS_IGNORE = /epd no meeting wednesday/i
+  const HOLDS_IGNORE = /epd no meeting wednesday|☕|platter days?|company all.?hands|all.?hands/i
 
   const nonPrivateHolds = useMemo(() => {
     const today = dateStr(new Date())
