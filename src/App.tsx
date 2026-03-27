@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Users, MessageSquare, UserSearch, Archive, Eye, EyeOff, DollarSign, Star, Calendar } from 'lucide-react'
 import DashboardToggle from './components/DashboardToggle'
 import { cn } from '@/lib/utils'
@@ -20,10 +20,27 @@ const tabs = [
 
 type TabId = (typeof tabs)[number]['id']
 
+function getTabFromHash(): TabId {
+  const hash = window.location.hash.slice(1)
+  const valid = tabs.find(t => t.id === hash)
+  return valid ? valid.id : 'team'
+}
+
 export default function App() {
-  const [activeTab, setActiveTab] = useState<TabId>('team')
+  const [activeTab, setActiveTab] = useState<TabId>(getTabFromHash)
   const [showSensitive, setShowSensitive] = useState(false)
   const [highlightTopPerformers, setHighlightTopPerformers] = useState(false)
+
+  const switchTab = (id: TabId) => {
+    setActiveTab(id)
+    window.location.hash = id
+  }
+
+  useEffect(() => {
+    const onHashChange = () => setActiveTab(getTabFromHash())
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [])
 
   return (
     <div className="min-h-screen bg-background text-foreground pb-16 md:pb-0">
@@ -35,7 +52,7 @@ export default function App() {
             {tabs.map(({ id, label, icon: Icon }) => (
               <button
                 key={id}
-                onClick={() => setActiveTab(id)}
+                onClick={() => switchTab(id)}
                 className={cn(
                   'flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors',
                   activeTab === id
@@ -115,7 +132,7 @@ export default function App() {
           {tabs.map(({ id, label, icon: Icon }) => (
             <button
               key={id}
-              onClick={() => setActiveTab(id)}
+              onClick={() => switchTab(id)}
               className={cn(
                 'flex flex-col items-center gap-0.5 py-2 px-3 min-w-[4.5rem] flex-shrink-0 transition-colors',
                 activeTab === id
