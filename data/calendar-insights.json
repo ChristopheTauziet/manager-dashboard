@@ -141,8 +141,8 @@
         {
           "meetingTitle": "Amy / Christophe",
           "currentWeek": "Mar 30 \u2013 Apr 5",
-          "suggestedWeek": "Mar 23 \u2013 Mar 29",
-          "reason": "Move to lighter week (low saturation, 7 meetings)"
+          "suggestedWeek": "Apr 27 \u2013 May 3",
+          "reason": "Move to lighter week (medium saturation, 41 meetings)"
         }
       ]
     },
@@ -213,14 +213,14 @@
         {
           "meetingTitle": "Chris / Christophe",
           "currentWeek": "Apr 6 \u2013 Apr 12",
-          "suggestedWeek": "Mar 23 \u2013 Mar 29",
-          "reason": "Move to lighter week (low saturation, 7 meetings)"
+          "suggestedWeek": "Apr 27 \u2013 May 3",
+          "reason": "Move to lighter week (medium saturation, 41 meetings)"
         },
         {
           "meetingTitle": "Nikki / Christophe",
           "currentWeek": "Apr 6 \u2013 Apr 12",
-          "suggestedWeek": "Mar 23 \u2013 Mar 29",
-          "reason": "Move to lighter week (low saturation, 7 meetings)"
+          "suggestedWeek": "Apr 27 \u2013 May 3",
+          "reason": "Move to lighter week (medium saturation, 41 meetings)"
         }
       ]
     },
@@ -295,8 +295,8 @@
         {
           "meetingTitle": "Gabbi / Christophe",
           "currentWeek": "Apr 13 \u2013 Apr 19",
-          "suggestedWeek": "Mar 23 \u2013 Mar 29",
-          "reason": "Move to lighter week (low saturation, 7 meetings)"
+          "suggestedWeek": "Apr 27 \u2013 May 3",
+          "reason": "Move to lighter week (medium saturation, 41 meetings)"
         }
       ]
     },
@@ -501,8 +501,8 @@
         {
           "meetingTitle": "Nikki / Christophe",
           "currentWeek": "May 4 \u2013 May 10",
-          "suggestedWeek": "Mar 23 \u2013 Mar 29",
-          "reason": "Move to lighter week (low saturation, 7 meetings)"
+          "suggestedWeek": "Apr 27 \u2013 May 3",
+          "reason": "Move to lighter week (medium saturation, 41 meetings)"
         }
       ]
     }
