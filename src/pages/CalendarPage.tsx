@@ -58,8 +58,8 @@ interface Week {
   focusHours: number
   deepWorkHours: number
   breakdown: Record<string, Breakdown>
-  visibilityFlags: VisibilityFlag[]
-  rescheduleOpportunities: RescheduleOpp[]
+  visibilityFlags?: VisibilityFlag[]
+  rescheduleOpportunities?: RescheduleOpp[]
 }
 
 interface CalendarEvent {
@@ -194,19 +194,19 @@ function WeeklyDistribution({ weeks }: { weeks: Week[] }) {
                 <span className="flex items-center gap-1">
                   <Zap className="h-3 w-3" /> {week.deepWorkHours}h deep work
                 </span>
-                {week.rescheduleOpportunities.length > 0 && (
+                {(week.rescheduleOpportunities?.length ?? 0) > 0 && (
                   <button
                     onClick={() => setExpandedResched(expandedResched === wIdx ? null : wIdx)}
                     className="flex items-center gap-1 text-amber-400 hover:text-amber-300 transition-colors"
                   >
-                    <RefreshCw className="h-3 w-3" /> {week.rescheduleOpportunities.length} reschedule
+                    <RefreshCw className="h-3 w-3" /> {week.rescheduleOpportunities!.length} reschedule
                   </button>
                 )}
               </div>
 
-              {expandedResched === wIdx && week.rescheduleOpportunities.length > 0 && (
+              {expandedResched === wIdx && (week.rescheduleOpportunities?.length ?? 0) > 0 && (
                 <div className="ml-[8.5rem] pl-3 space-y-1 py-1">
-                  {week.rescheduleOpportunities.map((r, i) => (
+                  {week.rescheduleOpportunities!.map((r, i) => (
                     <div key={i} className="text-[11px] text-muted-foreground bg-muted/30 rounded px-2.5 py-1.5">
                       <span className="font-medium text-foreground/80">{r.meeting}</span>
                       <span className="mx-1">→</span>
