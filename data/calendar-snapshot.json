@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-03-27T06:32:06Z",
+  "generatedAt": "2026-03-27T18:41:03.892302+00:00",
   "fromDate": "2025-12-27",
   "toDate": "2026-05-15",
-  "totalEvents": 1173,
+  "totalEvents": 1181,
   "events": [
     {
       "id": "1h05qh5phuhs7e8tuvoo9h0dv8",
@@ -35835,7 +35835,7 @@
         {
           "email": "dbarry@plaid.com",
           "displayName": "",
-          "responseStatus": "needsAction",
+          "responseStatus": "accepted",
           "self": false
         }
       ],
@@ -35967,11 +35967,17 @@
         {
           "email": "gmakrigiorgos@plaid.com",
           "displayName": "",
-          "responseStatus": "needsAction",
+          "responseStatus": "accepted",
           "self": false
         }
       ],
-      "roomAttendees": [],
+      "roomAttendees": [
+        {
+          "email": "plaid.com_393038393037393539@resource.calendar.google.com",
+          "displayName": "HQ-2-Animal Spirits (4) [Google Meet]",
+          "responseStatus": "accepted"
+        }
+      ],
       "htmlLink": "https://www.google.com/calendar/event?eid=Mmdmcm5iOGFvaGc5dWg5bDQyMW5qaDBpMnUgY3RhdXppZXRAcGxhaWQuY29t&ctz=America/Los_Angeles"
     },
     {
@@ -36085,7 +36091,7 @@
         {
           "email": "adchang@plaid.com",
           "displayName": "",
-          "responseStatus": "needsAction",
+          "responseStatus": "declined",
           "self": false
         },
         {
@@ -36241,7 +36247,7 @@
         {
           "email": "dbarry@plaid.com",
           "displayName": "",
-          "responseStatus": "needsAction",
+          "responseStatus": "declined",
           "self": false
         }
       ],
@@ -37014,7 +37020,7 @@
         {
           "email": "noghedo@plaid.com",
           "displayName": "",
-          "responseStatus": "needsAction",
+          "responseStatus": "accepted",
           "self": false
         }
       ],
@@ -37473,7 +37479,7 @@
         {
           "email": "ssodipo@plaid.com",
           "displayName": "",
-          "responseStatus": "needsAction",
+          "responseStatus": "accepted",
           "self": false
         },
         {
@@ -37653,19 +37659,73 @@
       "htmlLink": "https://www.google.com/calendar/event?eid=NzEwdDA3bWI4ajg5NHFnMG9ubWlmaGo3Mm8gY3RhdXppZXRAcGxhaWQuY29t&ctz=America/Los_Angeles"
     },
     {
-      "id": "o5kjqg4nrkh9jd44766irhgr21_20260331T210500Z",
-      "title": "Sarah / Christophe",
+      "id": "52lposu28q51c2pedg0tq06hl3",
+      "title": "Christophe / Julie",
       "date": "2026-03-31",
-      "startTime": "14:05",
+      "startTime": "14:00",
       "endTime": "14:30",
-      "durationMinutes": 25,
+      "durationMinutes": 30,
       "isAllDay": false,
-      "isRecurring": true,
-      "recurringEventId": "o5kjqg4nrkh9jd44766irhgr21",
+      "isRecurring": false,
+      "recurringEventId": null,
       "visibility": "default",
       "myResponseStatus": "accepted",
       "meetingType": "design_1on1",
       "humanAttendees": [
+        {
+          "email": "jhenson@plaid.com",
+          "displayName": "",
+          "responseStatus": "accepted",
+          "self": false
+        },
+        {
+          "email": "ctauziet@plaid.com",
+          "displayName": "",
+          "responseStatus": "accepted",
+          "self": true
+        }
+      ],
+      "roomAttendees": [
+        {
+          "email": "plaid.com_3137313939383536353737@resource.calendar.google.com",
+          "displayName": "HQ-2-Consumer Confidence (5) [Google Hangout, Phone]",
+          "responseStatus": "accepted"
+        }
+      ],
+      "htmlLink": "https://www.google.com/calendar/event?eid=NTJscG9zdTI4cTUxYzJwZWRnMHRxMDZobDMgY3RhdXppZXRAcGxhaWQuY29t&ctz=America/Los_Angeles"
+    },
+    {
+      "id": "27ma9b6e3jdbooucn4brst1hin",
+      "title": "Effects | Keynote Visual Direction Review",
+      "date": "2026-03-31",
+      "startTime": "14:30",
+      "endTime": "15:00",
+      "durationMinutes": 30,
+      "isAllDay": false,
+      "isRecurring": false,
+      "recurringEventId": null,
+      "visibility": "default",
+      "myResponseStatus": "accepted",
+      "meetingType": "review",
+      "humanAttendees": [
+        {
+          "email": "oghabra@plaid.com",
+          "displayName": "",
+          "responseStatus": "needsAction",
+          "self": false
+        },
+        {
+          "email": "amurphy@plaid.com",
+          "displayName": "",
+          "responseStatus": "needsAction",
+          "self": false
+        },
+        {
+          "email": "clo@plaid.com",
+          "displayName": "",
+          "responseStatus": "accepted",
+          "self": false
+        },
         {
           "email": "ctauziet@plaid.com",
           "displayName": "",
@@ -37673,7 +37733,31 @@
           "self": true
         },
         {
-          "email": "scantu@plaid.com",
+          "email": "gsanchezmallona@plaid.com",
+          "displayName": "",
+          "responseStatus": "accepted",
+          "self": false
+        },
+        {
+          "email": "cwarner@plaid.com",
+          "displayName": "",
+          "responseStatus": "needsAction",
+          "self": false
+        },
+        {
+          "email": "msandsprice@plaid.com",
+          "displayName": "",
+          "responseStatus": "accepted",
+          "self": false
+        },
+        {
+          "email": "jhang@plaid.com",
+          "displayName": "",
+          "responseStatus": "accepted",
+          "self": false
+        },
+        {
+          "email": "eyu@plaid.com",
           "displayName": "",
           "responseStatus": "accepted",
           "self": false
@@ -37681,12 +37765,17 @@
       ],
       "roomAttendees": [
         {
-          "email": "plaid.com_2d3330363833383631333033@resource.calendar.google.com",
-          "displayName": "HQ-2-Gold Standard (7) [Google Meet, Phone]",
+          "email": "plaid.com_3834343132343535393631@resource.calendar.google.com",
+          "displayName": "HQ-2-Inverted Yield (5) [Google Meet, Phone]",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "c_188ftu58tq2d2gkkj7mqt1lhfq66u@resource.calendar.google.com",
+          "displayName": "NYC-10-3-Keynes (3) [Google Meet]",
           "responseStatus": "accepted"
         }
       ],
-      "htmlLink": "https://www.google.com/calendar/event?eid=bzVranFnNG5ya2g5amQ0NDc2NmlyaGdyMjFfMjAyNjAzMzFUMjEwNTAwWiBjdGF1emlldEBwbGFpZC5jb20&ctz=America/Los_Angeles"
+      "htmlLink": "https://www.google.com/calendar/event?eid=MjdtYTliNmUzamRib291Y240YnJzdDFoaW4gY3RhdXppZXRAcGxhaWQuY29t&ctz=America/Los_Angeles"
     },
     {
       "id": "5k4t3fc9f93vmkaimlsc4dg8nn_20260331T203000Z",
@@ -38725,6 +38814,42 @@
       "htmlLink": "https://www.google.com/calendar/event?eid=dW0zb2RuOHMzZmJtNzhtb2RkOTgyNGt2MmJfMjAyNjA0MDJUMjEwNTAwWiBjdGF1emlldEBwbGFpZC5jb20&ctz=America/Los_Angeles"
     },
     {
+      "id": "o5kjqg4nrkh9jd44766irhgr21_20260331T210500Z",
+      "title": "Sarah / Christophe",
+      "date": "2026-04-02",
+      "startTime": "14:35",
+      "endTime": "15:00",
+      "durationMinutes": 25,
+      "isAllDay": false,
+      "isRecurring": true,
+      "recurringEventId": "o5kjqg4nrkh9jd44766irhgr21",
+      "visibility": "default",
+      "myResponseStatus": "accepted",
+      "meetingType": "design_1on1",
+      "humanAttendees": [
+        {
+          "email": "ctauziet@plaid.com",
+          "displayName": "",
+          "responseStatus": "accepted",
+          "self": true
+        },
+        {
+          "email": "scantu@plaid.com",
+          "displayName": "",
+          "responseStatus": "needsAction",
+          "self": false
+        }
+      ],
+      "roomAttendees": [
+        {
+          "email": "plaid.com_2d3330363833383631333033@resource.calendar.google.com",
+          "displayName": "HQ-2-Gold Standard (7) [Google Meet, Phone]",
+          "responseStatus": "accepted"
+        }
+      ],
+      "htmlLink": "https://www.google.com/calendar/event?eid=bzVranFnNG5ya2g5amQ0NDc2NmlyaGdyMjFfMjAyNjAzMzFUMjEwNTAwWiBjdGF1emlldEBwbGFpZC5jb20&ctz=America/Los_Angeles"
+    },
+    {
       "id": "3usj3ihtl86j09lrj3mi268ivs_20260402T233000Z",
       "title": "[DNB] Kids",
       "date": "2026-04-02",
@@ -39338,6 +39463,30 @@
       "humanAttendees": [],
       "roomAttendees": [],
       "htmlLink": "https://www.google.com/calendar/event?eid=cm9xM25pbm0wYWI4aHFpMHYyZzdjbWRhYzBfMjAyNjA0MDdUMTQzMDAwWiBjdGF1emlldEBwbGFpZC5jb20&ctz=America/Los_Angeles"
+    },
+    {
+      "id": "68l4h52bgishi6rients5bu1nl",
+      "title": "Plaiderdays Opening Ceremonies",
+      "date": "2026-04-07",
+      "startTime": "09:00",
+      "endTime": "09:30",
+      "durationMinutes": 30,
+      "isAllDay": false,
+      "isRecurring": false,
+      "recurringEventId": null,
+      "visibility": "default",
+      "myResponseStatus": "needsAction",
+      "meetingType": "focus",
+      "humanAttendees": [
+        {
+          "email": "ctauziet@plaid.com",
+          "displayName": "",
+          "responseStatus": "needsAction",
+          "self": true
+        }
+      ],
+      "roomAttendees": [],
+      "htmlLink": "https://www.google.com/calendar/event?eid=NjhsNGg1MmJnaXNoaTZyaWVudHM1YnUxbmwgY3RhdXppZXRAcGxhaWQuY29t&ctz=America/Los_Angeles"
     },
     {
       "id": "ikf9mnaoffdtiugd907e9cri0j_20260407T160500Z",
@@ -40297,6 +40446,30 @@
       "htmlLink": "https://www.google.com/calendar/event?eid=ZGxmbGdsZ2Ywa2FmNm1wYmhmN3ZjY2owdmFfMjAyNjA0MDhUMTgzMDAwWiBjdGF1emlldEBwbGFpZC5jb20&ctz=America/Los_Angeles"
     },
     {
+      "id": "141t4fkqi53esrb2n5jovimu3h",
+      "title": "Plaiderdays NYC: Space Escape VR Experience",
+      "date": "2026-04-08",
+      "startTime": "12:00",
+      "endTime": "13:00",
+      "durationMinutes": 60,
+      "isAllDay": false,
+      "isRecurring": false,
+      "recurringEventId": null,
+      "visibility": "default",
+      "myResponseStatus": "needsAction",
+      "meetingType": "focus",
+      "humanAttendees": [
+        {
+          "email": "ctauziet@plaid.com",
+          "displayName": "",
+          "responseStatus": "needsAction",
+          "self": true
+        }
+      ],
+      "roomAttendees": [],
+      "htmlLink": "https://www.google.com/calendar/event?eid=MTQxdDRma3FpNTNlc3JiMm41am92aW11M2ggY3RhdXppZXRAcGxhaWQuY29t&ctz=America/Los_Angeles"
+    },
+    {
       "id": "u2q427p4tgpmulgr6dabte3pr5_20260408T190000Z",
       "title": "Effects 2026 Planning | Weekly",
       "date": "2026-04-08",
@@ -40497,6 +40670,30 @@
       ],
       "roomAttendees": [],
       "htmlLink": "https://www.google.com/calendar/event?eid=cmN2NTc4dGgxcG8xZzZtZzhlbGcxZ2txZXRfMjAyNjA0MDZUMTgzNTAwWiBjdGF1emlldEBwbGFpZC5jb20&ctz=America/Los_Angeles"
+    },
+    {
+      "id": "7pv2sg049o3kt3o9elu1psb0d8",
+      "title": "Plaiderdays NYC: Starship Station",
+      "date": "2026-04-09",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "durationMinutes": 60,
+      "isAllDay": false,
+      "isRecurring": false,
+      "recurringEventId": null,
+      "visibility": "default",
+      "myResponseStatus": "needsAction",
+      "meetingType": "focus",
+      "humanAttendees": [
+        {
+          "email": "ctauziet@plaid.com",
+          "displayName": "",
+          "responseStatus": "needsAction",
+          "self": true
+        }
+      ],
+      "roomAttendees": [],
+      "htmlLink": "https://www.google.com/calendar/event?eid=N3B2MnNnMDQ5bzNrdDNvOWVsdTFwc2IwZDggY3RhdXppZXRAcGxhaWQuY29t&ctz=America/Los_Angeles"
     },
     {
       "id": "5fhq9hqo67n7gi0q77rr6i6hcu_20260409T180500Z",
@@ -40915,6 +41112,30 @@
       "htmlLink": "https://www.google.com/calendar/event?eid=NnI2b3A0ZHNrdjNsMWNwaHZqZm1hb2Z1dmtfMjAyNjA0MTAgY3RhdXppZXRAcGxhaWQuY29t&ctz=America/Los_Angeles"
     },
     {
+      "id": "3u472d2tm5hafbc7s4ffrqbosf",
+      "title": "Plaiderdays NYC: These Aren't the Droids You're Looking For... Or Are They?",
+      "date": "2026-04-10",
+      "startTime": "06:00",
+      "endTime": "06:15",
+      "durationMinutes": 15,
+      "isAllDay": false,
+      "isRecurring": false,
+      "recurringEventId": null,
+      "visibility": "default",
+      "myResponseStatus": "needsAction",
+      "meetingType": "focus",
+      "humanAttendees": [
+        {
+          "email": "ctauziet@plaid.com",
+          "displayName": "",
+          "responseStatus": "needsAction",
+          "self": true
+        }
+      ],
+      "roomAttendees": [],
+      "htmlLink": "https://www.google.com/calendar/event?eid=M3U0NzJkMnRtNWhhZmJjN3M0ZmZycWJvc2YgY3RhdXppZXRAcGxhaWQuY29t&ctz=America/Los_Angeles"
+    },
+    {
       "id": "4le4rrt4vif1kstlkft8i8p0ou_20260410T143000Z",
       "title": "DNB [Kids]",
       "date": "2026-04-10",
@@ -40990,6 +41211,30 @@
       ],
       "roomAttendees": [],
       "htmlLink": "https://www.google.com/calendar/event?eid=MGgwZTlqaTdyamg0azNqcGhoY2hyZjZxc21fMjAyNjA0MTBUMTcwMDAwWiBjdGF1emlldEBwbGFpZC5jb20&ctz=America/Los_Angeles"
+    },
+    {
+      "id": "6bb2p38fq4ksh31cpbrj650nv6",
+      "title": "Plaiderdays 23 HOLD: Presentations Live",
+      "date": "2026-04-10",
+      "startTime": "10:00",
+      "endTime": "13:30",
+      "durationMinutes": 210,
+      "isAllDay": false,
+      "isRecurring": false,
+      "recurringEventId": null,
+      "visibility": "default",
+      "myResponseStatus": "needsAction",
+      "meetingType": "focus",
+      "humanAttendees": [
+        {
+          "email": "ctauziet@plaid.com",
+          "displayName": "",
+          "responseStatus": "needsAction",
+          "self": true
+        }
+      ],
+      "roomAttendees": [],
+      "htmlLink": "https://www.google.com/calendar/event?eid=NmJiMnAzOGZxNGtzaDMxY3Bicmo2NTBudjYgY3RhdXppZXRAcGxhaWQuY29t&ctz=America/Los_Angeles"
     },
     {
       "id": "ckk9j8oi5qlvor65v9d0a99ed6_20260410T173500Z",
@@ -41108,6 +41353,30 @@
       "humanAttendees": [],
       "roomAttendees": [],
       "htmlLink": "https://www.google.com/calendar/event?eid=MGNwYjAxNm1tM3IyZjBzdWFrdXJkZHJuYnFfMjAyNjA0MTBUMTkwMDAwWiBjdGF1emlldEBwbGFpZC5jb20&ctz=America/Los_Angeles"
+    },
+    {
+      "id": "4be5kvhdmrmmto2liq3rqga3lj",
+      "title": "Plaiderdays NYC: After Party",
+      "date": "2026-04-10",
+      "startTime": "13:00",
+      "endTime": "15:00",
+      "durationMinutes": 120,
+      "isAllDay": false,
+      "isRecurring": false,
+      "recurringEventId": null,
+      "visibility": "default",
+      "myResponseStatus": "needsAction",
+      "meetingType": "focus",
+      "humanAttendees": [
+        {
+          "email": "ctauziet@plaid.com",
+          "displayName": "",
+          "responseStatus": "needsAction",
+          "self": true
+        }
+      ],
+      "roomAttendees": [],
+      "htmlLink": "https://www.google.com/calendar/event?eid=NGJlNWt2aGRtcm1tdG8ybGlxM3JxZ2EzbGogY3RhdXppZXRAcGxhaWQuY29t&ctz=America/Los_Angeles"
     },
     {
       "id": "2n3j7ptr3u5k1uhaq490i3bd10_20260413",
@@ -45892,7 +46161,7 @@
         {
           "email": "dbarry@plaid.com",
           "displayName": "",
-          "responseStatus": "needsAction",
+          "responseStatus": "accepted",
           "self": false
         }
       ],
@@ -46166,7 +46435,7 @@
         {
           "email": "dbarry@plaid.com",
           "displayName": "",
-          "responseStatus": "needsAction",
+          "responseStatus": "accepted",
           "self": false
         }
       ],
@@ -46892,7 +47161,7 @@
         {
           "email": "hkang@plaid.com",
           "displayName": "",
-          "responseStatus": "declined",
+          "responseStatus": "needsAction",
           "self": false
         },
         {
