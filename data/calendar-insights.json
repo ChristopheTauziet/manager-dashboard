@@ -1,20 +1,19 @@
 {
-  "generatedAt": "2026-03-27T06:47:04Z",
-  "snapshotGeneratedAt": "2026-03-27T06:32:06Z",
+  "generatedAt": "2026-03-27T21:18:42Z",
+  "snapshotGeneratedAt": "2026-03-27T21:17:15Z",
   "lookaheadWeeks": 7,
-  "note": "Event durations capped at 480 min (8h) per event to normalize multi-day calendar blocks.",
   "summary": {
-    "avgMeetingsPerWeek": 37.9,
-    "avgMeetingHoursPerWeek": 44.8,
-    "heaviestWeek": "Apr 06 \u2013 Apr 12",
+    "avgMeetingsPerWeek": 38.9,
+    "avgMeetingHoursPerWeek": 74.5,
+    "heaviestWeek": "Apr 6 \u2013 Apr 12",
     "lightestWeek": "Mar 23 \u2013 Mar 29",
     "flaggedWeeks": [
-      "Mar 30 \u2013 Apr 05",
-      "Apr 06 \u2013 Apr 12",
-      "Apr 13 \u2013 Apr 19",
-      "Apr 20 \u2013 Apr 26",
-      "Apr 27 \u2013 May 03",
-      "May 04 \u2013 May 10"
+      "Week 2 (Mar 30 \u2013 Apr 5): high saturation (12 1:1s)",
+      "Week 3 (Apr 6 \u2013 Apr 12): high saturation (12 1:1s)",
+      "Week 4 (Apr 13 \u2013 Apr 19): overloaded saturation (14 1:1s)",
+      "Week 5 (Apr 20 \u2013 Apr 26): high saturation (12 1:1s)",
+      "Week 6 (Apr 27 \u2013 May 3): high saturation (11 1:1s)",
+      "Week 7 (May 4 \u2013 May 10): overloaded saturation (15 1:1s)"
     ]
   },
   "weeks": [
@@ -25,31 +24,29 @@
       "label": "Mar 23 \u2013 Mar 29",
       "saturation": "low",
       "totalMeetings": 7,
-      "meetingHours": 5.2,
+      "meetingHours": 5.3,
       "focusHours": 2.8,
-      "deepWorkHours": 34.8,
+      "deepWorkHours": 34.7,
       "breakdown": {
         "zach": {
           "count": 0,
-          "hours": 0,
-          "names": []
+          "hours": 0.0
         },
         "direct_1on1": {
           "count": 0,
-          "hours": 0,
+          "hours": 0.0,
           "names": []
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "Gmakrigiorgos",
-            "Ctauziet"
+            "Gmakrigiorgos"
           ]
         },
         "interview": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         },
         "review": {
           "count": 1,
@@ -59,18 +56,7 @@
           "count": 1,
           "hours": 0.9,
           "names": [
-            "Eyu",
-            "Ctauziet",
-            "Amurphy",
-            "Nkim",
-            "Jcausse",
-            "Cshah",
-            "Cjohannsen",
-            "Spatel",
-            "Dcarrington",
-            "Jsanders",
-            "Adchang",
-            "Iyeh"
+            "Eyu"
           ]
         },
         "xfn": {
@@ -83,7 +69,7 @@
         },
         "one_off": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         }
       },
       "rescheduleOpportunities": []
@@ -92,106 +78,32 @@
       "weekNumber": 2,
       "startDate": "2026-03-30",
       "endDate": "2026-04-05",
-      "label": "Mar 30 \u2013 Apr 05",
-      "saturation": "overloaded",
-      "totalMeetings": 44,
-      "meetingHours": 54.4,
-      "focusHours": 39.2,
+      "label": "Mar 30 \u2013 Apr 5",
+      "saturation": "high",
+      "totalMeetings": 42,
+      "meetingHours": 73.6,
+      "focusHours": 60.1,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
-          "count": 2,
-          "hours": 2.0,
-          "names": [
-            "Bdammeir",
-            "Ajaggi",
-            "Jwitkin",
-            "Ctauziet",
-            "Zach",
-            "Mruiz",
-            "Jkovler",
-            "Cchopra",
-            "Rsriram",
-            "Esager",
-            "Clo",
-            "Cshugrue",
-            "Esatterwhite",
-            "Ghyacinth",
-            "Hkang",
-            "Jgoldman",
-            "Jgurwitz",
-            "Mwelch",
-            "Myoung",
-            "Yox",
-            "Lkosak",
-            "Cbush",
-            "Ewong",
-            "Mbouscaren",
-            "Joy",
-            "Ltarca",
-            "Rdandawate",
-            "Mfuchs",
-            "Cpearce",
-            "Damurray",
-            "Szhang",
-            "Davileskrueger",
-            "Ljackson",
-            "Amartin",
-            "Wrobinson",
-            "Jhan",
-            "Dzhou",
-            "Rgera",
-            "Kmcguirk",
-            "Lverma",
-            "Ssibley",
-            "Nsalhuana",
-            "Gmeinersmoran",
-            "Tjotwani",
-            "Hstaples",
-            "Scollins",
-            "Ssodipo",
-            "Abunting",
-            "Bnilsson",
-            "Lincoln",
-            "Jbrereton",
-            "Nastakhov",
-            "Nrajendran",
-            "Hhughes",
-            "Ehaahr",
-            "Bmanning",
-            "Aperelygin",
-            "Sbond",
-            "Lkarlins",
-            "Rchetlapalli",
-            "Jhughes",
-            "Sweber",
-            "Msandsprice",
-            "Shano"
-          ]
+          "count": 1,
+          "hours": 1.0
         },
         "direct_1on1": {
-          "count": 6,
-          "hours": 2.9,
+          "count": 5,
+          "hours": 2.4,
           "names": [
             "Jchristiani",
-            "Tshi",
-            "Ctauziet",
-            "Ijaye",
-            "Eyu",
             "Leliasen",
-            "Tim",
-            "Linda",
-            "[HOLD]",
+            "Eyu",
             "Ftoqan"
           ]
         },
         "skip_1on1": {
-          "count": 2,
-          "hours": 0.8,
+          "count": 1,
+          "hours": 0.4,
           "names": [
-            "Amwong",
-            "Ctauziet",
-            "Ndahan"
+            "Amwong"
           ]
         },
         "interview": {
@@ -199,30 +111,19 @@
           "hours": 0.4
         },
         "review": {
-          "count": 6,
-          "hours": 4.2
+          "count": 7,
+          "hours": 4.8
         },
         "design_1on1": {
           "count": 6,
-          "hours": 3.5,
+          "hours": 3.1,
           "names": [
-            "Eyu",
-            "Ctauziet",
-            "Rfolz",
-            "Nkim",
-            "Cjohannsen",
             "Jcarter",
             "Oghabra",
-            "Scantu",
+            "Jhenson",
             "Hhughes",
-            "Amurphy",
-            "Jcausse",
-            "Cshah",
-            "Spatel",
-            "Dcarrington",
-            "Jsanders",
-            "Adchang",
-            "Iyeh"
+            "Eyu",
+            "Scantu"
           ]
         },
         "xfn": {
@@ -231,11 +132,11 @@
         },
         "focus": {
           "count": 19,
-          "hours": 39.2
+          "hours": 60.1
         },
         "one_off": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         }
       },
       "rescheduleOpportunities": []
@@ -244,89 +145,21 @@
       "weekNumber": 3,
       "startDate": "2026-04-06",
       "endDate": "2026-04-12",
-      "label": "Apr 06 \u2013 Apr 12",
+      "label": "Apr 6 \u2013 Apr 12",
       "saturation": "high",
-      "totalMeetings": 36,
-      "meetingHours": 57.2,
-      "focusHours": 45.8,
+      "totalMeetings": 44,
+      "meetingHours": 172.6,
+      "focusHours": 160.6,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 2,
-          "hours": 2.0,
-          "names": [
-            "Jkovler",
-            "Mruiz",
-            "Zach",
-            "Esager",
-            "Clo",
-            "Cshugrue",
-            "Esatterwhite",
-            "Ghyacinth",
-            "Ajaggi",
-            "Hkang",
-            "Jgoldman",
-            "Jgurwitz",
-            "Mwelch",
-            "Myoung",
-            "Yox",
-            "Jwitkin",
-            "Lkosak",
-            "Ctauziet",
-            "Bdammeir",
-            "Cbush",
-            "Ewong",
-            "Mbouscaren",
-            "Joy",
-            "Ltarca",
-            "Rdandawate",
-            "Mfuchs",
-            "Cpearce",
-            "Damurray",
-            "Szhang",
-            "Davileskrueger",
-            "Ljackson",
-            "Amartin",
-            "Wrobinson",
-            "Jhan",
-            "Dzhou",
-            "Rgera",
-            "Kmcguirk",
-            "Lverma",
-            "Rsriram",
-            "Ssibley",
-            "Nsalhuana",
-            "Cchopra",
-            "Gmeinersmoran",
-            "Tjotwani",
-            "Hstaples",
-            "Scollins",
-            "Ssodipo",
-            "Abunting",
-            "Bnilsson",
-            "Lincoln",
-            "Jbrereton",
-            "Nastakhov",
-            "Nrajendran",
-            "Hhughes",
-            "Ehaahr",
-            "Bmanning",
-            "Aperelygin",
-            "Sbond",
-            "Lkarlins",
-            "Rchetlapalli",
-            "Jhughes",
-            "Sweber",
-            "Msandsprice",
-            "Shano",
-            "Marketing"
-          ]
+          "hours": 2.0
         },
         "direct_1on1": {
           "count": 5,
           "hours": 2.2,
           "names": [
-            "Ctauziet",
             "Ijaye",
             "Leliasen",
             "Jchristiani",
@@ -335,16 +168,16 @@
           ]
         },
         "skip_1on1": {
-          "count": 1,
-          "hours": 0.4,
+          "count": 2,
+          "hours": 0.8,
           "names": [
-            "Ctauziet",
-            "Cwarner"
+            "Cwarner",
+            "Ndahan"
           ]
         },
         "interview": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         },
         "review": {
           "count": 2,
@@ -355,21 +188,8 @@
           "hours": 3.9,
           "names": [
             "Eyu",
-            "Ctauziet",
-            "Rfolz",
-            "Nkim",
-            "Cjohannsen",
             "Bwstell",
-            "Dashboard",
-            "Hhughes",
-            "Amurphy",
-            "Jcausse",
-            "Cshah",
-            "Spatel",
-            "Dcarrington",
-            "Jsanders",
-            "Adchang",
-            "Iyeh"
+            "Hhughes"
           ]
         },
         "xfn": {
@@ -377,12 +197,12 @@
           "hours": 2.0
         },
         "focus": {
-          "count": 18,
-          "hours": 45.8
+          "count": 25,
+          "hours": 160.6
         },
         "one_off": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         }
       },
       "rescheduleOpportunities": []
@@ -394,80 +214,13 @@
       "label": "Apr 13 \u2013 Apr 19",
       "saturation": "overloaded",
       "totalMeetings": 51,
-      "meetingHours": 56.1,
-      "focusHours": 41.3,
+      "meetingHours": 74.4,
+      "focusHours": 59.6,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 3,
-          "hours": 3.0,
-          "names": [
-            "Bdammeir",
-            "Ajaggi",
-            "Jwitkin",
-            "Ctauziet",
-            "Zach",
-            "Mruiz",
-            "Jkovler",
-            "Cchopra",
-            "Rsriram",
-            "Esager",
-            "Clo",
-            "Cshugrue",
-            "Esatterwhite",
-            "Ghyacinth",
-            "Hkang",
-            "Jgoldman",
-            "Jgurwitz",
-            "Mwelch",
-            "Myoung",
-            "Yox",
-            "Lkosak",
-            "Cbush",
-            "Ewong",
-            "Mbouscaren",
-            "Joy",
-            "Ltarca",
-            "Rdandawate",
-            "Mfuchs",
-            "Cpearce",
-            "Damurray",
-            "Szhang",
-            "Davileskrueger",
-            "Ljackson",
-            "Amartin",
-            "Wrobinson",
-            "Jhan",
-            "Dzhou",
-            "Rgera",
-            "Kmcguirk",
-            "Lverma",
-            "Ssibley",
-            "Nsalhuana",
-            "Gmeinersmoran",
-            "Tjotwani",
-            "Hstaples",
-            "Scollins",
-            "Ssodipo",
-            "Abunting",
-            "Bnilsson",
-            "Lincoln",
-            "Jbrereton",
-            "Nastakhov",
-            "Nrajendran",
-            "Hhughes",
-            "Ehaahr",
-            "Bmanning",
-            "Aperelygin",
-            "Sbond",
-            "Lkarlins",
-            "Rchetlapalli",
-            "Jhughes",
-            "Sweber",
-            "Msandsprice",
-            "Shano",
-            "Eyu"
-          ]
+          "hours": 3.0
         },
         "direct_1on1": {
           "count": 3,
@@ -475,19 +228,13 @@
           "names": [
             "Jchristiani",
             "Tshi",
-            "Ctauziet",
-            "Ijaye",
-            "Eyu",
-            "Leliasen",
-            "Tim",
-            "Linda"
+            "Leliasen"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "Ctauziet",
             "Gsanchezmallona"
           ]
         },
@@ -504,24 +251,11 @@
           "hours": 5.9,
           "names": [
             "Sarad",
-            "Ctauziet",
             "Eyu",
-            "Rfolz",
-            "Nkim",
-            "Cjohannsen",
             "Esager",
             "Darguetaleclercq",
             "Rsmith",
-            "Dashboard",
             "Hhughes",
-            "Amurphy",
-            "Jcausse",
-            "Cshah",
-            "Spatel",
-            "Dcarrington",
-            "Jsanders",
-            "Adchang",
-            "Iyeh",
             "Jlaughlin",
             "Lkosak"
           ]
@@ -532,11 +266,11 @@
         },
         "focus": {
           "count": 27,
-          "hours": 41.3
+          "hours": 59.6
         },
         "one_off": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         }
       },
       "rescheduleOpportunities": []
@@ -548,106 +282,28 @@
       "label": "Apr 20 \u2013 Apr 26",
       "saturation": "high",
       "totalMeetings": 44,
-      "meetingHours": 47.6,
-      "focusHours": 31.9,
+      "meetingHours": 65.9,
+      "focusHours": 50.2,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 3,
-          "hours": 3.0,
-          "names": [
-            "Ctauziet",
-            "Mruiz",
-            "Ajaggi",
-            "Wrobinson",
-            "Zach",
-            "Lkosak",
-            "Bdammeir",
-            "Fkarim",
-            "Jwitkin",
-            "Joy",
-            "Zlambert",
-            "Esager",
-            "Jkovler",
-            "Sseshadri",
-            "Hhughes",
-            "Cchopra",
-            "Nsalhuana",
-            "Rsriram",
-            "Clo",
-            "Cshugrue",
-            "Esatterwhite",
-            "Ghyacinth",
-            "Hkang",
-            "Jgoldman",
-            "Jgurwitz",
-            "Mwelch",
-            "Myoung",
-            "Yox",
-            "Cbush",
-            "Ewong",
-            "Mbouscaren",
-            "Ltarca",
-            "Rdandawate",
-            "Mfuchs",
-            "Cpearce",
-            "Damurray",
-            "Szhang",
-            "Davileskrueger",
-            "Ljackson",
-            "Amartin",
-            "Jhan",
-            "Dzhou",
-            "Rgera",
-            "Kmcguirk",
-            "Lverma",
-            "Ssibley",
-            "Gmeinersmoran",
-            "Tjotwani",
-            "Hstaples",
-            "Scollins",
-            "Ssodipo",
-            "Abunting",
-            "Bnilsson",
-            "Lincoln",
-            "Jbrereton",
-            "Nastakhov",
-            "Nrajendran",
-            "Ehaahr",
-            "Bmanning",
-            "Aperelygin",
-            "Sbond",
-            "Lkarlins",
-            "Rchetlapalli",
-            "Jhughes",
-            "Sweber",
-            "Msandsprice",
-            "Shano"
-          ]
+          "hours": 3.0
         },
         "direct_1on1": {
           "count": 5,
           "hours": 2.1,
           "names": [
             "Jchristiani",
-            "Tshi",
-            "Ctauziet",
-            "Ijaye",
-            "Eyu",
             "Leliasen",
-            "Joe",
-            "Linda",
             "Ftoqan",
-            "Ellis"
+            "Eyu"
           ]
         },
         "skip_1on1": {
-          "count": 1,
-          "hours": 0.4,
-          "names": [
-            "Ctauziet",
-            "Ndahan"
-          ]
+          "count": 0,
+          "hours": 0.0,
+          "names": []
         },
         "interview": {
           "count": 1,
@@ -658,26 +314,14 @@
           "hours": 1.0
         },
         "design_1on1": {
-          "count": 6,
-          "hours": 4.0,
+          "count": 7,
+          "hours": 4.4,
           "names": [
             "Eyu",
-            "Ctauziet",
-            "Rfolz",
-            "Nkim",
-            "Cjohannsen",
             "Noghedo",
-            "Dashboard",
+            "Jhenson",
             "Hhughes",
-            "Amurphy",
-            "Jcausse",
-            "Cshah",
-            "Spatel",
-            "Dcarrington",
-            "Jsanders",
-            "Adchang",
-            "Iyeh",
-            "Tony"
+            "Amurphy"
           ]
         },
         "xfn": {
@@ -686,11 +330,11 @@
         },
         "focus": {
           "count": 19,
-          "hours": 31.9
+          "hours": 50.2
         },
         "one_off": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         }
       },
       "rescheduleOpportunities": []
@@ -699,83 +343,16 @@
       "weekNumber": 6,
       "startDate": "2026-04-27",
       "endDate": "2026-05-03",
-      "label": "Apr 27 \u2013 May 03",
+      "label": "Apr 27 \u2013 May 3",
       "saturation": "high",
       "totalMeetings": 41,
-      "meetingHours": 46.0,
-      "focusHours": 32.7,
+      "meetingHours": 64.3,
+      "focusHours": 51.0,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 3,
-          "hours": 3.0,
-          "names": [
-            "Bdammeir",
-            "Ajaggi",
-            "Jwitkin",
-            "Ctauziet",
-            "Zach",
-            "Mruiz",
-            "Jkovler",
-            "Cchopra",
-            "Rsriram",
-            "Esager",
-            "Clo",
-            "Cshugrue",
-            "Esatterwhite",
-            "Ghyacinth",
-            "Hkang",
-            "Jgoldman",
-            "Jgurwitz",
-            "Mwelch",
-            "Myoung",
-            "Yox",
-            "Lkosak",
-            "Cbush",
-            "Ewong",
-            "Mbouscaren",
-            "Joy",
-            "Ltarca",
-            "Rdandawate",
-            "Mfuchs",
-            "Cpearce",
-            "Damurray",
-            "Szhang",
-            "Davileskrueger",
-            "Ljackson",
-            "Amartin",
-            "Wrobinson",
-            "Jhan",
-            "Dzhou",
-            "Rgera",
-            "Kmcguirk",
-            "Lverma",
-            "Ssibley",
-            "Nsalhuana",
-            "Gmeinersmoran",
-            "Tjotwani",
-            "Hstaples",
-            "Scollins",
-            "Ssodipo",
-            "Abunting",
-            "Bnilsson",
-            "Lincoln",
-            "Jbrereton",
-            "Nastakhov",
-            "Nrajendran",
-            "Hhughes",
-            "Ehaahr",
-            "Bmanning",
-            "Aperelygin",
-            "Sbond",
-            "Lkarlins",
-            "Rchetlapalli",
-            "Jhughes",
-            "Sweber",
-            "Msandsprice",
-            "Shano",
-            "Brand"
-          ]
+          "hours": 3.0
         },
         "direct_1on1": {
           "count": 4,
@@ -783,21 +360,15 @@
           "names": [
             "Jchristiani",
             "Tshi",
-            "Ctauziet",
             "Ijaye",
-            "Eyu",
-            "Leliasen",
-            "Tim",
-            "Ian",
-            "Linda"
+            "Leliasen"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "Gmakrigiorgos",
-            "Ctauziet"
+            "Gmakrigiorgos"
           ]
         },
         "interview": {
@@ -813,22 +384,9 @@
           "hours": 4.0,
           "names": [
             "Eyu",
-            "Ctauziet",
-            "Rfolz",
-            "Nkim",
-            "Cjohannsen",
             "Idickens",
-            "Dashboard",
             "Hhughes",
-            "Amurphy",
-            "Jcausse",
-            "Cshah",
-            "Spatel",
-            "Dcarrington",
-            "Jsanders",
-            "Adchang",
-            "Iyeh",
-            "Natalie"
+            "Nkim"
           ]
         },
         "xfn": {
@@ -837,11 +395,11 @@
         },
         "focus": {
           "count": 20,
-          "hours": 32.7
+          "hours": 51.0
         },
         "one_off": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         }
       },
       "rescheduleOpportunities": []
@@ -850,106 +408,33 @@
       "weekNumber": 7,
       "startDate": "2026-05-04",
       "endDate": "2026-05-10",
-      "label": "May 04 \u2013 May 10",
+      "label": "May 4 \u2013 May 10",
       "saturation": "overloaded",
-      "totalMeetings": 42,
-      "meetingHours": 46.8,
-      "focusHours": 31.8,
+      "totalMeetings": 43,
+      "meetingHours": 65.5,
+      "focusHours": 50.0,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 2,
-          "hours": 2.5,
-          "names": [
-            "Ctauziet",
-            "Mruiz",
-            "Ajaggi",
-            "Wrobinson",
-            "Zach",
-            "Lkosak",
-            "Bdammeir",
-            "Fkarim",
-            "Jwitkin",
-            "Joy",
-            "Zlambert",
-            "Esager",
-            "Jkovler",
-            "Sseshadri",
-            "Hhughes",
-            "Cchopra",
-            "Nsalhuana",
-            "Rsriram",
-            "Clo",
-            "Cshugrue",
-            "Esatterwhite",
-            "Ghyacinth",
-            "Hkang",
-            "Jgoldman",
-            "Jgurwitz",
-            "Mwelch",
-            "Myoung",
-            "Yox",
-            "Cbush",
-            "Ewong",
-            "Mbouscaren",
-            "Ltarca",
-            "Rdandawate",
-            "Mfuchs",
-            "Cpearce",
-            "Damurray",
-            "Szhang",
-            "Davileskrueger",
-            "Ljackson",
-            "Amartin",
-            "Jhan",
-            "Dzhou",
-            "Rgera",
-            "Kmcguirk",
-            "Lverma",
-            "Ssibley",
-            "Gmeinersmoran",
-            "Tjotwani",
-            "Hstaples",
-            "Scollins",
-            "Ssodipo",
-            "Abunting",
-            "Bnilsson",
-            "Lincoln",
-            "Jbrereton",
-            "Nastakhov",
-            "Nrajendran",
-            "Ehaahr",
-            "Bmanning",
-            "Aperelygin",
-            "Sbond",
-            "Lkarlins",
-            "Rchetlapalli",
-            "Jhughes",
-            "Sweber",
-            "Msandsprice",
-            "Shano"
-          ]
+          "hours": 2.5
         },
         "direct_1on1": {
           "count": 5,
           "hours": 2.1,
           "names": [
             "Jchristiani",
-            "Tshi",
-            "Ctauziet",
-            "Ijaye",
-            "Eyu",
             "Leliasen",
-            "Joe",
-            "Linda",
             "Ftoqan",
-            "Ellis"
+            "Eyu"
           ]
         },
         "skip_1on1": {
-          "count": 0,
-          "hours": 0,
-          "names": []
+          "count": 1,
+          "hours": 0.4,
+          "names": [
+            "Ndahan"
+          ]
         },
         "interview": {
           "count": 1,
@@ -963,24 +448,11 @@
           "count": 9,
           "hours": 5.3,
           "names": [
-            "Ctauziet",
             "Zmeredith",
             "Jzhong",
             "Eyu",
-            "Rfolz",
-            "Nkim",
-            "Cjohannsen",
             "Lgrizzard",
-            "Dashboard",
             "Hhughes",
-            "Amurphy",
-            "Jcausse",
-            "Cshah",
-            "Spatel",
-            "Dcarrington",
-            "Jsanders",
-            "Adchang",
-            "Iyeh",
             "Cfisher",
             "Bdecker"
           ]
@@ -991,11 +463,11 @@
         },
         "focus": {
           "count": 18,
-          "hours": 31.7
+          "hours": 50.0
         },
         "one_off": {
           "count": 0,
-          "hours": 0
+          "hours": 0.0
         }
       },
       "rescheduleOpportunities": []
