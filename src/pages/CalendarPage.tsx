@@ -323,7 +323,120 @@ function WeeklyDistribution({ weeks }: { weeks: Week[] }) {
   )
 }
 
-// ── Widget 2: Room Check (Calendar View) ───────────────────────────────────────
+// ── Widget 2: Daily Meeting Breakdown ──────────────────────────────────────────
+
+function DailyBreakdown({ events }: { events: CalendarEvent[] }) {
+  const { week1, week2, week1Label, week2Label } = useMemo(() => {
+    const now = new Date()
+    const dayOfWeek = now.getDay()
+    const isFriOrLater = dayOfWeek === 5 || dayOfWeek === 6 || dayOfWeek === 0
+    const currentMon = getMonday(now)
+    const nextMon = new Date(currentMon.getFullYear(), currentMon.getMonth(), currentMon.getDate() + 7)
+    const thirdMon = new Date(nextMon.getFullYear(), nextMon.getMonth(), nextMon.getDate() + 7)
+
+    const mon1 = isFriOrLater ? nextMon : currentMon
+    const mon2 = isFriOrLater ? thirdMon : nextMon
+
+    const buildWeekDays = (mon: Date) =>
+      Array.from({ length: 5 }, (_, i) => {
+        const d = new Date(mon.getFullYear(), mon.getMonth(), mon.getDate() + i)
+        return dateStr(d)
+      })
+
+    const fmtLabel = (mon: Date) => {
+      const fri = new Date(mon.getFullYear(), mon.getMonth(), mon.getDate() + 4)
+      const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+      return `${fmt(mon)} – ${fmt(fri)}`
+    }
+
+    return {
+      week1: buildWeekDays(mon1),
+      week2: buildWeekDays(mon2),
+      week1Label: fmtLabel(mon1),
+      week2Label: fmtLabel(mon2),
+    }
+  }, [])
+
+  const countForDay = useCallback((day: string) =>
+    events.filter(e =>
+      e.date === day &&
+      !e.isAllDay &&
+      e.myResponseStatus !== 'declined' &&
+      e.meetingType !== 'focus'
+    ).length,
+  [events])
+
+  const hoursForDay = useCallback((day: string) =>
+    Math.round(events.filter(e =>
+      e.date === day &&
+      !e.isAllDay &&
+      e.myResponseStatus !== 'declined' &&
+      e.meetingType !== 'focus'
+    ).reduce((s, e) => s + e.durationMinutes / 60, 0) * 10) / 10,
+  [events])
+
+  const dayLabel = (ds: string) => {
+    const d = new Date(ds + 'T12:00:00')
+    return ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'][d.getDay() - 1] || ''
+  }
+
+  const dayNum = (ds: string) => {
+    const d = new Date(ds + 'T12:00:00')
+    return d.getDate()
+  }
+
+  const today = dateStr(new Date())
+
+  const allCounts = [...week1, ...week2].map(d => countForDay(d))
+  const maxCount = Math.max(...allCounts, 1)
+
+  const renderWeek = (days: string[], label: string) => (
+    <div className="flex-1">
+      <p className="text-xs text-muted-foreground mb-3 font-medium">{label}</p>
+      <div className="flex gap-2">
+        {days.map(day => {
+          const count = countForDay(day)
+          const hours = hoursForDay(day)
+          const isToday = day === today
+          const barPct = (count / maxCount) * 100
+          return (
+            <div key={day} className="flex-1 flex flex-col items-center gap-1.5">
+              <span className={cn('text-[10px] tabular-nums', isToday ? 'text-foreground font-semibold' : 'text-muted-foreground')}>
+                {dayLabel(day)}
+              </span>
+              <span className={cn('text-[10px] tabular-nums', isToday ? 'text-foreground font-semibold' : 'text-muted-foreground/60')}>
+                {dayNum(day)}
+              </span>
+              <div className="w-full h-20 bg-muted/30 rounded-md relative flex items-end overflow-hidden">
+                <div
+                  className={cn('w-full rounded-md transition-all', isToday ? 'bg-blue-500/60' : 'bg-muted-foreground/20')}
+                  style={{ height: `${barPct}%`, minHeight: count > 0 ? 4 : 0 }}
+                />
+              </div>
+              <span className={cn('text-sm font-bold tabular-nums', isToday ? 'text-foreground' : count === 0 ? 'text-muted-foreground/40' : '')}>
+                {count}
+              </span>
+              <span className="text-[10px] text-muted-foreground tabular-nums">{hours}h</span>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+
+  return (
+    <div className="bg-card border border-border rounded-xl p-5">
+      <h2 className="text-lg font-semibold mb-4">Daily Meetings</h2>
+      <div className="flex gap-8">
+        {renderWeek(week1, week1Label)}
+        <div className="w-px bg-border flex-shrink-0" />
+        {renderWeek(week2, week2Label)}
+      </div>
+    </div>
+  )
+}
+
+// ── Widget 3: Room Check (Calendar View) ───────────────────────────────────────
 
 function timeToMinutes(t: string): number {
   const [h, m] = t.split(':').map(Number)
@@ -634,6 +747,8 @@ export default function CalendarPage() {
       <QuickInsights weeks={weeks} events={events} />
 
       <WeeklyDistribution weeks={weeks} />
+
+      <DailyBreakdown events={events} />
 
       <RoomCheck events={events} />
     </div>
