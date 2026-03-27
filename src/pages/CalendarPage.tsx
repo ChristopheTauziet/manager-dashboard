@@ -1,7 +1,6 @@
 import { useState, useMemo, useCallback } from 'react'
 import { RefreshCw, Lock, AlertTriangle, Calendar, Zap, ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import insightsData from '../../data/calendar-insights.json'
 import snapshotData from '../../data/calendar-snapshot.json'
 
 // ── Color map ──────────────────────────────────────────────────────────────────
@@ -27,17 +26,14 @@ const SATURATION_STYLES: Record<string, string> = {
   overloaded: 'bg-red-600/40 text-red-300',
 }
 
+const FLEXIBLE_TYPES = new Set(['skip_1on1', 'design_1on1'])
+
 // ── Types ──────────────────────────────────────────────────────────────────────
 
 interface Breakdown {
   count: number
   hours: number
   names?: string[]
-}
-
-interface VisibilityFlag {
-  title: string
-  visibility: string
 }
 
 interface RescheduleOpp {
@@ -55,11 +51,9 @@ interface Week {
   saturation: string
   totalMeetings: number
   meetingHours: number
-  focusHours: number
   deepWorkHours: number
   breakdown: Record<string, Breakdown>
-  visibilityFlags?: VisibilityFlag[]
-  rescheduleOpportunities?: RescheduleOpp[]
+  rescheduleOpportunities: RescheduleOpp[]
 }
 
 interface CalendarEvent {
@@ -123,10 +117,108 @@ function getNextWeekday(targetDay: number): string {
   return dateStr(d)
 }
 
+function saturationLevel(meetingHours: number): string {
+  if (meetingHours < 10) return 'low'
+  if (meetingHours < 13) return 'medium'
+  if (meetingHours <= 15) return 'high'
+  return 'overloaded'
+}
+
+function formatWeekLabel(mon: Date): string {
+  const sun = new Date(mon.getFullYear(), mon.getMonth(), mon.getDate() + 6)
+  const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+  return `${fmt(mon)} – ${fmt(sun)}`
+}
+
+// ── Compute weeks from snapshot ────────────────────────────────────────────────
+
+function computeWeeks(events: CalendarEvent[], numWeeks: number): Week[] {
+  const monday = getMonday(new Date())
+  const weeks: Week[] = []
+
+  for (let i = 0; i < numWeeks; i++) {
+    const start = new Date(monday.getFullYear(), monday.getMonth(), monday.getDate() + i * 7)
+    const end = new Date(start.getFullYear(), start.getMonth(), start.getDate() + 6)
+    const startStr = dateStr(start)
+    const endStr = dateStr(end)
+
+    const weekEvents = events.filter(e =>
+      e.date >= startStr && e.date <= endStr &&
+      !e.isAllDay &&
+      e.myResponseStatus !== 'declined'
+    )
+
+    const meetings = weekEvents.filter(e => e.meetingType !== 'focus')
+    const breakdown: Record<string, Breakdown> = {}
+    let meetingHours = 0
+
+    for (const e of meetings) {
+      const t = e.meetingType
+      if (!breakdown[t]) breakdown[t] = { count: 0, hours: 0, names: [] }
+      breakdown[t].count++
+      breakdown[t].hours += e.durationMinutes / 60
+      meetingHours += e.durationMinutes / 60
+      if (t.endsWith('_1on1') || t === 'zach') {
+        const other = e.humanAttendees.find(a => !a.self)
+        if (other) {
+          const name = other.displayName || other.email.split('@')[0]
+          if (!breakdown[t].names!.includes(name)) breakdown[t].names!.push(name)
+        }
+      }
+    }
+
+    for (const k of Object.keys(breakdown)) {
+      breakdown[k].hours = Math.round(breakdown[k].hours * 10) / 10
+    }
+
+    meetingHours = Math.round(meetingHours * 10) / 10
+    const deepWorkHours = Math.round(Math.max(0, 40 - meetingHours) * 10) / 10
+
+    weeks.push({
+      weekNumber: i + 1,
+      startDate: startStr,
+      endDate: endStr,
+      label: formatWeekLabel(start),
+      saturation: saturationLevel(meetingHours),
+      totalMeetings: meetings.length,
+      meetingHours,
+      deepWorkHours,
+      breakdown,
+      rescheduleOpportunities: [],
+    })
+  }
+
+  for (const week of weeks) {
+    if (week.saturation !== 'high' && week.saturation !== 'overloaded') continue
+    const lighterWeek = weeks.find(w =>
+      w.weekNumber !== week.weekNumber &&
+      (w.saturation === 'low' || w.saturation === 'medium')
+    )
+    if (!lighterWeek) continue
+
+    const flexMeetings = events.filter(e =>
+      e.date >= week.startDate && e.date <= week.endDate &&
+      !e.isAllDay &&
+      e.myResponseStatus !== 'declined' &&
+      FLEXIBLE_TYPES.has(e.meetingType)
+    )
+    for (const e of flexMeetings) {
+      week.rescheduleOpportunities.push({
+        meeting: e.title,
+        currentWeek: week.label,
+        suggestedWeek: lighterWeek.label,
+        reason: `Week is ${week.saturation} — lighter week available`,
+      })
+    }
+  }
+
+  return weeks
+}
+
 // ── Widget 1: Weekly Meeting Distribution ──────────────────────────────────────
 
 function WeeklyDistribution({ weeks }: { weeks: Week[] }) {
-  const display = weeks.slice(0, 4)
+  const display = weeks.slice(0, 6)
   const [hoveredSegment, setHoveredSegment] = useState<{ weekIdx: number; type: string; x: number; y: number } | null>(null)
   const [expandedResched, setExpandedResched] = useState<number | null>(null)
 
@@ -194,19 +286,19 @@ function WeeklyDistribution({ weeks }: { weeks: Week[] }) {
                 <span className="flex items-center gap-1">
                   <Zap className="h-3 w-3" /> {week.deepWorkHours}h deep work
                 </span>
-                {(week.rescheduleOpportunities?.length ?? 0) > 0 && (
+                {week.rescheduleOpportunities.length > 0 && (
                   <button
                     onClick={() => setExpandedResched(expandedResched === wIdx ? null : wIdx)}
                     className="flex items-center gap-1 text-amber-400 hover:text-amber-300 transition-colors"
                   >
-                    <RefreshCw className="h-3 w-3" /> {week.rescheduleOpportunities!.length} reschedule
+                    <RefreshCw className="h-3 w-3" /> {week.rescheduleOpportunities.length} reschedule
                   </button>
                 )}
               </div>
 
-              {expandedResched === wIdx && (week.rescheduleOpportunities?.length ?? 0) > 0 && (
+              {expandedResched === wIdx && week.rescheduleOpportunities.length > 0 && (
                 <div className="ml-[8.5rem] pl-3 space-y-1 py-1">
-                  {week.rescheduleOpportunities!.map((r, i) => (
+                  {week.rescheduleOpportunities.map((r, i) => (
                     <div key={i} className="text-[11px] text-muted-foreground bg-muted/30 rounded px-2.5 py-1.5">
                       <span className="font-medium text-foreground/80">{r.meeting}</span>
                       <span className="mx-1">→</span>
@@ -444,13 +536,12 @@ function RoomCheck({ events }: { events: CalendarEvent[] }) {
 
 // ── Widget 4: Quick Insights ───────────────────────────────────────────────────
 
-function QuickInsights({ weeks, events, summary }: { weeks: Week[]; events: CalendarEvent[]; summary: { heaviestWeek: string; avgMeetingHoursPerWeek: number } }) {
-  const display = weeks.slice(0, 4)
+function QuickInsights({ weeks, events }: { weeks: Week[]; events: CalendarEvent[] }) {
+  const display = weeks.slice(0, 6)
 
-  const heaviestWeekData = useMemo(() => {
-    const w = display.find(w => w.label === summary.heaviestWeek) || display.reduce((best, w) => w.meetingHours > best.meetingHours ? w : best, display[0])
-    return w
-  }, [display, summary.heaviestWeek])
+  const heaviestWeekData = useMemo(() =>
+    display.reduce((best, w) => w.meetingHours > best.meetingHours ? w : best, display[0]),
+  [display])
 
   const bestDeepWork = useMemo(() =>
     display.reduce((best, w) => w.deepWorkHours > best.deepWorkHours ? w : best, display[0]),
@@ -504,7 +595,7 @@ function QuickInsights({ weeks, events, summary }: { weeks: Week[]; events: Cale
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
       <div className={cn('bg-card border border-border rounded-xl p-4', heaviestWeekData?.saturation === 'overloaded' ? 'border-red-500/30' : heaviestWeekData?.saturation === 'high' ? 'border-amber-500/30' : '')}>
         <p className="text-xs text-muted-foreground mb-1">Heaviest week</p>
-        <p className="text-sm font-semibold">{summary.heaviestWeek}</p>
+        <p className="text-sm font-semibold">{heaviestWeekData?.label}</p>
         <p className={cn('text-lg font-bold tabular-nums', heaviestWeekData?.saturation === 'overloaded' ? 'text-red-400' : heaviestWeekData?.saturation === 'high' ? 'text-amber-400' : '')}>
           {heaviestWeekData?.meetingHours ?? '—'}h
         </p>
@@ -550,9 +641,11 @@ function QuickInsights({ weeks, events, summary }: { weeks: Week[]; events: Cale
 
 export default function CalendarPage() {
   const [, setTick] = useState(0)
+  const events = snapshotData.events as CalendarEvent[]
+  const weeks = useMemo(() => computeWeeks(events, 7), [events])
 
-  const stale = isStale(insightsData.generatedAt) || isStale(snapshotData.generatedAt)
-  const generatedAt = new Date(insightsData.generatedAt).toLocaleString('en-US', {
+  const stale = isStale(snapshotData.generatedAt)
+  const generatedAt = new Date(snapshotData.generatedAt).toLocaleString('en-US', {
     weekday: 'short', month: 'short', day: 'numeric',
     hour: 'numeric', minute: '2-digit',
   })
@@ -580,17 +673,13 @@ export default function CalendarPage() {
         </div>
       )}
 
-      <QuickInsights
-        weeks={insightsData.weeks as Week[]}
-        events={snapshotData.events as CalendarEvent[]}
-        summary={insightsData.summary}
-      />
+      <QuickInsights weeks={weeks} events={events} />
 
-      <WeeklyDistribution weeks={insightsData.weeks as Week[]} />
+      <WeeklyDistribution weeks={weeks} />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <RoomCheck events={snapshotData.events as CalendarEvent[]} />
-        <PrivacyHoldsCheck events={snapshotData.events as CalendarEvent[]} />
+        <RoomCheck events={events} />
+        <PrivacyHoldsCheck events={events} />
       </div>
     </div>
   )
