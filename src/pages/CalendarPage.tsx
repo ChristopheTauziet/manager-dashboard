@@ -399,6 +399,8 @@ function DailyBreakdown({ events }: { events: CalendarEvent[] }) {
           const hours = hoursForDay(day)
           const isToday = day === today
           const barPct = (count / maxCount) * 100
+          const barColor = count >= 7 ? 'bg-red-500/60' : count >= 6 ? 'bg-amber-500/60' : count > 0 ? 'bg-emerald-500/50' : 'bg-muted-foreground/20'
+          const countColor = count >= 7 ? 'text-red-400' : count >= 6 ? 'text-amber-400' : count > 0 ? 'text-emerald-400' : 'text-muted-foreground/40'
           return (
             <div key={day} className="flex-1 flex flex-col items-center gap-1.5">
               <span className={cn('text-[10px] tabular-nums', isToday ? 'text-foreground font-semibold' : 'text-muted-foreground')}>
@@ -409,11 +411,11 @@ function DailyBreakdown({ events }: { events: CalendarEvent[] }) {
               </span>
               <div className="w-full h-20 bg-muted/30 rounded-md relative flex items-end overflow-hidden">
                 <div
-                  className={cn('w-full rounded-md transition-all', isToday ? 'bg-blue-500/60' : 'bg-muted-foreground/20')}
+                  className={cn('w-full rounded-md transition-all', isToday ? 'bg-blue-500/60' : barColor)}
                   style={{ height: `${barPct}%`, minHeight: count > 0 ? 4 : 0 }}
                 />
               </div>
-              <span className={cn('text-sm font-bold tabular-nums', isToday ? 'text-foreground' : count === 0 ? 'text-muted-foreground/40' : '')}>
+              <span className={cn('text-sm font-bold tabular-nums', isToday ? 'text-foreground' : countColor)}>
                 {count}
               </span>
               <span className="text-[10px] text-muted-foreground tabular-nums">{hours}h</span>
