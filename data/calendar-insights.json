@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-03-29T16:29:15Z",
+  "generatedAt": "2026-03-29T16:30:46Z",
   "snapshotGeneratedAt": "2026-03-29T16:26:49Z",
   "lookaheadWeeks": 7,
   "summary": {
     "avgMeetingsPerWeek": 37.7,
-    "avgMeetingHoursPerWeek": 73.6,
+    "avgMeetingHoursPerWeek": 44.8,
     "heaviestWeek": "Apr 6 \u2013 Apr 12",
     "lightestWeek": "Mar 23 \u2013 Mar 29",
     "flaggedWeeks": [
@@ -74,8 +74,8 @@
       "label": "Mar 30 \u2013 Apr 5",
       "saturation": "high",
       "totalMeetings": 44,
-      "meetingHours": 75.6,
-      "focusHours": 61.9,
+      "meetingHours": 54.8,
+      "focusHours": 41.0,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
@@ -96,22 +96,22 @@
           "count": 5,
           "hours": 2.8,
           "names": [
-            "Jchristiani",
-            "Tshi",
-            "Ijaye",
-            "Eyu",
-            "Leliasen",
-            "Leliasen",
-            "Leliasen",
-            "Eyu",
-            "Ftoqan"
+            "Joe",
+            "Tim",
+            "Ian",
+            "Ellis",
+            "Linda",
+            "Linda",
+            "Linda",
+            "Ellis",
+            "Faris"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "Amwong"
+            "Amy"
           ]
         },
         "interview": {
@@ -126,9 +126,9 @@
           "count": 3,
           "hours": 1.2,
           "names": [
-            "Jcarter",
+            "James",
             "Oghabra",
-            "Scantu"
+            "Sarah"
           ]
         },
         "xfn": {
@@ -137,7 +137,7 @@
         },
         "focus": {
           "count": 21,
-          "hours": 61.9
+          "hours": 41.0
         },
         "one_off": {
           "count": 0,
@@ -160,8 +160,8 @@
       "label": "Apr 6 \u2013 Apr 12",
       "saturation": "medium",
       "totalMeetings": 44,
-      "meetingHours": 172.1,
-      "focusHours": 161.6,
+      "meetingHours": 64.2,
+      "focusHours": 53.8,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
@@ -178,19 +178,19 @@
           "count": 5,
           "hours": 2.2,
           "names": [
-            "Ijaye",
-            "Leliasen",
-            "Jchristiani",
-            "Ftoqan",
-            "Eyu"
+            "Ian",
+            "Linda",
+            "Joe",
+            "Faris",
+            "Ellis"
           ]
         },
         "skip_1on1": {
           "count": 2,
           "hours": 0.8,
           "names": [
-            "Cwarner",
-            "Ndahan"
+            "Chris",
+            "Nikki"
           ]
         },
         "interview": {
@@ -214,7 +214,7 @@
         },
         "focus": {
           "count": 26,
-          "hours": 161.6
+          "hours": 53.8
         },
         "one_off": {
           "count": 0,
@@ -230,8 +230,8 @@
       "label": "Apr 13 \u2013 Apr 19",
       "saturation": "medium",
       "totalMeetings": 49,
-      "meetingHours": 72.5,
-      "focusHours": 57.6,
+      "meetingHours": 54.2,
+      "focusHours": 39.3,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
@@ -247,7 +247,7 @@
             "Cchopra",
             "Rsriram",
             "Jkovler",
-            "Eyu",
+            "Ellis",
             "Jwitkin",
             "Zach"
           ]
@@ -256,20 +256,20 @@
           "count": 3,
           "hours": 1.2,
           "names": [
-            "Jchristiani",
-            "Tshi",
-            "Ijaye",
-            "Eyu",
-            "Leliasen",
-            "Tshi",
-            "Leliasen"
+            "Joe",
+            "Tim",
+            "Ian",
+            "Ellis",
+            "Linda",
+            "Tim",
+            "Linda"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "Gsanchezmallona"
+            "Gabbi"
           ]
         },
         "interview": {
@@ -293,7 +293,7 @@
         },
         "focus": {
           "count": 25,
-          "hours": 57.6
+          "hours": 39.3
         },
         "one_off": {
           "count": 0,
@@ -309,8 +309,8 @@
       "label": "Apr 20 \u2013 Apr 26",
       "saturation": "medium",
       "totalMeetings": 44,
-      "meetingHours": 65.9,
-      "focusHours": 50.2,
+      "meetingHours": 47.6,
+      "focusHours": 31.9,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
@@ -404,15 +404,15 @@
           "count": 5,
           "hours": 2.1,
           "names": [
-            "Jchristiani",
-            "Tshi",
-            "Ijaye",
-            "Eyu",
-            "Leliasen",
-            "Jchristiani",
-            "Leliasen",
-            "Ftoqan",
-            "Eyu"
+            "Joe",
+            "Tim",
+            "Ian",
+            "Ellis",
+            "Linda",
+            "Joe",
+            "Linda",
+            "Faris",
+            "Ellis"
           ]
         },
         "skip_1on1": {
@@ -441,7 +441,7 @@
         },
         "focus": {
           "count": 19,
-          "hours": 50.2
+          "hours": 31.9
         },
         "one_off": {
           "count": 0,
@@ -457,8 +457,8 @@
       "label": "Apr 27 \u2013 May 3",
       "saturation": "medium",
       "totalMeetings": 41,
-      "meetingHours": 64.3,
-      "focusHours": 51.0,
+      "meetingHours": 46.0,
+      "focusHours": 32.7,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
@@ -544,21 +544,21 @@
           "count": 4,
           "hours": 1.8,
           "names": [
-            "Jchristiani",
-            "Tshi",
-            "Ijaye",
-            "Eyu",
-            "Leliasen",
-            "Tshi",
-            "Ijaye",
-            "Leliasen"
+            "Joe",
+            "Tim",
+            "Ian",
+            "Ellis",
+            "Linda",
+            "Tim",
+            "Ian",
+            "Linda"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "Gmakrigiorgos"
+            "Greg"
           ]
         },
         "interview": {
@@ -583,7 +583,7 @@
         },
         "focus": {
           "count": 20,
-          "hours": 51.0
+          "hours": 32.7
         },
         "one_off": {
           "count": 0,
@@ -599,8 +599,8 @@
       "label": "May 4 \u2013 May 10",
       "saturation": "high",
       "totalMeetings": 42,
-      "meetingHours": 65.0,
-      "focusHours": 50.0,
+      "meetingHours": 46.8,
+      "focusHours": 31.8,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
@@ -693,15 +693,15 @@
           "count": 5,
           "hours": 2.1,
           "names": [
-            "Jchristiani",
-            "Tshi",
-            "Ijaye",
-            "Eyu",
-            "Leliasen",
-            "Jchristiani",
-            "Leliasen",
-            "Ftoqan",
-            "Eyu"
+            "Joe",
+            "Tim",
+            "Ian",
+            "Ellis",
+            "Linda",
+            "Joe",
+            "Linda",
+            "Faris",
+            "Ellis"
           ]
         },
         "skip_1on1": {
@@ -721,9 +721,9 @@
           "count": 5,
           "hours": 2.1,
           "names": [
-            "Zmeredith",
+            "Zack",
             "Jzhong",
-            "Lgrizzard",
+            "Lindsay",
             "Cfisher",
             "Bdecker"
           ]
@@ -734,7 +734,7 @@
         },
         "focus": {
           "count": 18,
-          "hours": 50.0
+          "hours": 31.8
         },
         "one_off": {
           "count": 0,
