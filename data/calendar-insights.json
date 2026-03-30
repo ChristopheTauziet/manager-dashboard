@@ -1,19 +1,13 @@
 {
-  "generatedAt": "2026-03-30T16:27:23.160805+00:00",
-  "snapshotGeneratedAt": "2026-03-30T16:25:05.856232+00:00",
+  "generatedAt": "2026-03-30T22:13:02Z",
+  "snapshotGeneratedAt": "2026-03-30T22:10:00Z",
   "lookaheadWeeks": 7,
   "summary": {
-    "avgMeetingsPerWeek": 43.4,
-    "avgMeetingHoursPerWeek": 51.1,
+    "avgMeetingsPerWeek": 43.6,
+    "avgMeetingHoursPerWeek": 51.3,
     "heaviestWeek": "Apr 6 \u2013 Apr 12",
     "lightestWeek": "Apr 27 \u2013 May 3",
-    "flaggedWeeks": [
-      "Mar 30 \u2013 Apr 5",
-      "Apr 6 \u2013 Apr 12",
-      "Apr 13 \u2013 Apr 19",
-      "Apr 20 \u2013 Apr 26",
-      "May 4 \u2013 May 10"
-    ]
+    "flaggedWeeks": []
   },
   "weeks": [
     {
@@ -21,92 +15,67 @@
       "startDate": "2026-03-30",
       "endDate": "2026-04-05",
       "label": "Mar 30 \u2013 Apr 5",
-      "saturation": "high",
-      "totalMeetings": 42,
-      "meetingHours": 52.8,
-      "focusHours": 40.0,
+      "saturation": "medium",
+      "totalMeetings": 43,
+      "meetingHours": 53.9,
+      "focusHours": 41.0,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 1,
-          "hours": 1.0,
-          "names": [
-            "bdammeir@plaid.com",
-            "ajaggi@plaid.com",
-            "jwitkin@plaid.com",
-            "zach@plaid.com",
-            "mruiz@plaid.com",
-            "jkovler@plaid.com",
-            "cchopra@plaid.com",
-            "rsriram@plaid.com"
-          ]
+          "hours": 1.0
         },
         "direct_1on1": {
           "count": 5,
           "hours": 2.8,
           "names": [
-            "jchristiani@plaid.com",
-            "tshi@plaid.com",
-            "ijaye@plaid.com",
-            "eyu@plaid.com",
-            "leliasen@plaid.com",
-            "ftoqan@plaid.com"
+            "Joe",
+            "Linda",
+            "Ellis",
+            "Faris"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "amwong@plaid.com"
+            "Amy"
           ]
         },
         "interview": {
-          "count": 1,
-          "hours": 0.4
+          "count": 0,
+          "hours": 0.0
         },
         "review": {
-          "count": 7,
-          "hours": 4.8
+          "count": 8,
+          "hours": 5.2
         },
         "design_1on1": {
-          "count": 5,
-          "hours": 2.2,
-          "names": [
-            "jcarter@plaid.com",
-            "oghabra@plaid.com",
-            "jhenson@plaid.com",
-            "hhughes@plaid.com",
-            "scantu@plaid.com"
-          ]
+          "count": 0,
+          "hours": 0.0,
+          "names": []
         },
         "xfn": {
-          "count": 2,
-          "hours": 1.3
+          "count": 7,
+          "hours": 3.5
         },
         "focus": {
-          "count": 20,
-          "hours": 40.0
+          "count": 21,
+          "hours": 41.0
         },
         "one_off": {
           "count": 0,
           "hours": 0.0
         }
       },
-      "rescheduleOpportunities": [
-        {
-          "meetingTitle": "Amy / Christophe",
-          "currentWeek": "2026-03-30",
-          "suggestedWeek": "2026-04-27",
-          "reason": "Week of Mar 30 \u2013 Apr 5 is high; week of Apr 27 \u2013 May 3 is medium"
-        }
-      ]
+      "rescheduleOpportunities": []
     },
     {
       "weekNumber": 2,
       "startDate": "2026-04-06",
       "endDate": "2026-04-12",
       "label": "Apr 6 \u2013 Apr 12",
-      "saturation": "high",
+      "saturation": "medium",
       "totalMeetings": 46,
       "meetingHours": 64.7,
       "focusHours": 53.8,
@@ -114,31 +83,25 @@
       "breakdown": {
         "zach": {
           "count": 1,
-          "hours": 0.5,
-          "names": [
-            "hhughes@plaid.com",
-            "amartin@plaid.com",
-            "zach@plaid.com",
-            "esager@plaid.com"
-          ]
+          "hours": 0.5
         },
         "direct_1on1": {
           "count": 5,
           "hours": 2.2,
           "names": [
-            "ijaye@plaid.com",
-            "leliasen@plaid.com",
-            "jchristiani@plaid.com",
-            "ftoqan@plaid.com",
-            "eyu@plaid.com"
+            "Ian",
+            "Linda",
+            "Joe",
+            "Faris",
+            "Ellis"
           ]
         },
         "skip_1on1": {
           "count": 2,
           "hours": 0.8,
           "names": [
-            "cwarner@plaid.com",
-            "ndahan@plaid.com"
+            "Chris",
+            "Nikki"
           ]
         },
         "interview": {
@@ -147,19 +110,16 @@
         },
         "review": {
           "count": 5,
-          "hours": 3.8
+          "hours": 3.7
         },
         "design_1on1": {
-          "count": 3,
-          "hours": 0.9,
-          "names": [
-            "bolmedoquiroga@plaid.com",
-            "rsmith@plaid.com"
-          ]
+          "count": 0,
+          "hours": 0.0,
+          "names": []
         },
         "xfn": {
-          "count": 4,
-          "hours": 2.8
+          "count": 7,
+          "hours": 3.7
         },
         "focus": {
           "count": 26,
@@ -170,62 +130,37 @@
           "hours": 0.0
         }
       },
-      "rescheduleOpportunities": [
-        {
-          "meetingTitle": "Chris / Christophe",
-          "currentWeek": "2026-04-06",
-          "suggestedWeek": "2026-04-27",
-          "reason": "Week of Apr 6 \u2013 Apr 12 is high; week of Apr 27 \u2013 May 3 is medium"
-        },
-        {
-          "meetingTitle": "Nikki / Christophe",
-          "currentWeek": "2026-04-06",
-          "suggestedWeek": "2026-04-27",
-          "reason": "Week of Apr 6 \u2013 Apr 12 is high; week of Apr 27 \u2013 May 3 is medium"
-        }
-      ]
+      "rescheduleOpportunities": []
     },
     {
       "weekNumber": 3,
       "startDate": "2026-04-13",
       "endDate": "2026-04-19",
       "label": "Apr 13 \u2013 Apr 19",
-      "saturation": "high",
+      "saturation": "low",
       "totalMeetings": 48,
       "meetingHours": 53.7,
-      "focusHours": 41.3,
+      "focusHours": 39.3,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 1,
-          "hours": 1.0,
-          "names": [
-            "bdammeir@plaid.com",
-            "ajaggi@plaid.com",
-            "jwitkin@plaid.com",
-            "zach@plaid.com",
-            "mruiz@plaid.com",
-            "jkovler@plaid.com",
-            "cchopra@plaid.com",
-            "rsriram@plaid.com"
-          ]
+          "hours": 1.0
         },
         "direct_1on1": {
           "count": 3,
           "hours": 1.2,
           "names": [
-            "jchristiani@plaid.com",
-            "tshi@plaid.com",
-            "ijaye@plaid.com",
-            "eyu@plaid.com",
-            "leliasen@plaid.com"
+            "Joe",
+            "Tim",
+            "Linda"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "gsanchezmallona@plaid.com"
+            "Gabbi"
           ]
         },
         "interview": {
@@ -234,48 +169,34 @@
         },
         "review": {
           "count": 5,
-          "hours": 3.8
+          "hours": 3.7
         },
         "design_1on1": {
-          "count": 6,
-          "hours": 2.8,
-          "names": [
-            "sarad@plaid.com",
-            "esager@plaid.com",
-            "darguetaleclercq@plaid.com",
-            "hhughes@plaid.com",
-            "jlaughlin@plaid.com",
-            "lkosak@plaid.com"
-          ]
+          "count": 0,
+          "hours": 0.0,
+          "names": []
         },
         "xfn": {
-          "count": 4,
-          "hours": 2.8
+          "count": 12,
+          "hours": 7.5
         },
         "focus": {
-          "count": 27,
-          "hours": 41.3
+          "count": 25,
+          "hours": 39.3
         },
         "one_off": {
           "count": 0,
           "hours": 0.0
         }
       },
-      "rescheduleOpportunities": [
-        {
-          "meetingTitle": "Gabbi / Christophe",
-          "currentWeek": "2026-04-13",
-          "suggestedWeek": "2026-04-27",
-          "reason": "Week of Apr 13 \u2013 Apr 19 is high; week of Apr 27 \u2013 May 3 is medium"
-        }
-      ]
+      "rescheduleOpportunities": []
     },
     {
       "weekNumber": 4,
       "startDate": "2026-04-20",
       "endDate": "2026-04-26",
       "label": "Apr 20 \u2013 Apr 26",
-      "saturation": "high",
+      "saturation": "medium",
       "totalMeetings": 44,
       "meetingHours": 47.6,
       "focusHours": 31.9,
@@ -283,86 +204,16 @@
       "breakdown": {
         "zach": {
           "count": 3,
-          "hours": 3.0,
-          "names": [
-            "mruiz@plaid.com",
-            "ajaggi@plaid.com",
-            "wrobinson@plaid.com",
-            "zach@plaid.com",
-            "lkosak@plaid.com",
-            "bdammeir@plaid.com",
-            "fkarim@plaid.com",
-            "jwitkin@plaid.com",
-            "joy@plaid.com",
-            "zlambert@plaid.com",
-            "esager@plaid.com",
-            "jkovler@plaid.com",
-            "sseshadri@plaid.com",
-            "hhughes@plaid.com",
-            "cchopra@plaid.com",
-            "nsalhuana@plaid.com",
-            "rsriram@plaid.com",
-            "clo@plaid.com",
-            "cshugrue@plaid.com",
-            "esatterwhite@plaid.com",
-            "ghyacinth@plaid.com",
-            "hkang@plaid.com",
-            "jgoldman@plaid.com",
-            "jgurwitz@plaid.com",
-            "mwelch@plaid.com",
-            "myoung@plaid.com",
-            "yox@plaid.com",
-            "cbush@plaid.com",
-            "ewong@plaid.com",
-            "mbouscaren@plaid.com",
-            "ltarca@plaid.com",
-            "rdandawate@plaid.com",
-            "mfuchs@plaid.com",
-            "cpearce@plaid.com",
-            "damurray@plaid.com",
-            "szhang@plaid.com",
-            "davileskrueger@plaid.com",
-            "ljackson@plaid.com",
-            "amartin@plaid.com",
-            "jhan@plaid.com",
-            "dzhou@plaid.com",
-            "rgera@plaid.com",
-            "kmcguirk@plaid.com",
-            "lverma@plaid.com",
-            "ssibley@plaid.com",
-            "gmeinersmoran@plaid.com",
-            "tjotwani@plaid.com",
-            "hstaples@plaid.com",
-            "scollins@plaid.com",
-            "ssodipo@plaid.com",
-            "abunting@plaid.com",
-            "bnilsson@plaid.com",
-            "lincoln@plaid.com",
-            "jbrereton@plaid.com",
-            "nastakhov@plaid.com",
-            "nrajendran@plaid.com",
-            "ehaahr@plaid.com",
-            "bmanning@plaid.com",
-            "aperelygin@plaid.com",
-            "sbond@plaid.com",
-            "lkarlins@plaid.com",
-            "rchetlapalli@plaid.com",
-            "jhughes@plaid.com",
-            "sweber@plaid.com",
-            "msandsprice@plaid.com",
-            "shano@plaid.com"
-          ]
+          "hours": 3.0
         },
         "direct_1on1": {
           "count": 5,
           "hours": 2.1,
           "names": [
-            "jchristiani@plaid.com",
-            "tshi@plaid.com",
-            "ijaye@plaid.com",
-            "eyu@plaid.com",
-            "leliasen@plaid.com",
-            "ftoqan@plaid.com"
+            "Joe",
+            "Linda",
+            "Faris",
+            "Ellis"
           ]
         },
         "skip_1on1": {
@@ -376,21 +227,16 @@
         },
         "review": {
           "count": 5,
-          "hours": 3.8
+          "hours": 3.7
         },
         "design_1on1": {
-          "count": 4,
-          "hours": 1.7,
-          "names": [
-            "noghedo@plaid.com",
-            "jhenson@plaid.com",
-            "hhughes@plaid.com",
-            "amurphy@plaid.com"
-          ]
+          "count": 0,
+          "hours": 0.0,
+          "names": []
         },
         "xfn": {
-          "count": 7,
-          "hours": 4.8
+          "count": 11,
+          "hours": 6.4
         },
         "focus": {
           "count": 19,
@@ -416,89 +262,23 @@
       "breakdown": {
         "zach": {
           "count": 3,
-          "hours": 3.0,
-          "names": [
-            "bdammeir@plaid.com",
-            "ajaggi@plaid.com",
-            "jwitkin@plaid.com",
-            "zach@plaid.com",
-            "mruiz@plaid.com",
-            "jkovler@plaid.com",
-            "cchopra@plaid.com",
-            "rsriram@plaid.com",
-            "esager@plaid.com",
-            "clo@plaid.com",
-            "cshugrue@plaid.com",
-            "esatterwhite@plaid.com",
-            "ghyacinth@plaid.com",
-            "hkang@plaid.com",
-            "jgoldman@plaid.com",
-            "jgurwitz@plaid.com",
-            "mwelch@plaid.com",
-            "myoung@plaid.com",
-            "yox@plaid.com",
-            "lkosak@plaid.com",
-            "cbush@plaid.com",
-            "ewong@plaid.com",
-            "mbouscaren@plaid.com",
-            "joy@plaid.com",
-            "ltarca@plaid.com",
-            "rdandawate@plaid.com",
-            "mfuchs@plaid.com",
-            "cpearce@plaid.com",
-            "damurray@plaid.com",
-            "szhang@plaid.com",
-            "davileskrueger@plaid.com",
-            "ljackson@plaid.com",
-            "amartin@plaid.com",
-            "wrobinson@plaid.com",
-            "jhan@plaid.com",
-            "dzhou@plaid.com",
-            "rgera@plaid.com",
-            "kmcguirk@plaid.com",
-            "lverma@plaid.com",
-            "ssibley@plaid.com",
-            "nsalhuana@plaid.com",
-            "gmeinersmoran@plaid.com",
-            "tjotwani@plaid.com",
-            "hstaples@plaid.com",
-            "scollins@plaid.com",
-            "ssodipo@plaid.com",
-            "abunting@plaid.com",
-            "bnilsson@plaid.com",
-            "lincoln@plaid.com",
-            "jbrereton@plaid.com",
-            "nastakhov@plaid.com",
-            "nrajendran@plaid.com",
-            "hhughes@plaid.com",
-            "ehaahr@plaid.com",
-            "bmanning@plaid.com",
-            "aperelygin@plaid.com",
-            "sbond@plaid.com",
-            "lkarlins@plaid.com",
-            "rchetlapalli@plaid.com",
-            "jhughes@plaid.com",
-            "sweber@plaid.com",
-            "msandsprice@plaid.com",
-            "shano@plaid.com"
-          ]
+          "hours": 3.0
         },
         "direct_1on1": {
           "count": 4,
           "hours": 1.8,
           "names": [
-            "jchristiani@plaid.com",
-            "tshi@plaid.com",
-            "ijaye@plaid.com",
-            "eyu@plaid.com",
-            "leliasen@plaid.com"
+            "Joe",
+            "Tim",
+            "Ian",
+            "Linda"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "gmakrigiorgos@plaid.com"
+            "Greg"
           ]
         },
         "interview": {
@@ -507,20 +287,16 @@
         },
         "review": {
           "count": 5,
-          "hours": 3.8
+          "hours": 3.7
         },
         "design_1on1": {
-          "count": 3,
-          "hours": 1.2,
-          "names": [
-            "idickens@plaid.com",
-            "hhughes@plaid.com",
-            "nkim@plaid.com"
-          ]
+          "count": 0,
+          "hours": 0.0,
+          "names": []
         },
         "xfn": {
-          "count": 4,
-          "hours": 2.8
+          "count": 7,
+          "hours": 4.0
         },
         "focus": {
           "count": 20,
@@ -538,7 +314,7 @@
       "startDate": "2026-05-04",
       "endDate": "2026-05-10",
       "label": "May 4 \u2013 May 10",
-      "saturation": "high",
+      "saturation": "medium",
       "totalMeetings": 42,
       "meetingHours": 46.8,
       "focusHours": 31.8,
@@ -546,86 +322,16 @@
       "breakdown": {
         "zach": {
           "count": 2,
-          "hours": 2.5,
-          "names": [
-            "mruiz@plaid.com",
-            "ajaggi@plaid.com",
-            "wrobinson@plaid.com",
-            "zach@plaid.com",
-            "lkosak@plaid.com",
-            "bdammeir@plaid.com",
-            "fkarim@plaid.com",
-            "jwitkin@plaid.com",
-            "joy@plaid.com",
-            "zlambert@plaid.com",
-            "esager@plaid.com",
-            "jkovler@plaid.com",
-            "sseshadri@plaid.com",
-            "hhughes@plaid.com",
-            "cchopra@plaid.com",
-            "nsalhuana@plaid.com",
-            "rsriram@plaid.com",
-            "clo@plaid.com",
-            "cshugrue@plaid.com",
-            "esatterwhite@plaid.com",
-            "ghyacinth@plaid.com",
-            "hkang@plaid.com",
-            "jgoldman@plaid.com",
-            "jgurwitz@plaid.com",
-            "mwelch@plaid.com",
-            "myoung@plaid.com",
-            "yox@plaid.com",
-            "cbush@plaid.com",
-            "ewong@plaid.com",
-            "mbouscaren@plaid.com",
-            "ltarca@plaid.com",
-            "rdandawate@plaid.com",
-            "mfuchs@plaid.com",
-            "cpearce@plaid.com",
-            "damurray@plaid.com",
-            "szhang@plaid.com",
-            "davileskrueger@plaid.com",
-            "ljackson@plaid.com",
-            "amartin@plaid.com",
-            "jhan@plaid.com",
-            "dzhou@plaid.com",
-            "rgera@plaid.com",
-            "kmcguirk@plaid.com",
-            "lverma@plaid.com",
-            "ssibley@plaid.com",
-            "gmeinersmoran@plaid.com",
-            "tjotwani@plaid.com",
-            "hstaples@plaid.com",
-            "scollins@plaid.com",
-            "ssodipo@plaid.com",
-            "abunting@plaid.com",
-            "bnilsson@plaid.com",
-            "lincoln@plaid.com",
-            "jbrereton@plaid.com",
-            "nastakhov@plaid.com",
-            "nrajendran@plaid.com",
-            "ehaahr@plaid.com",
-            "bmanning@plaid.com",
-            "aperelygin@plaid.com",
-            "sbond@plaid.com",
-            "lkarlins@plaid.com",
-            "rchetlapalli@plaid.com",
-            "jhughes@plaid.com",
-            "sweber@plaid.com",
-            "msandsprice@plaid.com",
-            "shano@plaid.com"
-          ]
+          "hours": 2.5
         },
         "direct_1on1": {
           "count": 5,
           "hours": 2.1,
           "names": [
-            "jchristiani@plaid.com",
-            "tshi@plaid.com",
-            "ijaye@plaid.com",
-            "eyu@plaid.com",
-            "leliasen@plaid.com",
-            "ftoqan@plaid.com"
+            "Joe",
+            "Linda",
+            "Faris",
+            "Ellis"
           ]
         },
         "skip_1on1": {
@@ -642,24 +348,17 @@
           "hours": 4.8
         },
         "design_1on1": {
-          "count": 6,
-          "hours": 2.5,
-          "names": [
-            "zmeredith@plaid.com",
-            "jzhong@plaid.com",
-            "lgrizzard@plaid.com",
-            "hhughes@plaid.com",
-            "cfisher@plaid.com",
-            "bdecker@plaid.com"
-          ]
+          "count": 0,
+          "hours": 0.0,
+          "names": []
         },
         "xfn": {
-          "count": 4,
-          "hours": 2.8
+          "count": 10,
+          "hours": 5.2
         },
         "focus": {
           "count": 18,
-          "hours": 31.8
+          "hours": 31.7
         },
         "one_off": {
           "count": 0,
@@ -681,89 +380,23 @@
       "breakdown": {
         "zach": {
           "count": 3,
-          "hours": 3.0,
-          "names": [
-            "bdammeir@plaid.com",
-            "ajaggi@plaid.com",
-            "jwitkin@plaid.com",
-            "zach@plaid.com",
-            "mruiz@plaid.com",
-            "jkovler@plaid.com",
-            "cchopra@plaid.com",
-            "rsriram@plaid.com",
-            "esager@plaid.com",
-            "clo@plaid.com",
-            "cshugrue@plaid.com",
-            "esatterwhite@plaid.com",
-            "ghyacinth@plaid.com",
-            "hkang@plaid.com",
-            "jgoldman@plaid.com",
-            "jgurwitz@plaid.com",
-            "mwelch@plaid.com",
-            "myoung@plaid.com",
-            "yox@plaid.com",
-            "lkosak@plaid.com",
-            "cbush@plaid.com",
-            "ewong@plaid.com",
-            "mbouscaren@plaid.com",
-            "joy@plaid.com",
-            "ltarca@plaid.com",
-            "rdandawate@plaid.com",
-            "mfuchs@plaid.com",
-            "cpearce@plaid.com",
-            "damurray@plaid.com",
-            "szhang@plaid.com",
-            "davileskrueger@plaid.com",
-            "ljackson@plaid.com",
-            "amartin@plaid.com",
-            "wrobinson@plaid.com",
-            "jhan@plaid.com",
-            "dzhou@plaid.com",
-            "rgera@plaid.com",
-            "kmcguirk@plaid.com",
-            "lverma@plaid.com",
-            "ssibley@plaid.com",
-            "nsalhuana@plaid.com",
-            "gmeinersmoran@plaid.com",
-            "tjotwani@plaid.com",
-            "hstaples@plaid.com",
-            "scollins@plaid.com",
-            "ssodipo@plaid.com",
-            "abunting@plaid.com",
-            "bnilsson@plaid.com",
-            "lincoln@plaid.com",
-            "jbrereton@plaid.com",
-            "nastakhov@plaid.com",
-            "nrajendran@plaid.com",
-            "hhughes@plaid.com",
-            "ehaahr@plaid.com",
-            "bmanning@plaid.com",
-            "aperelygin@plaid.com",
-            "sbond@plaid.com",
-            "lkarlins@plaid.com",
-            "rchetlapalli@plaid.com",
-            "jhughes@plaid.com",
-            "sweber@plaid.com",
-            "msandsprice@plaid.com",
-            "shano@plaid.com"
-          ]
+          "hours": 3.0
         },
         "direct_1on1": {
           "count": 4,
           "hours": 1.8,
           "names": [
-            "jchristiani@plaid.com",
-            "tshi@plaid.com",
-            "ijaye@plaid.com",
-            "eyu@plaid.com",
-            "leliasen@plaid.com"
+            "Joe",
+            "Tim",
+            "Ian",
+            "Linda"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "amwong@plaid.com"
+            "Amy"
           ]
         },
         "interview": {
@@ -772,18 +405,16 @@
         },
         "review": {
           "count": 5,
-          "hours": 3.8
+          "hours": 3.7
         },
         "design_1on1": {
-          "count": 1,
-          "hours": 0.4,
-          "names": [
-            "hhughes@plaid.com"
-          ]
+          "count": 0,
+          "hours": 0.0,
+          "names": []
         },
         "xfn": {
-          "count": 6,
-          "hours": 3.7
+          "count": 7,
+          "hours": 4.1
         },
         "focus": {
           "count": 20,
