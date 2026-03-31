@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-03-30T22:13:02Z",
-  "snapshotGeneratedAt": "2026-03-30T22:10:00Z",
+  "generatedAt": "2026-03-31T16:26:54.692046+00:00",
+  "snapshotGeneratedAt": "2026-03-31T16:24:34.613884+00:00",
   "lookaheadWeeks": 7,
   "summary": {
-    "avgMeetingsPerWeek": 43.6,
-    "avgMeetingHoursPerWeek": 51.3,
-    "heaviestWeek": "Apr 6 \u2013 Apr 12",
+    "avgMeetingsPerWeek": 42.0,
+    "avgMeetingHoursPerWeek": 81.9,
+    "heaviestWeek": "Apr 6 \u2013 12",
     "lightestWeek": "Apr 27 \u2013 May 3",
     "flaggedWeeks": []
   },
@@ -15,24 +15,23 @@
       "startDate": "2026-03-30",
       "endDate": "2026-04-05",
       "label": "Mar 30 \u2013 Apr 5",
-      "saturation": "medium",
-      "totalMeetings": 43,
-      "meetingHours": 53.9,
-      "focusHours": 41.0,
+      "saturation": "low",
+      "totalMeetings": 29,
+      "meetingHours": 67.6,
+      "focusHours": 58.3,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
-          "count": 1,
-          "hours": 1.0
+          "count": 0,
+          "hours": 0.0,
+          "names": []
         },
         "direct_1on1": {
-          "count": 5,
-          "hours": 2.8,
+          "count": 3,
+          "hours": 1.9,
           "names": [
-            "Joe",
             "Linda",
-            "Ellis",
-            "Faris"
+            "Ellis"
           ]
         },
         "skip_1on1": {
@@ -47,8 +46,8 @@
           "hours": 0.0
         },
         "review": {
-          "count": 8,
-          "hours": 5.2
+          "count": 5,
+          "hours": 3.5
         },
         "design_1on1": {
           "count": 0,
@@ -60,8 +59,8 @@
           "hours": 3.5
         },
         "focus": {
-          "count": 21,
-          "hours": 41.0
+          "count": 13,
+          "hours": 58.3
         },
         "one_off": {
           "count": 0,
@@ -74,25 +73,28 @@
       "weekNumber": 2,
       "startDate": "2026-04-06",
       "endDate": "2026-04-12",
-      "label": "Apr 6 \u2013 Apr 12",
+      "label": "Apr 6 \u2013 12",
       "saturation": "medium",
-      "totalMeetings": 46,
-      "meetingHours": 64.7,
-      "focusHours": 53.8,
+      "totalMeetings": 47,
+      "meetingHours": 173.0,
+      "focusHours": 161.6,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 1,
-          "hours": 0.5
+          "hours": 0.5,
+          "names": [
+            "hhughes"
+          ]
         },
         "direct_1on1": {
-          "count": 5,
-          "hours": 2.2,
+          "count": 6,
+          "hours": 2.6,
           "names": [
             "Ian",
+            "Faris",
             "Linda",
             "Joe",
-            "Faris",
             "Ellis"
           ]
         },
@@ -110,7 +112,7 @@
         },
         "review": {
           "count": 5,
-          "hours": 3.7
+          "hours": 3.8
         },
         "design_1on1": {
           "count": 0,
@@ -123,7 +125,7 @@
         },
         "focus": {
           "count": 26,
-          "hours": 53.8
+          "hours": 161.6
         },
         "one_off": {
           "count": 0,
@@ -136,20 +138,23 @@
       "weekNumber": 3,
       "startDate": "2026-04-13",
       "endDate": "2026-04-19",
-      "label": "Apr 13 \u2013 Apr 19",
+      "label": "Apr 13 \u2013 19",
       "saturation": "low",
       "totalMeetings": 48,
-      "meetingHours": 53.7,
-      "focusHours": 39.3,
+      "meetingHours": 72.0,
+      "focusHours": 59.6,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 1,
-          "hours": 1.0
+          "hours": 1.0,
+          "names": [
+            "bdammeir"
+          ]
         },
         "direct_1on1": {
           "count": 3,
-          "hours": 1.2,
+          "hours": 1.3,
           "names": [
             "Joe",
             "Tim",
@@ -169,7 +174,7 @@
         },
         "review": {
           "count": 5,
-          "hours": 3.7
+          "hours": 3.8
         },
         "design_1on1": {
           "count": 0,
@@ -177,12 +182,12 @@
           "names": []
         },
         "xfn": {
-          "count": 12,
-          "hours": 7.5
+          "count": 10,
+          "hours": 5.5
         },
         "focus": {
-          "count": 25,
-          "hours": 39.3
+          "count": 27,
+          "hours": 59.6
         },
         "one_off": {
           "count": 0,
@@ -195,24 +200,29 @@
       "weekNumber": 4,
       "startDate": "2026-04-20",
       "endDate": "2026-04-26",
-      "label": "Apr 20 \u2013 Apr 26",
+      "label": "Apr 20 \u2013 26",
       "saturation": "medium",
-      "totalMeetings": 44,
-      "meetingHours": 47.6,
-      "focusHours": 31.9,
+      "totalMeetings": 45,
+      "meetingHours": 66.3,
+      "focusHours": 50.2,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 3,
-          "hours": 3.0
+          "hours": 3.0,
+          "names": [
+            "mruiz",
+            "Zach",
+            "jkovler"
+          ]
         },
         "direct_1on1": {
-          "count": 5,
-          "hours": 2.1,
+          "count": 6,
+          "hours": 2.5,
           "names": [
             "Joe",
-            "Linda",
             "Faris",
+            "Linda",
             "Ellis"
           ]
         },
@@ -227,7 +237,7 @@
         },
         "review": {
           "count": 5,
-          "hours": 3.7
+          "hours": 3.8
         },
         "design_1on1": {
           "count": 0,
@@ -240,7 +250,7 @@
         },
         "focus": {
           "count": 19,
-          "hours": 31.9
+          "hours": 50.2
         },
         "one_off": {
           "count": 0,
@@ -256,13 +266,18 @@
       "label": "Apr 27 \u2013 May 3",
       "saturation": "medium",
       "totalMeetings": 41,
-      "meetingHours": 46.0,
-      "focusHours": 32.7,
+      "meetingHours": 64.3,
+      "focusHours": 51.0,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 3,
-          "hours": 3.0
+          "hours": 3.0,
+          "names": [
+            "bdammeir",
+            "jkovler",
+            "hhughes"
+          ]
         },
         "direct_1on1": {
           "count": 4,
@@ -287,7 +302,7 @@
         },
         "review": {
           "count": 5,
-          "hours": 3.7
+          "hours": 3.8
         },
         "design_1on1": {
           "count": 0,
@@ -300,7 +315,7 @@
         },
         "focus": {
           "count": 20,
-          "hours": 32.7
+          "hours": 51.0
         },
         "one_off": {
           "count": 0,
@@ -313,24 +328,28 @@
       "weekNumber": 6,
       "startDate": "2026-05-04",
       "endDate": "2026-05-10",
-      "label": "May 4 \u2013 May 10",
+      "label": "May 4 \u2013 10",
       "saturation": "medium",
-      "totalMeetings": 42,
-      "meetingHours": 46.8,
-      "focusHours": 31.8,
+      "totalMeetings": 43,
+      "meetingHours": 65.5,
+      "focusHours": 50.0,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 2,
-          "hours": 2.5
+          "hours": 2.5,
+          "names": [
+            "mruiz",
+            "jkovler"
+          ]
         },
         "direct_1on1": {
-          "count": 5,
-          "hours": 2.1,
+          "count": 6,
+          "hours": 2.5,
           "names": [
             "Joe",
-            "Linda",
             "Faris",
+            "Linda",
             "Ellis"
           ]
         },
@@ -354,11 +373,11 @@
         },
         "xfn": {
           "count": 10,
-          "hours": 5.2
+          "hours": 5.3
         },
         "focus": {
           "count": 18,
-          "hours": 31.7
+          "hours": 50.0
         },
         "one_off": {
           "count": 0,
@@ -371,16 +390,21 @@
       "weekNumber": 7,
       "startDate": "2026-05-11",
       "endDate": "2026-05-17",
-      "label": "May 11 \u2013 May 17",
+      "label": "May 11 \u2013 17",
       "saturation": "medium",
       "totalMeetings": 41,
-      "meetingHours": 46.1,
-      "focusHours": 32.7,
+      "meetingHours": 64.4,
+      "focusHours": 51.0,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 3,
-          "hours": 3.0
+          "hours": 3.0,
+          "names": [
+            "bdammeir",
+            "jkovler",
+            "hhughes"
+          ]
         },
         "direct_1on1": {
           "count": 4,
@@ -405,7 +429,7 @@
         },
         "review": {
           "count": 5,
-          "hours": 3.7
+          "hours": 3.8
         },
         "design_1on1": {
           "count": 0,
@@ -418,7 +442,7 @@
         },
         "focus": {
           "count": 20,
-          "hours": 32.7
+          "hours": 51.0
         },
         "one_off": {
           "count": 0,
