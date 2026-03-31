@@ -367,7 +367,7 @@ export default function TeamPage({ showSensitive, highlightTopPerformers }: { sh
                                     </span>
                                   </td>
                                   {showSensitive && <td className="py-2 text-right tabular-nums">{formatCurrency(c.base_salary)}</td>}
-                                  {showSensitive && <td className="py-2 text-right tabular-nums">{formatCurrency(c.equity_value)}</td>}
+                                  {showSensitive && <td className="py-2 text-right tabular-nums">{formatCurrency(c.equity_value ?? 0)}</td>}
                                   {showSensitive && <td className="py-2 text-right tabular-nums font-medium">{formatCurrency(c.total_comp)}</td>}
                                 </tr>
                               ))}

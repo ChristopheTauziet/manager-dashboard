@@ -64,6 +64,12 @@
         "total_comp": 950000,
         "perf_rating": "Very Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 320000,
+        "total_comp": 1221000,
+        "perf_rating": "Very Strong"
       }
     ],
     "top_performer": true,
@@ -111,6 +117,12 @@
         "total_comp": 741695,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 313000,
+        "total_comp": 930000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": true,
@@ -142,6 +154,12 @@
         "total_comp": 610026,
         "perf_rating": "",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 292000,
+        "total_comp": 741613,
+        "perf_rating": "-"
       }
     ],
     "top_performer": true,
@@ -165,6 +183,12 @@
         "total_comp": 815000,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 270000,
+        "total_comp": 1072000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": true,
@@ -212,6 +236,13 @@
         "total_comp": 655325,
         "perf_rating": "Very Strong",
         "notes": "Promoted"
+      },
+      {
+        "year": 2026,
+        "base_salary": 300000,
+        "total_comp": 840000,
+        "perf_rating": "Very Strong",
+        "note": "Promoted"
       }
     ],
     "top_performer": true,
@@ -251,6 +282,12 @@
         "total_comp": 520220,
         "perf_rating": "Exceptional",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 272000,
+        "total_comp": 675000,
+        "perf_rating": "Exceptional"
       }
     ],
     "top_performer": true,
@@ -282,6 +319,12 @@
         "total_comp": 610000,
         "perf_rating": "Very Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 280000,
+        "total_comp": 765000,
+        "perf_rating": "Very Strong"
       }
     ],
     "top_performer": true,
@@ -313,6 +356,12 @@
         "total_comp": 600000,
         "perf_rating": "Very Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 265000,
+        "total_comp": 765000,
+        "perf_rating": "Very Strong"
       }
     ],
     "top_performer": true,
@@ -360,6 +409,12 @@
         "total_comp": 483496,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 260000,
+        "total_comp": 581000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": true,
@@ -407,6 +462,12 @@
         "total_comp": 426720,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 255000,
+        "total_comp": 506000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": true,
@@ -454,6 +515,12 @@
         "total_comp": 401650,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 248000,
+        "total_comp": 524000,
+        "perf_rating": "Very Strong"
       }
     ],
     "top_performer": true,
@@ -485,6 +552,13 @@
         "total_comp": 392350,
         "perf_rating": "Very Strong",
         "notes": "Promoted"
+      },
+      {
+        "year": 2026,
+        "base_salary": 271000,
+        "total_comp": 500000,
+        "perf_rating": "Very Strong",
+        "note": "Promoted"
       }
     ],
     "top_performer": true,
@@ -516,6 +590,13 @@
         "total_comp": 282912,
         "perf_rating": "Strong",
         "notes": "Promoted"
+      },
+      {
+        "year": 2026,
+        "base_salary": 225000,
+        "total_comp": 460000,
+        "perf_rating": "Exceptional",
+        "note": "Promoted"
       }
     ],
     "top_performer": true,
@@ -547,6 +628,12 @@
         "total_comp": 432000,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 247000,
+        "total_comp": 450000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": false,
@@ -570,6 +657,12 @@
         "total_comp": 405000,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 227800,
+        "total_comp": 457000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": true,
@@ -616,6 +709,12 @@
         "total_comp": 405000,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 237000,
+        "total_comp": 480000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": false,
@@ -663,6 +762,12 @@
         "total_comp": 386540,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 226000,
+        "total_comp": 460000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": false,
@@ -694,6 +799,12 @@
         "total_comp": 378091,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 244000,
+        "total_comp": 444000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": false,
@@ -741,6 +852,12 @@
         "total_comp": 367958,
         "perf_rating": "Inconsistent",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 215000,
+        "total_comp": 432000,
+        "perf_rating": "Inconsistent"
       }
     ],
     "top_performer": false,
@@ -772,6 +889,12 @@
         "total_comp": 365134,
         "perf_rating": "Very Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 232000,
+        "total_comp": 436000,
+        "perf_rating": "Very Strong"
       }
     ],
     "top_performer": true,
@@ -819,6 +942,12 @@
         "total_comp": 360238,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 233000,
+        "total_comp": 420000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": false,
@@ -850,6 +979,12 @@
         "total_comp": 340135,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 220000,
+        "total_comp": 395000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": false,
@@ -896,6 +1031,12 @@
         "total_comp": 345000,
         "perf_rating": "",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 210000,
+        "total_comp": 396962,
+        "perf_rating": "-"
       }
     ],
     "top_performer": false,
@@ -927,6 +1068,12 @@
         "total_comp": 336667,
         "perf_rating": "Very Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 230000,
+        "total_comp": 445000,
+        "perf_rating": "Very Strong"
       }
     ],
     "top_performer": true,
@@ -966,6 +1113,12 @@
         "total_comp": 335460,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 227000,
+        "total_comp": 388000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": false,
@@ -1013,6 +1166,12 @@
         "total_comp": 333610,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 219000,
+        "total_comp": 387000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": false,
@@ -1044,6 +1203,12 @@
         "total_comp": 332290,
         "perf_rating": "Very Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 212000,
+        "total_comp": 435000,
+        "perf_rating": "Very Strong"
       }
     ],
     "top_performer": true,
@@ -1075,6 +1240,12 @@
         "total_comp": 325149,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 215000,
+        "total_comp": 377000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": false,
@@ -1106,6 +1277,12 @@
         "total_comp": 323701,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 212000,
+        "total_comp": 377000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": true,
@@ -1129,6 +1306,12 @@
         "total_comp": 310000,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 200000,
+        "total_comp": 371000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": false,
@@ -1160,6 +1343,12 @@
         "total_comp": 308630,
         "perf_rating": "Very Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 220000,
+        "total_comp": 370000,
+        "perf_rating": "Very Strong"
       }
     ],
     "top_performer": true,
@@ -1183,6 +1372,12 @@
         "total_comp": 300000,
         "perf_rating": "Exceptional",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 207000,
+        "total_comp": 420000,
+        "perf_rating": "Exceptional"
       }
     ],
     "top_performer": true,
@@ -1222,6 +1417,12 @@
         "total_comp": 281050,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 196000,
+        "total_comp": 333000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": false,
@@ -1245,6 +1446,12 @@
         "total_comp": 235210,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 170000,
+        "total_comp": 274000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": false,
@@ -1276,6 +1483,12 @@
         "total_comp": 217305,
         "perf_rating": "Very Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 163000,
+        "total_comp": 272000,
+        "perf_rating": "Very Strong"
       }
     ],
     "top_performer": false,
@@ -1299,6 +1512,12 @@
         "total_comp": 285000,
         "perf_rating": "",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 190000,
+        "total_comp": 190000,
+        "perf_rating": "-"
       }
     ],
     "top_performer": false,
@@ -1330,6 +1549,12 @@
         "total_comp": 283337,
         "perf_rating": "Very Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 187000,
+        "total_comp": 336000,
+        "perf_rating": "Very Strong"
       }
     ],
     "top_performer": false,
@@ -1361,6 +1586,12 @@
         "total_comp": 273750,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 178000,
+        "total_comp": 290000,
+        "perf_rating": "Very Strong"
       }
     ],
     "top_performer": false,
@@ -1392,6 +1623,12 @@
         "total_comp": 247936,
         "perf_rating": "Inconsistent",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 168000,
+        "total_comp": 282000,
+        "perf_rating": "Inconsistent"
       }
     ],
     "top_performer": false,
@@ -1423,6 +1660,12 @@
         "total_comp": 196750,
         "perf_rating": "Strong",
         "notes": ""
+      },
+      {
+        "year": 2026,
+        "base_salary": 160000,
+        "total_comp": 225000,
+        "perf_rating": "Strong"
       }
     ],
     "top_performer": false,

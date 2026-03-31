@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'fs'
 
-const csv = readFileSync('/Users/ctauziet/Downloads/Employee Data - 2025 Year End Cycle - 2026-03-16 (2).csv', 'utf8')
+const csv = readFileSync('/Users/ctauziet/Downloads/Employee Data - 2025 Year End Cycle - 2026-03-31.csv', 'utf8')
 
 // Proper CSV parser that handles quoted fields with newlines
 function parseCSV(text) {
@@ -79,7 +79,7 @@ const COL_PERF = col('YE25 Performance Score')
 const COL_PROMO = col('YE25 Promotion Decision')
 const COL_CURRENT_BASE = col('Current Base Pay')
 const COL_NEW_BASE = col('New Base Pay')
-const COL_Y1_TOTAL = headers.findIndex(h => h.startsWith('New Total Annual Compensation Apr') && h.includes('26 to Mar\'27'))
+const COL_Y1_TOTAL = headers.findIndex(h => h.includes('Total Annual Compensation') && h.includes("26 to Mar'27"))
 const COL_Y2_TOTAL = col('Target Compensation')
 const COL_EQUITY = col('New Equity Award Total Value')
 
