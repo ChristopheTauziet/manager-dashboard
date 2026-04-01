@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-01T16:25:09.386974+00:00",
+  "generatedAt": "2026-04-01T16:27:17.157784+00:00",
   "fromDate": "2026-01-01",
   "toDate": "2026-05-20",
   "totalEvents": 1207,
@@ -866,7 +866,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -1100,7 +1100,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -1234,7 +1234,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -1364,7 +1364,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -1659,7 +1659,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -1746,7 +1746,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "jcarter@plaid.com",
@@ -2198,7 +2198,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "oghabra@plaid.com",
@@ -2837,7 +2837,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -4518,7 +4518,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -6882,7 +6882,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -7354,7 +7354,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "jlaughlin@plaid.com",
@@ -9783,7 +9783,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -10119,7 +10119,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -10800,7 +10800,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "rsmith@plaid.com",
@@ -12105,7 +12105,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "idickens@plaid.com",
@@ -12685,7 +12685,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -13231,7 +13231,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "nkim@plaid.com",
@@ -14123,7 +14123,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "amurphy@plaid.com",
@@ -15600,7 +15600,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -16410,7 +16410,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "jzhong@plaid.com",
@@ -16911,7 +16911,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "cfisher@plaid.com",
@@ -16942,7 +16942,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -18167,7 +18167,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -18718,7 +18718,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "bdecker@plaid.com",
@@ -20099,7 +20099,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -22585,7 +22585,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "lreddinger@plaid.com",
@@ -23163,7 +23163,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -23486,7 +23486,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "bolmedoquiroga@plaid.com",
@@ -24656,7 +24656,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "amurphy@plaid.com",
@@ -26482,7 +26482,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -27106,7 +27106,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -29759,7 +29759,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "cramsey@plaid.com",
@@ -29851,7 +29851,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "oluo@plaid.com",
@@ -30678,7 +30678,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -31680,7 +31680,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "tcincotta@plaid.com",
@@ -31914,7 +31914,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "adchang@plaid.com",
@@ -32332,7 +32332,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -33119,7 +33119,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -33376,7 +33376,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "cli@plaid.com",
@@ -34015,7 +34015,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -35162,7 +35162,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -35444,7 +35444,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -36079,7 +36079,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -36313,7 +36313,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -38922,7 +38922,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "jcarter@plaid.com",
@@ -38959,7 +38959,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "oghabra@plaid.com",
@@ -39429,7 +39429,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -40017,7 +40017,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -41691,7 +41691,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "needsAction",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "bolmedoquiroga@plaid.com",
@@ -42253,7 +42253,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -42830,7 +42830,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "rsmith@plaid.com",
@@ -43122,7 +43122,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "needsAction",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "bolmedoquiroga@plaid.com",
@@ -44928,7 +44928,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -45221,7 +45221,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -45704,7 +45704,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "jlaughlin@plaid.com",
@@ -47182,7 +47182,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -47423,7 +47423,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -48155,7 +48155,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "amurphy@plaid.com",
@@ -50113,7 +50113,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -50431,7 +50431,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "idickens@plaid.com",
@@ -50778,7 +50778,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "nkim@plaid.com",
@@ -51575,7 +51575,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -51795,7 +51795,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "jzhong@plaid.com",
@@ -52406,7 +52406,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "ctauziet@plaid.com",
@@ -52620,7 +52620,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -53569,7 +53569,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "cfisher@plaid.com",
@@ -53606,7 +53606,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "bdecker@plaid.com",
@@ -54997,7 +54997,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
@@ -57196,7 +57196,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "accepted",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "lreddinger@plaid.com",
@@ -57529,7 +57529,7 @@
       "visibility": "default",
       "hasVideoCall": false,
       "myResponseStatus": "declined",
-      "meetingType": "xfn",
+      "meetingType": "design_1on1",
       "humanAttendees": [
         {
           "email": "hmounsey@plaid.com",
