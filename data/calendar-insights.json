@@ -1,16 +1,13 @@
 {
-  "generatedAt": "2026-04-01T16:30:10.913563+00:00",
-  "snapshotGeneratedAt": "2026-04-01T16:27:17.157784+00:00",
+  "generatedAt": "2026-04-02T16:25:30Z",
+  "snapshotGeneratedAt": "2026-04-02T16:25:30Z",
   "lookaheadWeeks": 7,
   "summary": {
-    "avgMeetingsPerWeek": 37.9,
-    "avgMeetingHoursPerWeek": 29.5,
-    "heaviestWeek": "Apr 13 \u2013 19",
+    "avgMeetingsPerWeek": 38.9,
+    "avgMeetingHoursPerWeek": 75.0,
+    "heaviestWeek": "Apr 6 \u2013 Apr 12",
     "lightestWeek": "Mar 30 \u2013 Apr 5",
-    "flaggedWeeks": [
-      "Apr 6 \u2013 12",
-      "May 4 \u2013 10"
-    ]
+    "flaggedWeeks": []
   },
   "weeks": [
     {
@@ -18,43 +15,38 @@
       "startDate": "2026-03-30",
       "endDate": "2026-04-05",
       "label": "Mar 30 \u2013 Apr 5",
-      "saturation": "medium",
-      "totalMeetings": 20,
-      "meetingHours": 16.3,
-      "focusHours": 10.5,
-      "deepWorkHours": 23.7,
+      "saturation": "low",
+      "totalMeetings": 11,
+      "meetingHours": 20.8,
+      "focusHours": 18.0,
+      "deepWorkHours": 19.2,
       "breakdown": {
         "zach": {
           "count": 0,
           "hours": 0.0
         },
         "direct_1on1": {
-          "count": 7,
-          "hours": 2.1,
+          "count": 4,
+          "hours": 1.2,
           "names": [
-            "Ellis",
-            "Tim",
             "Ian",
             "Joe",
-            "Leliasen",
-            "Ftoqan",
-            "Eyu"
+            "ftoqan@plaid.com",
+            "eyu@plaid.com"
           ]
         },
         "skip_1on1": {
-          "count": 1,
-          "hours": 0.4,
-          "names": [
-            "Amwong"
-          ]
+          "count": 0,
+          "hours": 0.0,
+          "names": []
         },
         "interview": {
           "count": 0,
           "hours": 0.0
         },
         "review": {
-          "count": 3,
-          "hours": 2.5
+          "count": 2,
+          "hours": 1.5
         },
         "design_1on1": {
           "count": 0,
@@ -62,12 +54,12 @@
           "names": []
         },
         "xfn": {
-          "count": 2,
-          "hours": 0.9
+          "count": 0,
+          "hours": 0.0
         },
         "focus": {
-          "count": 7,
-          "hours": 10.4
+          "count": 5,
+          "hours": 18.0
         },
         "one_off": {
           "count": 0,
@@ -80,12 +72,12 @@
       "weekNumber": 2,
       "startDate": "2026-04-06",
       "endDate": "2026-04-12",
-      "label": "Apr 6 \u2013 12",
-      "saturation": "high",
-      "totalMeetings": 39,
-      "meetingHours": 29.8,
-      "focusHours": 20.8,
-      "deepWorkHours": 10.2,
+      "label": "Apr 6 \u2013 Apr 12",
+      "saturation": "medium",
+      "totalMeetings": 43,
+      "meetingHours": 170.7,
+      "focusHours": 161.6,
+      "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 1,
@@ -93,21 +85,21 @@
         },
         "direct_1on1": {
           "count": 5,
-          "hours": 2.1,
+          "hours": 2.2,
           "names": [
-            "Ijaye",
-            "Ftoqan",
-            "Leliasen",
-            "Jchristiani",
-            "Eyu"
+            "ijaye@plaid.com",
+            "ftoqan@plaid.com",
+            "leliasen@plaid.com",
+            "jchristiani@plaid.com",
+            "eyu@plaid.com"
           ]
         },
         "skip_1on1": {
           "count": 2,
           "hours": 0.8,
           "names": [
-            "Cwarner",
-            "Ndahan"
+            "cwarner@plaid.com",
+            "ndahan@plaid.com"
           ]
         },
         "interview": {
@@ -119,51 +111,35 @@
           "hours": 1.9
         },
         "design_1on1": {
-          "count": 3,
-          "hours": 0.8,
-          "names": [
-            "Bolmedoquiroga",
-            "Rsmith"
-          ]
+          "count": 0,
+          "hours": 0.0,
+          "names": []
         },
         "xfn": {
-          "count": 4,
-          "hours": 2.8
+          "count": 7,
+          "hours": 3.7
         },
         "focus": {
-          "count": 21,
-          "hours": 20.6
+          "count": 25,
+          "hours": 161.6
         },
         "one_off": {
           "count": 0,
           "hours": 0.0
         }
       },
-      "rescheduleOpportunities": [
-        {
-          "meetingTitle": "Chris / Christophe",
-          "currentWeek": "Apr 6 \u2013 12",
-          "suggestedWeek": "Apr 13 \u2013 19",
-          "reason": "Current week is high (10 1:1s); Apr 13 \u2013 19 has medium load"
-        },
-        {
-          "meetingTitle": "Nikki / Christophe",
-          "currentWeek": "Apr 6 \u2013 12",
-          "suggestedWeek": "Apr 13 \u2013 19",
-          "reason": "Current week is high (10 1:1s); Apr 13 \u2013 19 has medium load"
-        }
-      ]
+      "rescheduleOpportunities": []
     },
     {
       "weekNumber": 3,
       "startDate": "2026-04-13",
       "endDate": "2026-04-19",
-      "label": "Apr 13 \u2013 19",
-      "saturation": "medium",
-      "totalMeetings": 46,
-      "meetingHours": 37.7,
-      "focusHours": 25.3,
-      "deepWorkHours": 2.3,
+      "label": "Apr 13 \u2013 Apr 19",
+      "saturation": "low",
+      "totalMeetings": 49,
+      "meetingHours": 73.2,
+      "focusHours": 60.9,
+      "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 1,
@@ -173,18 +149,18 @@
           "count": 3,
           "hours": 1.2,
           "names": [
-            "Jchristiani",
-            "Tshi",
-            "Ijaye",
-            "Eyu",
-            "Leliasen"
+            "jchristiani@plaid.com",
+            "tshi@plaid.com",
+            "ijaye@plaid.com",
+            "eyu@plaid.com",
+            "leliasen@plaid.com"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "Gsanchezmallona"
+            "gsanchezmallona@plaid.com"
           ]
         },
         "interview": {
@@ -193,23 +169,20 @@
         },
         "review": {
           "count": 5,
-          "hours": 3.7
+          "hours": 3.8
         },
         "design_1on1": {
-          "count": 2,
-          "hours": 0.8,
-          "names": [
-            "Darguetaleclercq",
-            "Jlaughlin"
-          ]
+          "count": 0,
+          "hours": 0.0,
+          "names": []
         },
         "xfn": {
-          "count": 8,
-          "hours": 4.6
+          "count": 10,
+          "hours": 5.5
         },
         "focus": {
-          "count": 25,
-          "hours": 25.1
+          "count": 28,
+          "hours": 60.9
         },
         "one_off": {
           "count": 0,
@@ -222,12 +195,12 @@
       "weekNumber": 4,
       "startDate": "2026-04-20",
       "endDate": "2026-04-26",
-      "label": "Apr 20 \u2013 26",
+      "label": "Apr 20 \u2013 Apr 26",
       "saturation": "medium",
-      "totalMeetings": 42,
-      "meetingHours": 31.6,
-      "focusHours": 15.9,
-      "deepWorkHours": 8.4,
+      "totalMeetings": 45,
+      "meetingHours": 66.9,
+      "focusHours": 51.2,
+      "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 3,
@@ -235,14 +208,14 @@
         },
         "direct_1on1": {
           "count": 5,
-          "hours": 2.0,
+          "hours": 2.1,
           "names": [
-            "Jchristiani",
-            "Tshi",
-            "Ijaye",
-            "Eyu",
-            "Leliasen",
-            "Ftoqan"
+            "jchristiani@plaid.com",
+            "tshi@plaid.com",
+            "ijaye@plaid.com",
+            "eyu@plaid.com",
+            "leliasen@plaid.com",
+            "ftoqan@plaid.com"
           ]
         },
         "skip_1on1": {
@@ -256,23 +229,20 @@
         },
         "review": {
           "count": 5,
-          "hours": 3.7
+          "hours": 3.8
         },
         "design_1on1": {
-          "count": 2,
-          "hours": 0.8,
-          "names": [
-            "Noghedo",
-            "Amurphy"
-          ]
+          "count": 0,
+          "hours": 0.0,
+          "names": []
         },
         "xfn": {
-          "count": 9,
-          "hours": 5.6
+          "count": 11,
+          "hours": 6.4
         },
         "focus": {
-          "count": 17,
-          "hours": 15.7
+          "count": 20,
+          "hours": 51.2
         },
         "one_off": {
           "count": 0,
@@ -287,10 +257,10 @@
       "endDate": "2026-05-03",
       "label": "Apr 27 \u2013 May 3",
       "saturation": "medium",
-      "totalMeetings": 39,
-      "meetingHours": 30.0,
-      "focusHours": 16.7,
-      "deepWorkHours": 10.0,
+      "totalMeetings": 41,
+      "meetingHours": 64.3,
+      "focusHours": 51.0,
+      "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 3,
@@ -298,20 +268,20 @@
         },
         "direct_1on1": {
           "count": 4,
-          "hours": 1.7,
+          "hours": 1.8,
           "names": [
-            "Jchristiani",
-            "Tshi",
-            "Ijaye",
-            "Eyu",
-            "Leliasen"
+            "jchristiani@plaid.com",
+            "tshi@plaid.com",
+            "ijaye@plaid.com",
+            "eyu@plaid.com",
+            "leliasen@plaid.com"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "Gmakrigiorgos"
+            "gmakrigiorgos@plaid.com"
           ]
         },
         "interview": {
@@ -320,23 +290,20 @@
         },
         "review": {
           "count": 5,
-          "hours": 3.7
+          "hours": 3.8
         },
         "design_1on1": {
-          "count": 2,
-          "hours": 0.8,
-          "names": [
-            "Idickens",
-            "Nkim"
-          ]
+          "count": 0,
+          "hours": 0.0,
+          "names": []
         },
         "xfn": {
-          "count": 5,
-          "hours": 3.2
+          "count": 7,
+          "hours": 4.0
         },
         "focus": {
-          "count": 18,
-          "hours": 16.4
+          "count": 20,
+          "hours": 51.0
         },
         "one_off": {
           "count": 0,
@@ -349,12 +316,12 @@
       "weekNumber": 6,
       "startDate": "2026-05-04",
       "endDate": "2026-05-10",
-      "label": "May 4 \u2013 10",
-      "saturation": "high",
-      "totalMeetings": 40,
-      "meetingHours": 30.8,
-      "focusHours": 15.8,
-      "deepWorkHours": 9.2,
+      "label": "May 4 \u2013 May 10",
+      "saturation": "medium",
+      "totalMeetings": 42,
+      "meetingHours": 65.0,
+      "focusHours": 50.0,
+      "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 2,
@@ -362,14 +329,14 @@
         },
         "direct_1on1": {
           "count": 5,
-          "hours": 2.0,
+          "hours": 2.1,
           "names": [
-            "Jchristiani",
-            "Tshi",
-            "Ijaye",
-            "Eyu",
-            "Leliasen",
-            "Ftoqan"
+            "jchristiani@plaid.com",
+            "tshi@plaid.com",
+            "ijaye@plaid.com",
+            "eyu@plaid.com",
+            "leliasen@plaid.com",
+            "ftoqan@plaid.com"
           ]
         },
         "skip_1on1": {
@@ -383,26 +350,20 @@
         },
         "review": {
           "count": 6,
-          "hours": 4.7
+          "hours": 4.8
         },
         "design_1on1": {
-          "count": 5,
-          "hours": 2.0,
-          "names": [
-            "Zmeredith",
-            "Jzhong",
-            "Lgrizzard",
-            "Cfisher",
-            "Bdecker"
-          ]
+          "count": 0,
+          "hours": 0.0,
+          "names": []
         },
         "xfn": {
-          "count": 5,
-          "hours": 3.2
+          "count": 10,
+          "hours": 5.2
         },
         "focus": {
-          "count": 16,
-          "hours": 15.5
+          "count": 18,
+          "hours": 50.0
         },
         "one_off": {
           "count": 0,
@@ -415,12 +376,12 @@
       "weekNumber": 7,
       "startDate": "2026-05-11",
       "endDate": "2026-05-17",
-      "label": "May 11 \u2013 17",
+      "label": "May 11 \u2013 May 17",
       "saturation": "medium",
-      "totalMeetings": 39,
-      "meetingHours": 30.1,
-      "focusHours": 16.7,
-      "deepWorkHours": 9.9,
+      "totalMeetings": 41,
+      "meetingHours": 64.4,
+      "focusHours": 51.0,
+      "deepWorkHours": 0,
       "breakdown": {
         "zach": {
           "count": 3,
@@ -428,20 +389,20 @@
         },
         "direct_1on1": {
           "count": 4,
-          "hours": 1.7,
+          "hours": 1.8,
           "names": [
-            "Jchristiani",
-            "Tshi",
-            "Ijaye",
-            "Eyu",
-            "Leliasen"
+            "jchristiani@plaid.com",
+            "tshi@plaid.com",
+            "ijaye@plaid.com",
+            "eyu@plaid.com",
+            "leliasen@plaid.com"
           ]
         },
         "skip_1on1": {
           "count": 1,
           "hours": 0.4,
           "names": [
-            "Amwong"
+            "amwong@plaid.com"
           ]
         },
         "interview": {
@@ -450,7 +411,7 @@
         },
         "review": {
           "count": 5,
-          "hours": 3.7
+          "hours": 3.8
         },
         "design_1on1": {
           "count": 0,
@@ -462,8 +423,8 @@
           "hours": 4.1
         },
         "focus": {
-          "count": 18,
-          "hours": 16.4
+          "count": 20,
+          "hours": 51.0
         },
         "one_off": {
           "count": 0,
