@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-02T16:25:30Z",
-  "snapshotGeneratedAt": "2026-04-02T16:25:30Z",
+  "generatedAt": "2026-04-02T16:27:40Z",
+  "snapshotGeneratedAt": "2026-04-02T16:27:40Z",
   "lookaheadWeeks": 7,
   "summary": {
     "avgMeetingsPerWeek": 38.9,
-    "avgMeetingHoursPerWeek": 75.0,
+    "avgMeetingHoursPerWeek": 46.2,
     "heaviestWeek": "Apr 6 \u2013 Apr 12",
     "lightestWeek": "Mar 30 \u2013 Apr 5",
     "flaggedWeeks": []
@@ -17,9 +17,9 @@
       "label": "Mar 30 \u2013 Apr 5",
       "saturation": "low",
       "totalMeetings": 11,
-      "meetingHours": 20.8,
-      "focusHours": 18.0,
-      "deepWorkHours": 19.2,
+      "meetingHours": 18.2,
+      "focusHours": 15.4,
+      "deepWorkHours": 21.8,
       "breakdown": {
         "zach": {
           "count": 0,
@@ -59,7 +59,7 @@
         },
         "focus": {
           "count": 5,
-          "hours": 18.0
+          "hours": 15.4
         },
         "one_off": {
           "count": 0,
@@ -75,8 +75,8 @@
       "label": "Apr 6 \u2013 Apr 12",
       "saturation": "medium",
       "totalMeetings": 43,
-      "meetingHours": 170.7,
-      "focusHours": 161.6,
+      "meetingHours": 62.8,
+      "focusHours": 53.8,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
@@ -121,7 +121,7 @@
         },
         "focus": {
           "count": 25,
-          "hours": 161.6
+          "hours": 53.8
         },
         "one_off": {
           "count": 0,
@@ -137,8 +137,8 @@
       "label": "Apr 13 \u2013 Apr 19",
       "saturation": "low",
       "totalMeetings": 49,
-      "meetingHours": 73.2,
-      "focusHours": 60.9,
+      "meetingHours": 54.9,
+      "focusHours": 42.6,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
@@ -182,7 +182,7 @@
         },
         "focus": {
           "count": 28,
-          "hours": 60.9
+          "hours": 42.6
         },
         "one_off": {
           "count": 0,
@@ -198,8 +198,8 @@
       "label": "Apr 20 \u2013 Apr 26",
       "saturation": "medium",
       "totalMeetings": 45,
-      "meetingHours": 66.9,
-      "focusHours": 51.2,
+      "meetingHours": 48.6,
+      "focusHours": 32.9,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
@@ -242,7 +242,7 @@
         },
         "focus": {
           "count": 20,
-          "hours": 51.2
+          "hours": 32.9
         },
         "one_off": {
           "count": 0,
@@ -258,8 +258,8 @@
       "label": "Apr 27 \u2013 May 3",
       "saturation": "medium",
       "totalMeetings": 41,
-      "meetingHours": 64.3,
-      "focusHours": 51.0,
+      "meetingHours": 46.0,
+      "focusHours": 32.7,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
@@ -303,7 +303,7 @@
         },
         "focus": {
           "count": 20,
-          "hours": 51.0
+          "hours": 32.7
         },
         "one_off": {
           "count": 0,
@@ -319,8 +319,8 @@
       "label": "May 4 \u2013 May 10",
       "saturation": "medium",
       "totalMeetings": 42,
-      "meetingHours": 65.0,
-      "focusHours": 50.0,
+      "meetingHours": 46.8,
+      "focusHours": 31.8,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
@@ -363,7 +363,7 @@
         },
         "focus": {
           "count": 18,
-          "hours": 50.0
+          "hours": 31.8
         },
         "one_off": {
           "count": 0,
@@ -379,8 +379,8 @@
       "label": "May 11 \u2013 May 17",
       "saturation": "medium",
       "totalMeetings": 41,
-      "meetingHours": 64.4,
-      "focusHours": 51.0,
+      "meetingHours": 46.1,
+      "focusHours": 32.7,
       "deepWorkHours": 0,
       "breakdown": {
         "zach": {
@@ -424,7 +424,7 @@
         },
         "focus": {
           "count": 20,
-          "hours": 51.0
+          "hours": 32.7
         },
         "one_off": {
           "count": 0,
