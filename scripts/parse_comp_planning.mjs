@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'fs'
 
-const csv = readFileSync('/Users/ctauziet/Downloads/Employee Data - 2025 Year End Cycle - 2026-03-31.csv', 'utf8')
+const csv = readFileSync('/Users/ctauziet/Downloads/Employee Data - 2025 Year End Cycle - 2026-04-01.csv', 'utf8')
 
 // Proper CSV parser that handles quoted fields with newlines
 function parseCSV(text) {
@@ -79,8 +79,8 @@ const COL_PERF = col('YE25 Performance Score')
 const COL_PROMO = col('YE25 Promotion Decision')
 const COL_CURRENT_BASE = col('Current Base Pay')
 const COL_NEW_BASE = col('New Base Pay')
-const COL_Y1_TOTAL = headers.findIndex(h => h.includes('Total Annual Compensation') && h.includes("26 to Mar'27"))
-const COL_Y2_TOTAL = col('Target Compensation')
+const COL_Y1_TOTAL = headers.findIndex(h => h.includes('Total Annual Compensation') && h.includes("26 to Mar'27") && !h.includes('Change'))
+const COL_Y2_TOTAL = headers.findIndex(h => h.includes('Total Annual Compensation') && h.includes("27 to Mar'28") && !h.includes('Change'))
 const COL_EQUITY = col('New Equity Award Total Value')
 
 console.log(`Column indices: Y1=${COL_Y1_TOTAL}, Y2=${COL_Y2_TOTAL}`)
@@ -90,8 +90,11 @@ const results = data.map(row => {
   const displayName = NAME_MAP[csvName] || csvName
   const member = findTeamMember(displayName)
 
-  const currentBase = parseMoney(row[COL_CURRENT_BASE])
-  const newBase = parseMoney(row[COL_NEW_BASE])
+  let currentBase = parseMoney(row[COL_CURRENT_BASE])
+  let newBase = parseMoney(row[COL_NEW_BASE])
+  // Hourly rates show as small numbers; convert to annual (2080 hrs/yr)
+  if (currentBase > 0 && currentBase < 1000) currentBase = Math.round(parseFloat(row[COL_CURRENT_BASE].replace(/[$,\s]/g, '')) * 2080)
+  if (newBase > 0 && newBase < 1000) newBase = Math.round(parseFloat(row[COL_NEW_BASE].replace(/[$,\s]/g, '')) * 2080)
   const newTotalCompY1 = parseMoney(row[COL_Y1_TOTAL])
   const newTotalCompY2 = parseMoney(row[COL_Y2_TOTAL])
   const perfScore = row[COL_PERF] || ''
